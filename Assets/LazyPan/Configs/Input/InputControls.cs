@@ -53,6 +53,15 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MouseLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""ecccec7d-9b91-4b47-93a9-08b0179bbbd9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -70,7 +79,7 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""up"",
                     ""id"": ""07e74a9f-3b6c-4503-be41-b0cf69f1fa4b"",
-                    ""path"": """",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -81,7 +90,7 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""down"",
                     ""id"": ""f1a6f964-cf18-4971-b6de-b3d98d7ef6d8"",
-                    ""path"": """",
+                    ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -92,7 +101,7 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""left"",
                     ""id"": ""f7d5a770-d919-4b3b-84f9-2bc54ac9ca38"",
-                    ""path"": """",
+                    ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -103,7 +112,7 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""right"",
                     ""id"": ""1c2bec22-c29c-4b7a-9bb7-15e9cd8b53df"",
-                    ""path"": """",
+                    ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -126,10 +135,21 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""31dd9af2-61df-46cc-b04b-05d7f0057e62"",
                     ""path"": ""<Mouse>/rightButton"",
-                    ""interactions"": ""Hold"",
+                    ""interactions"": ""Hold(duration=0.1)"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""MouseRightPress"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""be656c94-9894-471f-9aa6-525a8799299c"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MouseLeft"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -143,6 +163,7 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
         m_Player_Motion = m_Player.FindAction("Motion", throwIfNotFound: true);
         m_Player_MouseRight = m_Player.FindAction("MouseRight", throwIfNotFound: true);
         m_Player_MouseRightPress = m_Player.FindAction("MouseRightPress", throwIfNotFound: true);
+        m_Player_MouseLeft = m_Player.FindAction("MouseLeft", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -207,6 +228,7 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Motion;
     private readonly InputAction m_Player_MouseRight;
     private readonly InputAction m_Player_MouseRightPress;
+    private readonly InputAction m_Player_MouseLeft;
     public struct PlayerActions
     {
         private @InputControls m_Wrapper;
@@ -214,6 +236,7 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
         public InputAction @Motion => m_Wrapper.m_Player_Motion;
         public InputAction @MouseRight => m_Wrapper.m_Player_MouseRight;
         public InputAction @MouseRightPress => m_Wrapper.m_Player_MouseRightPress;
+        public InputAction @MouseLeft => m_Wrapper.m_Player_MouseLeft;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -232,6 +255,9 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
             @MouseRightPress.started += instance.OnMouseRightPress;
             @MouseRightPress.performed += instance.OnMouseRightPress;
             @MouseRightPress.canceled += instance.OnMouseRightPress;
+            @MouseLeft.started += instance.OnMouseLeft;
+            @MouseLeft.performed += instance.OnMouseLeft;
+            @MouseLeft.canceled += instance.OnMouseLeft;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -245,6 +271,9 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
             @MouseRightPress.started -= instance.OnMouseRightPress;
             @MouseRightPress.performed -= instance.OnMouseRightPress;
             @MouseRightPress.canceled -= instance.OnMouseRightPress;
+            @MouseLeft.started -= instance.OnMouseLeft;
+            @MouseLeft.performed -= instance.OnMouseLeft;
+            @MouseLeft.canceled -= instance.OnMouseLeft;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -267,5 +296,6 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
         void OnMotion(InputAction.CallbackContext context);
         void OnMouseRight(InputAction.CallbackContext context);
         void OnMouseRightPress(InputAction.CallbackContext context);
+        void OnMouseLeft(InputAction.CallbackContext context);
     }
 }

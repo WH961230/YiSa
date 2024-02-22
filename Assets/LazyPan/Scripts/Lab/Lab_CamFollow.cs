@@ -1,7 +1,6 @@
 using UnityEngine;
 
 public class Lab_CamFollow : MonoBehaviour {
-    public CharacterController characterController;
     public Transform PlayerTr;
     private Vector3 off;
 

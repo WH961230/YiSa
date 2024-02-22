@@ -5,6 +5,7 @@ public class Lab_Trigger : MonoBehaviour {
         if (other.gameObject.layer == LayerMask.NameToLayer("Floor")) {
             return;
         }
+
         Rigidbody rb = other.gameObject.GetComponent<Rigidbody>();
         if (rb == null) {
             other.gameObject.AddComponent<Rigidbody>();

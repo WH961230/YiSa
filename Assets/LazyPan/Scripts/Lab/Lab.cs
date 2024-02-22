@@ -2,11 +2,13 @@ using LazyPan;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.Playables;
 
 public class Lab : MonoBehaviour {
     public CharacterController characterController;
     public RectTransform CursorRect;
     public Comp PlayerComp;
+    public PlayableDirector Director;
     public float PlayerRotateSpeed;
     public float BulletShootSpeed;
 
@@ -18,11 +20,14 @@ public class Lab : MonoBehaviour {
     private bool isRightMouseHold;
     private bool isHitFloor;
     private Vector3 motionDir;
+    private bool canControl;
 
     void Start() {
         InputRegister.Instance.Load("Player/MouseRightPress", MouseRightPress);
         InputRegister.Instance.Load("Player/MouseLeft", MouseLeft);
         InputRegister.Instance.Load("Player/Motion", MotionEvent);
+        Director.Play();
+        Director.stopped += CheckStartControl;
         isRightMouseHold = false;
         CursorRect.gameObject.SetActive(false);
     }
@@ -57,7 +62,15 @@ public class Lab : MonoBehaviour {
         RotateToHitPoint();
     }
 
+    private void CheckStartControl(PlayableDirector director) {
+        canControl = true;
+    }
+
     private void PlayerMotion() {
+        if (!canControl) {
+            return;
+        }
+
         Vector3 cameraForward = Camera.main.transform.forward;
         cameraForward.y = 0;
         Vector3 moveDir = Vector3.zero;
@@ -70,6 +83,10 @@ public class Lab : MonoBehaviour {
     }
 
     private void Shoot() {
+        if (!canControl) {
+            return;
+        }
+
         GameObject template = PlayerComp.Get<GameObject>("BulletPrefab");
         Transform bulletMuzzle = PlayerComp.Get<Transform>("Muzzle");
         GameObject bullet = Instantiate(template);
@@ -79,6 +96,10 @@ public class Lab : MonoBehaviour {
     }
 
     private void CheckHitFloor() {
+        if (!canControl) {
+            return;
+        }
+
         if (isRightMouseHold) {
             Vector2 mousePosition = Mouse.current.position.ReadValue();
             Vector3 currentMousePositionToWorld = Camera.main.ScreenToWorldPoint(mousePosition);
@@ -98,6 +119,10 @@ public class Lab : MonoBehaviour {
     }
 
     private void RotateToHitPoint() {
+        if (!canControl) {
+            return;
+        }
+
         if (isHitFloor) {
             Vector3 pointVec = PlayerComp.Get<Transform>("Point").position;
             Vector3 worldToScreenPoint = Camera.main.WorldToScreenPoint(hit.point); //击中的点

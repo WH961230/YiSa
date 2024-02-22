@@ -10,6 +10,7 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="LazyPan" t="Include">
+          <e p="Animations" t="Include" />
           <e p="Configs" t="Include">
             <e p="Input" t="Include">
               <e p="InputControls.cs" t="Include" />
@@ -79,6 +80,7 @@
               <e p="Lab_Trigger.cs" t="Include" />
             </e>
           </e>
+          <e p="Timelines" t="Include" />
         </e>
         <e p="MilkShake" t="Include">
           <e p="Demo" t="Include">

@@ -41,12 +41,6 @@ namespace LazyPan {
             isInit = true;
         }
 
-        public static void Clear() {
-            isInit = false;
-            dics.Clear();
-            lines = null;
-        }
-
         public static SceneConfig Get(string sign) {
             if (dics.TryGetValue(sign, out SceneConfig config)) {
                 return config;

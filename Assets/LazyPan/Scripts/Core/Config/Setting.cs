@@ -5,12 +5,30 @@ using UnityEngine;
 
 namespace LazyPan {
 
+    //基础配置
+    [Serializable]
+    public class BaseSetting {
+        [Header("标识")] public string Sign;
+        [Header("类型")] public ObjType ObjType;
+        [Header("描述")] public string Detail;
+    }
+
+    //基础配置
+    [Serializable]
+    public class MotionRotateSetting {
+        [Header("标识")] public string Sign;
+        [Header("初始移动速度")] public float MovementSpeed;
+        [Header("初始转身速度")] public float RotateSpeed;
+    }
+
+    //震动配置
     [Serializable]
     public class ShakerSetting {
         [Header("相机震动标识")] public string CameraShakeSign;
         [Header("相机震动配置")] public ShakePreset CameraShakePreset;
     }
 
+    //生成器配置
     [Serializable]
     public class CreatorSetting {
         [Header("生成器物体标识")] public string CreatorObjSign;
@@ -18,13 +36,15 @@ namespace LazyPan {
         [Header("生成器物体间隔")] public Vector2 CreatorObjIntervalTime;
         [Header("生成器物体距离")] public float CreatorObjDistance;
     }
-    
+
+    //等级配置
     [Serializable]
     public class LevelSetting {
         [Header("等级")] public int Level;
         [Header("经验值")] public int ExperienceMax;
     }
-    
+
+    //霸服配置
     [Serializable]
     public class BuffSetting {
         [Header("标识")] public string Sign;
@@ -33,6 +53,7 @@ namespace LazyPan {
         [Header("参数")] public List<string> ParamStrs;
     }
 
+    //掉落物配置
     [Serializable]
     public class DropSetting {
         [Header("标识")] public string Sign;
@@ -40,6 +61,7 @@ namespace LazyPan {
         [Header("掉落力")] public float DropForce;
     }
 
+    //攻击配置
     [Serializable]
     public class AttackSetting {
         [Header("基础攻击力")] public int AttackBase;
@@ -49,11 +71,8 @@ namespace LazyPan {
 
     [CreateAssetMenu(menuName = "LazyPan/Setting", fileName = "Setting")]
     public class Setting : ScriptableObject {
-        [Header("标识")] public string Sign;
-        [Header("类型")] public ObjType ObjType;
-        [Header("描述")] public string Detail;
-        [Header("初始移动速度")] public float MovementSpeed;
-        [Header("初始转身速度")] public float RotateSpeed;
+        [Header("基础信息配置")] public List<BaseSetting> BaseSettings;
+        [Header("移动与旋转配置")] public List<MotionRotateSetting> MotionRotateSettings;
         [Header("初始血量上限")] public int HealthMax;
         [Header("初始攻击间隔")] public float AttackInterval;
         [Header("初始换弹间隔")] public float ReloadInterval;

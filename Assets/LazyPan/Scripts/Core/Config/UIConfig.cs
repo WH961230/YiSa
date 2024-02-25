@@ -6,6 +6,7 @@ namespace LazyPan {
 		public string Sign;
 		public string Description;
 		public int Type;
+		public int RenderQueue;
 
         private static bool isInit;
         private static string content;
@@ -18,6 +19,7 @@ namespace LazyPan {
 				Sign = values[0];
 				Description = values[1];
 				Type = int.Parse(values[2]);
+				RenderQueue = int.Parse(values[3]);
 
             } catch (Exception e) {
                 Console.WriteLine(e);
@@ -39,12 +41,6 @@ namespace LazyPan {
             }
 
             isInit = true;
-        }
-
-        public static void Clear() {
-            isInit = false;
-            dics.Clear();
-            lines = null;
         }
 
         public static UIConfig Get(string sign) {

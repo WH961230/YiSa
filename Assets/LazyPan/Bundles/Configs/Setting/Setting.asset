@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce22abf0f6034603bcf80fe1b2798dda, type: 3}
+  m_Name: Setting
+  m_EditorClassIdentifier: 
+  BaseSettings:
+  - Sign: Obj_Player
+    ObjType: 2
+    Detail: "\u73A9\u5BB6"
+  - Sign: Obj_Camera
+    ObjType: 1
+    Detail: "\u4E3B\u76F8\u673A"
+  MotionRotateSettings:
+  - Sign: Obj_Player
+    MovementSpeed: 3
+    RotateSpeed: 15
+  HealthMax: 0
+  AttackInterval: 0
+  ReloadInterval: 0
+  Level: 0
+  Experience: 0
+  AttackSetting:
+    AttackBase: 0
+    AttackRatio: 0
+    AttackExtraRatio: 0
+  LevelSettings: []
+  BulletNum: 0
+  BulletMaxNum: 0
+  BulletFx: {fileID: 0}
+  ShakerSettings: []
+  CameraFollowOffset: {x: 0, y: 0, z: 0}
+  CameraFollowPositionSpeed: 0
+  CameraFollowRotationSpeed: 0
+  InjuredHealthFloatingGo: {fileID: 0}
+  RecoverHealthFloatingGo: {fileID: 0}
+  OverlapCapsuleOffset: 0
+  GravitySpeed: 0
+  GravityDetectMaskLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  FootStepFx: {fileID: 0}
+  WeaponType: 0
+  ArrowMarkSprite: {fileID: 0}
+  RobotAttackDistance: 0
+  RobotMovementSpeed: {x: 0, y: 0}
+  RobotRotateSpeed: {x: 0, y: 0}
+  RobotDeadRagdollForce: 0
+  BloodFloatingGo: {fileID: 0}
+  CreatorSetting:
+    CreatorObjSign: 
+    CreatorObjDelayTime: 0
+    CreatorObjIntervalTime: {x: 0, y: 0}
+    CreatorObjDistance: 0
+  BuffSettings: []
+  DropSettings: []
+  LevelUpGo: {fileID: 0}

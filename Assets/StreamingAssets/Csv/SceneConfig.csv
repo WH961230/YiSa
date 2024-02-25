@@ -1,0 +1,4 @@
+﻿Sign,Description,DirPath
+string,string,string
+标识,描述,物体路径
+Lab,实验场景,Obj/

@@ -4,14 +4,13 @@ using UnityEngine;
 
 namespace LazyPan {
     public class UI : SingletonMonoBehaviour<UI> {
-        [NonSerialized] public Transform UIRoot;
         private Comp UIComp;
         private Dictionary<string, Comp> uICompAlwaysDics = new Dictionary<string, Comp>();
         private Dictionary<string, Comp> uICompExchangeDics = new Dictionary<string, Comp>();
         private Dictionary<string, Comp> uICompDics = new Dictionary<string, Comp>();
 
         public void Init() {
-            UIRoot = Loader.LoadGo("画布", "Global/Global_UI_Root", null, true).transform;
+            Data.Instance.UIRoot = Loader.LoadGo("画布", "Global/Global_UI_Root", null, true).transform;
             List<string> keys = UIConfig.GetKeys();
             int length = keys.Count;
             uICompDics.Clear();
@@ -19,7 +18,7 @@ namespace LazyPan {
             uICompAlwaysDics.Clear();
             for (int i = 0; i < length; i++) {
                 string key = keys[i];
-                GameObject uiGo = Loader.LoadGo(key, string.Concat("UI/", key), UIRoot, false);
+                GameObject uiGo = Loader.LoadGo(key, string.Concat("UI/", key), Data.Instance.UIRoot, false);
                 switch (UIConfig.Get(key).Type) {
                     case 0:
                         uICompExchangeDics.Add(key, uiGo.GetComponent<Comp>());

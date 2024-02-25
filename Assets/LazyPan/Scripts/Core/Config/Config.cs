@@ -3,8 +3,7 @@
         public void Init() {
             SceneConfig.Init();
             ObjConfig.Init();
-            BehaviourConfig.Init();
-            BuffConfig.Init();
+            UIConfig.Init();
         }
     }
 }

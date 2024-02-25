@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Asset
+  m_EditorClassIdentifier: 
+  m_GroupName: Asset
+  m_Data:
+    m_SerializedData: []
+  m_GUID: cb26f3e1c6d4b4f43a6edfa72fc77a64
+  m_SerializeEntries:
+  - m_GUID: 3058cfc35258b414a98aa42b21960496
+    m_Address: Assets/LazyPan/Bundles/Configs/Setting/GameSetting.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5d13fac4251ba29498e17c85f529c236
+    m_Address: Assets/LazyPan/Bundles/Prefabs/Global
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ef0df9c2dfa75584b9e2cd0a75d79d23
+    m_Address: Assets/LazyPan/Bundles/Prefabs
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 349137a476e42a241a5885a98fed4540
+    m_Address: Assets/LazyPan/Bundles/Configs/Setting
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5ba7671be21c36a4385559c588149cef
+    m_Address: Assets/LazyPan/Bundles/Prefabs/UI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 5cd535f96ceaaaf43a1e3b41ba68119a, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 9cb24882030de3e4ca861142b43dbd56, type: 2}
+    - {fileID: 11400000, guid: 8e32578fba9f3bb4eb5f357b05fab40b, type: 2}

@@ -4,12 +4,9 @@ using System.Collections.Generic;
 namespace LazyPan {
     public class ObjConfig {
 		public string Sign;
-		public string ObjTypeSign;
+		public int Type;
 		public string Name;
 		public string Behaviour;
-		public string Setting;
-		public string RootTypeSign;
-		public int IsPreload;
 
         private static bool isInit;
         private static string content;
@@ -20,12 +17,9 @@ namespace LazyPan {
             try {
                 string[] values = line.Split(',');
 				Sign = values[0];
-				ObjTypeSign = values[1];
+				Type = int.Parse(values[1]);
 				Name = values[2];
 				Behaviour = values[3];
-				Setting = values[4];
-				RootTypeSign = values[5];
-				IsPreload = int.Parse(values[6]);
 
             } catch (Exception e) {
                 Console.WriteLine(e);
@@ -47,12 +41,6 @@ namespace LazyPan {
             }
 
             isInit = true;
-        }
-
-        public static void Clear() {
-            isInit = false;
-            dics.Clear();
-            lines = null;
         }
 
         public static ObjConfig Get(string sign) {

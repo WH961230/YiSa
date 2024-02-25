@@ -1,0 +1,12 @@
+using UnityEngine;
+
+namespace LazyPan {
+    public class Behaviour_#ClassName# : Behaviour {
+        public Behaviour_#ClassName#(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
+        }
+
+        public override void OnClear() {
+            base.OnClear();
+        }
+    }
+}

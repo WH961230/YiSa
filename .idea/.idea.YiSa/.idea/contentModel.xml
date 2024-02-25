@@ -9,15 +9,35 @@
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="LazyPan" t="Include">
-          <e p="Animations" t="Include" />
-          <e p="Configs" t="Include">
-            <e p="Input" t="Include">
-              <e p="InputControls.cs" t="Include" />
-            </e>
+        <e p="AddressableAssetsData" t="Include">
+          <e p="AssetGroups" t="Include">
+            <e p="Schemas" t="Include" />
           </e>
-          <e p="Mats" t="Include" />
-          <e p="Prefabs" t="Include" />
+          <e p="AssetGroupTemplates" t="Include" />
+          <e p="DataBuilders" t="Include" />
+        </e>
+        <e p="LazyPan" t="Include">
+          <e p="Bundles" t="Include">
+            <e p="Animations" t="Include" />
+            <e p="Configs" t="Include">
+              <e p="Input" t="Include">
+                <e p="InputControls.cs" t="Include" />
+              </e>
+              <e p="Setting" t="Include" />
+              <e p="Txt" t="Include">
+                <e p="GenerateBehaviourTemplate.txt" t="Include" />
+                <e p="GenerateConfigTemplate.txt" t="Include" />
+              </e>
+            </e>
+            <e p="Mats" t="Include" />
+            <e p="Prefabs" t="Include">
+              <e p="Global" t="Include" />
+              <e p="obj" t="Include" />
+              <e p="UI" t="Include" />
+            </e>
+            <e p="Scenes" t="Include" />
+            <e p="Timelines" t="Include" />
+          </e>
           <e p="Scripts" t="Include">
             <e p="Core" t="Include">
               <e p="Behaviour" t="Include">
@@ -27,7 +47,6 @@
                 <e p="Comp.cs" t="Include" />
               </e>
               <e p="Config" t="Include">
-                <e p="BehaviourConfig.cs" t="Include" />
                 <e p="BuffConfig.cs" t="Include" />
                 <e p="Config.cs" t="Include" />
                 <e p="GameSetting.cs" t="Include" />
@@ -39,7 +58,6 @@
               </e>
               <e p="Data" t="Include">
                 <e p="Data.cs" t="Include" />
-                <e p="Data_Preload.cs" t="Include" />
                 <e p="EntityData.cs" t="Include" />
               </e>
               <e p="Entity" t="Include">
@@ -49,6 +67,7 @@
                 <e p="Flow.cs" t="Include" />
                 <e p="IFlow.cs" t="Include" />
               </e>
+              <e p="Game.cs" t="Include" />
               <e p="Loader" t="Include">
                 <e p="Loader.cs" t="Include" />
               </e>
@@ -74,13 +93,28 @@
                 <e p="UI.cs" t="Include" />
               </e>
             </e>
+            <e p="GamePlay" t="Include">
+              <e p="Behaviour" t="Include">
+                <e p="Behaviour_BeginTimeline.cs" t="Include" />
+                <e p="Behaviour_FollowPlayer.cs" t="Include" />
+                <e p="Behaviour_InputMotion.cs" t="Include" />
+                <e p="Behaviour_InputRotate.cs" t="Include" />
+                <e p="Behaviour_InputShoot.cs" t="Include" />
+              </e>
+              <e p="Data" t="Include">
+                <e p="Data_Global.cs" t="Include" />
+              </e>
+              <e p="Flow" t="Include">
+                <e p="BeginFlow.cs" t="Include" />
+                <e p="MainFlow.cs" t="Include" />
+              </e>
+            </e>
             <e p="Lab" t="Include">
               <e p="Lab.cs" t="Include" />
               <e p="Lab_CamFollow.cs" t="Include" />
               <e p="Lab_Trigger.cs" t="Include" />
             </e>
           </e>
-          <e p="Timelines" t="Include" />
         </e>
         <e p="MilkShake" t="Include">
           <e p="Demo" t="Include">
@@ -163,8 +197,10 @@
           </e>
         </e>
         <e p="Resources" t="Include" />
-        <e p="Scenes" t="Include" />
         <e p="Settings" t="Include" />
+        <e p="StreamingAssets" t="Include">
+          <e p="Csv" t="Include" />
+        </e>
         <e p="TutorialInfo" t="Include">
           <e p="Icons" t="Include" />
           <e p="Scripts" t="Include">

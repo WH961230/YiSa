@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -45,6 +46,8 @@ namespace LazyPan {
         public List<PlayableDirectorData> PlayableDirectors = new List<PlayableDirectorData>();
         public List<TimelineAssetData> TimelineAssets = new List<TimelineAssetData>();
         public List<CompData> Comps = new List<CompData>();
+        public List<UnityEventData> UnityEventDatas = new List<UnityEventData>();
+        public List<DoTweenAnimationData> DoTweenAnimationDatas = new List<DoTweenAnimationData>();
         public List<string> BehaviourBundles = new List<string>();
 
         public T Get<T>(string sign) where T : Object {
@@ -132,6 +135,22 @@ namespace LazyPan {
                         return compData.Comp as T;
                     }
                 }
+            } else if (typeof(T) == typeof(DOTweenAnimation)) {
+                foreach (DoTweenAnimationData compData in DoTweenAnimationDatas) {
+                    if (compData.Sign == sign) {
+                        return compData.DOTweenAnimation as T;
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        public UnityEvent GetEvent(string sign) {
+            foreach (UnityEventData data in UnityEventDatas) {
+                if (data.Sign == sign) {
+                    return data.UnityEvent;
+                }
             }
 
             return null;
@@ -182,6 +201,18 @@ namespace LazyPan {
             OnDrawGizmosAction.Invoke();
         }
 #endif
+
+        [Serializable]
+        public class DoTweenAnimationData {
+            public string Sign;
+            public DOTweenAnimation DOTweenAnimation;
+        }
+        
+        [Serializable]
+        public class UnityEventData {
+            public string Sign;
+            public UnityEvent UnityEvent;
+        }
 
         [Serializable]
         public class CompData {

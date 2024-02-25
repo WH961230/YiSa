@@ -23,7 +23,6 @@ namespace LazyPan {
                 }
             }
 
-
             return false;
         }
 

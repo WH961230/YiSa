@@ -5,11 +5,12 @@ using UnityEngine.InputSystem;
 namespace LazyPan {
     public class InputRegister : Singleton<InputRegister> {
         public string Shift = "Player/Shift";
-        public string Movement = "Player/Movement";
+        public string Motion = "Player/Motion";
         public string LeftClick = "Player/LeftClick";
         public string RightClick = "Player/RightClick";
         public string Tab = "Player/Tab";
         public string R = "Player/R";
+        public string MouseRightPress = "Player/MouseRightPress";
 
         private InputControls inputControls;
 

@@ -9,4 +9,4 @@ Obj_Volume,0,后处理,
 Obj_Floor,0,地板,
 Obj_BeginTimeline,0,开始时间轴,Behaviour_BeginTimeline
 Obj_DirectionalLight,0,直射灯光,
-Obj_Soldier,0,士兵,Behaviour_InputMotion|Behaviour_InputRotate|Behaviour_InputShoot
+Obj_Soldier,0,士兵,Behaviour_InputMotion|Behaviour_InputRotate|Behaviour_InputCloseFight

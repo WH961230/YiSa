@@ -48,6 +48,7 @@ namespace LazyPan {
         public List<CompData> Comps = new List<CompData>();
         public List<UnityEventData> UnityEventDatas = new List<UnityEventData>();
         public List<DoTweenAnimationData> DoTweenAnimationDatas = new List<DoTweenAnimationData>();
+        public List<TrailRendererData> TrailRendererDatas = new List<TrailRendererData>();
         public List<string> BehaviourBundles = new List<string>();
 
         public T Get<T>(string sign) where T : Object {
@@ -141,6 +142,12 @@ namespace LazyPan {
                         return compData.DOTweenAnimation as T;
                     }
                 }
+            } else if (typeof(T) == typeof(TrailRenderer)) {
+                foreach (TrailRendererData data in TrailRendererDatas) {
+                    if (data.Sign == sign) {
+                        return data.TrailRenderer as T;
+                    }
+                }
             }
 
             return null;
@@ -201,6 +208,12 @@ namespace LazyPan {
             OnDrawGizmosAction.Invoke();
         }
 #endif
+
+        [Serializable]
+        public class TrailRendererData {
+            public string Sign;
+            public TrailRenderer TrailRenderer;
+        }
 
         [Serializable]
         public class DoTweenAnimationData {

@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 namespace LazyPan {
     public class Behaviour_InputShoot : Behaviour {
         public Behaviour_InputShoot(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
-            InputRegister.Instance.Load("Player/MouseLeft", MouseLeft);
+            InputRegister.Instance.Load(InputRegister.Instance.LeftClick, MouseLeft);
         }
 
         private void MouseLeft(InputAction.CallbackContext obj) {
@@ -31,6 +31,7 @@ namespace LazyPan {
 
         public override void OnClear() {
             base.OnClear();
+            InputRegister.Instance.UnLoad(InputRegister.Instance.LeftClick, MouseLeft);
         }
     }
 }

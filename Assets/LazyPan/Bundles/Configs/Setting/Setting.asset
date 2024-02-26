@@ -26,6 +26,9 @@ MonoBehaviour:
   - Sign: Obj_Player
     MovementSpeed: 3
     RotateSpeed: 15
+  - Sign: Obj_Soldier
+    MovementSpeed: 3
+    RotateSpeed: 15
   HealthMax: 0
   AttackInterval: 0
   ReloadInterval: 0

@@ -6,7 +6,7 @@ namespace LazyPan {
     public class InputRegister : Singleton<InputRegister> {
         public string Shift = "Player/Shift";
         public string Motion = "Player/Motion";
-        public string LeftClick = "Player/LeftClick";
+        public string LeftClick = "Player/MouseLeft";
         public string RightClick = "Player/RightClick";
         public string Tab = "Player/Tab";
         public string R = "Player/R";

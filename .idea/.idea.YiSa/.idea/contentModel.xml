@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\ASUS\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\ASUS\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_YiSa.1592269222.00" t="ExcludeRecursive" />
+    <e p="D:\git\fork\YiSa" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="AddressableAssetsData" t="Include">
+          <e p="AssetGroups" t="Include">
+            <e p="Schemas" t="Include" />
+          </e>
+          <e p="AssetGroupTemplates" t="Include" />
+          <e p="DataBuilders" t="Include" />
+        </e>
+        <e p="LazyPan" t="Include">
+          <e p="Bundles" t="Include">
+            <e p="Animations" t="Include" />
+            <e p="Configs" t="Include">
+              <e p="Input" t="Include">
+                <e p="InputControls.cs" t="Include" />
+              </e>
+              <e p="Setting" t="Include" />
+              <e p="Txt" t="Include">
+                <e p="GenerateBehaviourTemplate.txt" t="Include" />
+                <e p="GenerateConfigTemplate.txt" t="Include" />
+              </e>
+            </e>
+            <e p="Mats" t="Include" />
+            <e p="Prefabs" t="Include">
+              <e p="Global" t="Include" />
+              <e p="obj" t="Include" />
+              <e p="UI" t="Include" />
+            </e>
+            <e p="Scenes" t="Include" />
+            <e p="Timelines" t="Include" />
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="Core" t="Include">
+              <e p="Behaviour" t="Include">
+                <e p="Behaviour.cs" t="Include" />
+              </e>
+              <e p="Comp" t="Include">
+                <e p="Comp.cs" t="Include" />
+              </e>
+              <e p="Config" t="Include">
+                <e p="BuffConfig.cs" t="Include" />
+                <e p="Config.cs" t="Include" />
+                <e p="GameSetting.cs" t="Include" />
+                <e p="ObjConfig.cs" t="Include" />
+                <e p="ReadCSV.cs" t="Include" />
+                <e p="SceneConfig.cs" t="Include" />
+                <e p="Setting.cs" t="Include" />
+                <e p="UIConfig.cs" t="Include" />
+              </e>
+              <e p="Data" t="Include">
+                <e p="Data.cs" t="Include" />
+                <e p="EntityData.cs" t="Include" />
+              </e>
+              <e p="Entity" t="Include">
+                <e p="Entity.cs" t="Include" />
+              </e>
+              <e p="Flow" t="Include">
+                <e p="Flow.cs" t="Include" />
+                <e p="IFlow.cs" t="Include" />
+              </e>
+              <e p="Game.cs" t="Include" />
+              <e p="Loader" t="Include">
+                <e p="Loader.cs" t="Include" />
+              </e>
+              <e p="obj" t="Include">
+                <e p="Obj.cs" t="Include" />
+              </e>
+              <e p="Register" t="Include">
+                <e p="BehaviourRegister.cs" t="Include" />
+                <e p="ButtonRegister.cs" t="Include" />
+                <e p="InputRegister.cs" t="Include" />
+                <e p="MessageRegister.cs" t="Include" />
+              </e>
+              <e p="Sound" t="Include">
+                <e p="Sound.cs" t="Include" />
+              </e>
+              <e p="Tool" t="Include">
+                <e p="ClockUtil.cs" t="Include" />
+                <e p="Generate.cs" t="Include" />
+                <e p="Singleton.cs" t="Include" />
+                <e p="SingletonMonobehaviour.cs" t="Include" />
+              </e>
+              <e p="UI" t="Include">
+                <e p="UI.cs" t="Include" />
+              </e>
+            </e>
+            <e p="GamePlay" t="Include">
+              <e p="Behaviour" t="Include">
+                <e p="Behaviour_BeginTimeline.cs" t="Include" />
+                <e p="Behaviour_FollowPlayer.cs" t="Include" />
+                <e p="Behaviour_InputCloseFight.cs" t="Include" />
+                <e p="Behaviour_InputMotion.cs" t="Include" />
+                <e p="Behaviour_InputRotate.cs" t="Include" />
+                <e p="Behaviour_InputShoot.cs" t="Include" />
+              </e>
+              <e p="Data" t="Include">
+                <e p="Data_Global.cs" t="Include" />
+              </e>
+              <e p="Flow" t="Include">
+                <e p="BeginFlow.cs" t="Include" />
+                <e p="MainFlow.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Lab" t="Include">
+              <e p="Lab.cs" t="Include" />
+              <e p="Lab_CamFollow.cs" t="Include" />
+              <e p="Lab_Trigger.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="MilkShake" t="Include">
+          <e p="Demo" t="Include">
+            <e p="Materials" t="Include" />
+            <e p="Presets" t="Include" />
+            <e p="Scenes" t="Include">
+              <e p="MilkShake Demo" t="Include" />
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="CameraDistance.cs" t="Include" />
+              <e p="CameraSwitcher.cs" t="Include" />
+              <e p="CustomShake.cs" t="Include" />
+              <e p="ShakeButton.cs" t="Include" />
+              <e p="ShakeClicker.cs" t="Include" />
+              <e p="ToggleAudio.cs" t="Include" />
+            </e>
+            <e p="Sounds" t="Include" />
+          </e>
+          <e p="Documentation" t="Include">
+            <e p="Readme.txt" t="Include" />
+            <e p="Simple Setup.txt" t="Include" />
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="IShakeParameters.cs" t="Include" />
+            <e p="ShakeInstance.cs" t="Include" />
+            <e p="ShakeParameters.cs" t="Include" />
+            <e p="ShakePreset.cs" t="Include" />
+            <e p="Shaker.cs" t="Include" />
+            <e p="ShakeResult.cs" t="Include" />
+            <e p="ShakeState.cs" t="Include" />
+            <e p="ShakeType.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Plugins" t="Include">
+          <e p="Demigiant" t="Include">
+            <e p="DemiLib" t="Include">
+              <e p="Core" t="Include">
+                <e p="DemiLib.xml" t="Include" />
+                <e p="Editor" t="Include">
+                  <e p="DemiEditor.xml" t="Include" />
+                  <e p="Imgs" t="Include">
+                    <e p="project" t="Include" />
+                  </e>
+                </e>
+              </e>
+            </e>
+            <e p="DOTween" t="Include">
+              <e p="Editor" t="Include">
+                <e p="Imgs" t="Include" />
+              </e>
+              <e p="Modules" t="Include">
+                <e p="DOTweenModuleAudio.cs" t="Include" />
+                <e p="DOTweenModuleEPOOutline.cs" t="Include" />
+                <e p="DOTweenModulePhysics.cs" t="Include" />
+                <e p="DOTweenModulePhysics2D.cs" t="Include" />
+                <e p="DOTweenModuleSprite.cs" t="Include" />
+                <e p="DOTweenModuleUI.cs" t="Include" />
+                <e p="DOTweenModuleUnityVersion.cs" t="Include" />
+                <e p="DOTweenModuleUtils.cs" t="Include" />
+              </e>
+              <e p="Readme.txt" t="Include" />
+            </e>
+            <e p="DOTweenPro" t="Include">
+              <e p="DOTweenAnimation.cs" t="Include" />
+              <e p="DOTweenDeAudio.cs" t="Include" />
+              <e p="DOTweenDeUnityExtended.cs" t="Include" />
+              <e p="DOTweenProShortcuts.cs" t="Include" />
+              <e p="DOTweenTextMeshPro.cs" t="Include" />
+              <e p="DOTweenTk2d.cs" t="Include" />
+              <e p="Editor" t="Include">
+                <e p="DOTweenAnimationInspector.cs" t="Include" />
+                <e p="DOTweenPreviewManager.cs" t="Include" />
+              </e>
+              <e p="Readme.txt" t="Include" />
+            </e>
+            <e p="DOTweenPro Examples" t="Include">
+              <e p="Examples Assets" t="Include" />
+            </e>
+            <e p="readme_DOTweenPro.txt" t="Include" />
+          </e>
+        </e>
+        <e p="Resources" t="Include" />
+        <e p="Settings" t="Include" />
+        <e p="StreamingAssets" t="Include">
+          <e p="Csv" t="Include" />
+        </e>
+        <e p="TutorialInfo" t="Include">
+          <e p="Icons" t="Include" />
+          <e p="Scripts" t="Include">
+            <e p="Editor" t="Include">
+              <e p="ReadmeEditor.cs" t="Include" />
+            </e>
+            <e p="Readme.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\Bin" t="ExcludeRecursive" />
+      <e p="YiSa.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>

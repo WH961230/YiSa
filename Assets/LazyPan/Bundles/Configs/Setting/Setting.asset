@@ -19,6 +19,9 @@ MonoBehaviour:
   - Sign: Obj_Camera
     ObjType: 1
     Detail: "\u4E3B\u76F8\u673A"
+  - Sign: Obj_Soldier
+    ObjType: 2
+    Detail: "\u58EB\u5175"
   MotionRotateSettings:
   - Sign: Obj_Player
     MovementSpeed: 3

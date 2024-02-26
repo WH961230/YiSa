@@ -10,7 +10,7 @@
             Obj.Instance.LoadEntity("Obj_Floor");
             Obj.Instance.LoadEntity("Obj_Volume");
             Obj.Instance.LoadEntity("Obj_DirectionalLight");
-            Obj.Instance.LoadEntity("Obj_Player");
+            Obj.Instance.LoadEntity("Obj_Soldier");
             Obj.Instance.LoadEntity("Obj_BeginTimeline");
             Obj.Instance.LoadEntity("Obj_Camera");
         }

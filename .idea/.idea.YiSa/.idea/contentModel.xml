@@ -85,7 +85,12 @@
               </e>
               <e p="Tool" t="Include">
                 <e p="ClockUtil.cs" t="Include" />
+                <e p="CollectCreatorRobotPoints.cs" t="Include" />
+                <e p="Editor" t="Include">
+                  <e p="CollectCreatorRobotPointsEditor.cs" t="Include" />
+                </e>
                 <e p="Generate.cs" t="Include" />
+                <e p="MathUtil.cs" t="Include" />
                 <e p="Singleton.cs" t="Include" />
                 <e p="SingletonMonobehaviour.cs" t="Include" />
               </e>
@@ -95,6 +100,7 @@
             </e>
             <e p="GamePlay" t="Include">
               <e p="Behaviour" t="Include">
+                <e p="Behaviour_AutoAttack.cs" t="Include" />
                 <e p="Behaviour_BeginTimeline.cs" t="Include" />
                 <e p="Behaviour_FollowPlayer.cs" t="Include" />
                 <e p="Behaviour_InputCloseFight.cs" t="Include" />

@@ -29,7 +29,7 @@ namespace LazyPan {
         [MenuItem("Assets/Create/LazyPan/生成配置脚本")]
         public static void GenerateConfig() {
             Object obj = Selection.objects[0];
-            GameSetting gameSetting = Loader.LoadSetting();
+            GameSetting gameSetting = Loader.LoadGameSetting();
             ReadCSV.Instance.Read(obj.name, out string content, out string[] lines);
             GenerateScript(obj.name, gameSetting, lines);
         }

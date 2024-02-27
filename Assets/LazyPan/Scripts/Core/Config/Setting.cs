@@ -31,10 +31,7 @@ namespace LazyPan {
     //生成器配置
     [Serializable]
     public class CreatorSetting {
-        [Header("生成器物体标识")] public string CreatorObjSign;
-        [Header("生成器物体延时时间")] public float CreatorObjDelayTime;
-        [Header("生成器物体间隔")] public Vector2 CreatorObjIntervalTime;
-        [Header("生成器物体距离")] public float CreatorObjDistance;
+        [Header("生成机器人点位")] public List<Vector3> CreatorPoints;
     }
 
     //等级配置

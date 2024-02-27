@@ -7,7 +7,7 @@ public class Game : MonoBehaviour {
 
     private void Awake() {
         instance = this;
-        GameSetting = Loader.LoadSetting();
+        GameSetting = Loader.LoadGameSetting();
     }
 
     private void Start() {

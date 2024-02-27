@@ -1,5 +1,4 @@
-﻿using UnityEngine;
-using UnityEngine.InputSystem;
+﻿using UnityEngine.InputSystem;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
 
@@ -7,22 +6,12 @@ namespace LazyPan {
     public class Behaviour_InputCloseFight : Behaviour {
         private TimelineAsset asset;
         private PlayableDirector playableDirector;
-        private TrailRenderer swordTrail;
         private bool isPlay;
         public Behaviour_InputCloseFight(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             asset = entity.Comp.Get<TimelineAsset>("CloseFightTimelineAsset");
             playableDirector = entity.Comp.Get<PlayableDirector>("CloseFightPlayableDirector");
-            swordTrail = entity.Comp.Get<TrailRenderer>("SwordTrail");
-            swordTrail.enabled = false;
-            playableDirector.played += playableDirector => {
-                isPlay = true;
-                swordTrail.enabled = true;
-            };  
-            playableDirector.stopped += director => {
-                swordTrail.enabled = false;
-                isPlay = false;
-            };  
-            //近战动画状态机
+            playableDirector.played += playableDirector => { isPlay = true; };  
+            playableDirector.stopped += director => { isPlay = false; };  
             InputRegister.Instance.Load(InputRegister.Instance.LeftClick, CloseFight);
         }
 

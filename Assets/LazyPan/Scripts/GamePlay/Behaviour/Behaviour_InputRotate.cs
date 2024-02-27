@@ -78,6 +78,9 @@ namespace LazyPan {
                               tempForward;
                 characterController.transform.forward = Vector3.MoveTowards(characterController.transform.forward,
                     tempForward, Time.deltaTime * entity.EntityData.RotateSpeed);
+            } else {
+                characterController.transform.forward = Vector3.MoveTowards(characterController.transform.forward,
+                    entity.EntityData.MotionDir, Time.deltaTime * entity.EntityData.RotateSpeed);
             }
         }
 

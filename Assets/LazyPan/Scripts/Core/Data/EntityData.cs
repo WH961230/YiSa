@@ -7,6 +7,7 @@ namespace LazyPan {
         public int Health;//血量
         public int HealthMax;//血量上限
         public float MovementSpeed;//移动速度
+        public Vector3 MotionDir;//移动方向
         public float RotateSpeed;//旋转速度
         public int Level;//等级
         public int Experience;//经验值
@@ -26,7 +27,7 @@ namespace LazyPan {
         public EntityData(string sign, Setting setting) {
             BaseSetting baseSetting = GetBaseSetting(sign, setting);
             ObjType = baseSetting == null ? ObjType.None : baseSetting.ObjType;
-            
+
             MotionRotateSetting motionRotateSetting = GetMotionRotateSetting(sign, setting);
             MovementSpeed = motionRotateSetting == null ? 0 : motionRotateSetting.MovementSpeed;//移动速度
             RotateSpeed = motionRotateSetting == null ? 0 : motionRotateSetting.RotateSpeed;//旋转速度

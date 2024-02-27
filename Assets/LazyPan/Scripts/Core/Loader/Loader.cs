@@ -7,7 +7,11 @@ namespace LazyPan {
         private static string SPRITE_PATH = "Assets/LazyPan/Bundles/Arts/Images/";
         private static string SPRITE_SUFFIX = ".png";
 
-        public static GameSetting LoadSetting() {
+        public static Setting LoadSetting() {
+            return Addressables.LoadAssetAsync<Setting>("Assets/LazyPan/Bundles/Configs/Setting/Setting.asset").WaitForCompletion();
+        }
+
+        public static GameSetting LoadGameSetting() {
             return Addressables.LoadAssetAsync<GameSetting>("Assets/LazyPan/Bundles/Configs/Setting/GameSetting.asset").WaitForCompletion();
         }
 
@@ -16,18 +20,18 @@ namespace LazyPan {
         }
 
         public static T LoadAsset<T>(AssetType type, string assetName) {
-            (string, string) addressData = LoadSetting().GetAddress(type);
+            (string, string) addressData = LoadGameSetting().GetAddress(type);
             return Addressables.LoadAssetAsync<T>(string.Concat(addressData.Item1, assetName, addressData.Item2)).WaitForCompletion();
         }
 
         public static T LoadAsset<T>(CommonAssetType type) {
-            string addressData = LoadSetting().GetCommonAddress(type);
+            string addressData = LoadGameSetting().GetCommonAddress(type);
             return Addressables.LoadAssetAsync<T>(addressData).WaitForCompletion();
         }
 
         // 加载游戏物体
         public static GameObject LoadGo(string finalName, string assetName, Transform parent, bool active) {
-            (string, string) addressData = LoadSetting().GetAddress(AssetType.PREFAB);
+            (string, string) addressData = LoadGameSetting().GetAddress(AssetType.PREFAB);
             GameObject go = Addressables.InstantiateAsync(string.Concat(addressData.Item1, assetName, addressData.Item2), parent).WaitForCompletion();
             go.SetActive(active);
             go.name = finalName;

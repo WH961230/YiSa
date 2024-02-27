@@ -72,20 +72,6 @@ namespace LazyPan {
             return false;
         }
 
-        public bool TryGetBuffSetting(string buffSign, out BuffSetting buffSetting) {
-            List<BuffSetting> buffSettings = Loader.LoadBuffSetting().BuffSettings;
-
-            foreach (BuffSetting tempBuffSetting in buffSettings) {
-                if (tempBuffSetting.Sign == buffSign) {
-                    buffSetting = tempBuffSetting;
-                    return true;
-                }
-            }
-
-            buffSetting = default;
-            return false;
-        }
-
         public bool TryGetDropSetting(Setting setting, string dropSign, out DropSetting dropSetting) {
             List<DropSetting> dropSettings = setting.DropSettings;
 

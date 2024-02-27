@@ -23,14 +23,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="751138b9-e304-4f88-90e0-21e17608f2fb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Tool/CollectCreatorRobotPoints.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Tool/CollectCreatorRobotPoints.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Tool/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Tool/Editor/CollectCreatorRobotPointsEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Tool/Editor/CollectCreatorRobotPointsEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Tool/MathUtil.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Tool/MathUtil.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/Setting.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/Setting.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Obj_MarkRobot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Obj_MarkRobot.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Obj_Soldier.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Obj_Soldier.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Comp/Comp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Comp/Comp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Register/InputRegister.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Register/InputRegister.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_InputShoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_InputShoot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/ObjConfig.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/ObjConfig.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Scenes/Lab.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Scenes/Lab.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Timelines/CloseFight.playable" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Timelines/CloseFight.playable" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Config/Setting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Config/Setting.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Data/Data.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Data/Data.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Data/EntityData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Data/EntityData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Entity/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Entity/Entity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Loader/Loader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Loader/Loader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Tool/Generate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Tool/Generate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_InputCloseFight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_InputCloseFight.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_InputMotion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_InputMotion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_InputRotate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_InputRotate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Data/Data_Global.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Data/Data_Global.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/BeginFlow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/BeginFlow.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,29 +83,33 @@
         <option value="$PROJECT_DIR$/Assets/StreamingAssets/Csv/UIConfig.csv" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Config/UIConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Config/ObjConfig.cs" />
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Loader/Loader.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/MainFlow.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Register/BehaviourRegister.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_FollowPlayer.cs" />
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Entity/Entity.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Txt/GenerateBehaviourTemplate.txt" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Tool/Generate.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/UI/UI.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Obj/Obj.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Game.cs" />
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Data/EntityData.cs" />
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Config/Setting.cs" />
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/BeginFlow.cs" />
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Data/Data_Global.cs" />
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_InputRotate.cs" />
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_InputMotion.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_BeginTimeline.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Config/Config.cs" />
         <option value="$PROJECT_DIR$/Assets/StreamingAssets/Csv/ObjConfig.csv" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Register/InputRegister.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_InputShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Comp/Comp.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_InputMotion.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_InputRotate.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_InputCloseFight.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Data/EntityData.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Config/Setting.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Tool/MathUtil.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Tool/CollectCreatorRobotPoints.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Tool/Editor/CollectCreatorRobotPointsEditor.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Data/Data.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Loader/Loader.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Entity/Entity.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Data/Data_Global.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/BeginFlow.cs" />
       </list>
     </option>
   </component>
@@ -129,10 +150,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="14848">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="14848" />
+      <option name="pid" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -156,6 +177,7 @@
       <workItem from="1708919371461" duration="1044000" />
       <workItem from="1708925556111" duration="638000" />
       <workItem from="1708952213256" duration="1954000" />
+      <workItem from="1709037371520" duration="4830000" />
     </task>
     <servers />
   </component>
@@ -248,6 +270,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1230" height="375" key="GridCell.Tab.3.right/0.0.2560.1400@0.0.2560.1400" timestamp="1708957044186" />
+    <state x="936" y="353" width="672" height="678" key="search.everywhere.popup" timestamp="1709038726987">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="936" y="353" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1709038726987" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

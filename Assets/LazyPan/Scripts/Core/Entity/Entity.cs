@@ -21,7 +21,7 @@ namespace LazyPan {
             ObjConfig objConfig = ObjConfig.Get(sign);
             ObjConfig = objConfig;
             //实体配置
-            EntitySetting = Loader.LoadAsset<Setting>(AssetType.ASSET, "Setting/Setting");
+            EntitySetting = Data.Instance.Setting;
             //获取对象池的物体 如数量不足 对象池预加载
             Prefab = Loader.LoadGo(null,
                 string.Concat(SceneConfig.Get(SceneManager.GetActiveScene().name).DirPath, objConfig.Sign),

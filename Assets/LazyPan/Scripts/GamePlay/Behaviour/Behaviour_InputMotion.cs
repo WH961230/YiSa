@@ -37,11 +37,11 @@ namespace LazyPan {
             }
             Vector3 cameraForward = Camera.main.transform.forward;
             cameraForward.y = 0;
-            Vector3 moveDir = Vector3.zero;
-            moveDir += cameraForward * motionDir.y * 5f;
-            moveDir += Camera.main.transform.right * motionDir.x * 5f;
-            characterController.Move(moveDir * Time.deltaTime);
-            if (moveDir != Vector3.zero) {
+            entity.EntityData.MotionDir = Vector3.zero;
+            entity.EntityData.MotionDir += cameraForward * motionDir.y * 5f;
+            entity.EntityData.MotionDir += Camera.main.transform.right * motionDir.x * 5f;
+            characterController.Move(entity.EntityData.MotionDir * Time.deltaTime);
+            if (entity.EntityData.MotionDir != Vector3.zero) {
                 entity.Comp.GetEvent("PlayerMotionEvent")?.Invoke();
             }
         }

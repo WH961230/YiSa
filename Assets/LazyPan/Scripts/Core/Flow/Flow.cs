@@ -34,6 +34,7 @@ namespace LazyPan {
 
             if (FlowDic.ContainsKey(typeof(T))) {
                 CurrentFlow = FlowDic[typeof(T)];
+                Debug.LogFormat("进入流程: {0}", CurrentFlow.GetType().Name);
                 CurrentFlow.OnInit(this);
             }
 

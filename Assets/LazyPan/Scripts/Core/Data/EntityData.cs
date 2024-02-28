@@ -77,5 +77,7 @@ namespace LazyPan {
         MainCamera,//相机
         MainPlayer,//玩家
         Robot,//怪物
+        MainVolume,//后处理
+        MainLight,//灯光
     }
 }

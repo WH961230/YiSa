@@ -22,6 +22,15 @@ MonoBehaviour:
   - Sign: Obj_Soldier
     ObjType: 2
     Detail: "\u58EB\u5175"
+  - Sign: Obj_Volume
+    ObjType: 4
+    Detail: "\u540E\u5904\u7406"
+  - Sign: Obj_DirectionalLight
+    ObjType: 5
+    Detail: "\u706F\u5149"
+  - Sign: Obj_Camera
+    ObjType: 1
+    Detail: "\u4E3B\u76F8\u673A"
   MotionRotateSettings:
   - Sign: Obj_Player
     MovementSpeed: 3
@@ -62,10 +71,7 @@ MonoBehaviour:
   RobotDeadRagdollForce: 0
   BloodFloatingGo: {fileID: 0}
   CreatorSetting:
-    CreatorObjSign: 
-    CreatorObjDelayTime: 0
-    CreatorObjIntervalTime: {x: 0, y: 0}
-    CreatorObjDistance: 0
+    CreatorPoints: []
   BuffSettings: []
   DropSettings: []
   LevelUpGo: {fileID: 0}

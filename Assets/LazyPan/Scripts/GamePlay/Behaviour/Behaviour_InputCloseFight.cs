@@ -7,6 +7,7 @@ namespace LazyPan {
         private TimelineAsset asset;
         private PlayableDirector playableDirector;
         private bool isPlay;
+
         public Behaviour_InputCloseFight(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             asset = entity.Comp.Get<TimelineAsset>("CloseFightTimelineAsset");
             playableDirector = entity.Comp.Get<PlayableDirector>("CloseFightPlayableDirector");

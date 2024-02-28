@@ -14,7 +14,7 @@ public class Game : MonoBehaviour {
         Config.Instance.Init();
         Obj.Instance.Init();
         UI.Instance.Init();
-        new MainFlow().OnInit(null);
+        new Flow_Main().OnInit(null);
     }
 
     private void Update() { Data.Instance.OnUpdateEvent.Invoke(); }

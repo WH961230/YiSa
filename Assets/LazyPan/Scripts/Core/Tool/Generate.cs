@@ -9,20 +9,37 @@ namespace LazyPan {
     public class Generate : EditorWindow {
 #if UNITY_EDITOR
         private string behaviourName;
+        private string flowName;
 
         [MenuItem("Assets/Create/LazyPan/生成行为")]
         public static void GenerateBehaviour() {
-            EditorWindow window = GetWindow(typeof(Generate), true, "快速生成行为配置");
+            EditorWindow window = GetWindow(typeof(Generate), true, "快速生成行为脚本");
+            window.position = new Rect(new Vector2(Screen.width, Screen.height), new Vector2(500, 300));
+            window.Show();
+            window.Focus();
+        }
+
+        [MenuItem("Assets/Create/LazyPan/生成流程")]
+        public static void GenerateFlow() {
+            EditorWindow window = GetWindow(typeof(Generate), true, "快速生成流程脚本");
             window.position = new Rect(new Vector2(Screen.width, Screen.height), new Vector2(500, 300));
             window.Show();
             window.Focus();
         }
 
         private void OnGUI() {
-            behaviourName = EditorGUILayout.TextField("输入行为配置名 ：", behaviourName);
-            if (GUILayout.Button("生成行为脚本")) {
-                CreateBehaviourScript("Assets/LazyPan/Bundles/Configs/Txt/GenerateBehaviourTemplate.txt",
-                    "Assets/LazyPan/Scripts/GamePlay/Behaviour/", behaviourName, "Behaviour_", "");
+            if (focusedWindow.titleContent.text == "快速生成行为脚本") {
+                behaviourName = EditorGUILayout.TextField("输入行为配置名 ：", behaviourName);
+                if (GUILayout.Button("生成行为脚本")) {
+                    GenerateScript("Assets/LazyPan/Bundles/Configs/Txt/GenerateBehaviourTemplate.txt",
+                        "Assets/LazyPan/Scripts/GamePlay/Behaviour/", behaviourName, "Behaviour_", "");
+                }
+            } else if (focusedWindow.titleContent.text == "快速生成流程脚本") {
+                flowName = EditorGUILayout.TextField("输入流程脚本名 ：", flowName);
+                if (GUILayout.Button("生成流程脚本")) {
+                    GenerateScript("Assets/LazyPan/Bundles/Configs/Txt/GenerateFlowTemplate.txt",
+                        "Assets/LazyPan/Scripts/GamePlay/Flow/", flowName, "Flow_", "");
+                }
             }
         }
 
@@ -31,10 +48,10 @@ namespace LazyPan {
             Object obj = Selection.objects[0];
             GameSetting gameSetting = Loader.LoadGameSetting();
             ReadCSV.Instance.Read(obj.name, out string content, out string[] lines);
-            GenerateScript(obj.name, gameSetting, lines);
+            GenerateConfigScript(obj.name, gameSetting, lines);
         }
 
-        private static void GenerateScript(string className, GameSetting gameSetting, string[] lines) {
+        private static void GenerateConfigScript(string className, GameSetting gameSetting, string[] lines) {
             string property = "";
             string readContent = "";
             string[] propertyName = lines[0].Split(',');
@@ -59,10 +76,10 @@ namespace LazyPan {
 
             string inputPath = string.Concat(Application.dataPath, gameSetting.TxtPath, "GenerateConfigTemplate.txt");
             string outputPath = string.Concat(Application.dataPath, gameSetting.ConfigScriptPath);
-            CreateScript(inputPath, outputPath, className, property, readContent, "", "");
+            CreateConfigScript(inputPath, outputPath, className, property, readContent, "", "");
         }
 
-        private static bool CreateScript(string inputPath, string outputPath, string className, string property,
+        private static bool CreateConfigScript(string inputPath, string outputPath, string className, string property,
             string readContent, string front, string end) {
             if (inputPath.EndsWith(".txt")) {
                 var streamReader = new StreamReader(inputPath);
@@ -83,7 +100,7 @@ namespace LazyPan {
             return false;
         }
 
-        public static bool CreateBehaviourScript(string inputPath, string outputPath, string className, string front, string end) {
+        public static bool GenerateScript(string inputPath, string outputPath, string className, string front, string end) {
             if (inputPath.EndsWith(".txt")) {
                 var streamReader = new StreamReader(inputPath);
                 var log = streamReader.ReadToEnd();

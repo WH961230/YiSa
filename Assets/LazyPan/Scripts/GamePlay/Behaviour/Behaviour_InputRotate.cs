@@ -13,7 +13,7 @@ namespace LazyPan {
 
         public Behaviour_InputRotate(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             InputRegister.Instance.Load(InputRegister.Instance.MouseRightPress, MouseRightPress);
-            CursorRect = UI.Instance.Get("UI_Lab").Get<Transform>("Cursor").GetComponent<RectTransform>();
+            CursorRect = UI.Instance.Get("UI_Fight").Get<Transform>("Cursor").GetComponent<RectTransform>();
             CursorRect.gameObject.SetActive(false);
             characterController = entity.Comp.Get<CharacterController>("CharacterController");
             isRightMouseHold = false;

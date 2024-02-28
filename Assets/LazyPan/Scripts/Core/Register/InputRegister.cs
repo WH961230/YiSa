@@ -11,6 +11,7 @@ namespace LazyPan {
         public string Tab = "Player/Tab";
         public string R = "Player/R";
         public string MouseRightPress = "Player/MouseRightPress";
+        public string Space = "Player/Space";
 
         private InputControls inputControls;
 

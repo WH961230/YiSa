@@ -29,9 +29,6 @@ namespace LazyPan {
         [HideInInspector] public UnityEvent<PointerEventData> OnPointerExitEvent;
 
         [HideInInspector] public UnityEvent OnDrawGizmosAction;
-        public string ObjSign;
-        public string ObjInfo;
-        public Entity Entity;
         public List<GameObjectData> GameObjects = new List<GameObjectData>();
         public List<TransformData> Transforms = new List<TransformData>();
         public List<ColliderData> Colliders = new List<ColliderData>();
@@ -49,7 +46,6 @@ namespace LazyPan {
         public List<UnityEventData> UnityEventDatas = new List<UnityEventData>();
         public List<DoTweenAnimationData> DoTweenAnimationDatas = new List<DoTweenAnimationData>();
         public List<TrailRendererData> TrailRendererDatas = new List<TrailRendererData>();
-        public List<string> BehaviourBundles = new List<string>();
 
         public T Get<T>(string sign) where T : Object {
             if (typeof(T) == typeof(CharacterController)) {

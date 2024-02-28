@@ -7,6 +7,7 @@ namespace LazyPan {
     public class Flow_Fight : Flow {
         private Comp comp;
         private List<GameObject> markRootList = new List<GameObject>();
+        private List<Entity> robotEntity = new List<Entity>();
         private Entity floorEntity;
         private Entity soldierEntity;
         private Entity beginTimeline;

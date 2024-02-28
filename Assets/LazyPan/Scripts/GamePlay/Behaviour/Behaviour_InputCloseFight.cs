@@ -13,7 +13,7 @@ namespace LazyPan {
             playableDirector = entity.Comp.Get<PlayableDirector>("CloseFightPlayableDirector");
             playableDirector.played += playableDirector => { isPlay = true; };  
             playableDirector.stopped += director => { isPlay = false; };  
-            InputRegister.Instance.Load(InputRegister.Instance.LeftClick, CloseFight);
+            InputRegister.Instance.Load(InputRegister.Instance.Space, CloseFight);
         }
 
         private void CloseFight(InputAction.CallbackContext obj) {
@@ -26,7 +26,7 @@ namespace LazyPan {
 
         public override void OnClear() {
             base.OnClear();
-            InputRegister.Instance.UnLoad(InputRegister.Instance.LeftClick, CloseFight);
+            InputRegister.Instance.UnLoad(InputRegister.Instance.Space, CloseFight);
         }
     }
 }

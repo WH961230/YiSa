@@ -113,13 +113,6 @@ MonoBehaviour:
   OnDrawGizmosAction:
     m_PersistentCalls:
       m_Calls: []
-  ObjSign: 
-  ObjInfo: 
-  Entity:
-    ID: 0
-    Prefab: {fileID: 0}
-    Comp: {fileID: 0}
-    EntitySetting: {fileID: 0}
   GameObjects: []
   Transforms:
   - Sign: Point
@@ -163,7 +156,6 @@ MonoBehaviour:
           m_CallState: 2
   DoTweenAnimationDatas: []
   TrailRendererDatas: []
-  BehaviourBundles: []
 --- !u!1 &3744225152291596679
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,7 +781,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7811227924858125403
 Transform:
   m_ObjectHideFlags: 0
@@ -857,7 +849,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.23308271
+        value: 0.52287763
         inSlope: 0
         outSlope: 0
         tangentMode: 0

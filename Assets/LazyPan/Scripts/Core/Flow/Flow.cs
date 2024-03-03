@@ -9,19 +9,19 @@ namespace LazyPan {
         public Dictionary<Type, Flow> FlowDic = new Dictionary<Type, Flow>();
 
         //进入流程
-        public virtual void OnInit(Flow baseFlow) {
+        public virtual void Init(Flow baseFlow) {
             BaseFlow = baseFlow;
         }
 
         //结束流程
-        public virtual void OnClear() {
+        public virtual void Clear() {
             if (CurrentFlow != null) {
-                CurrentFlow.OnClear();
+                CurrentFlow.Clear();
                 CurrentFlow = null;
             }
 
             foreach (Flow tempFlow in FlowDic.Values) {
-                tempFlow.OnClear();
+                tempFlow.Clear();
             }
             FlowDic.Clear();
         }
@@ -29,13 +29,13 @@ namespace LazyPan {
         //切换流程
         public virtual void ChangeFlow<T>() {
             if (CurrentFlow != null) {
-                CurrentFlow.OnClear();
+                CurrentFlow.Clear();
             }
 
             if (FlowDic.ContainsKey(typeof(T))) {
                 CurrentFlow = FlowDic[typeof(T)];
                 Debug.LogFormat("进入流程: {0}", CurrentFlow.GetType().Name);
-                CurrentFlow.OnInit(this);
+                CurrentFlow.Init(this);
             }
 
             if (FlowDic.Count == 0) {
@@ -52,7 +52,7 @@ namespace LazyPan {
         }
 
         public virtual void EndFlow() {
-            OnClear();
+            Clear();
         }
     }
 }

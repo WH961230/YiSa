@@ -28,6 +28,7 @@ namespace LazyPan {
             }
         }
 
+        //通过 标识 查找实体
         public bool TryGetEntityBySign(string objSign, out Entity entity) {
             foreach (Entity tmpEntity in EntityDic.Values) {
                 if (objSign == tmpEntity.ObjConfig.Sign) {
@@ -40,6 +41,7 @@ namespace LazyPan {
             return false;
         }
 
+        //通过 ID 查找实体
         public bool TryGetEntityByID(int id, out Entity entity) {
             if (EntityDic.TryGetValue(id, out entity)) {
                 return true;
@@ -48,18 +50,20 @@ namespace LazyPan {
             return false;
         }
 
-        public bool TryGetEntityByObjType(ObjType type, out Entity entity) {
-            foreach (Entity tempEntity in EntityDic.Values) {
-                if (tempEntity.EntityData.ObjType == type) {
-                    entity = tempEntity;
+        //通过 类型 查找实体
+        public bool TryGetEntityByType(string type, out Entity entity) {
+            foreach (Entity tmpEntity in EntityDic.Values) {
+                if (type == tmpEntity.EntityData.BaseRuntimeData.Type) {
+                    entity = tmpEntity;
                     return true;
                 }
             }
 
-            entity = null;
+            entity = default;
             return false;
         }
 
+        //通过组件查找实体
         public bool TryGetEntityByComp(Comp comp, out Entity entity) {
             foreach (Entity tempEntity in EntityDic.Values) {
                 if (tempEntity.Comp == comp) {
@@ -72,43 +76,14 @@ namespace LazyPan {
             return false;
         }
 
-        public bool TryGetDropSetting(Setting setting, string dropSign, out DropSetting dropSetting) {
-            List<DropSetting> dropSettings = setting.DropSettings;
-
-            foreach (DropSetting tempDropSetting in dropSettings) {
-                if (tempDropSetting.Sign == dropSign) {
-                    dropSetting = tempDropSetting;
+        //通过实体查找实体
+        public bool HasEntity(Entity entity) {
+            foreach (Entity tempEntity in EntityDic.Values) {
+                if (tempEntity == entity) {
                     return true;
                 }
             }
 
-            dropSetting = default;
-            return false;
-        }
-
-        public bool TryGetLevelSetting(Setting setting, int level, out LevelSetting levelSetting) {
-            List<LevelSetting> levelSettings = setting.LevelSettings;
-            foreach (LevelSetting tempLevelSetting in levelSettings) {
-                if (tempLevelSetting.Level == level) {
-                    levelSetting = tempLevelSetting;
-                    return true;
-                }
-            }
-
-            levelSetting = default;
-            return false;
-        }
-
-        public bool TryGetShakerSetting(Setting setting, string sign, out ShakerSetting shakerSetting) {
-            List<ShakerSetting> settings = setting.ShakerSettings;
-            foreach (ShakerSetting tempSetting in settings) {
-                if (tempSetting.CameraShakeSign == sign) {
-                    shakerSetting = tempSetting;
-                    return true;
-                }
-            }
-
-            shakerSetting = default;
             return false;
         }
     }

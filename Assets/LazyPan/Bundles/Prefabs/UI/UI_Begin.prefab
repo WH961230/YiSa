@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3983488282480366576}
   - component: {fileID: 5952651429952812672}
   m_Layer: 5
-  m_Name: UI_Start
+  m_Name: UI_Begin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,24 +84,17 @@ MonoBehaviour:
   OnDrawGizmosAction:
     m_PersistentCalls:
       m_Calls: []
-  ObjSign: 
-  ObjInfo: 
-  Entity:
-    ID: 0
-    Prefab: {fileID: 0}
-    Comp: {fileID: 0}
-    EntitySetting: {fileID: 0}
   GameObjects: []
   Transforms: []
   Colliders: []
   CharacterControllers: []
   Buttons:
-  - Sign: UI_NextBtn
+  - Sign: UI_Begin_NextBtn
     Button: {fileID: 4874481206728552019}
   Sliders: []
   Texts: []
   TextMeshProUGUIs:
-  - Sign: UI_FlowTitle
+  - Sign: UI_Begin_FlowTitle
     TextMeshProUGUI: {fileID: 3315947190447010825}
   TMPInputFields: []
   Animators: []
@@ -112,7 +105,6 @@ MonoBehaviour:
   UnityEventDatas: []
   DoTweenAnimationDatas: []
   TrailRendererDatas: []
-  BehaviourBundles: []
 --- !u!1 &1054247508832924910
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,7 +118,7 @@ GameObject:
   - component: {fileID: 5030445743830994007}
   - component: {fileID: 4874481206728552019}
   m_Layer: 5
-  m_Name: UI_NextBtn
+  m_Name: UI_Begin_NextBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,7 +142,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 849, y: 0}
+  m_AnchoredPosition: {x: 840, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7428773967734530649
@@ -247,7 +239,7 @@ GameObject:
   - component: {fileID: 5188278786994283287}
   - component: {fileID: 3315947190447010825}
   m_Layer: 5
-  m_Name: UI_Title
+  m_Name: UI_Begin_Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -270,7 +262,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 476}
+  m_AnchoredPosition: {x: 0, y: 495}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5188278786994283287
@@ -335,8 +327,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0

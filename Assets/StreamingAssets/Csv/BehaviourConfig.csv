@@ -1,0 +1,28 @@
+﻿Sign,Description
+string,string
+标识,描述
+Behaviour_InputMotion,"【实现输入前后左右移动以相机为坐标轴】
+Comp 挂载 CharacterController,
+Input 配置 Player/Motion,"
+Behaviour_InputRotate,"【实现输入右键地面实现光标显示隐藏与角色旋转】
+Comp 挂载 CharacterController,
+UI_Fight Comp 挂载 Cursor RectTran,
+检测地面层级 Floor,
+Input 配置 Player/MouseRightPress,"
+Behaviour_InputShoot,"【实现输入左键在实体的Muzzle位置生成Bullet弹药】
+Comp挂载 Muzzle,
+Input 配置 Player/MouseLeft,
+Loader 物体 Obj/Resource/Obj_Bullet,"
+Behaviour_InputCloseFight,"【实现输入空格播放近战时间轴事件】
+Input 配置 Player/Space,
+Comp 挂载 <Timeline> CloseFightTimelineAsset,
+Comp 挂载 <PlayableDirector> CloseFightPlayableDirector,"
+Behaviour_FollowPlayer,"【实现跟随类型为主玩家的挂载Body】
+ObjType.MainPlayer Comp 挂载 Body,"
+Behaviour_BeginTimeline,"【播放开始时间轴事件】
+Comp 挂载 <PlayableDirector> BeginPlayableDirector"
+Behaviour_AutoRotate,"【实现根据当前的鼠标检测到地面的位置实现偏移】
+Comp 挂载 <CharacterController> CharacterController,
+Comp 挂载 <Transform> Point//计算旋转偏移
+UI_Fight Comp 挂载 Cursor RectTran,
+检测地面层级 Floor,"

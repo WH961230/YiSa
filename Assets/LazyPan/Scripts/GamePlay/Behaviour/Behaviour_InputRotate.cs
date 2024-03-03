@@ -66,21 +66,19 @@ namespace LazyPan {
                 Vector3 pointVec = entity.Comp.Get<Transform>("Point").position;
                 Vector3 worldToScreenPoint = Camera.main.WorldToScreenPoint(hit.point); //击中的点
                 Vector3 pointToScreenVec = Camera.main.WorldToScreenPoint(pointVec); //玩家头部
-                Vector3 hitPointToScreenVec =
-                    Camera.main.WorldToScreenPoint(new Vector3(hit.point.x, pointVec.y, hit.point.z)); //击中的点到角色头部
+                Vector3 hitPointToScreenVec = Camera.main.WorldToScreenPoint(new Vector3(hit.point.x, pointVec.y, hit.point.z)); //击中的点到角色头部
                 Vector3 v1 = (worldToScreenPoint - pointToScreenVec).normalized;
                 Vector3 v2 = (hitPointToScreenVec - pointToScreenVec).normalized;
                 float angle = Vector3.Angle(v1, v2);
                 angle = Mathf.Abs(angle);
                 Vector3 targetAimVec = (hit.point - pointVec).normalized;
                 Vector3 tempForward = Vector3.ProjectOnPlane(targetAimVec, Vector3.up);
-                tempForward = Quaternion.AngleAxis(angle, Vector3.Cross(v1, v2).y > 0 ? Vector3.up : Vector3.down) *
-                              tempForward;
+                tempForward = Quaternion.AngleAxis(angle, Vector3.Cross(v1, v2).y > 0 ? Vector3.up : Vector3.down) * tempForward;
                 characterController.transform.forward = Vector3.MoveTowards(characterController.transform.forward,
-                    tempForward, Time.deltaTime * entity.EntityData.RotateSpeed);
+                    tempForward, Time.deltaTime * entity.EntityData.BaseRuntimeData.CurRotateSpeed);
             } else {
                 characterController.transform.forward = Vector3.MoveTowards(characterController.transform.forward,
-                    entity.EntityData.MotionDir, Time.deltaTime * entity.EntityData.RotateSpeed);
+                    entity.EntityData.BaseRuntimeData.CurMotionDir, Time.deltaTime * entity.EntityData.BaseRuntimeData.CurRotateSpeed);
             }
         }
 

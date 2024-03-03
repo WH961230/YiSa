@@ -2,19 +2,13 @@ using LazyPan;
 using UnityEngine;
 
 public class Game : MonoBehaviour {
-    [HideInInspector] public GameSetting GameSetting;
     public static Game instance;
 
-    private void Awake() {
+    public void Init() {
         instance = this;
-        GameSetting = Loader.LoadGameSetting();
-    }
-
-    private void Start() {
-        Config.Instance.Init();
-        Obj.Instance.Init();
-        UI.Instance.Init();
-        new Flow_Main().OnInit(null);
+        Obj.Instance.Preload();
+        UI.Instance.Preload();
+        Flo.Instance.Preload();
     }
 
     private void Update() { Data.Instance.OnUpdateEvent.Invoke(); }

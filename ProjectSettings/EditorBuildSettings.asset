@@ -6,8 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/LazyPan/Bundles/Scenes/Lab.unity
+    path: Assets/LazyPan/Bundles/Scenes/Begin.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/LazyPan/Bundles/Scenes/Choose.unity
+    guid: 5f88a2d524d621b4996933b8eb495034
+  - enabled: 1
+    path: Assets/LazyPan/Bundles/Scenes/Fight.unity
+    guid: 17b94b2152aa6a544814d149b5d0fb70
+  - enabled: 1
+    path: Assets/LazyPan/Bundles/Scenes/Clear.unity
+    guid: 38af7e337e10fc0449eaeefdcc38b11b
+  - enabled: 1
+    path: Assets/LazyPan/Bundles/Scenes/Launch.unity
+    guid: 391afeb57dd2b4d4aac59910b84a4737
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 6ba4f1b1263aa8848be227053226f9c5,
       type: 2}

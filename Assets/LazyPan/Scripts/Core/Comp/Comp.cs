@@ -46,6 +46,7 @@ namespace LazyPan {
         public List<UnityEventData> UnityEventDatas = new List<UnityEventData>();
         public List<DoTweenAnimationData> DoTweenAnimationDatas = new List<DoTweenAnimationData>();
         public List<TrailRendererData> TrailRendererDatas = new List<TrailRendererData>();
+        public List<CameraData> CameraDatas = new List<CameraData>();
 
         public T Get<T>(string sign) where T : Object {
             if (typeof(T) == typeof(CharacterController)) {
@@ -142,6 +143,12 @@ namespace LazyPan {
                 foreach (TrailRendererData data in TrailRendererDatas) {
                     if (data.Sign == sign) {
                         return data.TrailRenderer as T;
+                    }
+                }
+            } else if (typeof(T) == typeof(Camera)) {
+                foreach (CameraData data in CameraDatas) {
+                    if (data.Sign == sign) {
+                        return data.Camera as T;
                     }
                 }
             }
@@ -305,6 +312,12 @@ namespace LazyPan {
         public class ColliderData {
             public string Sign;
             public Collider Collider;
+        }
+
+        [Serializable]
+        public class CameraData {
+            public string Sign;
+            public Camera Camera;
         }
     }
 }

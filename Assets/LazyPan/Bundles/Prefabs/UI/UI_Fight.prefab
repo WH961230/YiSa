@@ -85,13 +85,6 @@ MonoBehaviour:
   OnDrawGizmosAction:
     m_PersistentCalls:
       m_Calls: []
-  ObjSign: 
-  ObjInfo: 
-  Entity:
-    ID: 0
-    Prefab: {fileID: 0}
-    Comp: {fileID: 0}
-    EntitySetting: {fileID: 0}
   GameObjects: []
   Transforms:
   - Sign: Cursor
@@ -99,12 +92,12 @@ MonoBehaviour:
   Colliders: []
   CharacterControllers: []
   Buttons:
-  - Sign: UI_NextBtn
+  - Sign: UI_Fight_NextBtn
     Button: {fileID: 4874481206728552019}
   Sliders: []
   Texts: []
   TextMeshProUGUIs:
-  - Sign: UI_FlowTitle
+  - Sign: UI_Fight_FlowTitle
     TextMeshProUGUI: {fileID: 3149930843322889429}
   TMPInputFields: []
   Animators: []
@@ -115,7 +108,6 @@ MonoBehaviour:
   UnityEventDatas: []
   DoTweenAnimationDatas: []
   TrailRendererDatas: []
-  BehaviourBundles: []
 --- !u!1 &319796549578639803
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,7 +197,7 @@ GameObject:
   - component: {fileID: 5030445743830994007}
   - component: {fileID: 4874481206728552019}
   m_Layer: 5
-  m_Name: UI_NextBtn
+  m_Name: UI_Fight_NextBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -229,7 +221,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 849, y: 0}
+  m_AnchoredPosition: {x: 858, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7428773967734530649
@@ -632,7 +624,7 @@ GameObject:
   - component: {fileID: 5200797752431379306}
   - component: {fileID: 3149930843322889429}
   m_Layer: 5
-  m_Name: UI_FlowTitle
+  m_Name: UI_Fight_FlowTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -655,7 +647,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 480}
+  m_AnchoredPosition: {x: 0, y: 496}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5200797752431379306

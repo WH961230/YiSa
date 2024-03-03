@@ -84,24 +84,17 @@ MonoBehaviour:
   OnDrawGizmosAction:
     m_PersistentCalls:
       m_Calls: []
-  ObjSign: 
-  ObjInfo: 
-  Entity:
-    ID: 0
-    Prefab: {fileID: 0}
-    Comp: {fileID: 0}
-    EntitySetting: {fileID: 0}
   GameObjects: []
   Transforms: []
   Colliders: []
   CharacterControllers: []
   Buttons:
-  - Sign: UI_NextBtn
+  - Sign: UI_Choose_NextBtn
     Button: {fileID: 4874481206728552019}
   Sliders: []
   Texts: []
   TextMeshProUGUIs:
-  - Sign: UI_FlowTitle
+  - Sign: UI_Choose_FlowTitle
     TextMeshProUGUI: {fileID: 6702209307199156188}
   TMPInputFields: []
   Animators: []
@@ -112,7 +105,6 @@ MonoBehaviour:
   UnityEventDatas: []
   DoTweenAnimationDatas: []
   TrailRendererDatas: []
-  BehaviourBundles: []
 --- !u!1 &1054247508832924910
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,7 +118,7 @@ GameObject:
   - component: {fileID: 5030445743830994007}
   - component: {fileID: 4874481206728552019}
   m_Layer: 5
-  m_Name: UI_NextBtn
+  m_Name: UI_Choose_NextBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,7 +142,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 849, y: 0}
+  m_AnchoredPosition: {x: 845, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7428773967734530649
@@ -247,7 +239,7 @@ GameObject:
   - component: {fileID: 8278246731636740260}
   - component: {fileID: 6702209307199156188}
   m_Layer: 5
-  m_Name: UI_FlowTitle
+  m_Name: UI_Choose_FlowTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -270,7 +262,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 473}
+  m_AnchoredPosition: {x: 0, y: 492}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8278246731636740260

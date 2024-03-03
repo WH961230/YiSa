@@ -9,7 +9,7 @@ namespace LazyPan {
         private Dictionary<string, Comp> uICompExchangeDics = new Dictionary<string, Comp>();
         private Dictionary<string, Comp> uICompDics = new Dictionary<string, Comp>();
 
-        public void Init() {
+        public void Preload() {
             Data.Instance.UIRoot = Loader.LoadGo("画布", "Global/Global_UI_Root", null, true).transform;
             List<string> keys = UIConfig.GetKeys();
             int length = keys.Count;

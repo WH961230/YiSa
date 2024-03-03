@@ -203,13 +203,6 @@ MonoBehaviour:
   OnDrawGizmosAction:
     m_PersistentCalls:
       m_Calls: []
-  ObjSign: 
-  ObjInfo: 
-  Entity:
-    ID: 0
-    Prefab: {fileID: 0}
-    Comp: {fileID: 0}
-    EntitySetting: {fileID: 0}
   GameObjects: []
   Transforms: []
   Colliders: []
@@ -224,7 +217,9 @@ MonoBehaviour:
   PlayableDirectors: []
   TimelineAssets: []
   Comps: []
-  BehaviourBundles: []
+  UnityEventDatas: []
+  DoTweenAnimationDatas: []
+  TrailRendererDatas: []
 --- !u!114 &267621543448139972
 MonoBehaviour:
   m_ObjectHideFlags: 0

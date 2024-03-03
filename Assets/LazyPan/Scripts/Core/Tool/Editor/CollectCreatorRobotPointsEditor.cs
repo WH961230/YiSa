@@ -9,9 +9,9 @@ namespace LazyPan {
             CollectCreatorRobotPoints myScript = (CollectCreatorRobotPoints) target;
             if (GUILayout.Button("保存机器人出生点位")) {
                 Setting setting = Loader.LoadAsset<Setting>(AssetType.ASSET, "Setting/Setting");
-                setting.CreatorSetting.CreatorPoints.Clear();
+                setting.BaseCreatorPointsSetting.CreatorPoints.Clear();
                 foreach (Transform tr in myScript.Points) {
-                    setting.CreatorSetting.CreatorPoints.Add(tr.position);
+                    setting.BaseCreatorPointsSetting.CreatorPoints.Add(tr.position);
                 }
                 Debug.Log("保存机器人出生点位成功！");
             }

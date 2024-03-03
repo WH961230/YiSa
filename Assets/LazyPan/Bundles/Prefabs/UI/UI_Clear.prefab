@@ -85,26 +85,19 @@ MonoBehaviour:
   OnDrawGizmosAction:
     m_PersistentCalls:
       m_Calls: []
-  ObjSign: 
-  ObjInfo: 
-  Entity:
-    ID: 0
-    Prefab: {fileID: 0}
-    Comp: {fileID: 0}
-    EntitySetting: {fileID: 0}
   GameObjects: []
   Transforms: []
   Colliders: []
   CharacterControllers: []
   Buttons:
-  - Sign: UI_BackHomeBtn
+  - Sign: UI_Clear_BackHomeBtn
     Button: {fileID: 4874481206728552019}
-  - Sign: UI_PlayAgainBtn
+  - Sign: UI_Clear_PlayAgainBtn
     Button: {fileID: 7801107970732137922}
   Sliders: []
   Texts: []
   TextMeshProUGUIs:
-  - Sign: UI_FlowTitle
+  - Sign: UI_Clear_FlowTitle
     TextMeshProUGUI: {fileID: 6822109739348045932}
   TMPInputFields: []
   Animators: []
@@ -115,7 +108,6 @@ MonoBehaviour:
   UnityEventDatas: []
   DoTweenAnimationDatas: []
   TrailRendererDatas: []
-  BehaviourBundles: []
 --- !u!1 &654563987634038460
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,7 +121,7 @@ GameObject:
   - component: {fileID: 7908978764718110857}
   - component: {fileID: 7801107970732137922}
   m_Layer: 5
-  m_Name: UI_PlayAgainBtn
+  m_Name: UI_Clear_PlayAgainBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,7 +145,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 849, y: -54}
+  m_AnchoredPosition: {x: 867, y: -35}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2365628666888167773
@@ -251,7 +243,7 @@ GameObject:
   - component: {fileID: 5030445743830994007}
   - component: {fileID: 4874481206728552019}
   m_Layer: 5
-  m_Name: UI_BackHomeBtn
+  m_Name: UI_Clear_BackHomeBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -275,7 +267,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 849, y: 0}
+  m_AnchoredPosition: {x: 867, y: 19}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7428773967734530649
@@ -372,7 +364,7 @@ GameObject:
   - component: {fileID: 4301985758160565189}
   - component: {fileID: 6822109739348045932}
   m_Layer: 5
-  m_Name: UI_FlowTitle
+  m_Name: UI_Clear_FlowTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -395,7 +387,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 470}
+  m_AnchoredPosition: {x: 0, y: 493}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4301985758160565189

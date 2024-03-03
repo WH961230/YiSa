@@ -36,8 +36,8 @@ namespace LazyPan {
             Data.Instance.AddEntity(ID, this);
             //注册配置行为
             Data.Instance.BehaviourDic.TryAdd(ID, new List<Behaviour>());
-            if (!string.IsNullOrEmpty(objConfig.Behaviour)) {
-                string[] behaviourArray = objConfig.Behaviour.Split("|");
+            if (!string.IsNullOrEmpty(objConfig.SetUpBehaviourSign)) {
+                string[] behaviourArray = objConfig.SetUpBehaviourSign.Split("|");
                 for (int i = 0; i < behaviourArray.Length; i++) {
                     BehaviourRegister.Instance.RegisterBehaviour(ID, behaviourArray[i]);
                 }

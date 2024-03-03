@@ -59,7 +59,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -149,13 +149,6 @@ MonoBehaviour:
   OnDrawGizmosAction:
     m_PersistentCalls:
       m_Calls: []
-  ObjSign: 
-  ObjInfo: 
-  Entity:
-    ID: 0
-    Prefab: {fileID: 0}
-    Comp: {fileID: 0}
-    EntitySetting: {fileID: 0}
   GameObjects: []
   Transforms: []
   Colliders: []
@@ -171,7 +164,8 @@ MonoBehaviour:
   TimelineAssets: []
   Comps: []
   UnityEventDatas: []
-  BehaviourBundles: []
+  DoTweenAnimationDatas: []
+  TrailRendererDatas: []
 --- !u!1 &5575020028083351537
 GameObject:
   m_ObjectHideFlags: 0

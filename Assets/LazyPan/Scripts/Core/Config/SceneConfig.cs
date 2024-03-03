@@ -6,6 +6,7 @@ namespace LazyPan {
 		public string Sign;
 		public string Description;
 		public string DirPath;
+		public string Flow;
 
         private static bool isInit;
         private static string content;
@@ -18,6 +19,7 @@ namespace LazyPan {
 				Sign = values[0];
 				Description = values[1];
 				DirPath = values[2];
+				Flow = values[3];
 
             } catch (Exception e) {
                 Console.WriteLine(e);

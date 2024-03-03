@@ -3,9 +3,9 @@ using UnityEngine.InputSystem;
 
 namespace LazyPan {
     public class Behaviour_InputMotion : Behaviour {
-        private Vector3 motionDir;
+        private Vector3 inputMotionValue;
         private CharacterController characterController;
-        private Entity mainCameraEntity;
+        private Entity myCameraEntity;
 
         public Behaviour_InputMotion(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             InputRegister.Instance.Load(InputRegister.Instance.Motion, MotionEvent);
@@ -17,31 +17,32 @@ namespace LazyPan {
             if (!Data.Instance.CanControl) {
                 return;
             }
-            motionDir = obj.ReadValue<Vector2>();
+            inputMotionValue = obj.ReadValue<Vector2>();
         }
 
         void OnUpdate() {
-            GetMainCamera();
+            GetMyCamera();
             PlayerMotion();
         }
 
-        private void GetMainCamera() {
-            if (mainCameraEntity == null) {
-                Data.Instance.TryGetEntityByObjType(ObjType.MainCamera, out mainCameraEntity);
+        private void GetMyCamera() {
+            if (myCameraEntity == null) {
+                Data.Instance.TryGetEntityByType(entity.EntityData.BaseRuntimeData.CameraType, out myCameraEntity);
             }
         }
 
         private void PlayerMotion() {
-            if (mainCameraEntity == null) {
+            if (myCameraEntity == null) {
                 return;
             }
-            Vector3 cameraForward = Camera.main.transform.forward;
+
+            Vector3 cameraForward = myCameraEntity.Prefab.transform.forward;
             cameraForward.y = 0;
-            entity.EntityData.MotionDir = Vector3.zero;
-            entity.EntityData.MotionDir += cameraForward * motionDir.y * 5f;
-            entity.EntityData.MotionDir += Camera.main.transform.right * motionDir.x * 5f;
-            characterController.Move(entity.EntityData.MotionDir * Time.deltaTime);
-            if (entity.EntityData.MotionDir != Vector3.zero) {
+            entity.EntityData.BaseRuntimeData.CurMotionDir = Vector3.zero;
+            entity.EntityData.BaseRuntimeData.CurMotionDir += cameraForward * inputMotionValue.y * 5f;
+            entity.EntityData.BaseRuntimeData.CurMotionDir += myCameraEntity.Prefab.transform.right * inputMotionValue.x * 5f;
+            characterController.Move(entity.EntityData.BaseRuntimeData.CurMotionDir * Time.deltaTime * entity.EntityData.BaseRuntimeData.CurMotionSpeed);
+            if (entity.EntityData.BaseRuntimeData.CurMotionDir != Vector3.zero) {
                 entity.Comp.GetEvent("PlayerMotionEvent")?.Invoke();
             }
         }

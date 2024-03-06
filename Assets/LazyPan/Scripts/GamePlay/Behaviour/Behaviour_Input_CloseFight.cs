@@ -3,12 +3,12 @@ using UnityEngine.Playables;
 using UnityEngine.Timeline;
 
 namespace LazyPan {
-    public class Behaviour_InputCloseFight : Behaviour {
+    public class Behaviour_Input_CloseFight : Behaviour {
         private TimelineAsset asset;
         private PlayableDirector playableDirector;
         private bool isPlay;
 
-        public Behaviour_InputCloseFight(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
+        public Behaviour_Input_CloseFight(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             asset = entity.Comp.Get<TimelineAsset>("CloseFightTimelineAsset");
             playableDirector = entity.Comp.Get<PlayableDirector>("CloseFightPlayableDirector");
             playableDirector.played += playableDirector => { isPlay = true; };  
@@ -24,8 +24,8 @@ namespace LazyPan {
             playableDirector.Play();
         }
 
-        public override void OnClear() {
-            base.OnClear();
+        public override void Clear() {
+            base.Clear();
             InputRegister.Instance.UnLoad(InputRegister.Instance.Space, CloseFight);
         }
     }

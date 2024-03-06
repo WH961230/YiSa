@@ -2,12 +2,12 @@
 using UnityEngine.InputSystem;
 
 namespace LazyPan {
-    public class Behaviour_InputMotion : Behaviour {
+    public class Behaviour_Input_Motion : Behaviour {
         private Vector3 inputMotionValue;
         private CharacterController characterController;
         private Entity myCameraEntity;
 
-        public Behaviour_InputMotion(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
+        public Behaviour_Input_Motion(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             InputRegister.Instance.Load(InputRegister.Instance.Motion, MotionEvent);
             characterController = entity.Comp.Get<CharacterController>("CharacterController");
             Data.Instance.OnUpdateEvent.AddListener(OnUpdate);
@@ -47,8 +47,8 @@ namespace LazyPan {
             }
         }
 
-        public override void OnClear() {
-            base.OnClear();
+        public override void Clear() {
+            base.Clear();
             InputRegister.Instance.UnLoad(InputRegister.Instance.Motion, MotionEvent);
             Data.Instance.OnUpdateEvent.RemoveListener(OnUpdate);
         }

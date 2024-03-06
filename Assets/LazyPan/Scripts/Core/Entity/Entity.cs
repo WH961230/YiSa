@@ -14,7 +14,7 @@ namespace LazyPan {
         public EntityData EntityData;//实体数据
         public Setting EntitySetting;//实体配置
 
-        public void OnInit(string sign) {
+        public void Init(string sign) {
             //设置ID
             ID = ++Data.Instance.EntityID;
             //设置配置
@@ -44,7 +44,7 @@ namespace LazyPan {
             }
         }
 
-        public void OnClear() {
+        public void Clear() {
             //注销行为
             if (Data.Instance.BehaviourDic.TryGetValue(ID, out List<Behaviour> behaviours)) {
                 if (behaviours != null && behaviours.Count > 0) {

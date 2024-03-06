@@ -1,10 +1,10 @@
 using UnityEngine;
 
 namespace LazyPan {
-    public class Behaviour_FollowPlayer : Behaviour {
+    public class Behaviour_Auto_FollowPlayer : Behaviour {
         private Vector3 Offset;
         private Transform FollowTr;
-        public Behaviour_FollowPlayer(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
+        public Behaviour_Auto_FollowPlayer(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             Data.Instance.OnLateUpdateEvent.AddListener(OnFollowPlayerUpdate);
         }
 
@@ -22,8 +22,8 @@ namespace LazyPan {
             }
         }
 
-        public override void OnClear() {
-            base.OnClear();
+        public override void Clear() {
+            base.Clear();
             Data.Instance.OnLateUpdateEvent.RemoveListener(OnFollowPlayerUpdate);
         }
     }

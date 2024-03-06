@@ -2,7 +2,7 @@
 using UnityEngine.InputSystem;
 
 namespace LazyPan {
-    public class Behaviour_AutoRotate : Behaviour {
+    public class Behaviour_Auto_Rotate : Behaviour {
         private RectTransform CursorRect;
         private Vector3 mousePositionToWorld;
         private RaycastHit hit;
@@ -10,7 +10,7 @@ namespace LazyPan {
         private CharacterController characterController;
         private Camera camera;
 
-        public Behaviour_AutoRotate(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
+        public Behaviour_Auto_Rotate(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             characterController = entity.Comp.Get<CharacterController>("CharacterController");
             CursorRect = UI.Instance.Get("UI_Fight").Get<Transform>("Cursor").GetComponent<RectTransform>();
             CursorRect.gameObject.SetActive(true);
@@ -59,8 +59,8 @@ namespace LazyPan {
             characterController.transform.rotation = Quaternion.RotateTowards(characterController.transform.rotation, targetRotation, entity.EntityData.BaseRuntimeData.CurRotateSpeed * Time.deltaTime);
         }
 
-        public override void OnClear() {
-            base.OnClear();
+        public override void Clear() {
+            base.Clear();
             Data.Instance.OnUpdateEvent.RemoveListener(OnUpdate);
             Data.Instance.OnLateUpdateEvent.RemoveListener(OnLateUpdate);
         }

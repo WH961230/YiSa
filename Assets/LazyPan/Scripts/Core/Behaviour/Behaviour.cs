@@ -11,7 +11,7 @@ namespace LazyPan {
             Debug.LogFormat("ID:{0} 注册行为:{1}", entity.ID, behaviourSign);
         }
 
-        public virtual void OnClear() {
+        public virtual void Clear() {
             Debug.LogFormat("ID:{0} 注销行为:{1}", entity.ID, BehaviourSign);
         }
     }

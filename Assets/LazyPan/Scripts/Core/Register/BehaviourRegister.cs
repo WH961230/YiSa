@@ -32,7 +32,7 @@ namespace LazyPan {
             //是否有实体
             if (index != -1) {
                 if (Data.Instance.BehaviourDic.TryGetValue(id, out List<Behaviour> behaviours)) {
-                    behaviours[index].OnClear();
+                    behaviours[index].Clear();
                     behaviours.RemoveAt(index);
                     return true;
                 }

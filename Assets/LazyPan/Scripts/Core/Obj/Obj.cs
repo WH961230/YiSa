@@ -12,7 +12,7 @@ namespace LazyPan {
         public Entity LoadEntity(string sign) {
             if (!Data.Instance.TryGetEntityBySign(sign, out Entity instanceEntity)) {
                 instanceEntity = new Entity();
-                instanceEntity.OnInit(sign);
+                instanceEntity.Init(sign);
             }
             return instanceEntity;
         }
@@ -20,7 +20,7 @@ namespace LazyPan {
         //销毁实体
         public void UnLoadEntity(Entity entity) {
             if (Data.Instance.HasEntity(entity)) {
-                entity.OnClear();
+                entity.Clear();
             }
         }
     }

@@ -2,8 +2,8 @@
 using UnityEngine.InputSystem;
 
 namespace LazyPan {
-    public class Behaviour_InputShoot : Behaviour {
-        public Behaviour_InputShoot(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
+    public class Behaviour_Input_Shoot : Behaviour {
+        public Behaviour_Input_Shoot(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             InputRegister.Instance.Load(InputRegister.Instance.LeftClick, MouseLeft);
         }
 
@@ -29,8 +29,8 @@ namespace LazyPan {
             bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * 100f, ForceMode.Impulse);
         }
 
-        public override void OnClear() {
-            base.OnClear();
+        public override void Clear() {
+            base.Clear();
             InputRegister.Instance.UnLoad(InputRegister.Instance.LeftClick, MouseLeft);
         }
     }

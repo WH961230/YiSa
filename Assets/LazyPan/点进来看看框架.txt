@@ -30,7 +30,7 @@
                 >>>> EntityData.cs - 实体数据
             >>> Entity - 实体
                 >>>> Entity.cs - 实体脚本
-            >>> Flow - 流程
+            >>> Flow - 流程<流程不参与具体的行为，只对较大的生命周期的事件负责>
                 >>>> Flo.cs - 流程控制器
                 >>>> Flow.cs - 具体流程继承此脚本
                 >>>> IFlow.cs - 流程接口

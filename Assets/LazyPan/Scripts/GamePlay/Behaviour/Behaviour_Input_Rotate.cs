@@ -2,7 +2,7 @@
 using UnityEngine.InputSystem;
 
 namespace LazyPan {
-    public class Behaviour_InputRotate : Behaviour {
+    public class Behaviour_Input_Rotate : Behaviour {
         private RectTransform CursorRect;
         private bool isRightMouseHold;
 
@@ -11,7 +11,7 @@ namespace LazyPan {
         private bool isHitFloor;
         private CharacterController characterController;
 
-        public Behaviour_InputRotate(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
+        public Behaviour_Input_Rotate(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             InputRegister.Instance.Load(InputRegister.Instance.MouseRightPress, MouseRightPress);
             CursorRect = UI.Instance.Get("UI_Fight").Get<Transform>("Cursor").GetComponent<RectTransform>();
             CursorRect.gameObject.SetActive(false);
@@ -82,8 +82,8 @@ namespace LazyPan {
             }
         }
 
-        public override void OnClear() {
-            base.OnClear();
+        public override void Clear() {
+            base.Clear();
             InputRegister.Instance.UnLoad(InputRegister.Instance.MouseRightPress, MouseRightPress);
             Data.Instance.OnUpdateEvent.RemoveListener(OnUpdate);
             Data.Instance.OnLateUpdateEvent.RemoveListener(OnLateUpdate);

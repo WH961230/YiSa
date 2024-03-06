@@ -166,6 +166,7 @@ MonoBehaviour:
   UnityEventDatas: []
   DoTweenAnimationDatas: []
   TrailRendererDatas: []
+  CameraDatas: []
 --- !u!1 &5575020028083351537
 GameObject:
   m_ObjectHideFlags: 0

@@ -53,7 +53,7 @@
                 >>>> MathUtil.cs - 数学工具
                 >>>> ReadCSV.cs - CSV文件读取工具
                 >>>> Singleton.cs - 单例脚本
-                >>>> SingletonMonobehaviour.cs - 单例Mono脚本
+                >>>> SingletonMonoBehaviour.cs - 单例Mono脚本
             >>> UI - UI
                 >>>> UI.cs - UI管理器
             >>> Game.cs - 场景游戏管理<场景游戏管理>

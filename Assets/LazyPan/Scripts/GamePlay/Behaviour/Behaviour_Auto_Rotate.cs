@@ -8,7 +8,6 @@ namespace LazyPan {
         private RaycastHit hit;
         private bool isHitFloor;
         private CharacterController characterController;
-        private Camera camera;
 
         public Behaviour_Auto_Rotate(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             characterController = entity.Comp.Get<CharacterController>("CharacterController");
@@ -16,8 +15,6 @@ namespace LazyPan {
             CursorRect.gameObject.SetActive(true);
             Data.Instance.OnUpdateEvent.AddListener(OnUpdate);
             Data.Instance.OnLateUpdateEvent.AddListener(OnLateUpdate);
-            Data.Instance.TryGetEntityByType(entity.EntityData.BaseRuntimeData.CameraType, out Entity cameraEntity);
-            camera = cameraEntity.Comp.Get<Camera>("Camera");
         }
 
         private void OnUpdate() {
@@ -30,12 +27,12 @@ namespace LazyPan {
 
         private void CheckHitFloor() {
             Vector2 mousePosition = Mouse.current.position.ReadValue();
-            Vector3 currentMousePositionToWorld = camera.ScreenToWorldPoint(mousePosition);
+            Vector3 currentMousePositionToWorld = Cond.Instance.GetCamera().ScreenToWorldPoint(mousePosition);
             if (mousePositionToWorld != currentMousePositionToWorld) {
-                Ray ray = camera.ScreenPointToRay(mousePosition);
+                Ray ray = Cond.Instance.GetCamera().ScreenPointToRay(mousePosition);
                 isHitFloor = Physics.Raycast(ray, out hit, Mathf.Infinity, 1 << LayerMask.NameToLayer("Floor"));
                 if (isHitFloor) {
-                    Vector3 hitPointScreen = camera.WorldToScreenPoint(hit.point);
+                    Vector3 hitPointScreen = Cond.Instance.GetCamera().WorldToScreenPoint(hit.point);
                     CursorRect.position = new Vector2(hitPointScreen.x, hitPointScreen.y);
                 }
 
@@ -45,9 +42,9 @@ namespace LazyPan {
 
         private void RotateTowardsMouseWorldPoint() {
             Vector3 pointVec = entity.Comp.Get<Transform>("Point").position;
-            Vector3 worldToScreenPoint = camera.WorldToScreenPoint(hit.point); //击中的点
-            Vector3 pointToScreenVec = camera.WorldToScreenPoint(pointVec); //玩家头部
-            Vector3 hitPointToScreenVec = camera.WorldToScreenPoint(new Vector3(hit.point.x, pointVec.y, hit.point.z)); //击中的点到角色头部
+            Vector3 worldToScreenPoint = Cond.Instance.GetCamera().WorldToScreenPoint(hit.point); //击中的点
+            Vector3 pointToScreenVec = Cond.Instance.GetCamera().WorldToScreenPoint(pointVec); //玩家头部
+            Vector3 hitPointToScreenVec = Cond.Instance.GetCamera().WorldToScreenPoint(new Vector3(hit.point.x, pointVec.y, hit.point.z)); //击中的点到角色头部
             Vector3 v1 = (worldToScreenPoint - pointToScreenVec).normalized;
             Vector3 v2 = (hitPointToScreenVec - pointToScreenVec).normalized;
             float angle = Vector3.Angle(v1, v2);

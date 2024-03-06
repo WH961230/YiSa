@@ -17,18 +17,15 @@ MonoBehaviour:
     MotionSpeed: 0
     RotateSpeed: 0
   - Sign: Obj_Soldier
-    MotionSpeed: 0
-    RotateSpeed: 0
+    MotionSpeed: 1
+    RotateSpeed: 20
   - Sign: Obj_Volume
     MotionSpeed: 0
     RotateSpeed: 0
   - Sign: Obj_DirectionalLight
     MotionSpeed: 0
     RotateSpeed: 0
-  - Sign: Obj_Camera_Right
-    MotionSpeed: 0
-    RotateSpeed: 0
-  - Sign: Obj_Camera_Left
+  - Sign: Obj_FightCamera
     MotionSpeed: 0
     RotateSpeed: 0
   - Sign: Obj_BeginCamera

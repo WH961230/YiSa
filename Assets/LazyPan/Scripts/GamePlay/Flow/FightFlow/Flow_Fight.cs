@@ -7,8 +7,7 @@ namespace LazyPan {
     public class Flow_Fight : Flow {
         private Comp comp;
         private Entity floorEntity;
-        private Entity leftCameraEntity;
-        private Entity rightCameraEntity;
+        private Entity cameraEntity;
         private Entity soldierEntity;
         private Entity shooterEntity;
         private Entity beginTimeline;
@@ -21,11 +20,9 @@ namespace LazyPan {
 
             volumeEntity = Obj.Instance.LoadEntity("Obj_Volume");
             lightEntity = Obj.Instance.LoadEntity("Obj_DirectionalLight");
-            leftCameraEntity = Obj.Instance.LoadEntity("Obj_Camera_Left");
-            rightCameraEntity = Obj.Instance.LoadEntity("Obj_Camera_Right");
+            cameraEntity = Obj.Instance.LoadEntity("Obj_FightCamera");
             floorEntity = Obj.Instance.LoadEntity("Obj_Floor");
             soldierEntity = Obj.Instance.LoadEntity("Obj_Soldier");
-            shooterEntity = Obj.Instance.LoadEntity("Obj_Shooter");
             beginTimeline = Obj.Instance.LoadEntity("Obj_BeginTimeline");
 
             ButtonRegister.AddListener(comp.Get<Button>("UI_Fight_NextBtn"), () => {
@@ -45,8 +42,7 @@ namespace LazyPan {
             Obj.Instance.UnLoadEntity(soldierEntity);
             Obj.Instance.UnLoadEntity(shooterEntity);
             Obj.Instance.UnLoadEntity(beginTimeline);
-            Obj.Instance.UnLoadEntity(leftCameraEntity);
-            Obj.Instance.UnLoadEntity(rightCameraEntity);
+            Obj.Instance.UnLoadEntity(cameraEntity);
         }
     }
 }

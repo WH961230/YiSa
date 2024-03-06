@@ -3,15 +3,13 @@ string,string,string,string
 标识,类型,名称,创建绑定行为标识
 Global_UI_Root,UIRoot,画布根节点,
 Global_Obj_Root,ObjRoot,物品根节点,
-Obj_Camera_Left,CameraLeft,左侧相机,Behaviour_Auto_FollowPlayer
-Obj_Camera_Right,CameraRight,右侧相机,Behaviour_Auto_FollowPlayer
 Obj_Volume,Volume,后处理,
 Obj_Floor,Terrain,地板,
 Obj_BeginTimeline,Event,开始时间轴,Behaviour_Event_BeginTimeline
 Obj_DirectionalLight,Light,直射灯光,
-Obj_Soldier,Player,士兵,Behaviour_Input_Motion|Behaviour_Auto_Rotate|Behaviour_Input_CloseFight
+Obj_Soldier,Player,士兵,Behaviour_Input_Motion|Behaviour_Input_Rotate|Behaviour_Input_CloseFight
 Obj_Shooter,Player,射手,Behaviour_Input_Motion|Behaviour_Input_Rotate|Behaviour_Input_Shoot
 Obj_BeginCamera,MainCamera,开始主相机,
-Obj_FightCamera,MainCamera,战斗主相机,
+Obj_FightCamera,MainCamera,战斗主相机,Behaviour_Auto_FollowPlayer
 Obj_ChooseCamera,MainCamera,选择主相机,
 Obj_ClearCamera,MainCamera,结算主相机,

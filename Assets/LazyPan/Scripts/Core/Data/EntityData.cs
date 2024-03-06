@@ -21,7 +21,6 @@ namespace LazyPan {
         /*基础参数*/
         public string Sign;//标识
         public string Type;//类型
-        public string CameraType;//相机类型
         /*移动参数*/
         public float DefMotionSpeed;//默认移动速度
         public float CurMotionSpeed;//当前移动速度

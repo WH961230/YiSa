@@ -41,7 +41,7 @@ namespace LazyPan {
             return false;
         }
 
-        public int GetBehaviourIndex(int id, string sign) {
+        private int GetBehaviourIndex(int id, string sign) {
             int index = -1;
             //是否有实体
             if (Data.Instance.BehaviourDic.TryGetValue(id, out List<Behaviour> behaviours)) {

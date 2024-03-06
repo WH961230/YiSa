@@ -5,7 +5,6 @@ namespace LazyPan {
     public class Behaviour_Input_Motion : Behaviour {
         private Vector3 inputMotionValue;
         private CharacterController characterController;
-        private Entity myCameraEntity;
 
         public Behaviour_Input_Motion(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             InputRegister.Instance.Load(InputRegister.Instance.Motion, MotionEvent);
@@ -21,26 +20,19 @@ namespace LazyPan {
         }
 
         void OnUpdate() {
-            GetMyCamera();
             PlayerMotion();
         }
 
-        private void GetMyCamera() {
-            if (myCameraEntity == null) {
-                Data.Instance.TryGetEntityByType(entity.EntityData.BaseRuntimeData.CameraType, out myCameraEntity);
-            }
-        }
-
         private void PlayerMotion() {
-            if (myCameraEntity == null) {
+            if (Cond.Instance.GetCameraEntity() == null) {
                 return;
             }
 
-            Vector3 cameraForward = myCameraEntity.Prefab.transform.forward;
+            Vector3 cameraForward = Cond.Instance.GetCameraEntity().Prefab.transform.forward;
             cameraForward.y = 0;
             entity.EntityData.BaseRuntimeData.CurMotionDir = Vector3.zero;
             entity.EntityData.BaseRuntimeData.CurMotionDir += cameraForward * inputMotionValue.y * 5f;
-            entity.EntityData.BaseRuntimeData.CurMotionDir += myCameraEntity.Prefab.transform.right * inputMotionValue.x * 5f;
+            entity.EntityData.BaseRuntimeData.CurMotionDir += Cond.Instance.GetCameraEntity().Prefab.transform.right * inputMotionValue.x * 5f;
             characterController.Move(entity.EntityData.BaseRuntimeData.CurMotionDir * Time.deltaTime * entity.EntityData.BaseRuntimeData.CurMotionSpeed);
             if (entity.EntityData.BaseRuntimeData.CurMotionDir != Vector3.zero) {
                 entity.Comp.GetEvent("PlayerMotionEvent")?.Invoke();

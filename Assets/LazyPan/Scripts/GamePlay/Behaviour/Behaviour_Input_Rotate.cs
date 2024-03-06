@@ -45,12 +45,12 @@ namespace LazyPan {
         private void CheckHitFloor() {
             if (isRightMouseHold) {
                 Vector2 mousePosition = Mouse.current.position.ReadValue();
-                Vector3 currentMousePositionToWorld = Camera.main.ScreenToWorldPoint(mousePosition);
+                Vector3 currentMousePositionToWorld = Cond.Instance.GetCamera().ScreenToWorldPoint(mousePosition);
                 if (mousePositionToWorld != currentMousePositionToWorld) {
-                    Ray ray = Camera.main.ScreenPointToRay(mousePosition);
+                    Ray ray = Cond.Instance.GetCamera().ScreenPointToRay(mousePosition);
                     isHitFloor = Physics.Raycast(ray, out hit, Mathf.Infinity, 1 << LayerMask.NameToLayer("Floor"));
                     if (isHitFloor) {
-                        Vector3 hitPointScreen = Camera.main.WorldToScreenPoint(hit.point);
+                        Vector3 hitPointScreen = Cond.Instance.GetCamera().WorldToScreenPoint(hit.point);
                         CursorRect.position = new Vector2(hitPointScreen.x, hitPointScreen.y);
                     }
 
@@ -64,9 +64,9 @@ namespace LazyPan {
         private void RotateToHitPoint() {
             if (isHitFloor) {
                 Vector3 pointVec = entity.Comp.Get<Transform>("Point").position;
-                Vector3 worldToScreenPoint = Camera.main.WorldToScreenPoint(hit.point); //击中的点
-                Vector3 pointToScreenVec = Camera.main.WorldToScreenPoint(pointVec); //玩家头部
-                Vector3 hitPointToScreenVec = Camera.main.WorldToScreenPoint(new Vector3(hit.point.x, pointVec.y, hit.point.z)); //击中的点到角色头部
+                Vector3 worldToScreenPoint = Cond.Instance.GetCamera().WorldToScreenPoint(hit.point); //击中的点
+                Vector3 pointToScreenVec = Cond.Instance.GetCamera().WorldToScreenPoint(pointVec); //玩家头部
+                Vector3 hitPointToScreenVec = Cond.Instance.GetCamera().WorldToScreenPoint(new Vector3(hit.point.x, pointVec.y, hit.point.z)); //击中的点到角色头部
                 Vector3 v1 = (worldToScreenPoint - pointToScreenVec).normalized;
                 Vector3 v2 = (hitPointToScreenVec - pointToScreenVec).normalized;
                 float angle = Vector3.Angle(v1, v2);
@@ -77,8 +77,10 @@ namespace LazyPan {
                 characterController.transform.forward = Vector3.MoveTowards(characterController.transform.forward,
                     tempForward, Time.deltaTime * entity.EntityData.BaseRuntimeData.CurRotateSpeed);
             } else {
-                characterController.transform.forward = Vector3.MoveTowards(characterController.transform.forward,
-                    entity.EntityData.BaseRuntimeData.CurMotionDir, Time.deltaTime * entity.EntityData.BaseRuntimeData.CurRotateSpeed);
+                if (entity.EntityData.BaseRuntimeData.CurMotionDir != Vector3.zero) {
+                    characterController.transform.forward = Vector3.MoveTowards(characterController.transform.forward,
+                        entity.EntityData.BaseRuntimeData.CurMotionDir, Time.deltaTime * entity.EntityData.BaseRuntimeData.CurRotateSpeed);
+                }
             }
         }
 

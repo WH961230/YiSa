@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3843914435664633407}
   - component: {fileID: 7245982774783849109}
   - component: {fileID: 3718572964592200735}
-  - component: {fileID: 1237614373705066395}
   - component: {fileID: 4701317000307736355}
   - component: {fileID: 3426798771061242697}
   m_Layer: 0
@@ -140,19 +139,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!114 &1237614373705066395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6118677874761072040}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d510d7ed91b33954292399da9f7eeb8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerTr: {fileID: 0}
 --- !u!114 &4701317000307736355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,3 +325,4 @@ MonoBehaviour:
           m_CallState: 2
   DoTweenAnimationDatas: []
   TrailRendererDatas: []
+  CameraDatas: []

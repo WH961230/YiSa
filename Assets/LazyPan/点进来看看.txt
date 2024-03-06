@@ -1,0 +1,66 @@
+梳理下框架整体的结构：
+
+ LazyPan - 框架总目录
+    > Bundles - 资源包
+        >> Animations - 动作资源
+        >> Configs - 配置资源
+            >>> Input - 输入
+            >>> Setting - 配置
+            >>> Txt - 文本 
+        >> Mats - 材质资源
+        >> Prefabs - 预制体资源
+            >>> Global
+            >>> Obj
+            >>> UI
+                >>>> Template UI模板
+        >> Scenes - 场景资源
+        >> Timelines - 时间轴资源
+    > Scripts - 代码
+        >> Core - 核心部分<根>
+            >>> Behaviour - 行为<负责游戏所有的行为逻辑,尽量分解为最小>
+            >>> Comp - 组件
+                >>>> Comp.cs - 组件挂载脚本<游戏内 Unity 组件的唯一代码获取接口>
+            >>> Config - 配置<Txt 配置生成在此处>
+                >>>> Base
+                    >>>>> Config.cs - 配置<游戏内所有生成式的配置在此脚本内初始化，可优化为遍历配置重写脚本>
+                    >>>>> GameSetting.cs - 游戏总配置<配置全局配置>
+                    >>>>> Setting.cs - 实体类配置<待优化为获取式的配置，不太希望在此配置具体参数>
+            >>> Data - 数据
+                >>>> Data.cs - 全局数据
+                >>>> EntityData.cs - 实体数据
+            >>> Entity - 实体
+                >>>> Entity.cs - 实体脚本
+            >>> Flow - 流程
+                >>>> Flo.cs - 流程控制器
+                >>>> Flow.cs - 具体流程继承此脚本
+                >>>> IFlow.cs - 流程接口
+            >>> Loader - 加载
+                >>>> Loader.cs - 加载管理器
+            >>> Obj - 物体
+                >>>> Obj.cs - 物体管理器
+            >>> Register - 注册
+                >>>> BehaviourRegister.cs - 行为注册器
+                >>>> ButtonRegister.cs - 按钮注册器
+                >>>> InputRegister.cs - 输入注册器
+                >>>> MessageRegister.cs - 消息注册器
+            >>> Sound - 音效
+                >>>> Sound.cs - 音效管理器
+            >>> Tool - 工具
+                >>>> Editor
+                >>>> ClockUtil.cs - 计时器工具
+                >>>> CollectCreatorRobotPoints.cs - 机器人点位收集工具
+                >>>> Generate.cs - 生成器工具<生成配置等>
+                >>>> MathUtil.cs - 数学工具
+                >>>> ReadCSV.cs - CSV文件读取工具
+                >>>> Singleton.cs - 单例脚本
+                >>>> SingletonMonobehaviour.cs - 单例Mono脚本
+            >>> UI - UI
+                >>>> UI.cs - UI管理器
+            >>> Game.cs - 场景游戏管理<场景游戏管理>
+            >>> Launch.cs - 加载器<游戏入口>
+            >>> Stage.cs - 阶段加载器<运行加载进度>
+        >> GamePlay - 玩法部分<叶>
+            >>> Behaviour - 行为
+            >>> Config - 配置
+            >>> Data - 数据
+            >>> Flow - 流程

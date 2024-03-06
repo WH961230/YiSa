@@ -1,7 +1,5 @@
-using UnityEngine;
-
-public class Singleton<T> : MonoBehaviour where T : MonoBehaviour {
-    static T instance = null;
+public class Singleton<T> where T : new() {
+    static T instance = default;
 
     public static T Instance {
         get {
@@ -9,16 +7,8 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour {
                 return instance;
             }
 
-            instance = new GameObject(typeof(T).Name).AddComponent<T>();
-            if (Application.isPlaying) {
-                DontDestroyOnLoad(instance.gameObject);
-            }
-
+            instance = new T();
             return instance;
         }
-    }
-
-    private void Awake() {
-        instance = this as T;
     }
 }

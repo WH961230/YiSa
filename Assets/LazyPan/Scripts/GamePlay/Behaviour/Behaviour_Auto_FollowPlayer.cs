@@ -11,7 +11,7 @@ namespace LazyPan {
         private void OnFollowPlayerUpdate() {
             if (FollowTr == null) {
                 if (Cond.Instance.GetPlayerEntity() != null) {
-                    FollowTr = Cond.Instance.GetPlayerEntity().Comp.Get<Transform>("Body");
+                    FollowTr = Cond.Instance.Get<Transform>(Cond.Instance.GetPlayerEntity(), Label.BODY);
                     Offset = entity.Prefab.transform.position - FollowTr.position;
                 }
             } else {

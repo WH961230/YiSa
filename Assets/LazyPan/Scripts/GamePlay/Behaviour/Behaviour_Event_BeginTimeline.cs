@@ -4,7 +4,7 @@ namespace LazyPan {
     public class Behaviour_Event_BeginTimeline : Behaviour {
         private PlayableDirector pd;
         public Behaviour_Event_BeginTimeline(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
-            pd = entity.Comp.Get<PlayableDirector>("BeginPlayableDirector");
+            pd = Cond.Instance.Get<PlayableDirector>(entity, Label.PLAYABLEDIRECTOR);
             pd.Play();
             pd.stopped += CheckStartControl;
         }

@@ -8,7 +8,7 @@ namespace LazyPan {
 
         public Behaviour_Input_Motion(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             InputRegister.Instance.Load(InputRegister.Instance.Motion, MotionEvent);
-            characterController = entity.Comp.Get<CharacterController>("CharacterController");
+            characterController = Cond.Instance.Get<CharacterController>(entity, Label.CHARACTERCONTROLLER);
             Data.Instance.OnUpdateEvent.AddListener(OnUpdate);
         }
 
@@ -24,18 +24,19 @@ namespace LazyPan {
         }
 
         private void PlayerMotion() {
-            if (Cond.Instance.GetCameraEntity() == null) {
+            Camera camera = Cond.Instance.Get<Camera>(Cond.Instance.GetCameraEntity(), Label.CAMERA);
+            if (camera == null) {
                 return;
             }
 
-            Vector3 cameraForward = Cond.Instance.GetCameraEntity().Prefab.transform.forward;
+            Vector3 cameraForward = camera.transform.forward;
             cameraForward.y = 0;
             entity.EntityData.BaseRuntimeData.CurMotionDir = Vector3.zero;
             entity.EntityData.BaseRuntimeData.CurMotionDir += cameraForward * inputMotionValue.y * 5f;
-            entity.EntityData.BaseRuntimeData.CurMotionDir += Cond.Instance.GetCameraEntity().Prefab.transform.right * inputMotionValue.x * 5f;
+            entity.EntityData.BaseRuntimeData.CurMotionDir += camera.transform.right * inputMotionValue.x * 5f;
             characterController.Move(entity.EntityData.BaseRuntimeData.CurMotionDir * Time.deltaTime * entity.EntityData.BaseRuntimeData.CurMotionSpeed);
             if (entity.EntityData.BaseRuntimeData.CurMotionDir != Vector3.zero) {
-                entity.Comp.GetEvent("PlayerMotionEvent")?.Invoke();
+                Cond.Instance.Get(entity, Label.Assemble(Label.MOTION, Label.EVENT))?.Invoke();
             }
         }
 

@@ -13,14 +13,13 @@ namespace LazyPan {
             }
             if (obj.performed) {
                 Shoot();
-                entity.Comp.GetEvent("PlayerShootEvent")?.Invoke();
-                Cond.Instance.GetCameraEntity().Comp.GetEvent("PlayerShootEvent")?.Invoke();
+                Cond.Instance.Get(Cond.Instance.GetCameraEntity(), Label.Assemble(Label.SHOOT, Label.EVENT))?.Invoke();
             }
         }
 
         private void Shoot() {
             GameObject template = Loader.LoadGo("弹药", "Obj/Fight/Obj_Bullet", Data.Instance.ObjRoot, true);
-            Transform bulletMuzzle = entity.Comp.Get<Transform>("Muzzle");
+            Transform bulletMuzzle = Cond.Instance.Get<Transform>(entity, Label.MUZZLE);
             GameObject bullet = Object.Instantiate(template);
             bullet.transform.position = bulletMuzzle.position;
             bullet.transform.rotation = bulletMuzzle.rotation;

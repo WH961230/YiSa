@@ -9,7 +9,7 @@ Obj_BeginTimeline,Event,开始时间轴,Behaviour_Event_BeginTimeline
 Obj_DirectionalLight,Light,直射灯光,
 Obj_Soldier,Player,士兵,Behaviour_Input_Motion|Behaviour_Input_Rotate|Behaviour_Input_CloseFight
 Obj_Shooter,Player,射手,Behaviour_Input_Motion|Behaviour_Input_Rotate|Behaviour_Input_Shoot
-Obj_BeginCamera,MainCamera,开始主相机,
-Obj_FightCamera,MainCamera,战斗主相机,Behaviour_Auto_FollowPlayer
-Obj_ChooseCamera,MainCamera,选择主相机,
-Obj_ClearCamera,MainCamera,结算主相机,
+Obj_BeginCamera,Camera,开始主相机,
+Obj_FightCamera,Camera,战斗主相机,Behaviour_Auto_FollowPlayer
+Obj_ChooseCamera,Camera,选择主相机,
+Obj_ClearCamera,Camera,结算主相机,

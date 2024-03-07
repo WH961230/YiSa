@@ -2,7 +2,7 @@
 using UnityEngine.Events;
 
 namespace LazyPan {
-    public class Cond : Singleton<Cond> {
+    public partial class Cond : Singleton<Cond> {
         #region 全局
         public Entity GetCameraEntity() { if (Data.Instance.TryGetEntityByType("Camera", out Entity entity)) { return entity; } else { return null; } }
         public Entity GetPlayerEntity() { if (Data.Instance.TryGetEntityByType("Player", out Entity entity)) { return entity; } else { return null; } }

@@ -56,7 +56,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4787782289160238014}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.05, y: 0, z: -3.76}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -109,13 +109,6 @@ MonoBehaviour:
   OnDrawGizmosAction:
     m_PersistentCalls:
       m_Calls: []
-  ObjSign: 
-  ObjInfo: 
-  Entity:
-    ID: 0
-    Prefab: {fileID: 0}
-    Comp: {fileID: 0}
-    EntitySetting: {fileID: 0}
   GameObjects:
   - Sign: BulletPrefab
     GO: {fileID: 1646209852347824711, guid: 09c7fddead47ba14d83aceb76cc14a3e, type: 3}
@@ -136,7 +129,10 @@ MonoBehaviour:
   PlayableDirectors: []
   TimelineAssets: []
   Comps: []
-  BehaviourBundles: []
+  UnityEventDatas: []
+  DoTweenAnimationDatas: []
+  TrailRendererDatas: []
+  CameraDatas: []
 --- !u!1 &7153315398348871321
 GameObject:
   m_ObjectHideFlags: 0

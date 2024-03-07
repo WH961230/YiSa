@@ -18,7 +18,7 @@ namespace LazyPan {
             uICompAlwaysDics.Clear();
             for (int i = 0; i < length; i++) {
                 string key = keys[i];
-                GameObject uiGo = Loader.LoadGo(key, string.Concat("UI/", key), Data.Instance.UIRoot, false);
+                GameObject uiGo = Loader.LoadGo(UIConfig.Get(key).Description, string.Concat("UI/", key), Data.Instance.UIRoot, false);
                 switch (UIConfig.Get(key).Type) {
                     case 0:
                         uICompExchangeDics.Add(key, uiGo.GetComponent<Comp>());

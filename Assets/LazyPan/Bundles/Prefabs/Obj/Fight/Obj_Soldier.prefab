@@ -131,7 +131,7 @@ MonoBehaviour:
   Animators: []
   Images: []
   PlayableDirectors:
-  - Sign: CloseFightPlayableDirector
+  - Sign: PlayableDirector
     PlayableDirector: {fileID: 8727676133464439232}
   TimelineAssets:
   - Sign: CloseFightTimelineAsset
@@ -156,6 +156,7 @@ MonoBehaviour:
           m_CallState: 2
   DoTweenAnimationDatas: []
   TrailRendererDatas: []
+  CameraDatas: []
 --- !u!1 &3744225152291596679
 GameObject:
   m_ObjectHideFlags: 0

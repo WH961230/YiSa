@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Object = UnityEngine.Object;
+using Random = System.Random;
 
 namespace LazyPan {
     [Serializable]
@@ -31,7 +33,29 @@ namespace LazyPan {
             //物体名赋值
             Prefab.name = string.Concat("[", ID, "]", objConfig.Name);
             //创建实体数据
-            EntityData = new EntityData(objConfig.Sign, EntitySetting);
+            EntityData = new EntityData(objConfig, EntitySetting);
+            //读取配置位置初始化
+            if (!string.IsNullOrEmpty(objConfig.SetUpLocationInformationSign)) {
+                LocationInformationSetting setting = Loader.LoadAsset<LocationInformationSetting>(AssetType.ASSET,
+                    string.Concat("Setting/LocationInformationSetting/", objConfig.SetUpLocationInformationSign));
+                LocationInformationData data = null;
+                if (setting.locationInformationDatas.Count > 1) {
+                    data =
+                        setting.locationInformationDatas[
+                            UnityEngine.Random.Range(0, setting.locationInformationDatas.Count)];
+                } else if (setting.locationInformationDatas.Count == 1) {
+                    data = setting.locationInformationDatas[0];
+                } else {
+                    Debug.LogErrorFormat("错误！位置配置{0}信息数据为空！", setting.name);
+#if UNITY_EDITOR
+                    EditorApplication.isPaused = true;
+#endif
+                }
+
+                Cond.Instance.Get<Transform>(this, Label.BODY).position = data.Position;
+                Cond.Instance.Get<Transform>(this, Label.BODY).rotation = Quaternion.Euler(data.Rotation);
+                Cond.Instance.Get<CharacterController>(this, Label.CHARACTERCONTROLLER).enabled = true;
+            }
             //注册实体
             Data.Instance.AddEntity(ID, this);
             //注册配置行为

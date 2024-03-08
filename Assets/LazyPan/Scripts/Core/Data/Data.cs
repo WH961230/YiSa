@@ -53,7 +53,7 @@ namespace LazyPan {
         //通过 类型 查找实体
         public bool TryGetEntityByType(string type, out Entity entity) {
             foreach (Entity tmpEntity in EntityDic.Values) {
-                if (type == tmpEntity.EntityData.BaseRuntimeData.Type) {
+                if (tmpEntity.EntityData.BaseRuntimeData != null && type == tmpEntity.EntityData.BaseRuntimeData.Type) {
                     entity = tmpEntity;
                     return true;
                 }

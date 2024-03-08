@@ -3,15 +3,15 @@
 namespace LazyPan {
     public class EntityData {
         public BaseRuntimeData BaseRuntimeData;
-        public EntityData(string sign, Setting setting) {
-            if (setting.TryGetBaseSetting(sign, out BaseSetting baseSetting)) {
-                BaseRuntimeData = new BaseRuntimeData();
-                BaseRuntimeData.Sign = sign;
+        public EntityData(ObjConfig config, Setting setting) {
+            BaseRuntimeData = new BaseRuntimeData();
+            BaseRuntimeData.Sign = config.Sign;
+            BaseRuntimeData.Type = config.Type;
+            if (setting.TryGetBaseSetting(config.CreatureType, out BaseSetting baseSetting)) {
                 BaseRuntimeData.DefMotionSpeed = baseSetting.MotionSpeed;
                 BaseRuntimeData.CurMotionSpeed = baseSetting.MotionSpeed;
                 BaseRuntimeData.DefRotateSpeed = baseSetting.RotateSpeed;
                 BaseRuntimeData.CurRotateSpeed = baseSetting.RotateSpeed;
-                BaseRuntimeData.Type = ObjConfig.Get(sign).Type;
             }
         }
     }

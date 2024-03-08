@@ -2,28 +2,20 @@
 using System.Collections.Generic;
 
 namespace LazyPan {
-    public class ObjConfig {
+    public class LocationInformationConfig {
 		public string Sign;
-		public string Type;
-		public string Name;
-		public string CreatureType;
-		public string SetUpLocationInformationSign;
-		public string SetUpBehaviourSign;
+		public string Description;
 
         private static bool isInit;
         private static string content;
         private static string[] lines;
-        private static Dictionary<string, ObjConfig> dics = new Dictionary<string, ObjConfig>();
+        private static Dictionary<string, LocationInformationConfig> dics = new Dictionary<string, LocationInformationConfig>();
 
-        public ObjConfig(string line) {
+        public LocationInformationConfig(string line) {
             try {
                 string[] values = line.Split(',');
 				Sign = values[0];
-				Type = values[1];
-				Name = values[2];
-				CreatureType = values[3];
-				SetUpLocationInformationSign = values[4];
-				SetUpBehaviourSign = values[5];
+				Description = values[1];
 
             } catch (Exception e) {
                 Console.WriteLine(e);
@@ -35,11 +27,11 @@ namespace LazyPan {
             if (isInit) {
                 return;
             }
-            ReadCSV.Instance.Read("ObjConfig", out content, out lines);
+            ReadCSV.Instance.Read("LocationInformationConfig", out content, out lines);
             dics.Clear();
             for (int i = 0; i < lines.Length; i++) {
                 if (i > 2) {
-                    ObjConfig config = new ObjConfig(lines[i]);
+                    LocationInformationConfig config = new LocationInformationConfig(lines[i]);
                     dics.Add(config.Sign, config);
                 }
             }
@@ -47,8 +39,8 @@ namespace LazyPan {
             isInit = true;
         }
 
-        public static ObjConfig Get(string sign) {
-            if (dics.TryGetValue(sign, out ObjConfig config)) {
+        public static LocationInformationConfig Get(string sign) {
+            if (dics.TryGetValue(sign, out LocationInformationConfig config)) {
                 return config;
             }
 

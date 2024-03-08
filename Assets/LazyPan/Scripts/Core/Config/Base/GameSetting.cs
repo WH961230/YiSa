@@ -7,6 +7,7 @@ namespace LazyPan {
     public class GameSetting : ScriptableObject {
         [Header("配置脚本模板路径")] public string TxtPath;
         [Header("配置脚本输出路径")] public string ConfigScriptPath;
+        [Header("生成点位配置路径")] public string LocationInformationSettingPath;
 
         [Header("资源配置")] public List<AssetTypeAddress> AssetTypeAddress;
         [Header("通用配置")] public List<CommonAssetAddress> CommonAssetAddress;

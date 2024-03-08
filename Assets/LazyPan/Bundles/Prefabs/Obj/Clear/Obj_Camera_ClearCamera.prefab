@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4701317000307736355}
   - component: {fileID: 3426798771061242697}
   m_Layer: 0
-  m_Name: Obj_FightCamera
+  m_Name: Obj_Camera_ClearCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ Camera:
   m_GameObject: {fileID: 6118677874761072040}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -306,25 +306,6 @@ MonoBehaviour:
   PlayableDirectors: []
   TimelineAssets: []
   Comps: []
-  UnityEventDatas:
-  - Sign: PlayerShootEvent
-    UnityEvent:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 4701317000307736355}
-          m_TargetAssemblyTypeName: DG.Tweening.DOTweenAnimation, Assembly-CSharp-firstpass
-          m_MethodName: RecreateTweenAndPlay
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  UnityEventDatas: []
   DoTweenAnimationDatas: []
   TrailRendererDatas: []
-  CameraDatas:
-  - Sign: Camera
-    Camera: {fileID: 3843914435664633407}

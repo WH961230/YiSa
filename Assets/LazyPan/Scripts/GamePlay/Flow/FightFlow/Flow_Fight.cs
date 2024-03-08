@@ -18,12 +18,13 @@ namespace LazyPan {
             comp = UI.Instance.Open("UI_Fight");
             comp.Get<TextMeshProUGUI>("UI_Fight_FlowTitle").text = "FightFlow";
 
-            volumeEntity = Obj.Instance.LoadEntity("Obj_Volume");
-            lightEntity = Obj.Instance.LoadEntity("Obj_DirectionalLight");
-            cameraEntity = Obj.Instance.LoadEntity("Obj_FightCamera");
-            floorEntity = Obj.Instance.LoadEntity("Obj_Floor");
-            soldierEntity = Obj.Instance.LoadEntity("Obj_Soldier");
-            beginTimeline = Obj.Instance.LoadEntity("Obj_BeginTimeline");
+            volumeEntity = Obj.Instance.LoadEntity("Obj_Volume_Volume");
+            lightEntity = Obj.Instance.LoadEntity("Obj_Light_DirectionalLight");
+            floorEntity = Obj.Instance.LoadEntity("Obj_Terrain_Cube");
+            soldierEntity = Obj.Instance.LoadEntity("Obj_Player_Soldier");
+            soldierEntity = Obj.Instance.LoadEntity("Obj_Robot_Soldier");
+            beginTimeline = Obj.Instance.LoadEntity("Obj_Event_BeginTimeline");
+            cameraEntity = Obj.Instance.LoadEntity("Obj_Camera_FightCamera");
 
             ButtonRegister.AddListener(comp.Get<Button>("UI_Fight_NextBtn"), () => {
                 Clear();

@@ -10,7 +10,7 @@ namespace LazyPan {
             comp = UI.Instance.Open("UI_Choose");
             comp.Get<TextMeshProUGUI>("UI_Choose_FlowTitle").text = "ChooseFlow";
 
-            chooseEntity = Obj.Instance.LoadEntity("Obj_ChooseCamera");
+            chooseEntity = Obj.Instance.LoadEntity("Obj_Camera_ChooseCamera");
 
             ButtonRegister.AddListener(comp.Get<Button>("UI_Choose_NextBtn"), () => {
                 Clear();

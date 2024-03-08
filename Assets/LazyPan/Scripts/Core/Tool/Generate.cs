@@ -27,22 +27,6 @@ namespace LazyPan {
             window.Focus();
         }
 
-        private void OnGUI() {
-            if (focusedWindow.titleContent.text == "快速生成行为脚本") {
-                behaviourName = EditorGUILayout.TextField("输入行为配置名 ：", behaviourName);
-                if (GUILayout.Button("生成行为脚本")) {
-                    GenerateScript("Assets/LazyPan/Bundles/Configs/Txt/GenerateBehaviourTemplate.txt",
-                        "Assets/LazyPan/Scripts/GamePlay/Behaviour/", behaviourName, "Behaviour_", "");
-                }
-            } else if (focusedWindow.titleContent.text == "快速生成流程脚本") {
-                flowName = EditorGUILayout.TextField("输入流程脚本名 ：", flowName);
-                if (GUILayout.Button("生成流程脚本")) {
-                    GenerateScript("Assets/LazyPan/Bundles/Configs/Txt/GenerateFlowTemplate.txt",
-                        "Assets/LazyPan/Scripts/GamePlay/Flow/", flowName, "Flow_", "");
-                }
-            }
-        }
-
         [MenuItem("Assets/Create/LazyPan/生成配置脚本")]
         public static void GenerateConfig() {
             Object obj = Selection.objects[0];
@@ -115,6 +99,22 @@ namespace LazyPan {
             }
 
             return false;
+        }
+
+        private void OnGUI() {
+            if (focusedWindow.titleContent.text == "快速生成行为脚本") {
+                behaviourName = EditorGUILayout.TextField("输入行为配置名 ：", behaviourName);
+                if (GUILayout.Button("生成行为脚本")) {
+                    GenerateScript("Assets/LazyPan/Bundles/Configs/Txt/GenerateBehaviourTemplate.txt",
+                        "Assets/LazyPan/Scripts/GamePlay/Behaviour/", behaviourName, "Behaviour_", "");
+                }
+            } else if (focusedWindow.titleContent.text == "快速生成流程脚本") {
+                flowName = EditorGUILayout.TextField("输入流程脚本名 ：", flowName);
+                if (GUILayout.Button("生成流程脚本")) {
+                    GenerateScript("Assets/LazyPan/Bundles/Configs/Txt/GenerateFlowTemplate.txt",
+                        "Assets/LazyPan/Scripts/GamePlay/Flow/", flowName, "Flow_", "");
+                }
+            }
         }
 #endif
     }

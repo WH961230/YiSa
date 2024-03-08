@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2303927286517505908}
   - component: {fileID: 8838157125319167592}
   m_Layer: 0
-  m_Name: Obj_BeginTimeline
+  m_Name: Obj_Event_BeginTimeline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

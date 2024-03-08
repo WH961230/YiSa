@@ -21,7 +21,7 @@ namespace LazyPan {
             Data.Instance.OnFixedUpdateEvent.RemoveAllListeners();
             Data.Instance.OnLateUpdateEvent.RemoveAllListeners();
 
-            Transform uiRoot = Loader.LoadGo("加载画布", "Global/Global_UI_Root", null, true).transform;
+            Transform uiRoot = Loader.LoadGo("加载画布", "Global/Global_UIRoot", null, true).transform;
             Stage stage = uiRoot.gameObject.AddComponent<Stage>();
             DontDestroyOnLoad(uiRoot.gameObject);
             stage.Load(sceneName);

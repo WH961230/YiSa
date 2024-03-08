@@ -15,10 +15,6 @@ namespace LazyPan {
             return Addressables.LoadAssetAsync<GameSetting>("Assets/LazyPan/Bundles/Configs/Setting/GameSetting.asset").WaitForCompletion();
         }
 
-        public static Setting LoadBuffSetting() {
-            return Addressables.LoadAssetAsync<Setting>("Assets/LazyPan/Bundles/Configs/Setting/Setting_Buff.asset").WaitForCompletion();
-        }
-
         public static T LoadAsset<T>(AssetType type, string assetName) {
             (string, string) addressData = LoadGameSetting().GetAddress(type);
             return Addressables.LoadAssetAsync<T>(string.Concat(addressData.Item1, assetName, addressData.Item2)).WaitForCompletion();

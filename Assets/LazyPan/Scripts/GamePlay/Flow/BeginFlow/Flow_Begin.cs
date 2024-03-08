@@ -14,9 +14,9 @@ namespace LazyPan {
             comp = UI.Instance.Open("UI_Begin");
             comp.Get<TextMeshProUGUI>("UI_Begin_FlowTitle").text = "BeginFlow";
 
-            volumeEntity = Obj.Instance.LoadEntity("Obj_Volume");
-            lightEntity = Obj.Instance.LoadEntity("Obj_DirectionalLight");
-            beginCameraEntity = Obj.Instance.LoadEntity("Obj_BeginCamera");
+            volumeEntity = Obj.Instance.LoadEntity("Obj_Volume_Volume");
+            lightEntity = Obj.Instance.LoadEntity("Obj_Light_DirectionalLight");
+            beginCameraEntity = Obj.Instance.LoadEntity("Obj_Camera_BeginCamera");
 
             ButtonRegister.AddListener(comp.Get<Button>("UI_Begin_NextBtn"), () => {
                 Clear();

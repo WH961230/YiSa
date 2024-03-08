@@ -5,7 +5,7 @@ namespace LazyPan {
         }
 
         public void Preload() {
-            Data.Instance.ObjRoot = Loader.LoadGo("物体", "Global/Global_Obj_Root", null, true).transform;
+            Data.Instance.ObjRoot = Loader.LoadGo("物体", "Global/Global_ObjRoot", null, true).transform;
         }
 
         //加载物体

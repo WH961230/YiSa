@@ -42,6 +42,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a16e01af0cfd7ab4fa4dfced59330b1c
+    m_Address: Assets/LazyPan/Bundles/Configs/Setting/LocationInformationSetting
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 5cd535f96ceaaaf43a1e3b41ba68119a, type: 2}
   m_SchemaSet:

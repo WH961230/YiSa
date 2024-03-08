@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 2326962137649584712}
   - component: {fileID: 2993999856909464194}
   m_Layer: 0
-  m_Name: Obj_Soldier
+  m_Name: Obj_Robot_Soldier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -255,7 +255,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 75f24d546505de846aa1d6ef65333874, type: 2}
+  - {fileID: 2100000, guid: 868a0cf71f9c5794cad558d35a993af7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -294,7 +294,7 @@ CharacterController:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Height: 0.5
   m_Radius: 0.5
@@ -578,7 +578,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 75f24d546505de846aa1d6ef65333874, type: 2}
+  - {fileID: 2100000, guid: 868a0cf71f9c5794cad558d35a993af7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -661,7 +661,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 75f24d546505de846aa1d6ef65333874, type: 2}
+  - {fileID: 2100000, guid: 868a0cf71f9c5794cad558d35a993af7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -744,7 +744,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 75f24d546505de846aa1d6ef65333874, type: 2}
+  - {fileID: 2100000, guid: 868a0cf71f9c5794cad558d35a993af7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -972,7 +972,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 75f24d546505de846aa1d6ef65333874, type: 2}
+  - {fileID: 2100000, guid: 868a0cf71f9c5794cad558d35a993af7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

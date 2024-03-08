@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 4690161951857102243}
   - component: {fileID: 5417999528756451539}
   m_Layer: 0
-  m_Name: Obj_MarkRobot
+  m_Name: Obj_MarkLocationInformation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

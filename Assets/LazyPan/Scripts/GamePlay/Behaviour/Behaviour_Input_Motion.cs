@@ -32,8 +32,8 @@ namespace LazyPan {
             Vector3 cameraForward = camera.transform.forward;
             cameraForward.y = 0;
             entity.EntityData.BaseRuntimeData.CurMotionDir = Vector3.zero;
-            entity.EntityData.BaseRuntimeData.CurMotionDir += cameraForward * inputMotionValue.y * 5f;
-            entity.EntityData.BaseRuntimeData.CurMotionDir += camera.transform.right * inputMotionValue.x * 5f;
+            entity.EntityData.BaseRuntimeData.CurMotionDir += cameraForward * inputMotionValue.y;
+            entity.EntityData.BaseRuntimeData.CurMotionDir += camera.transform.right * inputMotionValue.x;
             characterController.Move(entity.EntityData.BaseRuntimeData.CurMotionDir * Time.deltaTime * entity.EntityData.BaseRuntimeData.CurMotionSpeed);
             if (entity.EntityData.BaseRuntimeData.CurMotionDir != Vector3.zero) {
                 Cond.Instance.Get(entity, Label.Assemble(Label.MOTION, Label.EVENT))?.Invoke();

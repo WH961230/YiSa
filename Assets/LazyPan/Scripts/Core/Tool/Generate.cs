@@ -6,8 +6,8 @@ using UnityEngine;
 using Object = UnityEngine.Object;
 
 namespace LazyPan {
-    public class Generate : EditorWindow {
 #if UNITY_EDITOR
+    public class Generate : EditorWindow {
         private string behaviourName;
         private string flowName;
 
@@ -116,6 +116,6 @@ namespace LazyPan {
                 }
             }
         }
-#endif
     }
+#endif
 }

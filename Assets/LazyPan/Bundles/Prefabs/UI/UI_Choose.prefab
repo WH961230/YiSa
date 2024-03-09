@@ -90,12 +90,12 @@ MonoBehaviour:
   Colliders: []
   CharacterControllers: []
   Buttons:
-  - Sign: UI_Choose_NextBtn
+  - Sign: Next
     Button: {fileID: 4874481206728552019}
   Sliders: []
   Texts: []
   TextMeshProUGUIs:
-  - Sign: UI_Choose_FlowTitle
+  - Sign: Title
     TextMeshProUGUI: {fileID: 6702209307199156188}
   TMPInputFields: []
   Animators: []
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 6039659824857851651}
   - component: {fileID: 6075613660764974012}
   m_Layer: 5
-  m_Name: UI_Choose_Select
+  m_Name: Select
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 5030445743830994007}
   - component: {fileID: 4874481206728552019}
   m_Layer: 5
-  m_Name: UI_Choose_NextBtn
+  m_Name: Next
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -314,7 +314,7 @@ GameObject:
   - component: {fileID: 8278246731636740260}
   - component: {fileID: 6702209307199156188}
   m_Layer: 5
-  m_Name: UI_Choose_FlowTitle
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

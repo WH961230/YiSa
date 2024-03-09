@@ -26,3 +26,6 @@ Comp 挂载 <CharacterController> CharacterController,
 Comp 挂载 <Transform> Point//计算旋转偏移
 UI_Fight Comp 挂载 Cursor RectTran,
 检测地面层级 Floor,"
+Behaviour_Auto_Gravity,"【实现重力】
+Comp 挂载 <CharacterController> CharacterController,
+检测地面层级 Floor,"

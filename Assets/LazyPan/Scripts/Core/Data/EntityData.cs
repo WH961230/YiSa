@@ -12,6 +12,7 @@ namespace LazyPan {
                 BaseRuntimeData.CurMotionSpeed = baseSetting.MotionSpeed;
                 BaseRuntimeData.DefRotateSpeed = baseSetting.RotateSpeed;
                 BaseRuntimeData.CurRotateSpeed = baseSetting.RotateSpeed;
+                BaseRuntimeData.GravitySpeed = baseSetting.GravitySpeed;
             }
         }
     }
@@ -28,5 +29,7 @@ namespace LazyPan {
         /*旋转参数*/
         public float DefRotateSpeed;//默认旋转速度
         public float CurRotateSpeed;//当前旋转速度
+        /*重力参数*/
+        public float GravitySpeed;//重力速度
     }
 }

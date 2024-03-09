@@ -1,18 +1,18 @@
+using UnityEditor;
 using UnityEngine;
 
 namespace LazyPan {
     public class Launch : MonoBehaviour {
         public static Launch instance;
-        private void Start() {
-            instance = this;
-            Data.Instance.Setting = Loader.LoadSetting();
-            Config.Instance.Init();
-            Obj.Instance.Init();
-            DontDestroyOnLoad(gameObject);
-
-            //配置开始界面
-            Game game = Loader.LoadGo("全局", "Global/Global", null, true).GetComponent<Game>();
-            game.Init();
+        private void Awake() {
+            if (instance == null) {
+                instance = this;
+                Data.Instance.Setting = Loader.LoadSetting();
+                Config.Instance.Init();
+                Obj.Instance.Init();
+                DontDestroyOnLoad(gameObject);
+                StageLoad("Begin");
+            }
         }
 
         //加载阶段
@@ -25,6 +25,14 @@ namespace LazyPan {
             Stage stage = uiRoot.gameObject.AddComponent<Stage>();
             DontDestroyOnLoad(uiRoot.gameObject);
             stage.Load(sceneName);
+        }
+
+        //结束游戏
+        public void QuitGame() {
+#if UNITY_EDITOR
+            EditorApplication.isPlaying = false;
+#endif
+            Application.Quit();
         }
     }
 }

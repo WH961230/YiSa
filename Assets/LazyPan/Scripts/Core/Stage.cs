@@ -44,8 +44,8 @@ public class Stage : MonoBehaviour {
 
     private void LoadingUI() {
         if (loadingUIComp && work != null) {
-            Slider loadingSlider = loadingUIComp.Get<Slider>("UI_Loading_Slider");
-            TextMeshProUGUI loadingText = loadingUIComp.Get<TextMeshProUGUI>("UI_Loading_Text");
+            Slider loadingSlider = Cond.Instance.Get<Slider>(loadingUIComp, "LoadingSlider");
+            TextMeshProUGUI loadingText = Cond.Instance.Get<TextMeshProUGUI>(loadingUIComp,"LoadingText");
             float eachProgress = (float) 1 / StageCount;
             loadingSlider.value = eachProgress * (StageCountIndex + work.Progress);
             loadingText.text = string.Concat(work.Parameters.Description, " ", Mathf.Round(loadingSlider.value * 100f), "%");

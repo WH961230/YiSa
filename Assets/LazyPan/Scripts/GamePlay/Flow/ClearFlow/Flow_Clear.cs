@@ -3,26 +3,34 @@ using UnityEngine.UI;
 
 namespace LazyPan {
     public class Flow_Clear : Flow {
+        private Entity cameraEntity;
+        private Entity volumeEntity;
         private Comp comp;
         public override void Init(Flow baseFlow) {
             base.Init(baseFlow);
             comp = UI.Instance.Open("UI_Clear");
-            comp.Get<TextMeshProUGUI>("UI_Clear_FlowTitle").text = "ClearFlow";
+            Cond.Instance.Get<TextMeshProUGUI>(comp, Label.TITLE).text = "ClearFlow";
 
-            ButtonRegister.AddListener(comp.Get<Button>("UI_Clear_BackHomeBtn"), () => {
+            cameraEntity = Obj.Instance.LoadEntity("Obj_Camera_ClearCamera");
+            volumeEntity = Obj.Instance.LoadEntity("Obj_Volume_Volume");
+            ButtonRegister.AddListener(Cond.Instance.Get<Button>(comp, Label.HOME), () => {
+                Clear();
                 Launch.instance.StageLoad("Begin");
             });
 
-            ButtonRegister.AddListener(comp.Get<Button>("UI_Clear_PlayAgainBtn"), () => {
+            ButtonRegister.AddListener(Cond.Instance.Get<Button>(comp, Label.AGAIN), () => {
+                Clear();
                 Launch.instance.StageLoad("Choose");
             });
         }
 
         public override void Clear() {
             base.Clear();
-            ButtonRegister.RemoveAllListener(comp.Get<Button>("UI_Clear_BackHomeBtn"));
-            ButtonRegister.RemoveAllListener(comp.Get<Button>("UI_Clear_PlayAgainBtn"));
+            ButtonRegister.RemoveAllListener(Cond.Instance.Get<Button>(comp, Label.HOME));
+            ButtonRegister.RemoveAllListener(Cond.Instance.Get<Button>(comp, Label.AGAIN));
             UI.Instance.Close("UI_Clear");
+            Obj.Instance.UnLoadEntity(cameraEntity);
+            Obj.Instance.UnLoadEntity(volumeEntity);
         }
     }
 }

@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Setting
   m_EditorClassIdentifier: 
   BaseSettings:
-  - Sign: Strong
-    MotionSpeed: 0.5
-    RotateSpeed: 10
-  - Sign: Agile
-    MotionSpeed: 1
-    RotateSpeed: 20
+  - CreatureType: Strong
+    MotionSpeed: 10
+    RotateSpeed: 1000
+    GravitySpeed: 5
+  - CreatureType: Agile
+    MotionSpeed: 20
+    RotateSpeed: 1000
+    GravitySpeed: 5

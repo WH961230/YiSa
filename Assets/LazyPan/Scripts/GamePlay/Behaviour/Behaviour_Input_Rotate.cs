@@ -63,25 +63,40 @@ namespace LazyPan {
         }
 
         private void RotateToHitPoint() {
+            //击中地板
             if (isHitFloor) {
+                //相机
                 Camera camera = Cond.Instance.Get<Camera>(Cond.Instance.GetCameraEntity(), Label.CAMERA);
-                Vector3 pointVec = Cond.Instance.Get<Transform>(entity, Label.AIMOFFSETPOINT).position;
-                Vector3 worldToScreenPoint = camera.WorldToScreenPoint(hit.point); //击中的点
-                Vector3 pointToScreenVec = camera.WorldToScreenPoint(pointVec); //玩家头部
-                Vector3 hitPointToScreenVec = camera.WorldToScreenPoint(new Vector3(hit.point.x, pointVec.y, hit.point.z)); //击中的点到角色头部
-                Vector3 v1 = (worldToScreenPoint - pointToScreenVec).normalized;
-                Vector3 v2 = (hitPointToScreenVec - pointToScreenVec).normalized;
+                //瞄准偏移点
+                Vector3 aimOffPointVec = Cond.Instance.Get<Transform>(entity, Label.AIMOFFSETPOINT).position;
+                //击中点在相机坐标系的点
+                Vector3 hitScreenPoint = camera.WorldToScreenPoint(hit.point); //击中的点
+                //偏移瞄准点在相机坐标系的点
+                Vector3 aimOffPointToScreenVec = camera.WorldToScreenPoint(aimOffPointVec); //玩家头部
+                //击中的点到角色头部
+                Vector3 hitPointToAimOffScreenVec = camera.WorldToScreenPoint(new Vector3(hit.point.x, aimOffPointVec.y, hit.point.z));
+                //向量
+                Vector3 v1 = (hitScreenPoint - aimOffPointToScreenVec).normalized;
+                Vector3 v2 = (hitPointToAimOffScreenVec - aimOffPointToScreenVec).normalized;
+                //偏移角度
                 float angle = Vector3.Angle(v1, v2);
                 angle = Mathf.Abs(angle);
-                Vector3 targetAimVec = (hit.point - pointVec).normalized;
+                Vector3 targetAimVec = (hit.point - aimOffPointVec).normalized;
                 Vector3 tempForward = Vector3.ProjectOnPlane(targetAimVec, Vector3.up);
                 tempForward = Quaternion.AngleAxis(angle, Vector3.Cross(v1, v2).y > 0 ? Vector3.up : Vector3.down) * tempForward;
-                characterController.transform.forward = Vector3.MoveTowards(characterController.transform.forward,
-                    tempForward, Time.deltaTime * entity.EntityData.BaseRuntimeData.CurRotateSpeed);
+
+                if (tempForward != Vector3.zero) {
+                    Quaternion toRotation = Quaternion.LookRotation(tempForward, Vector3.up);
+                    Cond.Instance.Get<Transform>(entity, Label.BODY).rotation = Quaternion.RotateTowards(
+                        Cond.Instance.Get<Transform>(entity, Label.BODY).rotation, toRotation,
+                        entity.EntityData.BaseRuntimeData.CurRotateSpeed * Time.deltaTime);
+                }
             } else {
                 if (entity.EntityData.BaseRuntimeData.CurMotionDir != Vector3.zero) {
-                    characterController.transform.forward = Vector3.MoveTowards(characterController.transform.forward,
-                        entity.EntityData.BaseRuntimeData.CurMotionDir, Time.deltaTime * entity.EntityData.BaseRuntimeData.CurRotateSpeed);
+                    Quaternion toRotation = Quaternion.LookRotation(entity.EntityData.BaseRuntimeData.CurMotionDir, Vector3.up);
+                    Cond.Instance.Get<Transform>(entity, Label.BODY).rotation = Quaternion.RotateTowards(
+                        Cond.Instance.Get<Transform>(entity, Label.BODY).rotation, toRotation,
+                        entity.EntityData.BaseRuntimeData.CurRotateSpeed * Time.deltaTime);
                 }
             }
         }

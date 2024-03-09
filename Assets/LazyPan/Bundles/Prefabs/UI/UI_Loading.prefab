@@ -166,11 +166,11 @@ MonoBehaviour:
   CharacterControllers: []
   Buttons: []
   Sliders:
-  - Sign: UI_Loading_Slider
+  - Sign: LoadingSlider
     Slider: {fileID: 7626741438759238751}
   Texts: []
   TextMeshProUGUIs:
-  - Sign: UI_Loading_Text
+  - Sign: LoadingText
     TextMeshProUGUI: {fileID: 4756034998599699168}
   TMPInputFields: []
   Animators: []
@@ -181,6 +181,7 @@ MonoBehaviour:
   UnityEventDatas: []
   DoTweenAnimationDatas: []
   TrailRendererDatas: []
+  CameraDatas: []
 --- !u!1 &4338154519450979286
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,7 +459,7 @@ GameObject:
   - component: {fileID: 5475171066577714606}
   - component: {fileID: 4756034998599699168}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: LoadingText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -592,7 +593,7 @@ GameObject:
   - component: {fileID: 299245138003290726}
   - component: {fileID: 7626741438759238751}
   m_Layer: 5
-  m_Name: UI_Loading_Slider
+  m_Name: LoadingSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

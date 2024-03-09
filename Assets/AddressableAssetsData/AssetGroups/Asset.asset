@@ -17,11 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: cb26f3e1c6d4b4f43a6edfa72fc77a64
   m_SerializeEntries:
-  - m_GUID: 3058cfc35258b414a98aa42b21960496
-    m_Address: Assets/LazyPan/Bundles/Configs/Setting/GameSetting.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5d13fac4251ba29498e17c85f529c236
     m_Address: Assets/LazyPan/Bundles/Prefabs/Global
     m_ReadOnly: 0

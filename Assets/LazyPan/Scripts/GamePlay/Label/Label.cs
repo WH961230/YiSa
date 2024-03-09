@@ -7,6 +7,7 @@ namespace LazyPan {
         public static string CHARACTERCONTROLLER = "CharacterController";//角色控制器
         public static string PLAYABLEDIRECTOR = "PlayableDirector";//时间轴播放器
         public static string TIMELINEASSET = "TimelineAsset";//时间轴资源
+        public static string TRAILRENDERER = "TrailRenderer";//拖尾
         public static string EVENT = "Event";//事件
 
         //角色
@@ -16,6 +17,12 @@ namespace LazyPan {
 
         //UI
         public static string CURSOR = "Cursor";//光标
+        public static string QUIT = "Quit";//退出
+        public static string BACK = "Back";//返回
+        public static string NEXT = "Next";//下一步
+        public static string TITLE = "Title";//标题
+        public static string HOME = "Home";//标题
+        public static string AGAIN = "Again";//再来
 
         //事件
         public static string SHOOTEVENT = "ShootEvent";//射击事件

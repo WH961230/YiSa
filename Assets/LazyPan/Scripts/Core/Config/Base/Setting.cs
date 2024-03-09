@@ -15,6 +15,7 @@ namespace LazyPan {
         [Header("移动参数")]
         [Tooltip("移动速度")] public float MotionSpeed;
         [Tooltip("旋转速度")] public float RotateSpeed;
+        [Tooltip("重力速度")] public float GravitySpeed;
     }
 
     [CreateAssetMenu(menuName = "LazyPan/Setting", fileName = "Setting")]

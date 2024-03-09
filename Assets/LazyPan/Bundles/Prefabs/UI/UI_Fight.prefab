@@ -92,12 +92,12 @@ MonoBehaviour:
   Colliders: []
   CharacterControllers: []
   Buttons:
-  - Sign: UI_Fight_NextBtn
+  - Sign: Next
     Button: {fileID: 4874481206728552019}
   Sliders: []
   Texts: []
   TextMeshProUGUIs:
-  - Sign: UI_Fight_FlowTitle
+  - Sign: Title
     TextMeshProUGUI: {fileID: 3149930843322889429}
   TMPInputFields: []
   Animators: []
@@ -108,6 +108,7 @@ MonoBehaviour:
   UnityEventDatas: []
   DoTweenAnimationDatas: []
   TrailRendererDatas: []
+  CameraDatas: []
 --- !u!1 &319796549578639803
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,7 +198,7 @@ GameObject:
   - component: {fileID: 5030445743830994007}
   - component: {fileID: 4874481206728552019}
   m_Layer: 5
-  m_Name: UI_Fight_NextBtn
+  m_Name: Next
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -394,7 +395,7 @@ GameObject:
   - component: {fileID: 8256610544842490616}
   - component: {fileID: 4402679504961525377}
   m_Layer: 5
-  m_Name: UI_Cursor
+  m_Name: Cursor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -624,7 +625,7 @@ GameObject:
   - component: {fileID: 5200797752431379306}
   - component: {fileID: 3149930843322889429}
   m_Layer: 5
-  m_Name: UI_Fight_FlowTitle
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -4,15 +4,15 @@ using UnityEngine.UI;
 namespace LazyPan {
     public class Flow_Choose : Flow {
         private Entity chooseEntity;
+        private Entity volumeEntity;
         private Comp comp;
         public override void Init(Flow baseFlow) {
             base.Init(baseFlow);
             comp = UI.Instance.Open("UI_Choose");
-            comp.Get<TextMeshProUGUI>("UI_Choose_FlowTitle").text = "ChooseFlow";
-
+            Cond.Instance.Get<TextMeshProUGUI>(comp, Label.TITLE).text = "ChooseFlow";
             chooseEntity = Obj.Instance.LoadEntity("Obj_Camera_ChooseCamera");
-
-            ButtonRegister.AddListener(comp.Get<Button>("UI_Choose_NextBtn"), () => {
+            volumeEntity = Obj.Instance.LoadEntity("Obj_Volume_Volume");
+            ButtonRegister.AddListener(Cond.Instance.Get<Button>(comp, Label.NEXT), () => {
                 Clear();
                 Launch.instance.StageLoad("Fight");
             });
@@ -20,10 +20,10 @@ namespace LazyPan {
 
         public override void Clear() {
             base.Clear();
-            ButtonRegister.RemoveAllListener(comp.Get<Button>("UI_Choose_NextBtn"));
+            ButtonRegister.RemoveAllListener(Cond.Instance.Get<Button>(comp, Label.NEXT));
             UI.Instance.Close("UI_Choose");
-
             Obj.Instance.UnLoadEntity(chooseEntity);
+            Obj.Instance.UnLoadEntity(volumeEntity);
         }
     }
 }

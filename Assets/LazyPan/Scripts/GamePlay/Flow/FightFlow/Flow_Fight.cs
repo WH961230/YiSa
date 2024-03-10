@@ -25,10 +25,13 @@ namespace LazyPan {
 
             beginTimeline = Obj.Instance.LoadEntity("Obj_Event_BeginTimeline");
             //播放完开场演示后生成玩家
-            Cond.Instance.Get<PlayableDirector>(beginTimeline, Label.PLAYABLEDIRECTOR).stopped += director => {
-                playerSoldierEntity = Obj.Instance.LoadEntity("Obj_Player_Soldier");
-                robotSoldierEntity = Obj.Instance.LoadEntity("Obj_Robot_Soldier");
-                cameraEntity = Obj.Instance.LoadEntity("Obj_Camera_FightCamera");
+            PlayableDirector playableDirector = Cond.Instance.Get<PlayableDirector>(beginTimeline, Label.PLAYABLEDIRECTOR);
+            playableDirector.stopped += director => {
+                if (playableDirector.enabled) {
+                    playerSoldierEntity = Obj.Instance.LoadEntity("Obj_Player_Soldier");
+                    robotSoldierEntity = Obj.Instance.LoadEntity("Obj_Robot_Soldier");
+                    cameraEntity = Obj.Instance.LoadEntity("Obj_Camera_FightCamera");
+                }
             };
 
             ButtonRegister.AddListener(Cond.Instance.Get<Button>(comp, Label.NEXT), () => {

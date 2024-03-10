@@ -34,6 +34,7 @@ namespace LazyPan {
         //攻击方式
         public static string CLOSEFIGHT = "CloseFight";//近战
         public static string SHOOT = "Shoot";
+        public static string ANNOUNCEMENT = "Announcement";//公告
 
         //组合A+B
         public static string Assemble(string labelA, string labelB) {

@@ -23,60 +23,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="751138b9-e304-4f88-90e0-21e17608f2fb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/contentModel.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.YiSa/riderModule.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/ProfileDataSourceSettings.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/ProfileDataSourceSettings.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/Windows.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Scenes/Launch.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Scenes/Launch.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Gravity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Gravity.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Asset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Asset.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/LocationInformationSetting/LocationInf_Single_Player.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/LocationInformationSetting/LocationInf_Single_Player.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/Setting.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/Setting.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Txt/GenerateBehaviourTemplate.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Txt/GenerateBehaviourTemplate.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Fight/Obj_Camera_FightCamera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Fight/Obj_Camera_FightCamera.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Fight/Obj_Player_Soldier.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Fight/Obj_Player_Soldier.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Global/Global_UIRoot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Global/Global_UIRoot.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/UI/UI_Begin.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/UI/UI_Begin.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/UI/UI_Choose.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/UI/UI_Choose.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/UI/UI_Clear.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/UI/UI_Clear.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/UI/UI_Fight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/UI/UI_Fight.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/UI/UI_Loading.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/UI/UI_Loading.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Scenes/Begin.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Scenes/Begin.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Config/Base/Setting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Config/Base/Setting.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Data/EntityData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Data/EntityData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Entity/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Entity/Entity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Launch.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Launch.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Stage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Stage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Tool/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Tool/Generate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Tool/Generate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_FollowPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_FollowPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_CloseFight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_CloseFight.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_Motion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_Motion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_Rotate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_Rotate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Data/Data_Global.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Data/Data_Global.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/BeginFlow/Flow_Begin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/BeginFlow/Flow_Begin.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/ChooseFlow/Flow_Choose.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/ChooseFlow/Flow_Choose.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/ClearFlow/Flow_Clear.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/ClearFlow/Flow_Clear.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/FightFlow/Flow_Fight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/FightFlow/Flow_Fight.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Label/Label.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Label/Label.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/URP-Balanced.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/URP-Balanced.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/URP-HighFidelity.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/URP-HighFidelity.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/URP-Performant.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/URP-Performant.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/BehaviourConfig.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/BehaviourConfig.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/ObjConfig.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/ObjConfig.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/BurstAotSettings_StandaloneWindows.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/BurstAotSettings_StandaloneWindows.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/CommonBurstAotSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/CommonBurstAotSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Anton SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Anton SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +42,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD871329-15F9-4F3F-8153-88D8E385E9D4/da/bc320b13/PlayableDirector.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/InputModules/BaseInput.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../LazyPanFramework/Assets/LazyPan/Scripts/Core/Game/Game.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Stage.cs" root0="FORCE_HIGHLIGHTING" />
@@ -98,8 +54,11 @@
     <setting file="file://$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Config/ObjConfig.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Gravity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/73C3B9FA-4DA6-44C9-A21A-8A16D8E2909F/cb/6df42bed/IMGUIContainer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collab-proxy@2.2.0/Editor/PlasticSCM/Views/IncomingChanges/Developer/DirectoryConflicts/DrawDirectoryResolutionPanel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6C9B376C-3FCA-40B7-87E8-C1A2133BF243/67/d55a39a8/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -110,7 +69,6 @@
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Tool/MathUtil.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Tool/CollectCreatorRobotPoints.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Loader/Loader.cs" />
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Data/Data_Global.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/BeginFlow.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_FollowPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_InputShoot.cs" />
@@ -147,14 +105,15 @@
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Data/EntityData.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Tool/Generate.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_CloseFight.cs" />
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Label/Label.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Stage.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_Rotate.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Launch.cs" />
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/BeginFlow/Flow_Begin.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/ChooseFlow/Flow_Choose.cs" />
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/FightFlow/Flow_Fight.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/ClearFlow/Flow_Clear.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Data/Data_Global.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Label/Label.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/BeginFlow/Flow_Begin.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/FightFlow/Flow_Fight.cs" />
       </list>
     </option>
   </component>
@@ -167,8 +126,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34983924" />
-    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.30032155" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.35014838" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.3004451" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
@@ -198,10 +157,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="8268">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="30496">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="8268" />
+      <option name="pid" value="30496" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -238,6 +197,7 @@
       <workItem from="1709904594123" duration="1309000" />
       <workItem from="1709949068827" duration="4473000" />
       <workItem from="1709954508888" duration="9581000" />
+      <workItem from="1710034887827" duration="3108000" />
     </task>
     <servers />
   </component>
@@ -266,70 +226,70 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="831" height="464" key="DebuggerActiveHint/0.0.2560.1400@0.0.2560.1400" timestamp="1709955907401" />
-    <state width="1586" height="272" key="GridCell.Tab.0.bottom" timestamp="1709956338197">
+    <state width="1379" height="318" key="GridCell.Tab.0.bottom" timestamp="1710037424573">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1586" height="272" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1709956338197" />
-    <state width="1586" height="272" key="GridCell.Tab.0.center" timestamp="1709956338197">
+    <state width="1379" height="318" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1710037424573" />
+    <state width="1379" height="318" key="GridCell.Tab.0.center" timestamp="1710037424573">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1586" height="272" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1709956338197" />
-    <state width="1586" height="272" key="GridCell.Tab.0.left" timestamp="1709956338197">
+    <state width="1379" height="318" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1710037424573" />
+    <state width="1379" height="318" key="GridCell.Tab.0.left" timestamp="1710037424573">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1586" height="272" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1709956338197" />
-    <state width="1586" height="272" key="GridCell.Tab.0.right" timestamp="1709956338197">
+    <state width="1379" height="318" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1710037424573" />
+    <state width="1379" height="318" key="GridCell.Tab.0.right" timestamp="1710037424573">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1586" height="272" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1709956338197" />
-    <state width="1586" height="272" key="GridCell.Tab.1.bottom" timestamp="1709956338197">
+    <state width="1379" height="318" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1710037424573" />
+    <state width="1379" height="318" key="GridCell.Tab.1.bottom" timestamp="1710037424574">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1586" height="272" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1709956338197" />
-    <state width="1586" height="272" key="GridCell.Tab.1.center" timestamp="1709956338197">
+    <state width="1379" height="318" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1710037424574" />
+    <state width="1379" height="318" key="GridCell.Tab.1.center" timestamp="1710037424574">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1586" height="272" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1709956338197" />
-    <state width="1586" height="272" key="GridCell.Tab.1.left" timestamp="1709956338197">
+    <state width="1379" height="318" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1710037424574" />
+    <state width="1379" height="318" key="GridCell.Tab.1.left" timestamp="1710037424573">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1586" height="272" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1709956338197" />
-    <state width="1586" height="272" key="GridCell.Tab.1.right" timestamp="1709956338197">
+    <state width="1379" height="318" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1710037424573" />
+    <state width="1379" height="318" key="GridCell.Tab.1.right" timestamp="1710037424574">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1586" height="272" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1709956338197" />
-    <state width="1586" height="272" key="GridCell.Tab.2.bottom" timestamp="1709956338198">
+    <state width="1379" height="318" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1710037424574" />
+    <state width="1379" height="318" key="GridCell.Tab.2.bottom" timestamp="1710037424574">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1586" height="272" key="GridCell.Tab.2.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1709956338198" />
-    <state width="1586" height="272" key="GridCell.Tab.2.center" timestamp="1709956338198">
+    <state width="1379" height="318" key="GridCell.Tab.2.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1710037424574" />
+    <state width="1379" height="318" key="GridCell.Tab.2.center" timestamp="1710037424574">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1586" height="272" key="GridCell.Tab.2.center/0.0.2560.1400@0.0.2560.1400" timestamp="1709956338198" />
-    <state width="1586" height="272" key="GridCell.Tab.2.left" timestamp="1709956338197">
+    <state width="1379" height="318" key="GridCell.Tab.2.center/0.0.2560.1400@0.0.2560.1400" timestamp="1710037424574" />
+    <state width="1379" height="318" key="GridCell.Tab.2.left" timestamp="1710037424574">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1586" height="272" key="GridCell.Tab.2.left/0.0.2560.1400@0.0.2560.1400" timestamp="1709956338197" />
-    <state width="1586" height="272" key="GridCell.Tab.2.right" timestamp="1709956338198">
+    <state width="1379" height="318" key="GridCell.Tab.2.left/0.0.2560.1400@0.0.2560.1400" timestamp="1710037424574" />
+    <state width="1379" height="318" key="GridCell.Tab.2.right" timestamp="1710037424574">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1586" height="272" key="GridCell.Tab.2.right/0.0.2560.1400@0.0.2560.1400" timestamp="1709956338198" />
-    <state width="1586" height="272" key="GridCell.Tab.3.bottom" timestamp="1709956338198">
+    <state width="1379" height="318" key="GridCell.Tab.2.right/0.0.2560.1400@0.0.2560.1400" timestamp="1710037424574" />
+    <state width="1379" height="318" key="GridCell.Tab.3.bottom" timestamp="1710037424574">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1586" height="272" key="GridCell.Tab.3.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1709956338198" />
-    <state width="1586" height="272" key="GridCell.Tab.3.center" timestamp="1709956338198">
+    <state width="1379" height="318" key="GridCell.Tab.3.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1710037424574" />
+    <state width="1379" height="318" key="GridCell.Tab.3.center" timestamp="1710037424574">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1586" height="272" key="GridCell.Tab.3.center/0.0.2560.1400@0.0.2560.1400" timestamp="1709956338198" />
-    <state width="1586" height="272" key="GridCell.Tab.3.left" timestamp="1709956338198">
+    <state width="1379" height="318" key="GridCell.Tab.3.center/0.0.2560.1400@0.0.2560.1400" timestamp="1710037424574" />
+    <state width="1379" height="318" key="GridCell.Tab.3.left" timestamp="1710037424574">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1586" height="272" key="GridCell.Tab.3.left/0.0.2560.1400@0.0.2560.1400" timestamp="1709956338198" />
-    <state width="1586" height="272" key="GridCell.Tab.3.right" timestamp="1709956338198">
+    <state width="1379" height="318" key="GridCell.Tab.3.left/0.0.2560.1400@0.0.2560.1400" timestamp="1710037424574" />
+    <state width="1379" height="318" key="GridCell.Tab.3.right" timestamp="1710037424574">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1586" height="272" key="GridCell.Tab.3.right/0.0.2560.1400@0.0.2560.1400" timestamp="1709956338198" />
+    <state width="1379" height="318" key="GridCell.Tab.3.right/0.0.2560.1400@0.0.2560.1400" timestamp="1710037424574" />
     <state x="1178" y="362" width="755" height="536" key="find.popup" timestamp="1709954538857">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -340,28 +300,12 @@
     <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1709970138359" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_Rotate.cs</url>
-          <line>59</line>
-          <properties documentPath="D:\git\fork\YiSa\Assets\LazyPan\Scripts\GamePlay\Behaviour\Behaviour_Input_Rotate.cs" initialLine="59">
-            <startOffsets>
-              <option value="2614" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2615" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="UNITY_DEBUG_RUN_CONFIGURATION">
         <watch expression="SceneManager.GetActiveScene().name" language="C#" />
         <watch expression="Data.Instance.TryGetEntityBySign(&quot;Obj_Volume&quot;, out volumeEntity)" language="C#" />
         <watch expression="SceneConfig.Get(SceneManager.GetActiveScene().name).DirPath" language="C#" />
+        <watch expression="Cond.Instance.Get&lt;PlayableDirector&gt;(beginTimeline, Label.PLAYABLEDIRECTOR)" language="C#" />
         <watch expression="Data.Instance.HasEntity(entity)" language="C#" />
         <watch expression="typeof(T)" language="C#" />
         <watch expression="Loader.LoadGameSetting().LocationInformationSettingPath" language="C#" />

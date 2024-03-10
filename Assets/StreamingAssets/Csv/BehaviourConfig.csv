@@ -16,12 +16,12 @@ Loader 物体 Obj/Resource/Obj_Bullet,"
 Behaviour_Input_CloseFight,"【实现输入空格播放近战时间轴事件】
 Input 配置 Player/Space,
 Comp 挂载 <Timeline> CloseFightTimelineAsset,
-Comp 挂载 <PlayableDirector> CloseFightPlayableDirector,"
+Comp 挂载 <PlayableDirector> PlayableDirector,"
 Behaviour_Auto_FollowPlayer,"【实现跟随类型为主玩家的挂载Body】
 ObjType.MainPlayer Comp 挂载 Body,"
 Behaviour_Event_BeginTimeline,"【播放开始时间轴事件】
-Comp 挂载 <PlayableDirector> BeginPlayableDirector"
-Behaviour_AutoRotate,"【实现根据当前的鼠标检测到地面的位置实现偏移】
+Comp 挂载 <PlayableDirector> PlayableDirector"
+Behaviour_Auto_Rotate,"【实现根据当前的鼠标检测到地面的位置实现偏移】
 Comp 挂载 <CharacterController> CharacterController,
 Comp 挂载 <Transform> Point//计算旋转偏移
 UI_Fight Comp 挂载 Cursor RectTran,
@@ -29,3 +29,7 @@ UI_Fight Comp 挂载 Cursor RectTran,
 Behaviour_Auto_Gravity,"【实现重力】
 Comp 挂载 <CharacterController> CharacterController,
 检测地面层级 Floor,"
+Behaviour_Input_Teleport,"【实现输入空格播放传送时间轴事件】
+Input 配置 Player/Space,
+Comp 挂载 <Timeline> TeleportTimelineAsset,
+Comp 挂载 <PlayableDirector> PlayableDirector,"

@@ -13,10 +13,10 @@ namespace LazyPan {
         public Behaviour_Input_CloseFight(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             asset = Cond.Instance.Get<TimelineAsset>(entity,  Label.Assemble(Label.CLOSEFIGHT, Label.TIMELINEASSET));
             playableDirector = Cond.Instance.Get<PlayableDirector>(entity, Label.PLAYABLEDIRECTOR);
-            trailRenderer = Cond.Instance.Get<TrailRenderer>(entity, Label.TRAILRENDERER);
+            trailRenderer = Cond.Instance.Get<TrailRenderer>(entity, Label.Assemble(Label.SWORD, Label.TRAILRENDERER));
             playableDirector.played += playableDirector => { isPlay = true; trailRenderer.Clear();};
             playableDirector.stopped += director => { isPlay = false; };
-            InputRegister.Instance.Load(InputRegister.Instance.Space, CloseFight);
+            InputRegister.Instance.Load(InputRegister.Instance.LeftClick, CloseFight);
         }
 
         private void CloseFight(InputAction.CallbackContext obj) {
@@ -29,7 +29,7 @@ namespace LazyPan {
 
         public override void Clear() {
             base.Clear();
-            InputRegister.Instance.UnLoad(InputRegister.Instance.Space, CloseFight);
+            InputRegister.Instance.UnLoad(InputRegister.Instance.LeftClick, CloseFight);
         }
     }
 }

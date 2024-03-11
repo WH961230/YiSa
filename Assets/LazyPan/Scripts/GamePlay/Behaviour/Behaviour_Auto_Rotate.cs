@@ -7,10 +7,10 @@ namespace LazyPan {
         private Vector3 mousePositionToWorld;
         private RaycastHit hit;
         private bool isHitFloor;
-        private CharacterController characterController;
+        private Transform body;
 
         public Behaviour_Auto_Rotate(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
-            characterController = Cond.Instance.Get<CharacterController>(entity, Label.CHARACTERCONTROLLER);
+            body = Cond.Instance.Get<Transform>(entity, Label.BODY);
             CursorRect = Cond.Instance.Get<Transform>(UI.Instance.Get("UI_Fight"), Label.CURSOR)
                 .GetComponent<RectTransform>();
             CursorRect.gameObject.SetActive(true);
@@ -56,7 +56,7 @@ namespace LazyPan {
             Vector3 tempForward = Vector3.ProjectOnPlane(targetAimVec, Vector3.up);
             tempForward = Quaternion.AngleAxis(angle, Vector3.Cross(v1, v2).y > 0 ? Vector3.up : Vector3.down) * tempForward;
             Quaternion targetRotation = Quaternion.LookRotation(tempForward, Vector3.up);
-            characterController.transform.rotation = Quaternion.RotateTowards(characterController.transform.rotation, targetRotation, entity.EntityData.BaseRuntimeData.CurRotateSpeed * Time.deltaTime);
+            body.rotation = Quaternion.RotateTowards(body.rotation, targetRotation, entity.EntityData.BaseRuntimeData.CurRotateSpeed * Time.deltaTime);
         }
 
         public override void Clear() {

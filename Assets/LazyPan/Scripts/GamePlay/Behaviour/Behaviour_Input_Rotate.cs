@@ -9,13 +9,11 @@ namespace LazyPan {
         private Vector3 mousePositionToWorld;
         private RaycastHit hit;
         private bool isHitFloor;
-        private CharacterController characterController;
 
         public Behaviour_Input_Rotate(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             InputRegister.Instance.Load(InputRegister.Instance.MouseRightPress, MouseRightPress);
             CursorRect = Cond.Instance.Get<Transform>(UI.Instance.Get("UI_Fight"), Label.CURSOR).GetComponent<RectTransform>();
             CursorRect.gameObject.SetActive(false);
-            characterController = Cond.Instance.Get<CharacterController>(entity, Label.CHARACTERCONTROLLER);
             isRightMouseHold = false;
             Data.Instance.OnUpdateEvent.AddListener(OnUpdate);
             Data.Instance.OnLateUpdateEvent.AddListener(OnLateUpdate);
@@ -63,6 +61,10 @@ namespace LazyPan {
         }
 
         private void RotateToHitPoint() {
+            if (entity.EntityData.BaseRuntimeData.CurMotionState == 2) {
+                return;
+            }
+
             //击中地板
             if (isHitFloor) {
                 //相机
@@ -90,10 +92,11 @@ namespace LazyPan {
                     Cond.Instance.Get<Transform>(entity, Label.BODY).rotation = Quaternion.RotateTowards(
                         Cond.Instance.Get<Transform>(entity, Label.BODY).rotation, toRotation,
                         entity.EntityData.BaseRuntimeData.CurRotateSpeed * Time.deltaTime);
+                    entity.EntityData.BaseRuntimeData.CurRotateDir = tempForward;
                 }
             } else {
-                if (entity.EntityData.BaseRuntimeData.CurMotionDir != Vector3.zero) {
-                    Quaternion toRotation = Quaternion.LookRotation(entity.EntityData.BaseRuntimeData.CurMotionDir, Vector3.up);
+                if (entity.EntityData.BaseRuntimeData.CurRotateDir != Vector3.zero) {
+                    Quaternion toRotation = Quaternion.LookRotation(entity.EntityData.BaseRuntimeData.CurRotateDir, Vector3.up);
                     Cond.Instance.Get<Transform>(entity, Label.BODY).rotation = Quaternion.RotateTowards(
                         Cond.Instance.Get<Transform>(entity, Label.BODY).rotation, toRotation,
                         entity.EntityData.BaseRuntimeData.CurRotateSpeed * Time.deltaTime);

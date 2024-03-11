@@ -16,8 +16,14 @@ MonoBehaviour:
   - CreatureType: Strong
     MotionSpeed: 10
     RotateSpeed: 1000
+    TeleportSpeed: 30
+    TeleportTime: 0.1
+    TeleportColdTime: 1
     GravitySpeed: 5
   - CreatureType: Agile
     MotionSpeed: 20
     RotateSpeed: 1000
+    TeleportSpeed: 30
+    TeleportTime: 0.1
+    TeleportColdTime: 1
     GravitySpeed: 5

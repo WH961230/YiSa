@@ -9,10 +9,12 @@ namespace LazyPan {
         }
 
         private void OnGravityLateUpdate() {
-            entity.EntityData.BaseRuntimeData.CurMotionDir = Vector3.zero;
-            entity.EntityData.BaseRuntimeData.CurMotionDir += Vector3.down;
-            characterController.Move(entity.EntityData.BaseRuntimeData.CurMotionDir * Time.deltaTime *
-                                     entity.EntityData.BaseRuntimeData.GravitySpeed);
+            if (entity.EntityData.BaseRuntimeData.CurMotionState == 0) {
+                entity.EntityData.BaseRuntimeData.CurGravityDir = Vector3.zero;
+                entity.EntityData.BaseRuntimeData.CurGravityDir += Vector3.down;
+                characterController.Move(entity.EntityData.BaseRuntimeData.CurGravityDir * Time.deltaTime *
+                                         entity.EntityData.BaseRuntimeData.GravitySpeed);
+            }
         }
 
         public override void Clear() {

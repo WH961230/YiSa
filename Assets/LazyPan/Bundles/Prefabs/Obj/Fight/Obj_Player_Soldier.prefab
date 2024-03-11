@@ -687,7 +687,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6757627004424546976}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 4a7defd07583dff4eb82542787f4559d, type: 2}
   m_CullingMode: 0
@@ -828,7 +828,9 @@ MonoBehaviour:
   Texts: []
   TextMeshProUGUIs: []
   TMPInputFields: []
-  Animators: []
+  Animators:
+  - Sign: Animator
+    Animator: {fileID: 662991643036315760}
   Images: []
   PlayableDirectors:
   - Sign: PlayableDirector
@@ -836,8 +838,6 @@ MonoBehaviour:
   TimelineAssets:
   - Sign: CloseFightTimelineAsset
     TimelineAsset: {fileID: 11400000, guid: 106ee6e26671a4f4e8ae562facd52473, type: 2}
-  - Sign: TeleportTimelineAsset
-    TimelineAsset: {fileID: 11400000, guid: a6ea785062ad3954fa3ae4b0ca3c3a1b, type: 2}
   Comps: []
   UnityEventDatas:
   - Sign: PlayerMotionEvent
@@ -1042,7 +1042,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.5
+  m_Time: 0.2
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3

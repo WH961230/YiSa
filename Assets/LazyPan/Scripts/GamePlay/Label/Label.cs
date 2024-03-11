@@ -9,11 +9,18 @@ namespace LazyPan {
         public static string TIMELINEASSET = "TimelineAsset";//时间轴资源
         public static string TRAILRENDERER = "TrailRenderer";//拖尾
         public static string EVENT = "Event";//事件
+        public static string TRIGGER = "Trigger";//触发器
+        public static string COLLIDER = "Collider";//碰撞体
+        public static string COMP = "Comp";//组件
+
+        public static string PLAYER = "Player";//玩家
+        public static string ROBOT = "Robot";//机器人
 
         //角色
         public static string BODY = "Body";//身体位置
         public static string AIMOFFSETPOINT = "Point";//修复射击偏移点位配置
         public static string MUZZLE = "Muzzle";//枪口
+        public static string SQUIRT = "Squirt";//喷血口
 
         //UI
         public static string CURSOR = "Cursor";//光标
@@ -23,10 +30,6 @@ namespace LazyPan {
         public static string TITLE = "Title";//标题
         public static string HOME = "Home";//标题
         public static string AGAIN = "Again";//再来
-
-        //事件
-        public static string SHOOTEVENT = "ShootEvent";//射击事件
-        public static string MOTIONEVENT = "MotionEvent";//移动事件
 
         //移动类型
         public static string MOTION = "Motion";

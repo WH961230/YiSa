@@ -5,8 +5,6 @@ namespace LazyPan {
     public class Behaviour_Input_Teleport : Behaviour {
         private TrailRenderer trailRenderer;
         private CharacterController characterController;
-        private float teleportColdDeployTime;
-        private float teleportDeployTime;
 
         public Behaviour_Input_Teleport(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             characterController = Cond.Instance.Get<CharacterController>(entity, Label.CHARACTERCONTROLLER);
@@ -17,24 +15,25 @@ namespace LazyPan {
         }
 
         private void Teleport(InputAction.CallbackContext obj) {
-            if (entity.EntityData.BaseRuntimeData.CurMotionState != 2 && teleportColdDeployTime == 0) {
+            if (entity.EntityData.BaseRuntimeData.CurMotionState != 2 && entity.EntityData.BaseRuntimeData.DefTeleportColdTime == 0) {
                 trailRenderer.gameObject.SetActive(true);
-                teleportDeployTime = entity.EntityData.BaseRuntimeData.DefTeleportTime;
-                teleportColdDeployTime = entity.EntityData.BaseRuntimeData.DefTeleportColdTime;
+                entity.EntityData.BaseRuntimeData.CurTeleportDeployTime = entity.EntityData.BaseRuntimeData.DefTeleportTime;
+                entity.EntityData.BaseRuntimeData.CurTeleportColdDeployTime =
+                    entity.EntityData.BaseRuntimeData.DefTeleportColdTime;
                 entity.EntityData.BaseRuntimeData.CurMotionState = 2;
             }
         }
 
         private void OnTeleportUpdate() {
             if (entity.EntityData.BaseRuntimeData.CurMotionState == 2) {
-                if (teleportDeployTime > 0) {
-                    teleportDeployTime -= Time.deltaTime;
+                if (entity.EntityData.BaseRuntimeData.CurTeleportDeployTime > 0) {
+                    entity.EntityData.BaseRuntimeData.CurTeleportDeployTime -= Time.deltaTime;
                     entity.EntityData.BaseRuntimeData.CurTeleportDir = Vector3.zero;
                     entity.EntityData.BaseRuntimeData.CurTeleportDir = Cond.Instance.Get<Transform>(entity, Label.BODY).forward;
                     characterController.Move(entity.EntityData.BaseRuntimeData.CurTeleportDir *
                                              Time.deltaTime * entity.EntityData.BaseRuntimeData.DefTeleportSpeed);
                 } else {
-                    teleportDeployTime = -1;
+                    entity.EntityData.BaseRuntimeData.CurTeleportDeployTime = -1;
                     trailRenderer.gameObject.SetActive(false);
                     entity.EntityData.BaseRuntimeData.CurTeleportDir = Vector3.zero;
                     entity.EntityData.BaseRuntimeData.CurMotionState = 0;
@@ -42,10 +41,10 @@ namespace LazyPan {
             }
 
             //冲刺冷却
-            if (teleportColdDeployTime > 0) {
-                teleportColdDeployTime -= Time.deltaTime;
+            if (entity.EntityData.BaseRuntimeData.CurTeleportColdDeployTime > 0) {
+                entity.EntityData.BaseRuntimeData.CurTeleportColdDeployTime -= Time.deltaTime;
             } else {
-                teleportColdDeployTime = 0;
+                entity.EntityData.BaseRuntimeData.CurTeleportColdDeployTime = 0;
             }
         }
 

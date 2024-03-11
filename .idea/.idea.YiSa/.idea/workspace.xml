@@ -23,23 +23,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="751138b9-e304-4f88-90e0-21e17608f2fb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/contentModel.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/modules.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Mats/掉血特效材质.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Mats/掉血特效材质.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Fight/Obj_Fx_BeHit.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Fight/Obj_Fx_BeHit.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Shoot.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Shoot.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.YiSa/riderModule.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/Setting.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/Setting.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Fight/Obj_Light_DirectionalLight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Fight/Obj_Light_DirectionalLight.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Fight/Obj_Player_Shooter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Fight/Obj_Player_Shooter.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Fight/Obj_Player_Soldier.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Fight/Obj_Player_Soldier.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/UI/UI_Fight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/UI/UI_Fight.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Fight/Obj_Robot_Shooter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Fight/Obj_Robot_Shooter.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Fight/Obj_Robot_Soldier.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Fight/Obj_Robot_Soldier.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Cond/Cond.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Cond/Cond.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Config/Base/Setting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Config/Base/Setting.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Data/Data.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Data/Data.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Data/EntityData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Data/EntityData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Gravity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Gravity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Rotate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Rotate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Entity/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Entity/Entity.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_CloseFight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_CloseFight.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_Motion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_Motion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_Rotate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_Rotate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_Shoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_Shoot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_Teleport.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_Teleport.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Cond/Cond_GamePlay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Cond/Cond_GamePlay.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/FightFlow/Flow_Fight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/FightFlow/Flow_Fight.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Label/Label.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Label/Label.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/ObjConfig.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/ObjConfig.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +234,7 @@
       <workItem from="1709949068827" duration="4473000" />
       <workItem from="1709954508888" duration="9581000" />
       <workItem from="1710034887827" duration="10201000" />
-      <workItem from="1710122941056" duration="9197000" />
+      <workItem from="1710122941056" duration="19788000" />
     </task>
     <servers />
   </component>

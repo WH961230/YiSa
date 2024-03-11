@@ -14,16 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseSettings:
   - CreatureType: Strong
+    Health: 100
     MotionSpeed: 10
     RotateSpeed: 1000
     TeleportSpeed: 30
     TeleportTime: 0.1
     TeleportColdTime: 1
     GravitySpeed: 5
+    AttackIntervalTime: 1
+    KnockbackSpeed: 5
+    KnockbackTime: 0.1
   - CreatureType: Agile
+    Health: 50
     MotionSpeed: 20
     RotateSpeed: 1000
     TeleportSpeed: 30
     TeleportTime: 0.1
     TeleportColdTime: 1
     GravitySpeed: 5
+    AttackIntervalTime: 1
+    KnockbackSpeed: 5
+    KnockbackTime: 0.1

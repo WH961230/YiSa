@@ -63,10 +63,41 @@ namespace LazyPan {
             return false;
         }
 
+        //通过 类型 查找所有实体
+        private bool TryGetEntitiesByType(string type, out List<Entity> entity) {
+            entity = new List<Entity>();
+            foreach (Entity tmpEntity in EntityDic.Values) {
+                if (tmpEntity.EntityData.BaseRuntimeData != null && type == tmpEntity.EntityData.BaseRuntimeData.Type) {
+                    entity.Add(tmpEntity);
+                }
+            }
+
+            if (entity.Count > 0) {
+                return true;
+            }
+
+            entity = default;
+            return false;
+        }
+
         //通过组件查找实体
         public bool TryGetEntityByComp(Comp comp, out Entity entity) {
             foreach (Entity tempEntity in EntityDic.Values) {
                 if (tempEntity.Comp == comp) {
+                    entity = tempEntity;
+                    return true;
+                }
+            }
+
+            entity = null;
+            return false;
+        }
+
+        //通过组件查找实体
+        public bool TryGetEntityByBodyPrefabID(int id, out Entity entity) {
+            foreach (Entity tempEntity in EntityDic.Values) {
+                Transform bodyTran = Cond.Instance.Get<Transform>(tempEntity, Label.BODY);
+                if (bodyTran != null && bodyTran.gameObject.GetInstanceID() == id) {
                     entity = tempEntity;
                     return true;
                 }
@@ -84,6 +115,18 @@ namespace LazyPan {
                 }
             }
 
+            return false;
+        }
+
+        //获取某一类型的随机实体
+        public bool TryGetRandEntityByEntities(string type, out Entity entity) {
+            if (TryGetEntitiesByType(type, out List<Entity> entities)) {
+                int index = Random.Range(0, entities.Count);
+                entity = entities[index];
+                return true;
+            }
+
+            entity = default;
             return false;
         }
     }

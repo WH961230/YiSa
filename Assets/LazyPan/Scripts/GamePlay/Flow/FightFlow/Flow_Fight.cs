@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System.Collections.Generic;
+using TMPro;
 using UnityEngine.Playables;
 using UnityEngine.UI;
 
@@ -9,9 +10,11 @@ namespace LazyPan {
         private Entity cameraEntity;
         private Entity playerSoldierEntity;
         private Entity robotSoldierEntity;
+        private Entity towerEntity;
         private Entity beginTimeline;
         private Entity volumeEntity;
         private Entity lightEntity;
+        private Clock robotCreatorClock;
         public override void Init(Flow baseFlow) {
             base.Init(baseFlow);
             comp = UI.Instance.Open("UI_Fight");
@@ -27,6 +30,7 @@ namespace LazyPan {
             playableDirector.stopped += director => {
                 if (playableDirector.enabled) {
                     playerSoldierEntity = Obj.Instance.LoadEntity("Obj_Player_Soldier");
+                    towerEntity = Obj.Instance.LoadEntity("Obj_Building_Tower");
                     robotSoldierEntity = Obj.Instance.LoadEntity("Obj_Robot_Soldier");
                     cameraEntity = Obj.Instance.LoadEntity("Obj_Camera_FightCamera");
                 }
@@ -48,6 +52,7 @@ namespace LazyPan {
             Obj.Instance.UnLoadEntity(lightEntity);
             Obj.Instance.UnLoadEntity(playerSoldierEntity);
             Obj.Instance.UnLoadEntity(robotSoldierEntity);
+            Obj.Instance.UnLoadEntity(towerEntity);
             Obj.Instance.UnLoadEntity(beginTimeline);
             Obj.Instance.UnLoadEntity(cameraEntity);
         }

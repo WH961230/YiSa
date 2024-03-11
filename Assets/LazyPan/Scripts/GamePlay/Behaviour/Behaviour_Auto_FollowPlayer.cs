@@ -18,7 +18,7 @@ namespace LazyPan {
             } else {
                 if (Offset != Vector3.zero) {
                     entity.Prefab.transform.position = Vector3.Lerp(entity.Prefab.transform.position,
-                        FollowTr.position + Offset, Time.deltaTime * 5);
+                        FollowTr.position + Offset, Time.deltaTime * 2);
                 }
             }
         }

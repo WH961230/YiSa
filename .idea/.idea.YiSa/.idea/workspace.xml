@@ -23,32 +23,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="751138b9-e304-4f88-90e0-21e17608f2fb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Mats/掉血特效材质.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Mats/掉血特效材质.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Fight/Obj_Fx_BeHit.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Fight/Obj_Fx_BeHit.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Shoot.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Shoot.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/Setting.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/Setting.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Fight/Obj_Light_DirectionalLight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Fight/Obj_Light_DirectionalLight.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Fight/Obj_Player_Shooter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Fight/Obj_Player_Shooter.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Fight/Obj_Player_Soldier.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Fight/Obj_Player_Soldier.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Fight/Obj_Robot_Shooter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Fight/Obj_Robot_Shooter.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Fight/Obj_Camera_FightCamera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Fight/Obj_Camera_FightCamera.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Fight/Obj_Fx_Bullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Fight/Obj_Fx_Bullet.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Fight/Obj_Robot_Soldier.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Fight/Obj_Robot_Soldier.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/UI/UI_Begin.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/UI/UI_Begin.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Comp/Comp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Comp/Comp.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Cond/Cond.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Cond/Cond.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Config/Base/Setting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Config/Base/Setting.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Data/Data.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Data/Data.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Data/EntityData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Data/EntityData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Entity/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Entity/Entity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Obj/Obj.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Obj/Obj.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_FollowPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_FollowPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Shoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Shoot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_CloseFight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_CloseFight.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_Shoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_Shoot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_Teleport.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_Teleport.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Cond/Cond_GamePlay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Cond/Cond_GamePlay.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/FightFlow/Flow_Fight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/FightFlow/Flow_Fight.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Label/Label.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Label/Label.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/ObjConfig.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/ObjConfig.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +53,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD871329-15F9-4F3F-8153-88D8E385E9D4/da/bc320b13/PlayableDirector.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/InputModules/BaseInput.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2E5FD3A8-3E4C-48E6-B136-968D0A8DE9A8/0f/e8eaf593/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
@@ -71,18 +66,14 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.State/StateGraphAsset.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Config/ObjConfig.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Gravity.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/73C3B9FA-4DA6-44C9-A21A-8A16D8E2909F/cb/6df42bed/IMGUIContainer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_Teleport.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collab-proxy@2.2.0/Editor/PlasticSCM/Views/IncomingChanges/Developer/DirectoryConflicts/DrawDirectoryResolutionPanel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6C9B376C-3FCA-40B7-87E8-C1A2133BF243/67/d55a39a8/Transform.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Register/InputRegister.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_InputCloseFight.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Tool/MathUtil.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Tool/CollectCreatorRobotPoints.cs" />
@@ -100,9 +91,6 @@
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Flow/IFlow.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Flow/Flo.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/BeginFlow/Flow_Main.cs" />
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Data/Data.cs" />
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Obj/Obj.cs" />
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Comp/Comp.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_AutoRotate.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Cond/ADD.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Register/BehaviourRegister.cs" />
@@ -112,15 +100,12 @@
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Event_BeginTimeline.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/UI/UI.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Cond/Cond.cs" />
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Cond/Cond.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Cond/Cond_GamePlay.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Entity/Entity.cs" />
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_FollowPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Txt/GenerateBehaviourTemplate.txt" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_Motion.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Config/Base/Setting.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Gravity.cs" />
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Data/EntityData.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Tool/Generate.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Stage.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_Rotate.cs" />
@@ -129,16 +114,20 @@
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/ClearFlow/Flow_Clear.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Data/Data_Global.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/BeginFlow/Flow_Begin.cs" />
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/FightFlow/Flow_Fight.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Data/EntityData.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_CloseFight.cs" />
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Label/Label.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_Teleport.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_FollowPlayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Cond/Cond.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Obj/Obj.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/FightFlow/Flow_Fight.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Label/Label.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Comp/Comp.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Shoot.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Data/Data.cs" />
       </list>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
   <component name="ProjectId" id="2cdN6hCIoDgE1ZtD3v5ebHQ2IFL" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -147,24 +136,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\Evore\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Evore\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
-      "C:\\Users\\Evore\\AppData\\Local\\Symbols\\src"
-    ]
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.10311573" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.088278934" />
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="D:\Software\UnityEditor\Unity 2022.3.0f1\Editor\Unity.exe" />
@@ -186,19 +163,17 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
-      <option name="projectPathOnTarget" />
       <option name="selectedOptions">
-        <list />
+        <set />
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="11308">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="1800">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="11308" />
-      <option name="projectPathOnTarget" />
+      <option name="pid" value="1800" />
       <option name="selectedOptions">
-        <list />
+        <set />
       </option>
       <method v="2" />
     </configuration>
@@ -235,6 +210,7 @@
       <workItem from="1709954508888" duration="9581000" />
       <workItem from="1710034887827" duration="10201000" />
       <workItem from="1710122941056" duration="19788000" />
+      <workItem from="1710160749242" duration="7761000" />
     </task>
     <servers />
   </component>
@@ -253,9 +229,88 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="514" height="464" key="DebuggerActiveHint" timestamp="1710165901127">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="514" height="464" key="DebuggerActiveHint/0.0.2560.1400@0.0.2560.1400" timestamp="1710165901127" />
+    <state width="1379" height="318" key="GridCell.Tab.0.bottom" timestamp="1710170291977">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1379" height="318" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1710170291977" />
+    <state width="1379" height="318" key="GridCell.Tab.0.center" timestamp="1710170291977">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1379" height="318" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1710170291977" />
+    <state width="1379" height="318" key="GridCell.Tab.0.left" timestamp="1710170291977">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1379" height="318" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1710170291977" />
+    <state width="1379" height="318" key="GridCell.Tab.0.right" timestamp="1710170291977">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1379" height="318" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1710170291977" />
+    <state width="1379" height="318" key="GridCell.Tab.1.bottom" timestamp="1710170291977">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1379" height="318" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1710170291977" />
+    <state width="1379" height="318" key="GridCell.Tab.1.center" timestamp="1710170291977">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1379" height="318" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1710170291977" />
+    <state width="1379" height="318" key="GridCell.Tab.1.left" timestamp="1710170291977">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1379" height="318" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1710170291977" />
+    <state width="1379" height="318" key="GridCell.Tab.1.right" timestamp="1710170291977">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1379" height="318" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1710170291977" />
+    <state width="1379" height="318" key="GridCell.Tab.2.bottom" timestamp="1710170291978">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1379" height="318" key="GridCell.Tab.2.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1710170291978" />
+    <state width="1379" height="318" key="GridCell.Tab.2.center" timestamp="1710170291977">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1379" height="318" key="GridCell.Tab.2.center/0.0.2560.1400@0.0.2560.1400" timestamp="1710170291977" />
+    <state width="1379" height="318" key="GridCell.Tab.2.left" timestamp="1710170291977">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1379" height="318" key="GridCell.Tab.2.left/0.0.2560.1400@0.0.2560.1400" timestamp="1710170291977" />
+    <state width="1379" height="318" key="GridCell.Tab.2.right" timestamp="1710170291978">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1379" height="318" key="GridCell.Tab.2.right/0.0.2560.1400@0.0.2560.1400" timestamp="1710170291978" />
+    <state width="1379" height="318" key="GridCell.Tab.3.bottom" timestamp="1710170291978">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1379" height="318" key="GridCell.Tab.3.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1710170291978" />
+    <state width="1379" height="318" key="GridCell.Tab.3.center" timestamp="1710170291978">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1379" height="318" key="GridCell.Tab.3.center/0.0.2560.1400@0.0.2560.1400" timestamp="1710170291978" />
+    <state width="1379" height="318" key="GridCell.Tab.3.left" timestamp="1710170291978">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1379" height="318" key="GridCell.Tab.3.left/0.0.2560.1400@0.0.2560.1400" timestamp="1710170291978" />
+    <state width="1379" height="318" key="GridCell.Tab.3.right" timestamp="1710170291978">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1379" height="318" key="GridCell.Tab.3.right/0.0.2560.1400@0.0.2560.1400" timestamp="1710170291978" />
+    <state x="948" y="382" key="run.anything.popup" timestamp="1710163773420">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="948" y="382" key="run.anything.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1710163773420" />
+    <state x="1028" y="574" width="672" height="678" key="search.everywhere.popup" timestamp="1710161682699">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1028" y="574" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1710161682699" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -264,6 +319,7 @@
         <watch expression="Data.Instance.TryGetEntityBySign(&quot;Obj_Volume&quot;, out volumeEntity)" language="C#" />
         <watch expression="SceneConfig.Get(SceneManager.GetActiveScene().name).DirPath" language="C#" />
         <watch expression="Cond.Instance.Get&lt;PlayableDirector&gt;(beginTimeline, Label.PLAYABLEDIRECTOR)" language="C#" />
+        <watch expression="LayerMask.NameToLayer(&quot;BeHit&quot;)" language="C#" />
         <watch expression="Data.Instance.HasEntity(entity)" language="C#" />
         <watch expression="typeof(T)" language="C#" />
         <watch expression="Loader.LoadGameSetting().LocationInformationSettingPath" language="C#" />

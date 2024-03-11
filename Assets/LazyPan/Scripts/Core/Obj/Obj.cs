@@ -10,10 +10,8 @@ namespace LazyPan {
 
         //加载物体
         public Entity LoadEntity(string sign) {
-            if (!Data.Instance.TryGetEntityBySign(sign, out Entity instanceEntity)) {
-                instanceEntity = new Entity();
-                instanceEntity.Init(sign);
-            }
+            Entity instanceEntity = new Entity();
+            instanceEntity.Init(sign);
             return instanceEntity;
         }
 

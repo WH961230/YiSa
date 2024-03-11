@@ -20,10 +20,10 @@ MonoBehaviour:
     TeleportSpeed: 30
     TeleportTime: 0.1
     TeleportColdTime: 1
-    GravitySpeed: 5
+    GravitySpeed: 10
     AttackIntervalTime: 1
     KnockbackSpeed: 5
-    KnockbackTime: 0.1
+    KnockbackTime: 0.2
   - CreatureType: Agile
     Health: 50
     MotionSpeed: 20
@@ -31,7 +31,18 @@ MonoBehaviour:
     TeleportSpeed: 30
     TeleportTime: 0.1
     TeleportColdTime: 1
-    GravitySpeed: 5
+    GravitySpeed: 10
     AttackIntervalTime: 1
     KnockbackSpeed: 5
-    KnockbackTime: 0.1
+    KnockbackTime: 0.2
+  - CreatureType: SuperStrong
+    Health: 200
+    MotionSpeed: 0
+    RotateSpeed: 1000
+    TeleportSpeed: 0
+    TeleportTime: 0
+    TeleportColdTime: 0
+    GravitySpeed: 0
+    AttackIntervalTime: 1
+    KnockbackSpeed: 0
+    KnockbackTime: 0

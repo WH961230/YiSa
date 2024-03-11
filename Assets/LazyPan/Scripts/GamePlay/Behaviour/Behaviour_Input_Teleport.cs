@@ -15,7 +15,7 @@ namespace LazyPan {
         }
 
         private void Teleport(InputAction.CallbackContext obj) {
-            if (entity.EntityData.BaseRuntimeData.CurMotionState != 2 && entity.EntityData.BaseRuntimeData.DefTeleportColdTime == 0) {
+            if (entity.EntityData.BaseRuntimeData.CurMotionState != 2 && entity.EntityData.BaseRuntimeData.CurTeleportColdDeployTime == 0) {
                 trailRenderer.gameObject.SetActive(true);
                 entity.EntityData.BaseRuntimeData.CurTeleportDeployTime = entity.EntityData.BaseRuntimeData.DefTeleportTime;
                 entity.EntityData.BaseRuntimeData.CurTeleportColdDeployTime =

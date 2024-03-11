@@ -20,6 +20,8 @@ namespace LazyPan {
         public static string BODY = "Body";//身体位置
         public static string AIMOFFSETPOINT = "Point";//修复射击偏移点位配置
         public static string MUZZLE = "Muzzle";//枪口
+        public static string BARREL = "Barrel";
+        public static string HIT = "Hit";
         public static string SQUIRT = "Squirt";//喷血口
 
         //UI

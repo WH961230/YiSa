@@ -40,7 +40,7 @@ namespace LazyPan {
                     Cond.Instance.Get<Transform>(tmpEntity, Label.BODY).position -
                     Cond.Instance.Get<Transform>(entity, Label.BODY).position).normalized;
                 tmpEntity.EntityData.BaseRuntimeData.CurKnockbackDeployTime =
-                    tmpEntity.EntityData.BaseRuntimeData.DefKnockbackSpeed;
+                    tmpEntity.EntityData.BaseRuntimeData.DefKnockbackTime;
             }
         }
 

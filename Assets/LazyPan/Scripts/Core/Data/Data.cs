@@ -14,7 +14,7 @@ namespace LazyPan {
 
         public bool AddEntity(int id, Entity entity) {
             if (EntityDic.TryAdd(id, entity)) {
-                Debug.LogFormat("ID:{0} 注册实体:{1}", id, entity.ObjConfig.Sign);
+                //Debug.LogFormat("ID:{0} 注册实体:{1}", id, entity.ObjConfig.Sign);
                 return true;
             }
 
@@ -23,7 +23,7 @@ namespace LazyPan {
 
         public void RemoveEntity(int id) {
             if (EntityDic.ContainsKey(id)) {
-                Debug.LogFormat("ID:{0} 移除实体:{1}", id, EntityDic[id].ObjConfig.Sign);
+                //Debug.LogFormat("ID:{0} 移除实体:{1}", id, EntityDic[id].ObjConfig.Sign);
                 EntityDic.Remove(id);
             }
         }

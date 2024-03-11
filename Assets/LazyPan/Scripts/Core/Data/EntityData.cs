@@ -44,7 +44,7 @@ namespace LazyPan {
         /*击退*/
         public float DefKnockbackSpeed;//默认击退速度
         public float DefKnockbackTime;//默认击退的持续时间
-        public float CurKnockbackDeployTime;//默认击退的持续时间
+        public float CurKnockbackDeployTime;//默认击退的持续雇佣时间
         public Vector3 CurKnockbackDir;//当前击退方向
         /*旋转参数*/
         public float DefRotateSpeed;//默认旋转速度

@@ -111,6 +111,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 159660bcc7281a24cad3eaf11416759e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnParticleCollisionEvent:
+    m_PersistentCalls:
+      m_Calls: []
   OnTriggerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -155,6 +158,10 @@ MonoBehaviour:
   - Sign: Hit
     Tran: {fileID: 4531259323213334187}
   Colliders: []
+  Materials: []
+  Renderers:
+  - Sign: BodyRenderer
+    Renderer: {fileID: 1614048662047340240}
   CharacterControllers:
   - Sign: CharacterController
     Controller: {fileID: 3713930386492575025}

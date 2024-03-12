@@ -27,9 +27,12 @@ namespace LazyPan {
         [Tooltip("重力速度")] public float GravitySpeed;
 
         [Header("攻击参数")]
+        [Tooltip("攻击力")] public int Attack;
         [Tooltip("攻击间隔时间")] public float AttackIntervalTime;
         [Tooltip("击退速度")] public float KnockbackSpeed;
         [Tooltip("击退时间")] public float KnockbackTime;
+        [Tooltip("检测距离")] public float DetectDistance;
+        [Tooltip("检测频率")] public float DetectFrequency;
     }
 
     [CreateAssetMenu(menuName = "LazyPan/Setting", fileName = "Setting")]

@@ -28,19 +28,21 @@ namespace LazyPan {
                 return;
             }
             if (Data.Instance.TryGetEntityByBodyPrefabID(arg0.gameObject.GetInstanceID(), out Entity tmpEntity)) {
-                tmpEntity.EntityData.BaseRuntimeData.CurHealth -= 10 /*伤害*/;
-                Debug.Log($"curHealth:{entity.EntityData.BaseRuntimeData.CurHealth}");
-                /*掉血表现*/
-                GameObject template = Loader.LoadGo("掉血", "Obj/Fight/Obj_Fx_BeHit", Data.Instance.ObjRoot, true);
-                Transform squirt = Cond.Instance.Get<Transform>(tmpEntity, Label.SQUIRT);
-                template.transform.position = squirt.position;
-                template.transform.rotation = squirt.rotation;
-                /*击退表现*/
-                tmpEntity.EntityData.BaseRuntimeData.CurKnockbackDir = (
-                    Cond.Instance.Get<Transform>(tmpEntity, Label.BODY).position -
-                    Cond.Instance.Get<Transform>(entity, Label.BODY).position).normalized;
-                tmpEntity.EntityData.BaseRuntimeData.CurKnockbackDeployTime =
-                    tmpEntity.EntityData.BaseRuntimeData.DefKnockbackTime;
+                if (tmpEntity.EntityData.BaseRuntimeData.CurHealth > 0) {
+                    tmpEntity.EntityData.BaseRuntimeData.CurHealth -= 10 /*伤害*/;
+                    Debug.Log($"curHealth:{entity.EntityData.BaseRuntimeData.CurHealth}");
+                    /*掉血表现*/
+                    GameObject template = Loader.LoadGo("掉血", "Obj/Fight/Obj_Fx_BeHit", Data.Instance.ObjRoot, true);
+                    Transform squirt = Cond.Instance.Get<Transform>(tmpEntity, Label.SQUIRT);
+                    template.transform.position = squirt.position;
+                    template.transform.rotation = squirt.rotation;
+                    /*击退表现*/
+                    tmpEntity.EntityData.BaseRuntimeData.CurKnockbackDir = (
+                        Cond.Instance.Get<Transform>(tmpEntity, Label.BODY).position -
+                        Cond.Instance.Get<Transform>(entity, Label.BODY).position).normalized;
+                    tmpEntity.EntityData.BaseRuntimeData.CurKnockbackDeployTime =
+                        tmpEntity.EntityData.BaseRuntimeData.DefKnockbackTime;
+                }
             }
         }
 

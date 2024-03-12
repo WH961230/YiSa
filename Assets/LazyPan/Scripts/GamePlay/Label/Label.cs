@@ -11,6 +11,8 @@ namespace LazyPan {
         public static string EVENT = "Event";//事件
         public static string TRIGGER = "Trigger";//触发器
         public static string COLLIDER = "Collider";//碰撞体
+        public static string MATERIAL = "Material";//材质
+        public static string RENDERER = "Renderer";//渲染
         public static string COMP = "Comp";//组件
 
         public static string PLAYER = "Player";//玩家
@@ -21,7 +23,7 @@ namespace LazyPan {
         public static string AIMOFFSETPOINT = "Point";//修复射击偏移点位配置
         public static string MUZZLE = "Muzzle";//枪口
         public static string BARREL = "Barrel";
-        public static string HIT = "Hit";
+        public static string HIT = "Hit";//
         public static string SQUIRT = "Squirt";//喷血口
 
         //UI
@@ -32,16 +34,19 @@ namespace LazyPan {
         public static string TITLE = "Title";//标题
         public static string HOME = "Home";//标题
         public static string AGAIN = "Again";//再来
+        public static string ANNOUNCEMENT = "Announcement";//公告
 
         //移动类型
         public static string MOTION = "Motion";
+        public static string TELEPORT = "Teleport";//传送
 
         //攻击方式
         public static string CLOSEFIGHT = "CloseFight";//近战
-        public static string SWORD = "Sword";//剑
-        public static string TELEPORT = "Teleport";//传送
         public static string SHOOT = "Shoot";//射击
-        public static string ANNOUNCEMENT = "Announcement";//公告
+
+        //武器
+        public static string SWORD = "Sword";//剑
+        public static string GUN = "Gun";//枪
 
         //组合A+B
         public static string Assemble(string labelA, string labelB) {

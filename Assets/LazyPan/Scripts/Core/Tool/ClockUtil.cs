@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using LazyPan;
 using UnityEngine;
 
 public enum ClockType {
@@ -89,7 +90,7 @@ public class Clock {
     }
 }
 
-public class ClockUtil : Singleton<ClockUtil> {
+public class ClockUtil : SingletonMonoBehaviour<ClockUtil> {
     readonly List<Clock> clocks = new List<Clock>();
 
     public Clock AlarmAt(DateTime dateTime, Action callBack) {

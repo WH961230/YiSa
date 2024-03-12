@@ -119,15 +119,39 @@ namespace LazyPan {
         }
 
         //获取某一类型的随机实体
-        public bool TryGetRandEntityByEntities(string type, out Entity entity) {
-            if (TryGetEntitiesByType(type, out List<Entity> entities)) {
-                int index = Random.Range(0, entities.Count);
-                entity = entities[index];
+        public bool TryGetRandEntityByType(string type, out Entity entity) {
+            bool findTypeEntities = TryGetEntitiesByType(type, out List<Entity> entities);
+            if (!findTypeEntities) {
+                entity = default;
+                return false;
+            }
+
+            entity = GetRandEntity(entities);
+            return true;
+        }
+
+        //获取距离内的所有实体
+        public bool TryGetEntitiesWithinDistance(string type, Vector3 fromPoint, float distance, out List<Entity> entity) {
+            entity = new List<Entity>();
+            if (TryGetEntitiesByType(type, out List<Entity> tmpEntities)) {
+                foreach (Entity tmpEntity in tmpEntities) {
+                    float disSqrt = distance * distance;
+                    if ((Cond.Instance.Get<Transform>(tmpEntity, Label.BODY).position - fromPoint).sqrMagnitude < disSqrt) {
+                        entity.Add(tmpEntity);
+                    }
+                }
+            }
+
+            if (entity.Count > 0) {
                 return true;
             }
 
-            entity = default;
             return false;
+        }
+
+        //实体列表内获取随机实体
+        public Entity GetRandEntity(List<Entity> entities) {
+            return entities[Random.Range(0, entities.Count)];
         }
     }
 }

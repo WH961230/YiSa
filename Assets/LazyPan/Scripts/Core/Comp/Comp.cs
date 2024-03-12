@@ -14,7 +14,7 @@ using Slider = UnityEngine.UI.Slider;
 
 namespace LazyPan {
     public class Comp : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
-        [HideInInspector] public UnityEvent<GameObject> OnParticleCollisionEvent;
+        public UnityEvent<GameObject> OnParticleCollisionEvent;
         [HideInInspector] public UnityEvent<Collider> OnTriggerEnterEvent;
         [HideInInspector] public UnityEvent<Collider> OnTriggerStayEvent;
         [HideInInspector] public UnityEvent<Collider> OnTriggerExitEvent;
@@ -33,6 +33,8 @@ namespace LazyPan {
         public List<GameObjectData> GameObjects = new List<GameObjectData>();
         public List<TransformData> Transforms = new List<TransformData>();
         public List<ColliderData> Colliders = new List<ColliderData>();
+        public List<MaterialData> Materials = new List<MaterialData>();
+        public List<RendererData> Renderers = new List<RendererData>();
         public List<CharacterControllerData> CharacterControllers = new List<CharacterControllerData>();
         public List<ButtonData> Buttons = new List<ButtonData>();
         public List<SliderData> Sliders = new List<SliderData>();
@@ -66,6 +68,18 @@ namespace LazyPan {
                 foreach (TransformData transformData in Transforms) {
                     if (transformData.Sign == sign) {
                         return transformData.Tran as T;
+                    }
+                }
+            } else if (typeof(T) == typeof(Material)) {
+                foreach (MaterialData materialData in Materials) {
+                    if (materialData.Sign == sign) {
+                        return materialData.Material as T;
+                    }
+                }
+            } else if (typeof(T) == typeof(Renderer)) {
+                foreach (RendererData rendererData in Renderers) {
+                    if (rendererData.Sign == sign) {
+                        return rendererData.Renderer as T;
                     }
                 }
             } else if (typeof(T) == typeof(Button)) {
@@ -317,6 +331,18 @@ namespace LazyPan {
         public class ColliderData {
             public string Sign;
             public Collider Collider;
+        }
+
+        [Serializable]
+        public class MaterialData {
+            public string Sign;
+            public Material Material;
+        }
+
+        [Serializable]
+        public class RendererData {
+            public string Sign;
+            public Renderer Renderer;
         }
 
         [Serializable]

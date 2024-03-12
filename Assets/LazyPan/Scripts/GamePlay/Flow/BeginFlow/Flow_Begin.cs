@@ -1,11 +1,12 @@
-﻿using TMPro;
-using UnityEngine.UI;
+﻿using UnityEngine.UI;
 
 namespace LazyPan {
     public class Flow_Begin : Flow {
+        private Entity floorEntity;
         private Entity volumeEntity;
         private Entity lightEntity;
         private Entity beginCameraEntity;
+        private Entity playerSoldierEntity;
         private Comp comp;
         private Comp announcementComp;
 
@@ -16,6 +17,9 @@ namespace LazyPan {
             volumeEntity = Obj.Instance.LoadEntity("Obj_Volume_Volume");
             lightEntity = Obj.Instance.LoadEntity("Obj_Light_DirectionalLight");
             beginCameraEntity = Obj.Instance.LoadEntity("Obj_Camera_BeginCamera");
+
+            playerSoldierEntity = Obj.Instance.LoadEntity("Obj_Player_Soldier");
+            floorEntity = Obj.Instance.LoadEntity("Obj_Terrain_Begin");
 
             announcementComp = Cond.Instance.Get<Comp>(comp, Label.ANNOUNCEMENT);
             announcementComp.gameObject.SetActive(false);
@@ -29,7 +33,7 @@ namespace LazyPan {
 
             ButtonRegister.AddListener(Cond.Instance.Get<Button>(comp, Label.NEXT), () => {
                 Clear();
-                Launch.instance.StageLoad("Choose");
+                Launch.instance.StageLoad("Fight");
             });
 
             ButtonRegister.AddListener(Cond.Instance.Get<Button>(comp, Label.QUIT), () => {
@@ -45,6 +49,8 @@ namespace LazyPan {
 
             Obj.Instance.UnLoadEntity(volumeEntity);
             Obj.Instance.UnLoadEntity(lightEntity);
+            Obj.Instance.UnLoadEntity(playerSoldierEntity);
+            Obj.Instance.UnLoadEntity(floorEntity);
             Obj.Instance.UnLoadEntity(beginCameraEntity);
         }
     }

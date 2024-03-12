@@ -259,6 +259,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 159660bcc7281a24cad3eaf11416759e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnParticleCollisionEvent:
+    m_PersistentCalls:
+      m_Calls: []
   OnTriggerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -309,4 +312,6 @@ MonoBehaviour:
   UnityEventDatas: []
   DoTweenAnimationDatas: []
   TrailRendererDatas: []
-  CameraDatas: []
+  CameraDatas:
+  - Sign: Camera
+    Camera: {fileID: 3843914435664633407}

@@ -8,8 +8,10 @@ namespace LazyPan {
             BaseRuntimeData.Sign = config.Sign;
             BaseRuntimeData.Type = config.Type;
             if (setting.TryGetBaseSetting(config.CreatureType, out BaseSetting baseSetting)) {
+                /*基参*/
                 BaseRuntimeData.DefHealth = baseSetting.Health;
                 BaseRuntimeData.CurHealth = BaseRuntimeData.DefHealth;
+                BaseRuntimeData.CurAttack = baseSetting.Attack;
                 BaseRuntimeData.DefAttackIntervalTime = baseSetting.AttackIntervalTime;
                 BaseRuntimeData.CurAttackIntervalDeployTime = BaseRuntimeData.DefAttackIntervalTime;
                 BaseRuntimeData.DefTeleportSpeed = baseSetting.TeleportSpeed;
@@ -21,6 +23,9 @@ namespace LazyPan {
                 BaseRuntimeData.CurMotionSpeed = BaseRuntimeData.DefMotionSpeed;
                 BaseRuntimeData.DefRotateSpeed = baseSetting.RotateSpeed;
                 BaseRuntimeData.CurRotateSpeed = BaseRuntimeData.DefRotateSpeed;
+                BaseRuntimeData.DefDetectDistance = baseSetting.DetectDistance;
+                BaseRuntimeData.CurDetectDistance = BaseRuntimeData.DefDetectDistance;
+                BaseRuntimeData.DefDetectFrequency = baseSetting.DetectFrequency;
                 BaseRuntimeData.GravitySpeed = baseSetting.GravitySpeed;
             }
         }
@@ -33,6 +38,12 @@ namespace LazyPan {
         public string Type;//类型
         public int DefHealth;//默认血量
         public int CurHealth;//当前血量
+        public int DefEnergy;//默认能量
+        public int DefMaxEnergy;//默认最大能量
+        public float DefChargeEnergySpeed;//默认能量补充速度
+        public int CurEnergy;//当前能量
+        public int CurMaxEnergy;//当前最大能量
+        public int CurChargeEnergySpeed;//当前能量补充速度
         /*移动参数*/
         public int CurMotionState;//默认 0 禁止 1 移动 2 冲刺
         public float DefMotionSpeed;//默认移动速度
@@ -58,7 +69,13 @@ namespace LazyPan {
         public float DefTeleportColdTime;//默认传送冷却时间
         public float CurTeleportColdDeployTime;//传送的冷却雇佣时间
         /*攻击参数*/
+        public int CurAttack;//当前伤害
         public float DefAttackIntervalTime;//默认攻击间隔时间
         public float CurAttackIntervalDeployTime;//当前攻击间隔时间
+        public float DefDetectDistance;//默认检测距离
+        public float CurDetectDistance;//当前检测距离
+        public float DefDetectFrequency;//默认检频测率
+        public float CurDetectFrequencyDeployTime;//当前检测频率
+        public int CurAttackTargetEntityID;//当前攻击的实体ID
     }
 }

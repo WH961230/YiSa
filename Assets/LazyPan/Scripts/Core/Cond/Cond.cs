@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,6 +8,11 @@ namespace LazyPan {
         #region 全局
         public Entity GetCameraEntity() { if (Data.Instance.TryGetEntityByType("Camera", out Entity entity)) { return entity; } else { return null; } }
         public Entity GetPlayerEntity() { if (Data.Instance.TryGetEntityByType("Player", out Entity entity)) { return entity; } else { return null; } }
+
+        public bool GetEntityByID(int id, out Entity entity) {
+            return Data.Instance.TryGetEntityByID(id, out entity) ;
+        }
+
         #endregion
 
         #region 根据标签获取组件|事件

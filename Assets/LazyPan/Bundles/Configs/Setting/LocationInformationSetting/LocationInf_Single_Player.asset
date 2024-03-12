@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: LocationInf_Single_Player
   m_EditorClassIdentifier: 
   locationInformationDatas:
-  - Position: {x: 0, y: 10, z: 13.9}
+  - Position: {x: 0, y: 10, z: 3.7}
     Rotation: {x: 0, y: 180, z: 0}

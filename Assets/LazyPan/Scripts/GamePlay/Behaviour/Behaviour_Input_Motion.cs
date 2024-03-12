@@ -15,9 +15,6 @@ namespace LazyPan {
         }
 
         private void MotionEvent(InputAction.CallbackContext obj) {
-            if (!Data.Instance.CanControl) {
-                return;
-            }
             inputMotionValue = obj.ReadValue<Vector2>();
         }
 

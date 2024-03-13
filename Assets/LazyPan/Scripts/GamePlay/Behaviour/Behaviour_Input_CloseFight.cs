@@ -24,7 +24,7 @@ namespace LazyPan {
         }
 
         private void OnCloseFightTriggerEnter(Collider arg0) {
-            if (arg0.gameObject.layer != LayerMask.NameToLayer("BeHit")) {
+            if (arg0.gameObject.layer != LayerMask.NameToLayer("EnemySideBeHit")) {
                 return;
             }
             if (Data.Instance.TryGetEntityByBodyPrefabID(arg0.gameObject.GetInstanceID(), out Entity tmpEntity)) {

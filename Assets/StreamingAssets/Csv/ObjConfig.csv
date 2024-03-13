@@ -11,7 +11,7 @@ Obj_Camera_FightCamera,Camera,战斗主相机,,,Behaviour_Auto_FollowPlayer
 Obj_Camera_ChooseCamera,Camera,选择主相机,,,
 Obj_Camera_ClearCamera,Camera,结算主相机,,,
 Obj_Robot_Shooter,Robot,射手,Strong,LocationInf_Mul_Robot,Behaviour_Auto_Gravity|Behaviour_Auto_Knockback
-Obj_Robot_Soldier,Robot,士兵,Agile,LocationInf_Mul_Robot,Behaviour_Auto_Gravity|Behaviour_Auto_Knockback|Behaviour_Auto_Motion
+Obj_Robot_Soldier,Robot,士兵,Agile,LocationInf_Mul_Robot,Behaviour_Auto_Gravity|Behaviour_Auto_Knockback|Behaviour_Auto_Motion|Behaviour_Auto_SelfDetonationAttack
 Obj_Building_Tower,Building,塔,SuperStrong,LocationInf_Single_Building,Behaviour_Auto_Shoot
 Obj_Event_RobotCreator,Event,敌人创建器,,,
 Obj_Terrain_Begin,Terrain,开始地形,,,

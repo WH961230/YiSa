@@ -46,7 +46,8 @@ GameObject:
   - component: {fileID: 3126866202446467321}
   - component: {fileID: 4464815036578376793}
   - component: {fileID: 662991643036315760}
-  m_Layer: 6
+  - component: {fileID: 6760249151443559887}
+  m_Layer: 7
   m_Name: "\u8EAB\u4F53"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,6 +366,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &6760249151443559887
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6757627004424546976}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6978085551086676492
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,6 +465,9 @@ MonoBehaviour:
   OnPointerExitEvent:
     m_PersistentCalls:
       m_Calls: []
+  OnControllerColliderHitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   OnDrawGizmosAction:
     m_PersistentCalls:
       m_Calls: []
@@ -453,6 +478,8 @@ MonoBehaviour:
   - Sign: Muzzle
     Tran: {fileID: 8971444033170900206}
   Colliders: []
+  Materials: []
+  Renderers: []
   CharacterControllers:
   - Sign: CharacterController
     Controller: {fileID: 3807087115910905708}

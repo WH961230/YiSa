@@ -27,7 +27,9 @@ namespace LazyPan {
         [HideInInspector] public UnityEvent OnBecameInvisibleEvent;
 
         [HideInInspector] public UnityEvent<PointerEventData> OnPointerEnterEvent;
-        [HideInInspector] public UnityEvent<PointerEventData> OnPointerExitEvent;
+        [HideInInspector] public UnityEvent<PointerEventData> OnPointerExitEvent; 
+
+        [HideInInspector] public UnityEvent<ControllerColliderHit> OnControllerColliderHitEvent;
 
         [HideInInspector] public UnityEvent OnDrawGizmosAction;
         public List<GameObjectData> GameObjects = new List<GameObjectData>();
@@ -223,6 +225,10 @@ namespace LazyPan {
 
         public void OnPointerExit(PointerEventData eventData) {
             OnPointerExitEvent?.Invoke(eventData);
+        }
+
+        public void OnControllerColliderHit(ControllerColliderHit hit) {
+            OnControllerColliderHitEvent?.Invoke(hit);
         }
 
 #if UNITY_EDITOR

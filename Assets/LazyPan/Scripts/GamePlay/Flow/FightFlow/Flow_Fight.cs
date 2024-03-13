@@ -10,6 +10,7 @@ namespace LazyPan {
         private Entity cameraEntity;
         private Entity playerSoldierEntity;
         private Entity robotSoldierEntity;
+        private List<Entity> robotSoldierEntities;
         private Entity towerEntity;
         private Entity beginTimeline;
         private Entity volumeEntity;
@@ -17,8 +18,6 @@ namespace LazyPan {
         private Clock robotCreatorClock;
         public override void Init(Flow baseFlow) {
             base.Init(baseFlow);
-            comp = UI.Instance.Open("UI_Fight");
-            Cond.Instance.Get<TextMeshProUGUI>(comp, Label.TITLE).text = "FightFlow";
 
             volumeEntity = Obj.Instance.LoadEntity("Obj_Volume_Volume");
             lightEntity = Obj.Instance.LoadEntity("Obj_Light_DirectionalLight");
@@ -31,15 +30,41 @@ namespace LazyPan {
                 if (playableDirector.enabled) {
                     playerSoldierEntity = Obj.Instance.LoadEntity("Obj_Player_Soldier");
                     towerEntity = Obj.Instance.LoadEntity("Obj_Building_Tower");
-                    robotSoldierEntity = Obj.Instance.LoadEntity("Obj_Robot_Soldier");
+
+                    robotSoldierEntities = new List<Entity>();
+ 
+                    AddRobot();
+                    AddRobot();
+                    AddRobot();
+                    AddRobot();
+                    AddRobot();
+                    AddRobot();
+                    AddRobot();
+                    AddRobot();
+                    AddRobot();
+                    AddRobot();
+
                     cameraEntity = Obj.Instance.LoadEntity("Obj_Camera_FightCamera");
+                    comp = UI.Instance.Open("UI_Fight");
+                    Cond.Instance.Get<TextMeshProUGUI>(comp, Label.TITLE).text = "FightFlow";
+
+                    ButtonRegister.AddListener(Cond.Instance.Get<Button>(comp, Label.NEXT), Next);
                 }
             };
+        }
 
-            ButtonRegister.AddListener(Cond.Instance.Get<Button>(comp, Label.NEXT), () => {
-                Clear();
-                Launch.instance.StageLoad("Clear");
-            });
+        public void AddRobot() {
+            robotSoldierEntities.Add(Obj.Instance.LoadEntity("Obj_Robot_Soldier"));
+        }
+
+        public void RemoveRobot(Entity robotEntity) {
+            robotSoldierEntities.Remove(robotEntity);
+            Obj.Instance.UnLoadEntity(robotEntity);
+        }
+
+        public void Next() {
+            Clear();
+            Launch.instance.StageLoad("Clear");
         }
 
         public override void Clear() {
@@ -51,7 +76,11 @@ namespace LazyPan {
             Obj.Instance.UnLoadEntity(volumeEntity);
             Obj.Instance.UnLoadEntity(lightEntity);
             Obj.Instance.UnLoadEntity(playerSoldierEntity);
-            Obj.Instance.UnLoadEntity(robotSoldierEntity);
+
+            foreach (Entity entity in robotSoldierEntities) {
+                Obj.Instance.UnLoadEntity(entity);
+            }
+
             Obj.Instance.UnLoadEntity(towerEntity);
             Obj.Instance.UnLoadEntity(beginTimeline);
             Obj.Instance.UnLoadEntity(cameraEntity);

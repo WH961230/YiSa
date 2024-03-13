@@ -28,30 +28,30 @@ MonoBehaviour:
     DetectDistance: 5
     DetectFrequency: 0.5
   - CreatureType: Agile
-    Health: 50
-    MotionSpeed: 3
+    Health: 10
+    MotionSpeed: 2
     RotateSpeed: 1000
     TeleportSpeed: 30
     TeleportTime: 0.1
     TeleportColdTime: 1
     GravitySpeed: 10
-    Attack: 20
+    Attack: 5
     AttackIntervalTime: 0.2
-    KnockbackSpeed: 5
+    KnockbackSpeed: 1
     KnockbackTime: 0.2
     DetectDistance: 100
     DetectFrequency: 0.5
   - CreatureType: SuperStrong
-    Health: 200
+    Health: 50
     MotionSpeed: 0
     RotateSpeed: 1000
     TeleportSpeed: 0
     TeleportTime: 0
     TeleportColdTime: 0
     GravitySpeed: 0
-    Attack: 20
+    Attack: 2
     AttackIntervalTime: 0.2
     KnockbackSpeed: 0
     KnockbackTime: 0
-    DetectDistance: 20
+    DetectDistance: 12
     DetectFrequency: 0.5

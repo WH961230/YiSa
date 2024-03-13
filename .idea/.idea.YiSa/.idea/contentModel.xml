@@ -38,7 +38,6 @@
               <e p="Global" t="Include" />
               <e p="obj" t="Include">
                 <e p="Begin" t="Include" />
-                <e p="Choose" t="Include" />
                 <e p="Clear" t="Include" />
                 <e p="Fight" t="Include" />
               </e>
@@ -123,7 +122,9 @@
                 <e p="Behaviour_Auto_FollowPlayer.cs" t="Include" />
                 <e p="Behaviour_Auto_Gravity.cs" t="Include" />
                 <e p="Behaviour_Auto_Knockback.cs" t="Include" />
+                <e p="Behaviour_Auto_Motion.cs" t="Include" />
                 <e p="Behaviour_Auto_Rotate.cs" t="Include" />
+                <e p="Behaviour_Auto_SelfDetonationAttack.cs" t="Include" />
                 <e p="Behaviour_Auto_Shoot.cs" t="Include" />
                 <e p="Behaviour_Event_BeginTimeline.cs" t="Include" />
                 <e p="Behaviour_Input_CloseFight.cs" t="Include" />
@@ -141,9 +142,6 @@
               <e p="Flow" t="Include">
                 <e p="BeginFlow" t="Include">
                   <e p="Flow_Begin.cs" t="Include" />
-                </e>
-                <e p="ChooseFlow" t="Include">
-                  <e p="Flow_Choose.cs" t="Include" />
                 </e>
                 <e p="ClearFlow" t="Include">
                   <e p="Flow_Clear.cs" t="Include" />

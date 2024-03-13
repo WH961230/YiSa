@@ -20,6 +20,9 @@ namespace LazyPan {
                     template.transform.position = bulletMuzzle.position;
                     template.transform.forward = (Cond.Instance.Get<Transform>(robotEntity, Label.HIT).position - bulletMuzzle.position).normalized;
                     template.GetComponent<Comp>().OnParticleCollisionEvent.AddListener(OnTriggerEnter);
+                    template.GetComponent<Comp>().OnParticleCollisionEvent.AddListener((aaa) => {
+                        Object.Destroy(template);
+                    });
                 }
                 entity.EntityData.BaseRuntimeData.CurAttackIntervalDeployTime =
                     entity.EntityData.BaseRuntimeData.DefAttackIntervalTime;
@@ -27,15 +30,18 @@ namespace LazyPan {
         }
 
         private void OnTriggerEnter(GameObject go) {
-            if (go.layer != LayerMask.NameToLayer("BeHit")) {
+            if (go.layer != LayerMask.NameToLayer("EnemySideBeHit")) {
                 return;
             }
             if (Data.Instance.TryGetEntityByBodyPrefabID(go.GetInstanceID(), out Entity tmpEntity)) {
                 if (tmpEntity.EntityData.BaseRuntimeData.CurHealth > 0) {
-                    tmpEntity.EntityData.BaseRuntimeData.CurHealth -= tmpEntity.EntityData.BaseRuntimeData.CurAttack /*伤害*/;
+                    tmpEntity.EntityData.BaseRuntimeData.CurHealth -= entity.EntityData.BaseRuntimeData.CurAttack /*伤害*/;
                     if (tmpEntity.EntityData.BaseRuntimeData.CurHealth <= 0) {
-                        Obj.Instance.UnLoadEntity(tmpEntity);
-                        Obj.Instance.LoadEntity("Obj_Robot_Soldier");
+                        bool hasFightFlow = Flo.Instance.GetFlow(out Flow_Fight fight);
+                        if (hasFightFlow) {
+                            fight.RemoveRobot(tmpEntity);
+                            fight.AddRobot();
+                        }
                         return;
                     }
                     Debug.Log($"curHealth:{tmpEntity.EntityData.BaseRuntimeData.CurHealth}");

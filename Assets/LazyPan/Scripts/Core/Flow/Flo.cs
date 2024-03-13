@@ -12,6 +12,18 @@ namespace LazyPan {
             Type type = Assembly.Load("Assembly-CSharp").GetType(string.Concat("LazyPan.", sceneConfig.Flow));
             Flow flow = (Flow) Activator.CreateInstance(type);
             flow.Init(null);
+            flows.Clear();
+            flows.Add(type, flow);
+        }
+
+        public bool GetFlow<T>(out T flow) where T : Flow {
+            if (flows.ContainsKey(typeof(T))) {
+                flow = (T)flows[typeof(T)];
+                return true;
+            }
+
+            flow = default;
+            return false;
         }
     }
 }

@@ -4,6 +4,11 @@ using UnityEngine.Events;
 
 namespace LazyPan {
     public partial class Data : Singleton<Data> {
+        public bool FirstPlay;//首次游玩
+        public Transform UIRoot;//根节点
+        public Transform ObjRoot;//根节点
+        public Setting Setting;//配置
+
         public UnityEvent OnUpdateEvent = new UnityEvent();
         public UnityEvent OnFixedUpdateEvent = new UnityEvent();
         public UnityEvent OnLateUpdateEvent = new UnityEvent();

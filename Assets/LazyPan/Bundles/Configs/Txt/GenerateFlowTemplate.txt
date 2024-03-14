@@ -3,11 +3,11 @@ using UnityEngine;
 namespace LazyPan {
     public class Flow_#ClassName# : Flow {
         public override void OnInit(Flow baseFlow) {
-            base.OnInit(baseFlow);
+            base.Init(baseFlow);
         }
 
         public override void OnClear() {
-            base.OnClear();
+            base.Clear();
         }
     }
 }

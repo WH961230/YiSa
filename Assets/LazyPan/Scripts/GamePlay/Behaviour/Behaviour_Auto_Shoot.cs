@@ -37,7 +37,7 @@ namespace LazyPan {
                 if (tmpEntity.EntityData.BaseRuntimeData.CurHealth > 0) {
                     tmpEntity.EntityData.BaseRuntimeData.CurHealth -= entity.EntityData.BaseRuntimeData.CurAttack /*伤害*/;
                     if (tmpEntity.EntityData.BaseRuntimeData.CurHealth <= 0) {
-                        bool hasFightFlow = Flo.Instance.GetFlow(out Flow_Fight fight);
+                        bool hasFightFlow = Flo.Instance.GetFlow(out Flow_Battle fight);
                         if (hasFightFlow) {
                             fight.RemoveRobot(tmpEntity);
                             fight.AddRobot();

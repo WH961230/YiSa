@@ -1,7 +1,5 @@
-﻿Sign,Description,DirPath,Flow
-string,string,string,string
-标识,描述,物体路径,流程
-Begin,开始场景,Obj/Begin/,Flow_Begin
-Choose,选择场景,Obj/Choose/,Flow_Choose
-Fight,战斗场景,Obj/Fight/,Flow_Fight
-Clear,结算场景,Obj/Clear/,Flow_Clear
+﻿Sign,Description,DirPath,Flow,DelayTime
+string,string,string,string,float
+标识,描述,物体路径,流程,加载时间
+Begin,开始场景,Obj/Begin/,Flow_Begin,0
+Fight,战斗场景,Obj/Battle/,Flow_Battle,1

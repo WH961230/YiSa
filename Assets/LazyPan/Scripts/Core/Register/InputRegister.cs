@@ -1,5 +1,4 @@
 using System;
-using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace LazyPan {
@@ -12,6 +11,8 @@ namespace LazyPan {
         public string R = "Player/R";
         public string MouseRightPress = "Player/MouseRightPress";
         public string Space = "Player/Space";
+        public string Console = "Global/Console";
+        public string ESCAPE = "Global/Escape";
 
         private InputControls inputControls;
 
@@ -33,6 +34,22 @@ namespace LazyPan {
             inputControls.FindAction(actionName).started -= action;
             inputControls.FindAction(actionName).performed -= action;
             inputControls.FindAction(actionName).canceled -= action;
+        }
+
+        public void Dispose(string actionName) {
+            if (inputControls == null) { 
+                inputControls = new InputControls();
+            }
+            inputControls.Enable();
+            inputControls.FindAction(actionName).Dispose();
+        }
+
+        public void Dispose() {
+            if (inputControls == null) {
+                inputControls = new InputControls();
+            }
+            inputControls.Enable();
+            inputControls.Dispose();
         }
     }
 }

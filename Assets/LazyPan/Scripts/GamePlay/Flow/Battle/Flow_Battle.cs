@@ -4,7 +4,7 @@ using UnityEngine.Playables;
 using UnityEngine.UI;
 
 namespace LazyPan {
-    public class Flow_Fight : Flow {
+    public class Flow_Battle : Flow {
         private Comp comp;
         private Entity floorEntity;
         private Entity cameraEntity;
@@ -33,15 +33,6 @@ namespace LazyPan {
 
                     robotSoldierEntities = new List<Entity>();
  
-                    AddRobot();
-                    AddRobot();
-                    AddRobot();
-                    AddRobot();
-                    AddRobot();
-                    AddRobot();
-                    AddRobot();
-                    AddRobot();
-                    AddRobot();
                     AddRobot();
 
                     cameraEntity = Obj.Instance.LoadEntity("Obj_Camera_FightCamera");

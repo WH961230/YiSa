@@ -17,18 +17,26 @@ namespace LazyPan {
                 return;
             }
             /*创建点位配置*/
-            LocationInformationSetting setting = CreateInstance<LocationInformationSetting>();
+            string settingPath = string.Concat("Assets", Loader.LoadGameSetting().LocationInformationSettingPath, selectGameObject.name, ".asset");
+            LocationInformationSetting setting = AssetDatabase.LoadAssetAtPath(settingPath, typeof(LocationInformationSetting)) as LocationInformationSetting;
+            if (setting == null) {
+                setting = CreateInstance<LocationInformationSetting>();
+                AssetDatabase.CreateAsset(setting, settingPath);
+            }
+
             setting.locationInformationDatas = new List<LocationInformationData>();
             for (int i = 0; i < selectGameObject.transform.childCount; i++) {
                 setting.name = selectGameObject.name;
                 Transform childTran = selectGameObject.transform.GetChild(i);
+                if (childTran.name == "TerrainIgnore") {
+                    continue;
+                }
                 LocationInformationData locationInformationData = new LocationInformationData();
                 locationInformationData.Position = childTran.position;
                 locationInformationData.Rotation = childTran.rotation.eulerAngles;
                 setting.locationInformationDatas.Add(locationInformationData);
             }
-            string settingPath = string.Concat("Assets", Loader.LoadGameSetting().LocationInformationSettingPath, setting.name, ".asset");
-            AssetDatabase.CreateAsset(setting, settingPath);
+
             AssetDatabase.SaveAssets();
         }
 
@@ -44,6 +52,10 @@ namespace LazyPan {
                 return;
             }
             GameObject parentGameObject = new GameObject(locationInformationSetting.name);
+            if (locationInformationSetting.TerrainGo != null) {
+                GameObject terrain = Instantiate(locationInformationSetting.TerrainGo, parentGameObject.transform);
+                terrain.name = "TerrainIgnore";
+            }
             for (int i = 0; i < locationInformationSetting.locationInformationDatas.Count; i++) {
                 LocationInformationData data = locationInformationSetting.locationInformationDatas[i];
                 string markSign = "Obj_MarkLocationInformation";

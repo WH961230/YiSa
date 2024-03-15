@@ -7,6 +7,7 @@ namespace LazyPan {
 		public string Description;
 		public string DirPath;
 		public string Flow;
+		public float DelayTime;
 
         private static bool isInit;
         private static string content;
@@ -20,6 +21,7 @@ namespace LazyPan {
 				Description = values[1];
 				DirPath = values[2];
 				Flow = values[3];
+				DelayTime = float.Parse(values[4]);
 
             } catch (Exception e) {
                 Console.WriteLine(e);

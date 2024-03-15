@@ -5,6 +5,7 @@ using UnityEngine.Events;
 namespace LazyPan {
     public partial class Data : Singleton<Data> {
         public bool FirstPlay;//首次游玩
+        public Transform UIDontDestroyRoot;//不可销毁UI根节点
         public Transform UIRoot;//根节点
         public Transform ObjRoot;//根节点
         public Setting Setting;//配置

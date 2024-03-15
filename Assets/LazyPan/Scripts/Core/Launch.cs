@@ -4,13 +4,25 @@ using UnityEngine;
 namespace LazyPan {
     public class Launch : MonoBehaviour {
         public static Launch instance;
+        public bool OpenConsole;
         private void Awake() {
             if (instance == null) {
                 instance = this;
                 Data.Instance.Setting = Loader.LoadSetting();
                 Config.Instance.Init();
                 Obj.Instance.Init();
+
+                Data.Instance.UIDontDestroyRoot = Loader.LoadGo("加载画布", "Global/Global_UIRoot", null, true).transform;
+                Data.Instance.UIDontDestroyRoot.gameObject.AddComponent<Stage>();
+                Data.Instance.UIDontDestroyRoot.gameObject.GetComponent<Canvas>().sortingOrder = 1;
+                DontDestroyOnLoad(Data.Instance.UIDontDestroyRoot.gameObject);
+
                 DontDestroyOnLoad(gameObject);
+
+#if UNITY_EDITOR
+                ConsoleEx.Instance.Init(OpenConsole);
+#endif
+
                 StageLoad("Begin");
             }
         }
@@ -21,10 +33,8 @@ namespace LazyPan {
             Data.Instance.OnFixedUpdateEvent.RemoveAllListeners();
             Data.Instance.OnLateUpdateEvent.RemoveAllListeners();
 
-            Transform uiRoot = Loader.LoadGo("加载画布", "Global/Global_UIRoot", null, true).transform;
-            Stage stage = uiRoot.gameObject.AddComponent<Stage>();
-            DontDestroyOnLoad(uiRoot.gameObject);
-            stage.Load(sceneName);
+            Stage stage = Data.Instance.UIDontDestroyRoot.gameObject.GetComponent<Stage>();
+            stage.Load(SceneConfig.Get(sceneName).DelayTime, sceneName);
         }
 
         //结束游戏

@@ -16,7 +16,7 @@ namespace LazyPan {
                 Debug.Log("hit GO:" + tmpEntity.EntityData.BaseRuntimeData.Type);
                 tmpEntity.EntityData.BaseRuntimeData.CurHealth -= entity.EntityData.BaseRuntimeData.CurAttack;
                 Debug.Log($"玩家血量:{tmpEntity.EntityData.BaseRuntimeData.CurHealth}");
-                bool hasFightFlow = Flo.Instance.GetFlow(out Flow_Fight fight);
+                bool hasFightFlow = Flo.Instance.GetFlow(out Flow_Battle fight);
                 if (hasFightFlow) {
                     fight.RemoveRobot(entity);
                     fight.AddRobot();

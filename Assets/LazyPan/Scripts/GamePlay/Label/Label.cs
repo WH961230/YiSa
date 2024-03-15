@@ -47,6 +47,8 @@ namespace LazyPan {
         //武器
         public static string SWORD = "Sword";//剑
         public static string GUN = "Gun";//枪
+        public static string CODE = "Code";//命令
+        public static string CONTENT = "Content";//内容
 
         //组合A+B
         public static string Assemble(string labelA, string labelB) {

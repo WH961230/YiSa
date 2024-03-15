@@ -7,84 +7,98 @@ using UnityEngine.UI;
 
 public class Stage : MonoBehaviour {
     public Comp loadingUIComp;
-    public int StageCountIndex = 0;
-    public int StageCount = 0;
     private StageWork work;
     private Queue<StageWork> works = new Queue<StageWork>();
 
-    public void Load(string sceneName) {
-        works.Enqueue(new LoadLoadingUI(new LoadLoadingUIParameters() {
-            Description = "Loading UI", uiRoot = transform
-        }, this));
+    public void Load(float delayTime, string sceneName) {
+        if (delayTime != 0) {
+            works.Enqueue(new LoadLoadingUI(new LoadLoadingUIParameters() {
+                uiRoot = transform
+            }, this));
+        }
         works.Enqueue(new LoadScene(new LoadSceneParameters() {
-            Description = "Loading Scene", sceneName = sceneName
+            sceneName = sceneName
         }));
         works.Enqueue(new LoadGlobal(new LoadGlobalParameters() {
-            Description = "Loading Global", sceneName = sceneName
+            sceneName = sceneName
         }, this));
-        StageCount = works.Count;
     }
 
     public void Update() {
         if (work == null && works.Count > 0) {
-            StageCountIndex = StageCount - works.Count;
             work = works.Dequeue();
-            work?.OnStart();
+            work?.Start();
         }
 
-        work?.OnUpdate();
+        work?.Update();
         if (work != null) {
-            LoadingUI();
             if (work.IsDone) {
-                work.OnComplete();
+                work.Complete();
                 work = null;
             }
-        }
-    }
-
-    private void LoadingUI() {
-        if (loadingUIComp && work != null) {
-            Slider loadingSlider = Cond.Instance.Get<Slider>(loadingUIComp, "LoadingSlider");
-            TextMeshProUGUI loadingText = Cond.Instance.Get<TextMeshProUGUI>(loadingUIComp,"LoadingText");
-            float eachProgress = (float) 1 / StageCount;
-            loadingSlider.value = eachProgress * (StageCountIndex + work.Progress);
-            loadingText.text = string.Concat(work.Parameters.Description, " ", Mathf.Round(loadingSlider.value * 100f), "%");
         }
     }
 }
 
 public class LoadGlobalParameters : StageParameters {
     public string sceneName;
+    public float delayTime;
+    public float progress;
 }
 
 public class LoadGlobal : StageWork {
     private LoadGlobalParameters Parameters;
     private Stage stage;
     private Game game;
+    private Clock clock;
+    private float delayDeployTime;
 
     public LoadGlobal(StageParameters Parameters, Stage stage) : base(Parameters) {
         this.Parameters = (LoadGlobalParameters) Parameters;
         this.stage = stage;
     }
 
-    public override void OnStart() {
-        Progress = 0;
+    public override void Start() {
+        Parameters.progress = 0;
+        delayDeployTime = 0;
     }
 
-    public override void OnUpdate() {
+    public override void Update() {
         if (SceneManager.GetActiveScene().name == Parameters.sceneName && game == null) {
             game = Loader.LoadGo("全局", "Global/Global", null, true).GetComponent<Game>();
             game.Init();
+            clock = ClockUtil.Instance.AlarmAfter(Parameters.delayTime, () => {
+                Parameters.progress = 1f;
+            });
         }
 
         if (game != null) {
-            Progress = 1;
-            IsDone = true;
+            if(Parameters.progress == 1) {
+                IsDone = true;
+                ClockUtil.Instance.Stop(clock);
+            }
+
+            LoadingUI(stage.loadingUIComp, "", Parameters.progress);
         }
     }
 
-    public override void OnComplete() {
-        Object.DestroyImmediate(stage.gameObject);
+    private void LoadingUI(Comp loadingUIComp, string description, float progress) {
+        if (loadingUIComp) {
+            Slider loadingSlider = Cond.Instance.Get<Slider>(loadingUIComp, "LoadingSlider");
+            TextMeshProUGUI loadingText = Cond.Instance.Get<TextMeshProUGUI>(loadingUIComp,"LoadingText");
+            if (delayDeployTime < Parameters.delayTime) {
+                delayDeployTime += 1 * Time.deltaTime / Parameters.delayTime;
+                progress = delayDeployTime;
+            }
+            loadingSlider.value = progress;
+            loadingText.text = string.Concat(description, " ", Mathf.Round(loadingSlider.value * 100f), "%");
+        }
+    }
+
+    public override void Complete() {
+        if (stage.loadingUIComp != null) {
+            Object.DestroyImmediate(stage.loadingUIComp.gameObject);
+        }
     }
 }
 
@@ -99,26 +113,22 @@ public class LoadScene : StageWork {
         this.Parameters = (LoadSceneParameters) Parameters;
     }
 
-    public override void OnStart() {
-        Progress = 0;
+    public override void Start() {
         AsyncOperation operation = Loader.LoadSceneAsync(Parameters.sceneName);
         operation.allowSceneActivation = false;
         while (!operation.isDone) {
             if (operation.progress >= 0.9f) {
-                Progress = 1;
                 operation.allowSceneActivation = true;
                 IsDone = true;
                 break;
-            } else {
-                Progress = operation.progress;
             }
         }
     }
 
-    public override void OnUpdate() {
+    public override void Update() {
     }
 
-    public override void OnComplete() {
+    public override void Complete() {
     }
 }
 
@@ -135,20 +145,18 @@ public class LoadLoadingUI : StageWork {
         this.stage = stage;
     }
 
-    public override void OnStart() {
-        Progress = 0;
+    public override void Start() {
         stage.loadingUIComp = Loader.LoadComp("加载界面", "UI/UI_Loading", Parameters.uiRoot, true);
     }
 
-    public override void OnUpdate() {
+    public override void Update() {
         if (stage.loadingUIComp != null) {
             stage.loadingUIComp.gameObject.SetActive(true);
-            Progress = 1;
             IsDone = true;
         }
     }
 
-    public override void OnComplete() {
+    public override void Complete() {
     }
 }
 
@@ -157,7 +165,6 @@ public class StageParameters {
 }
 
 public abstract class StageWork {
-    public float Progress;
     public bool IsDone;
     public StageParameters Parameters;
 
@@ -165,7 +172,7 @@ public abstract class StageWork {
         this.Parameters = Parameters;
     }
 
-    public abstract void OnStart();
-    public abstract void OnUpdate();
-    public abstract void OnComplete();
+    public abstract void Start();
+    public abstract void Update();
+    public abstract void Complete();
 }

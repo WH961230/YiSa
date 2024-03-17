@@ -385,12 +385,17 @@ MonoBehaviour:
   OnPointerExitEvent:
     m_PersistentCalls:
       m_Calls: []
+  OnControllerColliderHitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   OnDrawGizmosAction:
     m_PersistentCalls:
       m_Calls: []
   GameObjects: []
   Transforms: []
   Colliders: []
+  Materials: []
+  Renderers: []
   CharacterControllers: []
   Buttons:
   - Sign: Back
@@ -1046,12 +1051,17 @@ MonoBehaviour:
   OnPointerExitEvent:
     m_PersistentCalls:
       m_Calls: []
+  OnControllerColliderHitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   OnDrawGizmosAction:
     m_PersistentCalls:
       m_Calls: []
   GameObjects: []
   Transforms: []
   Colliders: []
+  Materials: []
+  Renderers: []
   CharacterControllers: []
   Buttons:
   - Sign: Next
@@ -1136,7 +1146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4198113, g: 0.89119303, b: 1, a: 0.392}
+  m_Color: {r: 0.4198113, g: 0.89119303, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

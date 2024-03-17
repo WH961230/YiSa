@@ -20,11 +20,18 @@ namespace LazyPan {
 
         //角色
         public static string BODY = "Body";//身体位置
+        public static string FOOT = "Foot";//脚
         public static string AIMOFFSETPOINT = "Point";//修复射击偏移点位配置
         public static string MUZZLE = "Muzzle";//枪口
         public static string BARREL = "Barrel";
         public static string HIT = "Hit";//
         public static string SQUIRT = "Squirt";//喷血口
+        
+        //属性
+        public static string ENERGY = "Energy";//能量
+        public static string HEALTH = "Health";//血量
+        public static string RANGE = "Range";//范围
+        public static string EXP = "Exp";//经验值
 
         //UI
         public static string CURSOR = "Cursor";//光标
@@ -35,6 +42,7 @@ namespace LazyPan {
         public static string HOME = "Home";//标题
         public static string AGAIN = "Again";//再来
         public static string ANNOUNCEMENT = "Announcement";//公告
+        public static string INFO = "Info";//信息
 
         //移动类型
         public static string MOTION = "Motion";

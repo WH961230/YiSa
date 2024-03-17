@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77819a1bce2c4b03a3046288c64f14d7, type: 3}
+  m_Name: LocationInf_Single_BeginStartGame
+  m_EditorClassIdentifier: 
+  SettingName: "\u5F00\u59CB\u7269\u4F53\u70B9\u4F4D"
+  TerrainGo: {fileID: 2774054687865642621, guid: c360ee0169452fc45a19dd6474728f0f,
+    type: 3}
+  locationInformationDatas:
+  - Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: -0, y: 0, z: 0}

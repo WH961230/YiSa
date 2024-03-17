@@ -10,8 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77819a1bce2c4b03a3046288c64f14d7, type: 3}
-  m_Name: LocationInf_Single_Player
+  m_Name: LocationInf_Single_BeginPlayer
   m_EditorClassIdentifier: 
+  SettingName: "\u73A9\u5BB6\u521D\u59CB\u70B9"
+  TerrainGo: {fileID: 2774054687865642621, guid: 19f6b3071ae2fab4ca04bdabd2ad3e65,
+    type: 3}
   locationInformationDatas:
-  - Position: {x: 0, y: 10, z: 3.7}
-    Rotation: {x: 0, y: 180, z: 0}
+  - Position: {x: -2.65, y: 0, z: -2.75}
+    Rotation: {x: -0, y: 0, z: 0}

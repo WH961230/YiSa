@@ -10,23 +10,41 @@ namespace LazyPan {
             if (setting.TryGetBaseSetting(config.CreatureType, out BaseSetting baseSetting)) {
                 /*基参*/
                 BaseRuntimeData.DefHealth = baseSetting.Health;
+                BaseRuntimeData.CurHealthMax = baseSetting.HealthMax;
                 BaseRuntimeData.CurHealth = BaseRuntimeData.DefHealth;
+                BaseRuntimeData.CurHealthSpeed = baseSetting.HealthSpeed;
+                /*攻击*/
                 BaseRuntimeData.CurAttack = baseSetting.Attack;
                 BaseRuntimeData.DefAttackIntervalTime = baseSetting.AttackIntervalTime;
                 BaseRuntimeData.CurAttackIntervalDeployTime = BaseRuntimeData.DefAttackIntervalTime;
+                /*冲刺*/
                 BaseRuntimeData.DefTeleportSpeed = baseSetting.TeleportSpeed;
                 BaseRuntimeData.DefTeleportTime = baseSetting.TeleportTime;
                 BaseRuntimeData.DefTeleportColdTime = baseSetting.TeleportColdTime;
+                /*击退*/
                 BaseRuntimeData.DefKnockbackSpeed = baseSetting.KnockbackSpeed;
                 BaseRuntimeData.DefKnockbackTime = baseSetting.KnockbackTime;
+                /*移动*/
                 BaseRuntimeData.DefMotionSpeed = baseSetting.MotionSpeed;
                 BaseRuntimeData.CurMotionSpeed = BaseRuntimeData.DefMotionSpeed;
+                /*旋转*/
                 BaseRuntimeData.DefRotateSpeed = baseSetting.RotateSpeed;
                 BaseRuntimeData.CurRotateSpeed = BaseRuntimeData.DefRotateSpeed;
+                /*检测*/
                 BaseRuntimeData.DefDetectDistance = baseSetting.DetectDistance;
                 BaseRuntimeData.CurDetectDistance = BaseRuntimeData.DefDetectDistance;
                 BaseRuntimeData.DefDetectFrequency = baseSetting.DetectFrequency;
+                /*重力*/
                 BaseRuntimeData.GravitySpeed = baseSetting.GravitySpeed;
+                /*充能*/
+                BaseRuntimeData.CurEnergy = baseSetting.Energy;
+                BaseRuntimeData.CurMaxEnergy = baseSetting.EnergyMax;
+                BaseRuntimeData.CurChargeEnergySpeed = baseSetting.ChargeEnergySpeed;
+                BaseRuntimeData.DefEnergyDownSpeed = baseSetting.EnergyDownSpeed;
+                BaseRuntimeData.DefRangeRotateAngle = baseSetting.RangeRotateAngle;
+                /*经验值*/
+                BaseRuntimeData.CurExp = 0;
+                BaseRuntimeData.CurExpMax = baseSetting.ExpMax;
             }
         }
     }
@@ -36,14 +54,6 @@ namespace LazyPan {
         /*基础参数*/
         public string Sign;//标识
         public string Type;//类型
-        public int DefHealth;//默认血量
-        public int CurHealth;//当前血量
-        public int DefEnergy;//默认能量
-        public int DefMaxEnergy;//默认最大能量
-        public float DefChargeEnergySpeed;//默认能量补充速度
-        public int CurEnergy;//当前能量
-        public int CurMaxEnergy;//当前最大能量
-        public int CurChargeEnergySpeed;//当前能量补充速度
         /*移动参数*/
         public int CurMotionState;//默认 0 禁止 1 移动 2 冲刺
         public float DefMotionSpeed;//默认移动速度
@@ -77,5 +87,22 @@ namespace LazyPan {
         public float DefDetectFrequency;//默认检频测率
         public float CurDetectFrequencyDeployTime;//当前检测频率
         public int CurAttackTargetEntityID;//当前攻击的实体ID
+        /*回血*/
+        public float DefHealth;//默认血量
+        public float CurHealthMax;//血量上限
+        public float CurHealth;//当前血量
+        public float CurHealthSpeed;//回血速度
+        public bool CurIsHealthing;//回血中
+        /*充能*/
+        public float CurEnergy;//当前能量
+        public float CurMaxEnergy;//当前最大能量
+        public float CurChargeEnergySpeed;//当前能量补充速度
+        public float DefEnergyDownSpeed;//能量减少速度
+        public bool CurIsCharging;//是否充能
+        /*范围*/
+        public float DefRangeRotateAngle;//范围旋转角度
+        /*经验值*/
+        public int CurExp;//经验值
+        public int CurExpMax;//经验值最大值
     }
 }

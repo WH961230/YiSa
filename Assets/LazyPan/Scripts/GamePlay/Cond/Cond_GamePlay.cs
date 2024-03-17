@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace LazyPan {
     public partial class Cond {
-        public bool GetTowerEntity(out Entity entity) { return Data.Instance.TryGetEntityByType("Tower", out entity); }
+        public bool GetTowerEntity(out Entity entity) { return Data.Instance.TryGetEntityByType("Building", out entity); }
         public bool GetRandEntityByType(string type, out Entity entity) { return Data.Instance.TryGetRandEntityByType(type, out entity); }
 
         //根据类型获取距离内的随机一个实体

@@ -9,6 +9,7 @@ namespace LazyPan {
         private Entity playerSoldierEntity;
         private Comp comp;
         private Comp announcementComp;
+        private Entity startGameEntity;
 
         public override void Init(Flow baseFlow) {
             base.Init(baseFlow);
@@ -18,11 +19,12 @@ namespace LazyPan {
             lightEntity = Obj.Instance.LoadEntity("Obj_Light_DirectionalLight");
             beginCameraEntity = Obj.Instance.LoadEntity("Obj_Camera_BeginCamera");
 
-            playerSoldierEntity = Obj.Instance.LoadEntity("Obj_Player_Soldier");
+            playerSoldierEntity = Obj.Instance.LoadEntity("Obj_Player_BeginSoldier");
             floorEntity = Obj.Instance.LoadEntity("Obj_Terrain_Begin");
 
             announcementComp = Cond.Instance.Get<Comp>(comp, Label.ANNOUNCEMENT);
             announcementComp.gameObject.SetActive(false);
+
             if (!Data.Instance.FirstPlay) {
                 announcementComp.gameObject.SetActive(true);
                 ButtonRegister.AddListener(Cond.Instance.Get<Button>(announcementComp, Label.BACK), () => {
@@ -31,15 +33,21 @@ namespace LazyPan {
                 Data.Instance.FirstPlay = true;
             }
 
-            ButtonRegister.AddListener(Cond.Instance.Get<Button>(comp, Label.NEXT), () => {
-                Clear();
-                Launch.instance.StageLoad("Fight");
-            });
+            startGameEntity = Obj.Instance.LoadEntity("Obj_Event_BeginStartGame");
+            startGameEntity.EntityData.BaseRuntimeData.CurMaxEnergy = 3;
+            startGameEntity.EntityData.BaseRuntimeData.CurEnergy = 0;
+            startGameEntity.EntityData.BaseRuntimeData.CurChargeEnergySpeed = 1;
+            startGameEntity.EntityData.BaseRuntimeData.DefEnergyDownSpeed = 1;
 
             ButtonRegister.AddListener(Cond.Instance.Get<Button>(comp, Label.QUIT), () => {
                 Clear();
                 Launch.instance.QuitGame();
             });
+        }
+
+        public void Next() {
+            Clear();
+            Launch.instance.StageLoad("Battle");
         }
 
         public override void Clear() {
@@ -52,6 +60,7 @@ namespace LazyPan {
             Obj.Instance.UnLoadEntity(playerSoldierEntity);
             Obj.Instance.UnLoadEntity(floorEntity);
             Obj.Instance.UnLoadEntity(beginCameraEntity);
+            Obj.Instance.UnLoadEntity(startGameEntity);
         }
     }
 }

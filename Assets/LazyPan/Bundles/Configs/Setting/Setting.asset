@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseSettings:
   - CreatureType: Strong
-    Health: 100
+    Health: 0
+    HealthMax: 0
+    HealthSpeed: 0
     MotionSpeed: 10
     RotateSpeed: 1000
     TeleportSpeed: 30
@@ -27,22 +29,38 @@ MonoBehaviour:
     KnockbackTime: 0.2
     DetectDistance: 5
     DetectFrequency: 0.5
+    EnergyMax: 0
+    Energy: 0
+    ChargeEnergySpeed: 0
+    EnergyDownSpeed: 0
+    RangeRotateAngle: 0
+    ExpMax: 0
   - CreatureType: Agile
     Health: 10
-    MotionSpeed: 2
+    HealthMax: 10
+    HealthSpeed: 0
+    MotionSpeed: 3
     RotateSpeed: 1000
     TeleportSpeed: 30
     TeleportTime: 0.1
     TeleportColdTime: 1
     GravitySpeed: 10
-    Attack: 5
+    Attack: 2
     AttackIntervalTime: 0.2
     KnockbackSpeed: 1
     KnockbackTime: 0.2
     DetectDistance: 100
     DetectFrequency: 0.5
+    EnergyMax: 0
+    Energy: 0
+    ChargeEnergySpeed: 0
+    EnergyDownSpeed: 0
+    RangeRotateAngle: 0
+    ExpMax: 0
   - CreatureType: SuperStrong
-    Health: 50
+    Health: 10
+    HealthMax: 10
+    HealthSpeed: 1
     MotionSpeed: 0
     RotateSpeed: 1000
     TeleportSpeed: 0
@@ -53,5 +71,11 @@ MonoBehaviour:
     AttackIntervalTime: 0.2
     KnockbackSpeed: 0
     KnockbackTime: 0
-    DetectDistance: 12
+    DetectDistance: 10
     DetectFrequency: 0.5
+    EnergyMax: 7
+    Energy: 0
+    ChargeEnergySpeed: 1
+    EnergyDownSpeed: 1
+    RangeRotateAngle: 5
+    ExpMax: 5

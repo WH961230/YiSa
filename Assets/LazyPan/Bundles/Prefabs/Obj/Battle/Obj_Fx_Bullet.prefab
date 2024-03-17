@@ -91,6 +91,9 @@ MonoBehaviour:
   OnPointerExitEvent:
     m_PersistentCalls:
       m_Calls: []
+  OnControllerColliderHitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   OnDrawGizmosAction:
     m_PersistentCalls:
       m_Calls: []
@@ -250,7 +253,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1000
+      scalar: 2000
       minScalar: 5
       maxCurve:
         serializedVersion: 2

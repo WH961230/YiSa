@@ -11,7 +11,7 @@ namespace LazyPan {
 
         public Behaviour_Auto_Rotate(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             body = Cond.Instance.Get<Transform>(entity, Label.BODY);
-            CursorRect = Cond.Instance.Get<Transform>(UI.Instance.Get("UI_Fight"), Label.CURSOR)
+            CursorRect = Cond.Instance.Get<Transform>(UI.Instance.Get("UI_Battle"), Label.CURSOR)
                 .GetComponent<RectTransform>();
             CursorRect.gameObject.SetActive(true);
             Data.Instance.OnUpdateEvent.AddListener(OnUpdate);

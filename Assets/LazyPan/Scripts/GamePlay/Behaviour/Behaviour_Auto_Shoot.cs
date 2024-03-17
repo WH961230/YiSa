@@ -8,24 +8,26 @@ namespace LazyPan {
         }
 
         private void OnShootUpdate() {
-            if (entity.EntityData.BaseRuntimeData.CurAttackIntervalDeployTime > 0) {
-                entity.EntityData.BaseRuntimeData.CurAttackIntervalDeployTime -= Time.deltaTime;
-            } else {
-                bool findRobotEntity = Cond.Instance.GetRandEntityByTypeWithinDistance(Label.ROBOT,
-                    Cond.Instance.Get<Transform>(entity, Label.BODY).position,
-                    entity.EntityData.BaseRuntimeData.CurDetectDistance, out Entity robotEntity);
-                if (findRobotEntity && robotEntity.EntityData.BaseRuntimeData.CurHealth > 0) {
-                    GameObject template = Loader.LoadGo("弹药", "Obj/Fight/Obj_Fx_Bullet", Data.Instance.ObjRoot, true);
-                    Transform bulletMuzzle = Cond.Instance.Get<Transform>(entity, Label.MUZZLE);
-                    template.transform.position = bulletMuzzle.position;
-                    template.transform.forward = (Cond.Instance.Get<Transform>(robotEntity, Label.HIT).position - bulletMuzzle.position).normalized;
-                    template.GetComponent<Comp>().OnParticleCollisionEvent.AddListener(OnTriggerEnter);
-                    template.GetComponent<Comp>().OnParticleCollisionEvent.AddListener((aaa) => {
-                        Object.Destroy(template);
-                    });
+            if (entity.EntityData.BaseRuntimeData.CurEnergy > 0) {
+                if (entity.EntityData.BaseRuntimeData.CurAttackIntervalDeployTime > 0) {
+                    entity.EntityData.BaseRuntimeData.CurAttackIntervalDeployTime -= Time.deltaTime;
+                } else {
+                    bool findRobotEntity = Cond.Instance.GetRandEntityByTypeWithinDistance(Label.ROBOT,
+                        Cond.Instance.Get<Transform>(entity, Label.BODY).position,
+                        entity.EntityData.BaseRuntimeData.CurDetectDistance, out Entity robotEntity);
+                    if (findRobotEntity && robotEntity.EntityData.BaseRuntimeData.CurHealth > 0) {
+                        GameObject template = Loader.LoadGo("弹药", "Obj/Battle/Obj_Fx_Bullet", Data.Instance.ObjRoot, true);
+                        Transform bulletMuzzle = Cond.Instance.Get<Transform>(entity, Label.MUZZLE);
+                        template.transform.position = bulletMuzzle.position;
+                        template.transform.forward = (Cond.Instance.Get<Transform>(robotEntity, Label.HIT).position - bulletMuzzle.position).normalized;
+                        template.GetComponent<Comp>().OnParticleCollisionEvent.AddListener(OnTriggerEnter);
+                        template.GetComponent<Comp>().OnParticleCollisionEvent.AddListener((aaa) => {
+                            Object.Destroy(template);
+                        });
+                    }
+                    entity.EntityData.BaseRuntimeData.CurAttackIntervalDeployTime =
+                        entity.EntityData.BaseRuntimeData.DefAttackIntervalTime;
                 }
-                entity.EntityData.BaseRuntimeData.CurAttackIntervalDeployTime =
-                    entity.EntityData.BaseRuntimeData.DefAttackIntervalTime;
             }
         }
 
@@ -46,7 +48,7 @@ namespace LazyPan {
                     }
                     Debug.Log($"curHealth:{tmpEntity.EntityData.BaseRuntimeData.CurHealth}");
                     /*掉血表现*/
-                    GameObject template = Loader.LoadGo("掉血", "Obj/Fight/Obj_Fx_BeHit", Data.Instance.ObjRoot, true);
+                    GameObject template = Loader.LoadGo("掉血", "Obj/Battle/Obj_Fx_BeHit", Data.Instance.ObjRoot, true);
                     Transform squirt = Cond.Instance.Get<Transform>(tmpEntity, Label.SQUIRT);
                     template.transform.position = squirt.position;
                     template.transform.rotation = squirt.rotation;

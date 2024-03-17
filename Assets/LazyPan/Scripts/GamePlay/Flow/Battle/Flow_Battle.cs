@@ -28,20 +28,18 @@ namespace LazyPan {
             PlayableDirector playableDirector = Cond.Instance.Get<PlayableDirector>(beginTimeline, Label.PLAYABLEDIRECTOR);
             playableDirector.stopped += director => {
                 if (playableDirector.enabled) {
-                    playerSoldierEntity = Obj.Instance.LoadEntity("Obj_Player_Soldier");
+                    comp = UI.Instance.Open("UI_Battle");
+                    playerSoldierEntity = Obj.Instance.LoadEntity("Obj_Player_BattleSoldier");
                     towerEntity = Obj.Instance.LoadEntity("Obj_Building_Tower");
-
                     robotSoldierEntities = new List<Entity>();
- 
                     AddRobot();
-
-                    cameraEntity = Obj.Instance.LoadEntity("Obj_Camera_FightCamera");
-                    comp = UI.Instance.Open("UI_Fight");
-                    Cond.Instance.Get<TextMeshProUGUI>(comp, Label.TITLE).text = "FightFlow";
-
-                    ButtonRegister.AddListener(Cond.Instance.Get<Button>(comp, Label.NEXT), Next);
+                    cameraEntity = Obj.Instance.LoadEntity("Obj_Camera_BattleCamera");
                 }
             };
+        }
+
+        public Comp GetUI() {
+            return comp;
         }
 
         public void AddRobot() {
@@ -60,8 +58,7 @@ namespace LazyPan {
 
         public override void Clear() {
             base.Clear();
-            ButtonRegister.RemoveAllListener(Cond.Instance.Get<Button>(comp, Label.NEXT));
-            UI.Instance.Close("UI_Fight");
+            UI.Instance.Close("UI_Battle");
 
             Obj.Instance.UnLoadEntity(floorEntity);
             Obj.Instance.UnLoadEntity(volumeEntity);

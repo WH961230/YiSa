@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace LazyPan {
     public class Behaviour_Auto_SelfDetonationAttack : Behaviour {
@@ -14,15 +15,35 @@ namespace LazyPan {
 
             if (Data.Instance.TryGetEntityByBodyPrefabID(hit.gameObject.GetInstanceID(), out Entity tmpEntity)) {
                 Debug.Log("hit GO:" + tmpEntity.EntityData.BaseRuntimeData.Type);
-                tmpEntity.EntityData.BaseRuntimeData.CurHealth -= entity.EntityData.BaseRuntimeData.CurAttack;
-                Debug.Log($"玩家血量:{tmpEntity.EntityData.BaseRuntimeData.CurHealth}");
-                bool hasFightFlow = Flo.Instance.GetFlow(out Flow_Battle fight);
-                if (hasFightFlow) {
-                    fight.RemoveRobot(entity);
-                    fight.AddRobot();
-                    if (tmpEntity.EntityData.BaseRuntimeData.CurHealth <= 0) {
-                        Debug.LogError("游戏结束");
-                        fight.Next();
+
+                Entity towerEntity = null;
+                if (tmpEntity.EntityData.BaseRuntimeData.Type == "Building") {
+                    towerEntity = tmpEntity;
+                }
+
+                if (tmpEntity.EntityData.BaseRuntimeData.Type == "Player") {
+                    Cond.Instance.GetTowerEntity(out towerEntity);
+                }
+
+                if (towerEntity != null) {
+                    towerEntity.EntityData.BaseRuntimeData.CurHealth -= entity.EntityData.BaseRuntimeData.CurAttack;
+                    bool isGetFlow = Flo.Instance.GetFlow(out Flow_Battle battleFlow);
+                    if (isGetFlow) {
+                        Comp battleui = battleFlow.GetUI();
+                        Comp info = Cond.Instance.Get<Comp>(battleui, Label.INFO);
+                        Cond.Instance.Get<Slider>(info, Label.HEALTH).value = entity.EntityData.BaseRuntimeData.CurHealth /
+                                                                              entity.EntityData.BaseRuntimeData
+                                                                                  .CurHealthMax;
+                    }
+                    Debug.Log($"血量:{towerEntity.EntityData.BaseRuntimeData.CurHealth}");
+                    bool hasFightFlow = Flo.Instance.GetFlow(out Flow_Battle fight);
+                    if (hasFightFlow) {
+                        fight.RemoveRobot(entity);
+                        fight.AddRobot();
+                        if (towerEntity.EntityData.BaseRuntimeData.CurHealth <= 0) {
+                            Debug.LogError("游戏结束");
+                            fight.Next();
+                        }
                     }
                 }
             }

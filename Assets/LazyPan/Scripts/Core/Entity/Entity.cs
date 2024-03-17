@@ -51,11 +51,13 @@ namespace LazyPan {
 #endif
                 }
 
-                CharacterController characterController =
-                    Cond.Instance.Get<CharacterController>(this, Label.CHARACTERCONTROLLER);
-                Cond.Instance.Get<Transform>(this, Label.BODY).position = data.Position + Vector3.up * characterController.radius;
-                Cond.Instance.Get<Transform>(this, Label.BODY).rotation = Quaternion.Euler(data.Rotation);
-                characterController.enabled = true;
+                Cond.Instance.Get<Transform>(this, Label.FOOT).position = data.Position;
+                Cond.Instance.Get<Transform>(this, Label.FOOT).rotation = Quaternion.Euler(data.Rotation);
+
+                CharacterController characterController = Cond.Instance.Get<CharacterController>(this, Label.CHARACTERCONTROLLER);
+                if (characterController != null) {
+                    characterController.enabled = true;
+                }
             }
             //注册实体
             Data.Instance.AddEntity(ID, this);

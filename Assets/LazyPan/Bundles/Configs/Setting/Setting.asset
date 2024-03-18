@@ -58,8 +58,8 @@ MonoBehaviour:
     RangeRotateAngle: 0
     ExpMax: 0
   - CreatureType: SuperStrong
-    Health: 10
-    HealthMax: 10
+    Health: 3
+    HealthMax: 3
     HealthSpeed: 1
     MotionSpeed: 0
     RotateSpeed: 1000

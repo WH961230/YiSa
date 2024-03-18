@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace LazyPan {
     public class Obj : Singleton<Obj> {
         public void Init() {
@@ -6,6 +8,10 @@ namespace LazyPan {
 
         public void Preload() {
             Data.Instance.ObjRoot = Loader.LoadGo("物体", "Global/Global_ObjRoot", null, true).transform;
+        }
+
+        public void UnPreload() {
+            GameObject.Destroy(Data.Instance.ObjRoot.gameObject);
         }
 
         //加载物体

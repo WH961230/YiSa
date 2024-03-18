@@ -935,6 +935,7 @@ GameObject:
   - component: {fileID: 211614921933866640}
   - component: {fileID: 861783290191642929}
   - component: {fileID: 3596810566383585932}
+  - component: {fileID: 4678246658302709047}
   m_Layer: 7
   m_Name: "\u8EAB\u4F53"
   m_TagString: Untagged
@@ -1256,6 +1257,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &4678246658302709047
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013383610614630703}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.1, y: 1.1, z: 1.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8844891474954714413
 GameObject:
   m_ObjectHideFlags: 0

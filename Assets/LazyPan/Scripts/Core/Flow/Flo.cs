@@ -16,6 +16,13 @@ namespace LazyPan {
             flows.Add(type, flow);
         }
 
+        public void UnPreload() {
+            foreach (Flow flow in flows.Values) {
+                flow.Clear();
+            }
+            flows.Clear();
+        }
+
         public bool GetFlow<T>(out T flow) where T : Flow {
             if (flows.ContainsKey(typeof(T))) {
                 flow = (T)flows[typeof(T)];

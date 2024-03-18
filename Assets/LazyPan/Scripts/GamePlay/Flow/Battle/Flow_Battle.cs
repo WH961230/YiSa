@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 namespace LazyPan {
     public class Flow_Battle : Flow {
-        private Comp comp;
+        private Comp battleComp;
+        private Comp SettlementComp;
         private Entity floorEntity;
         private Entity cameraEntity;
         private Entity playerSoldierEntity;
@@ -26,20 +27,22 @@ namespace LazyPan {
             beginTimeline = Obj.Instance.LoadEntity("Obj_Event_BeginTimeline");
             //播放完开场演示后生成玩家
             PlayableDirector playableDirector = Cond.Instance.Get<PlayableDirector>(beginTimeline, Label.PLAYABLEDIRECTOR);
-            playableDirector.stopped += director => {
-                if (playableDirector.enabled) {
-                    comp = UI.Instance.Open("UI_Battle");
-                    playerSoldierEntity = Obj.Instance.LoadEntity("Obj_Player_BattleSoldier");
-                    towerEntity = Obj.Instance.LoadEntity("Obj_Building_Tower");
-                    robotSoldierEntities = new List<Entity>();
-                    AddRobot();
-                    cameraEntity = Obj.Instance.LoadEntity("Obj_Camera_BattleCamera");
-                }
-            };
+            playableDirector.stopped += Play;
+            playableDirector.Play();
         }
 
         public Comp GetUI() {
-            return comp;
+            return battleComp;
+        }
+
+        public void Play(PlayableDirector pd) {
+            battleComp = UI.Instance.Open("UI_Battle");
+            playerSoldierEntity = Obj.Instance.LoadEntity("Obj_Player_BattleSoldier");
+            towerEntity = Obj.Instance.LoadEntity("Obj_Building_Tower");
+            robotSoldierEntities = new List<Entity>();
+            AddRobot();
+            cameraEntity = Obj.Instance.LoadEntity("Obj_Camera_BattleCamera");
+            pd.enabled = false;
         }
 
         public void AddRobot() {
@@ -51,9 +54,36 @@ namespace LazyPan {
             Obj.Instance.UnLoadEntity(robotEntity);
         }
 
-        public void Next() {
+        //结算
+        public void Settlement() {
+            SettlementComp = Cond.Instance.Get<Comp>(battleComp, Label.SETTLEMENT);
+            SettlementComp.gameObject.SetActive(true);
+
+            Button again = Cond.Instance.Get<Button>(SettlementComp, Label.AGAIN);
+            ButtonRegister.AddListener(again, Again);
+
+            Button returnBtn = Cond.Instance.Get<Button>(SettlementComp, Label.RETURN);
+            ButtonRegister.AddListener(returnBtn, Return);
+        }
+
+        //下一步
+        public void Return() {
+            Button returnBtn = Cond.Instance.Get<Button>(SettlementComp, Label.RETURN);
+            ButtonRegister.RemoveListener(returnBtn, Return);
             Clear();
-            Launch.instance.StageLoad("Clear");
+            Launch.instance.StageLoad("Begin");
+        }
+
+        //再来一局
+        public void Again() {
+            Button again = Cond.Instance.Get<Button>(SettlementComp, Label.AGAIN);
+            ButtonRegister.RemoveListener(again, Again);
+            Clear();
+            Data.Instance.OnUpdateEvent.RemoveAllListeners();
+            Data.Instance.OnFixedUpdateEvent.RemoveAllListeners();
+            Data.Instance.OnLateUpdateEvent.RemoveAllListeners();
+            Game.instance.Clear();
+            Game.instance.Init();
         }
 
         public override void Clear() {

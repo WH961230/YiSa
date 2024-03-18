@@ -43,6 +43,8 @@ namespace LazyPan {
         public static string AGAIN = "Again";//再来
         public static string ANNOUNCEMENT = "Announcement";//公告
         public static string INFO = "Info";//信息
+        public static string SETTLEMENT = "Settlement";//结算
+        public static string RETURN = "Return";//返回
 
         //移动类型
         public static string MOTION = "Motion";

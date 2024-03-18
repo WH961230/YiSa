@@ -4,16 +4,16 @@ using UnityEngine.UI;
 namespace LazyPan {
     public class Behaviour_Auto_SelfDetonationAttack : Behaviour {
         public Behaviour_Auto_SelfDetonationAttack(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
-            Cond.Instance.Get<Comp>(entity, Label.Assemble(Label.BODY, Label.COMP)).OnControllerColliderHitEvent
-                .AddListener(OnHitTrigger);
+            Cond.Instance.Get<Comp>(entity, Label.Assemble(Label.BODY, Label.COMP)).OnTriggerEnterEvent
+                .AddListener(OnHitTriggerEnter);
         }
 
-        private void OnHitTrigger(ControllerColliderHit hit) {
-            if (hit.gameObject.layer != LayerMask.NameToLayer("FriendSideBeHit")) {
+        private void OnHitTriggerEnter(Collider arg0) {
+            if (arg0.gameObject.layer != LayerMask.NameToLayer("FriendSideBeHit")) {
                 return;
             }
 
-            if (Data.Instance.TryGetEntityByBodyPrefabID(hit.gameObject.GetInstanceID(), out Entity tmpEntity)) {
+            if (Data.Instance.TryGetEntityByBodyPrefabID(arg0.gameObject.GetInstanceID(), out Entity tmpEntity)) {
                 Debug.Log("hit GO:" + tmpEntity.EntityData.BaseRuntimeData.Type);
 
                 Entity towerEntity = null;
@@ -41,8 +41,8 @@ namespace LazyPan {
                         fight.RemoveRobot(entity);
                         fight.AddRobot();
                         if (towerEntity.EntityData.BaseRuntimeData.CurHealth <= 0) {
-                            Debug.LogError("游戏结束");
-                            fight.Next();
+                            Debug.LogError("游戏结束 结算");
+                            fight.Settlement();
                         }
                     }
                 }
@@ -51,6 +51,8 @@ namespace LazyPan {
 
         public override void Clear() {
             base.Clear();
+            Cond.Instance.Get<Comp>(entity, Label.Assemble(Label.BODY, Label.COMP)).OnTriggerEnterEvent
+                .RemoveListener(OnHitTriggerEnter);
         }
     }
 }

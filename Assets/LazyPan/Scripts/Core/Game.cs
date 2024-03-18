@@ -11,6 +11,12 @@ public class Game : MonoBehaviour {
         Flo.Instance.Preload();
     }
 
+    public void Clear() {
+        Obj.Instance.UnPreload();
+        UI.Instance.UnPreload();
+        Flo.Instance.UnPreload();
+    }
+
     private void Update() { Data.Instance.OnUpdateEvent.Invoke(); }
 
     private void FixedUpdate() { Data.Instance.OnFixedUpdateEvent.Invoke(); }

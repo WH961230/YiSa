@@ -32,6 +32,13 @@ namespace LazyPan {
             }
         }
 
+        public void UnPreload() {
+            uICompDics.Clear();
+            uICompExchangeDics.Clear();
+            uICompAlwaysDics.Clear();
+            GameObject.Destroy(Data.Instance.UIRoot.gameObject);
+        }
+
         public Comp Open(string name) {
             if (uICompExchangeDics.TryGetValue(name, out Comp uiExchangeComp)) {
                 if (UIComp != null) {

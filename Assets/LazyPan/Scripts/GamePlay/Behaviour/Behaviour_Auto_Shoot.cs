@@ -45,7 +45,6 @@ namespace LazyPan {
                         }
                         return;
                     }
-                    Debug.Log($"curHealth:{tmpEntity.EntityData.BaseRuntimeData.CurHealth}");
                     /*掉血表现*/
                     GameObject template = Loader.LoadGo("掉血", "Obj/Battle/Obj_Fx_BeHit", Data.Instance.ObjRoot, true);
                     Transform squirt = Cond.Instance.Get<Transform>(tmpEntity, Label.SQUIRT);

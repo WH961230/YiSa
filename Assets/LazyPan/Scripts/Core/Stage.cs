@@ -20,7 +20,7 @@ public class Stage : MonoBehaviour {
             sceneName = sceneName
         }));
         works.Enqueue(new LoadGlobal(new LoadGlobalParameters() {
-            sceneName = sceneName
+            sceneName = sceneName, delayTime = delayTime
         }, this));
     }
 

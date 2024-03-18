@@ -53,10 +53,32 @@ namespace LazyPan {
         [Tooltip("经验值上限")] public int ExpMax;
     }
 
+    //关卡机器人配置
+    [Serializable]
+    public class LevelRobotSetting {
+        [Tooltip("关卡数")] public int LevelNum;
+        [Tooltip("描述")] public string Description;
+        [Tooltip("图标")] public Sprite Icon;
+        [Tooltip("怪物数量")] public int robotNum;
+        [Tooltip("怪物标识")] public string robotSign;
+    }
+
+    //关卡BUFF配置
+    [Serializable]
+    public class LevelBuffSetting {
+        [Tooltip("关卡数")] public int LevelNum;
+        [Tooltip("描述")] public string Description;
+        [Tooltip("图标")] public Sprite Icon;
+        [Tooltip("行为标识")] public string BehaviourSign;
+    }
+
     [CreateAssetMenu(menuName = "LazyPan/Setting", fileName = "Setting")]
     public class Setting : ScriptableObject {
         [Header("基础信息配置")] public List<BaseSetting> BaseSettings;
+        [Header("关卡机器人配置")] public List<LevelRobotSetting> LevelRobotSettings;
+        [Header("关卡BUFF配置")] public List<LevelBuffSetting> LevelBuffSettings;
 
+        /*获取标识的基础信息配置*/
         public bool TryGetBaseSetting(string sign, out BaseSetting baseSetting) {
             foreach (BaseSetting setting in BaseSettings) {
                 if (setting.CreatureType == sign) {
@@ -68,5 +90,33 @@ namespace LazyPan {
             baseSetting = default;
             return false;
         }
+
+        /*随机获取n个关卡数匹配的关卡机器人配置*/
+        public bool TryGetLevelRobotSetting(int levelNum, int needNum, out List<LevelRobotSetting> ret) {
+            ret = new List<LevelRobotSetting>();
+            foreach (LevelRobotSetting setting in LevelRobotSettings) {
+                if (setting.LevelNum == levelNum) {
+                    ret.Add(setting);
+                }
+            }
+
+            if (ret.Count < needNum) {
+                ret = default;
+                return false;
+            }
+
+            int[] indexs = MathUtil.Instance.GetRandNoRepeatIndex(ret.Count, needNum);
+            ret.Clear();
+            foreach (int index in indexs) {
+                ret.Add(LevelRobotSettings[index]);
+            }
+
+            return true;
+        }
+        
+        // /*随机获取n个关卡数匹配的关卡BUFF配置*/
+        // public bool TryGetLevelBuffSetting(int levelNum, int needNum) {
+        //     
+        // }
     }
 }

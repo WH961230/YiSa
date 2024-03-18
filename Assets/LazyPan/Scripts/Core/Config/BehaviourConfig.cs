@@ -4,6 +4,7 @@ using System.Collections.Generic;
 namespace LazyPan {
     public class BehaviourConfig {
 		public string Sign;
+		public string Name;
 		public string Description;
 
         private static bool isInit;
@@ -15,7 +16,8 @@ namespace LazyPan {
             try {
                 string[] values = line.Split(',');
 				Sign = values[0];
-				Description = values[1];
+				Name = values[1];
+				Description = values[2];
 
             } catch (Exception e) {
                 Console.WriteLine(e);

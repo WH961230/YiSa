@@ -45,6 +45,9 @@ namespace LazyPan {
         public static string INFO = "Info";//信息
         public static string SETTLEMENT = "Settlement";//结算
         public static string RETURN = "Return";//返回
+        public static string LEVEL = "Level";//关卡
+        public static string LEVELUP = "LevelUp";//等级
+        public static string SELECT = "Select";//选择
 
         //移动类型
         public static string MOTION = "Motion";
@@ -60,6 +63,11 @@ namespace LazyPan {
         public static string CODE = "Code";//命令
         public static string CONTENT = "Content";//内容
 
+        //常用
+        public static string A = "A";
+        public static string B = "B";
+        public static string C = "C";
+        
         //组合A+B
         public static string Assemble(string labelA, string labelB) {
             return string.Concat(labelA, labelB);

@@ -16,6 +16,10 @@ namespace LazyPan {
             PrepareRobot("Obj_Robot_Soldier");
             RobotEvent(2, 1);
             MessageRegister.Instance.Reg<Entity>(MessageCode.Dead, RobotDead);
+            Data.Instance.OnUpdateEvent.AddListener(Wait);
+        }
+
+        private void Wait() {
         }
 
         /*机器人事件 几秒钟后 间隔几秒 生成怪物 一共需要生成几只*/
@@ -24,6 +28,8 @@ namespace LazyPan {
                 if (robotSoldierQueuies.Count > 0) {
                     InstanceRobot();
                 } else {
+                    Data.Instance.LevelNum++;
+                    Data.Instance.SelectLevel = true;
                     ClockUtil.Instance.Stop(clock);
                 }
             });
@@ -54,6 +60,12 @@ namespace LazyPan {
             if (robotSoldierEntities.Contains(robotEntity)) {
                 robotSoldierEntities.Remove(robotEntity);
                 Obj.Instance.UnLoadEntity(robotEntity);
+                if (robotSoldierEntities.Count == 0) {
+#if UNITY_EDITOR
+                    ConsoleEx.Instance.Content("log", $"怪物清空!");
+#endif
+                    //关卡数量增加1 等待选择关卡完成
+                }
             }
         }
 
@@ -61,6 +73,7 @@ namespace LazyPan {
             base.Clear();
             MessageRegister.Instance.UnReg<Entity>(MessageCode.Dead, RobotDead);
             ClockUtil.Instance.Stop(clock);
+            Data.Instance.OnUpdateEvent.RemoveListener(Wait);
         }
     }
 }

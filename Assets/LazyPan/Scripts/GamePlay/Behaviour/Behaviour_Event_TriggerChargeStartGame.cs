@@ -2,12 +2,12 @@
 using UnityEngine.UI;
 
 namespace LazyPan {
-    public class Behaviour_Even_TriggerChargeStartGame : Behaviour {
+    public class Behaviour_Event_TriggerChargeStartGame : Behaviour {
         private Flow_Begin beginFlow;
         private float deploy;
         private Image energyImage;
 
-        public Behaviour_Even_TriggerChargeStartGame(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
+        public Behaviour_Event_TriggerChargeStartGame(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             Cond.Instance.Get<Comp>(entity, Label.TRIGGER).OnTriggerEnterEvent.AddListener(ChargeIn);
             Cond.Instance.Get<Comp>(entity, Label.TRIGGER).OnTriggerExitEvent.AddListener(ChargeOut);
             energyImage = Cond.Instance.Get<Image>(Cond.Instance.Get<Comp>(entity, Label.ENERGY), Label.ENERGY);

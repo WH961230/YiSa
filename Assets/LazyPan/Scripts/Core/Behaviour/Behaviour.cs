@@ -8,11 +8,15 @@ namespace LazyPan {
         protected Behaviour(Entity entity, string behaviourSign) {
             this.entity = entity;
             BehaviourSign = behaviourSign;
-            //Debug.LogFormat("ID:{0} 注册行为:{1}", entity.ID, behaviourSign);
+#if UNITY_EDITOR
+            ConsoleEx.Instance.Content("log", $"ID:{entity.ID} 注册行为:{BehaviourSign}");
+#endif
         }
 
         public virtual void Clear() {
-            //Debug.LogFormat("ID:{0} 注销行为:{1}", entity.ID, BehaviourSign);
+#if UNITY_EDITOR
+            ConsoleEx.Instance.Content("log", $"ID:{entity.ID} 注销行为:{BehaviourSign}");
+#endif
         }
     }
 }

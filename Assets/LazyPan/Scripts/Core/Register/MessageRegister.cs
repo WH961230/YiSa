@@ -133,4 +133,8 @@ namespace LazyPan {
             }
         }
     }
+
+    public class MessageCode {
+        public static int Dead = 0;
+    }
 }

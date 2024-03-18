@@ -14,8 +14,6 @@ namespace LazyPan {
             }
 
             if (Data.Instance.TryGetEntityByBodyPrefabID(arg0.gameObject.GetInstanceID(), out Entity tmpEntity)) {
-                Debug.Log("hit GO:" + tmpEntity.EntityData.BaseRuntimeData.Type);
-
                 Entity towerEntity = null;
                 if (tmpEntity.EntityData.BaseRuntimeData.Type == "Building") {
                     towerEntity = tmpEntity;
@@ -27,22 +25,19 @@ namespace LazyPan {
 
                 if (towerEntity != null) {
                     towerEntity.EntityData.BaseRuntimeData.CurHealth -= entity.EntityData.BaseRuntimeData.CurAttack;
+
+                    Debug.Log($"血量:{towerEntity.EntityData.BaseRuntimeData.CurHealth}");
                     bool isGetFlow = Flo.Instance.GetFlow(out Flow_Battle battleFlow);
                     if (isGetFlow) {
+                        MessageRegister.Instance.Dis(MessageCode.Dead, entity);
+
                         Comp battleui = battleFlow.GetUI();
                         Comp info = Cond.Instance.Get<Comp>(battleui, Label.INFO);
-                        Cond.Instance.Get<Slider>(info, Label.HEALTH).value = entity.EntityData.BaseRuntimeData.CurHealth /
-                                                                              entity.EntityData.BaseRuntimeData
+                        Cond.Instance.Get<Slider>(info, Label.HEALTH).value = towerEntity.EntityData.BaseRuntimeData.CurHealth /
+                                                                              towerEntity.EntityData.BaseRuntimeData
                                                                                   .CurHealthMax;
-                    }
-                    Debug.Log($"血量:{towerEntity.EntityData.BaseRuntimeData.CurHealth}");
-                    bool hasFightFlow = Flo.Instance.GetFlow(out Flow_Battle fight);
-                    if (hasFightFlow) {
-                        fight.RemoveRobot(entity);
-                        fight.AddRobot();
                         if (towerEntity.EntityData.BaseRuntimeData.CurHealth <= 0) {
-                            Debug.LogError("游戏结束 结算");
-                            fight.Settlement();
+                            battleFlow.Settlement();
                         }
                     }
                 }

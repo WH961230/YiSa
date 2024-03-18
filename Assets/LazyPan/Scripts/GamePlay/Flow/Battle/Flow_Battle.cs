@@ -11,51 +11,59 @@ namespace LazyPan {
         private Entity cameraEntity;
         private Entity playerSoldierEntity;
         private Entity robotSoldierEntity;
-        private List<Entity> robotSoldierEntities;
         private Entity towerEntity;
-        private Entity beginTimeline;
+        private Entity beginTimelineEntity;
         private Entity volumeEntity;
         private Entity lightEntity;
-        private Clock robotCreatorClock;
+        private Entity robotCreatorEntity;
+        private Entity levelSelectEntity;
+
         public override void Init(Flow baseFlow) {
             base.Init(baseFlow);
-
+#if UNITY_EDITOR
+            ConsoleEx.Instance.Content("log", $"=> 进入战斗流程");
+#endif
             volumeEntity = Obj.Instance.LoadEntity("Obj_Volume_Volume");
             lightEntity = Obj.Instance.LoadEntity("Obj_Light_DirectionalLight");
             floorEntity = Obj.Instance.LoadEntity("Obj_Terrain_Cube");
 
-            beginTimeline = Obj.Instance.LoadEntity("Obj_Event_BeginTimeline");
-            //播放完开场演示后生成玩家
-            PlayableDirector playableDirector = Cond.Instance.Get<PlayableDirector>(beginTimeline, Label.PLAYABLEDIRECTOR);
-            playableDirector.stopped += Play;
-            playableDirector.Play();
+            beginTimelineEntity = Obj.Instance.LoadEntity("Obj_Event_BeginTimeline");
+            PlayTimeline();
         }
 
         public Comp GetUI() {
             return battleComp;
         }
 
-        public void Play(PlayableDirector pd) {
+        private void PlayTimeline() {
+            //播放完开场演示后生成玩家
+            PlayableDirector playableDirector = Cond.Instance.Get<PlayableDirector>(beginTimelineEntity, Label.PLAYABLEDIRECTOR);
+            playableDirector.stopped += Play;
+            playableDirector.Play();
+        }
+
+        private void Play(PlayableDirector pd) {
+            /*战斗UI*/
             battleComp = UI.Instance.Open("UI_Battle");
+            /*战场玩家*/
             playerSoldierEntity = Obj.Instance.LoadEntity("Obj_Player_BattleSoldier");
+            /*玩家升级选择器*/
+            //Behaviour_Event_LevelUpSelect
+            /*塔*/
             towerEntity = Obj.Instance.LoadEntity("Obj_Building_Tower");
-            robotSoldierEntities = new List<Entity>();
-            AddRobot();
+            /*相机实体*/
             cameraEntity = Obj.Instance.LoadEntity("Obj_Camera_BattleCamera");
+            /*机器人生成器*/
+            robotCreatorEntity = Obj.Instance.LoadEntity("Obj_Event_RobotCreator");
+            /*关卡难度选择器*/
+            levelSelectEntity = Obj.Instance.LoadEntity("Obj_Event_LevelSelect");
             pd.enabled = false;
         }
 
-        public void AddRobot() {
-            robotSoldierEntities.Add(Obj.Instance.LoadEntity("Obj_Robot_Soldier"));
-        }
-
-        public void RemoveRobot(Entity robotEntity) {
-            robotSoldierEntities.Remove(robotEntity);
-            Obj.Instance.UnLoadEntity(robotEntity);
-        }
-
-        //结算
+        /*结算*/
         public void Settlement() {
+            Obj.Instance.UnLoadEntity(robotCreatorEntity);
+
             SettlementComp = Cond.Instance.Get<Comp>(battleComp, Label.SETTLEMENT);
             SettlementComp.gameObject.SetActive(true);
 
@@ -66,16 +74,16 @@ namespace LazyPan {
             ButtonRegister.AddListener(returnBtn, Return);
         }
 
-        //下一步
-        public void Return() {
+        /*回到主菜单*/
+        private void Return() {
             Button returnBtn = Cond.Instance.Get<Button>(SettlementComp, Label.RETURN);
             ButtonRegister.RemoveListener(returnBtn, Return);
             Clear();
             Launch.instance.StageLoad("Begin");
         }
 
-        //再来一局
-        public void Again() {
+        /*再来一局*/
+        private void Again() {
             Button again = Cond.Instance.Get<Button>(SettlementComp, Label.AGAIN);
             ButtonRegister.RemoveListener(again, Again);
             Clear();
@@ -94,13 +102,8 @@ namespace LazyPan {
             Obj.Instance.UnLoadEntity(volumeEntity);
             Obj.Instance.UnLoadEntity(lightEntity);
             Obj.Instance.UnLoadEntity(playerSoldierEntity);
-
-            foreach (Entity entity in robotSoldierEntities) {
-                Obj.Instance.UnLoadEntity(entity);
-            }
-
             Obj.Instance.UnLoadEntity(towerEntity);
-            Obj.Instance.UnLoadEntity(beginTimeline);
+            Obj.Instance.UnLoadEntity(beginTimelineEntity);
             Obj.Instance.UnLoadEntity(cameraEntity);
         }
     }

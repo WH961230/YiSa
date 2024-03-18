@@ -68,8 +68,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b90ad59cc18a0544d99cbd60a4735ac3, type: 2}
-  m_sharedMaterial: {fileID: -4225189586590324480, guid: b90ad59cc18a0544d99cbd60a4735ac3,
+  m_fontAsset: {fileID: 11400000, guid: f72a08162b983d24b9350dedf05504c6, type: 2}
+  m_sharedMaterial: {fileID: -4225189586590324480, guid: f72a08162b983d24b9350dedf05504c6,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1052,8 +1052,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Content
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b90ad59cc18a0544d99cbd60a4735ac3, type: 2}
-  m_sharedMaterial: {fileID: -4225189586590324480, guid: b90ad59cc18a0544d99cbd60a4735ac3,
+  m_fontAsset: {fileID: 11400000, guid: f72a08162b983d24b9350dedf05504c6, type: 2}
+  m_sharedMaterial: {fileID: -4225189586590324480, guid: f72a08162b983d24b9350dedf05504c6,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1215,10 +1215,7 @@ MonoBehaviour:
   OnPointerExitEvent:
     m_PersistentCalls:
       m_Calls: []
-  OnPointerDownEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnPointerUpEvent:
+  OnControllerColliderHitEvent:
     m_PersistentCalls:
       m_Calls: []
   OnDrawGizmosAction:
@@ -1246,8 +1243,8 @@ MonoBehaviour:
   Comps: []
   UnityEventDatas: []
   DoTweenAnimationDatas: []
-  TrailRenderers: []
-  Cameras: []
+  TrailRendererDatas: []
+  CameraDatas: []
 --- !u!114 &8725204783174942819
 MonoBehaviour:
   m_ObjectHideFlags: 0

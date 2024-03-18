@@ -13,7 +13,9 @@ namespace LazyPan {
 
         public override void Init(Flow baseFlow) {
             base.Init(baseFlow);
-
+#if UNITY_EDITOR
+            ConsoleEx.Instance.Content("log", $"=> 进入开始流程");
+#endif
             comp = UI.Instance.Open("UI_Begin");
             volumeEntity = Obj.Instance.LoadEntity("Obj_Volume_Volume");
             lightEntity = Obj.Instance.LoadEntity("Obj_Light_DirectionalLight");

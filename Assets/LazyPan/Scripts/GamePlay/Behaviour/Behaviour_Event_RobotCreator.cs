@@ -12,14 +12,23 @@ namespace LazyPan {
             robotSoldierQueuies = new Queue<string>();
             Flo.Instance.GetFlow(out flow);
             /*第一波 普通机器人*/
-            PrepareRobot("Obj_Robot_Soldier");
-            PrepareRobot("Obj_Robot_Soldier");
+            Data.Instance.SelectRobots = new List<string>();
+            Data.Instance.SelectRobots.Add("Obj_Robot_Soldier");
+            Data.Instance.SelectRobots.Add("Obj_Robot_Soldier");
+            PrepareRobot();
             RobotEvent(2, 1);
             MessageRegister.Instance.Reg<Entity>(MessageCode.Dead, RobotDead);
+            MessageRegister.Instance.Reg(MessageCode.GameOver, RemoveAllRobot);
             Data.Instance.OnUpdateEvent.AddListener(Wait);
         }
 
         private void Wait() {
+            if (Data.Instance.StartNextLevel) {
+                //准备机器人
+                PrepareRobot();
+                RobotEvent(2, 1);
+                Data.Instance.StartNextLevel = false;
+            }
         }
 
         /*机器人事件 几秒钟后 间隔几秒 生成怪物 一共需要生成几只*/
@@ -28,16 +37,16 @@ namespace LazyPan {
                 if (robotSoldierQueuies.Count > 0) {
                     InstanceRobot();
                 } else {
-                    Data.Instance.LevelNum++;
-                    Data.Instance.SelectLevel = true;
                     ClockUtil.Instance.Stop(clock);
                 }
             });
         }
 
         /*怪物队列预备*/
-        private void PrepareRobot(string robotSign) {
-            robotSoldierQueuies.Enqueue(robotSign);
+        private void PrepareRobot() {
+            foreach (string robotSign in Data.Instance.SelectRobots) {
+                robotSoldierQueuies.Enqueue(robotSign);
+            }
         }
 
         /*怪物生成*/
@@ -64,14 +73,27 @@ namespace LazyPan {
 #if UNITY_EDITOR
                     ConsoleEx.Instance.Content("log", $"怪物清空!");
 #endif
-                    //关卡数量增加1 等待选择关卡完成
+                    Data.Instance.LevelNum++;
+                    Data.Instance.SelectLevel = true;
                 }
             }
+        }
+
+        /*移除所有机器人*/
+        private void RemoveAllRobot() {
+#if UNITY_EDITOR
+            ConsoleEx.Instance.Content("log", $"所有怪物清空!");
+#endif
+            foreach (Entity robotEntity in robotSoldierEntities) {
+                Obj.Instance.UnLoadEntity(robotEntity);
+            }
+            robotSoldierEntities.Clear();
         }
 
         public override void Clear() {
             base.Clear();
             MessageRegister.Instance.UnReg<Entity>(MessageCode.Dead, RobotDead);
+            MessageRegister.Instance.UnReg(MessageCode.GameOver, RemoveAllRobot);
             ClockUtil.Instance.Stop(clock);
             Data.Instance.OnUpdateEvent.RemoveListener(Wait);
         }

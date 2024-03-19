@@ -17,3 +17,6 @@ Behaviour_Auto_TriggerHealth,触发回血,触发回血
 Behaviour_Event_RobotCreator,机器人创建器,机器人创建器
 Behaviour_Event_TriggerChargeStartGame,开始游戏触发,开始游戏触发
 Behaviour_Event_LevelSelect,关卡选择事件,关卡选择事件
+Behaviour_Event_LevelUpSelect,升级选择事件,升级选择事件
+Behaviour_Auto_Shoot,自动射击,自动射击
+Behaviour_Auto_Motion,自动移动,自动移动

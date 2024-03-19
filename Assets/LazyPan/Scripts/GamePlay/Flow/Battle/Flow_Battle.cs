@@ -29,6 +29,7 @@ namespace LazyPan {
 
             beginTimelineEntity = Obj.Instance.LoadEntity("Obj_Event_BeginTimeline");
             PlayTimeline();
+            MessageRegister.Instance.Reg(MessageCode.GameOver, Settlement);
         }
 
         public Comp GetUI() {
@@ -47,8 +48,6 @@ namespace LazyPan {
             battleComp = UI.Instance.Open("UI_Battle");
             /*战场玩家*/
             playerSoldierEntity = Obj.Instance.LoadEntity("Obj_Player_BattleSoldier");
-            /*玩家升级选择器*/
-            //Behaviour_Event_LevelUpSelect
             /*塔*/
             towerEntity = Obj.Instance.LoadEntity("Obj_Building_Tower");
             /*相机实体*/
@@ -62,8 +61,6 @@ namespace LazyPan {
 
         /*结算*/
         public void Settlement() {
-            Obj.Instance.UnLoadEntity(robotCreatorEntity);
-
             SettlementComp = Cond.Instance.Get<Comp>(battleComp, Label.SETTLEMENT);
             SettlementComp.gameObject.SetActive(true);
 
@@ -79,6 +76,8 @@ namespace LazyPan {
             Button returnBtn = Cond.Instance.Get<Button>(SettlementComp, Label.RETURN);
             ButtonRegister.RemoveListener(returnBtn, Return);
             Clear();
+            Data.Instance.Default();
+            Game.instance.Clear();
             Launch.instance.StageLoad("Begin");
         }
 
@@ -90,6 +89,7 @@ namespace LazyPan {
             Data.Instance.OnUpdateEvent.RemoveAllListeners();
             Data.Instance.OnFixedUpdateEvent.RemoveAllListeners();
             Data.Instance.OnLateUpdateEvent.RemoveAllListeners();
+            Data.Instance.Default();
             Game.instance.Clear();
             Game.instance.Init();
         }
@@ -105,6 +105,9 @@ namespace LazyPan {
             Obj.Instance.UnLoadEntity(towerEntity);
             Obj.Instance.UnLoadEntity(beginTimelineEntity);
             Obj.Instance.UnLoadEntity(cameraEntity);
+            Obj.Instance.UnLoadEntity(robotCreatorEntity);
+            Obj.Instance.UnLoadEntity(levelSelectEntity);
+            MessageRegister.Instance.UnReg(MessageCode.GameOver, Settlement);
         }
     }
 }

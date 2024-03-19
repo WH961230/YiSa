@@ -37,7 +37,8 @@ namespace LazyPan {
                                                                               towerEntity.EntityData.BaseRuntimeData
                                                                                   .CurHealthMax;
                         if (towerEntity.EntityData.BaseRuntimeData.CurHealth <= 0) {
-                            battleFlow.Settlement();
+                            MessageRegister.Instance.Dis(MessageCode.GameOver);
+                            Data.Instance.GameOver = true;
                         }
                     }
                 }

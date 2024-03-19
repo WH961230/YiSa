@@ -136,5 +136,6 @@ namespace LazyPan {
 
     public class MessageCode {
         public static int Dead = 0;
+        public static int GameOver = 1;
     }
 }

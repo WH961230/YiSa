@@ -47,9 +47,6 @@ namespace LazyPan {
                 Cond.Instance.Get<Slider>(info, Label.HEALTH).value = entity.EntityData.BaseRuntimeData.CurHealth /
                                                                           entity.EntityData.BaseRuntimeData
                                                                               .CurHealthMax;
-                Cond.Instance.Get<Slider>(info, Label.EXP).value = entity.EntityData.BaseRuntimeData.CurExp /
-                                                                   entity.EntityData.BaseRuntimeData
-                                                                       .CurExpMax;
             }
         }
 

@@ -7,9 +7,13 @@ namespace LazyPan {
             MessageRegister.Instance.Reg<Entity>(MessageCode.Dead, DeathDrop);
         }
 
-        private void DeathDrop(Entity obj) {
-            GameObject template = Loader.LoadGo("经验值", "Obj/Battle/Obj_Fx_Drop", Data.Instance.ObjRoot, true);
-            template.transform.position = obj.Prefab.transform.position;
+        private void DeathDrop(Entity deadEntity) {
+            if (!deadEntity.EntityData.BaseRuntimeData.DeathDrop) {
+                GameObject template = Loader.LoadGo("经验值", "Obj/Battle/Obj_Fx_Drop", Data.Instance.ObjRoot, true);
+                Comp comp = template.GetComponent<Comp>();
+                Cond.Instance.Get<Transform>(comp, Label.FOOT).position = Cond.Instance.Get<Transform>(deadEntity, Label.BODY).position;
+                deadEntity.EntityData.BaseRuntimeData.DeathDrop = true;
+            }
         }
 
         public override void Clear() {

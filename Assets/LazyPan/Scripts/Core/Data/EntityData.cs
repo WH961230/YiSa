@@ -54,6 +54,7 @@ namespace LazyPan {
         /*基础参数*/
         public string Sign;//标识
         public string Type;//类型
+        public bool DeathDrop;//死亡掉落
         /*移动参数*/
         public int CurMotionState;//默认 0 禁止 1 移动 2 冲刺
         public float DefMotionSpeed;//默认移动速度
@@ -102,7 +103,7 @@ namespace LazyPan {
         /*范围*/
         public float DefRangeRotateAngle;//范围旋转角度
         /*经验值*/
-        public int CurExp;//经验值
-        public int CurExpMax;//经验值最大值
+        public float CurExp;//经验值
+        public float CurExpMax;//经验值最大值
     }
 }

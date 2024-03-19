@@ -57,6 +57,7 @@ namespace LazyPan {
             /*关卡难度选择器*/
             levelSelectEntity = Obj.Instance.LoadEntity("Obj_Event_LevelSelect");
             pd.enabled = false;
+            Data.Instance.CanControl = true;
         }
 
         /*结算*/

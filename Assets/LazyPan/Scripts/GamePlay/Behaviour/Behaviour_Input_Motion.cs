@@ -23,6 +23,10 @@ namespace LazyPan {
         }
 
         private void PlayerMotion() {
+            if (!Data.Instance.CanControl) {
+                return;
+            }
+
             Camera camera = Cond.Instance.Get<Camera>(Cond.Instance.GetCameraEntity(), Label.CAMERA);
             if (camera == null) {
                 return;

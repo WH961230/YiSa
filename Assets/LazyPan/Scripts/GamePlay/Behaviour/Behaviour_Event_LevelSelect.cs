@@ -50,6 +50,7 @@ namespace LazyPan {
 
             levelselect.gameObject.SetActive(false);
             Data.Instance.StartNextLevel = true;
+            Data.Instance.CanControl = true;
         }
 
         public override void Clear() {

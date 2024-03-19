@@ -22,6 +22,8 @@ namespace LazyPan {
             beginCameraEntity = Obj.Instance.LoadEntity("Obj_Camera_BeginCamera");
 
             playerSoldierEntity = Obj.Instance.LoadEntity("Obj_Player_BeginSoldier");
+            Data.Instance.CanControl = true;
+
             floorEntity = Obj.Instance.LoadEntity("Obj_Terrain_Begin");
 
             announcementComp = Cond.Instance.Get<Comp>(comp, Label.ANNOUNCEMENT);

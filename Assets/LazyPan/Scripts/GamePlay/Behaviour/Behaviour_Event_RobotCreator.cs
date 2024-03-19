@@ -75,6 +75,7 @@ namespace LazyPan {
 #endif
                     Data.Instance.LevelNum++;
                     Data.Instance.SelectLevel = true;
+                    Data.Instance.CanControl = false;
                 }
             }
         }

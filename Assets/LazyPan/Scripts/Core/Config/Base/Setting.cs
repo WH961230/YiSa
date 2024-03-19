@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace LazyPan {
 
@@ -61,6 +60,7 @@ namespace LazyPan {
         [Tooltip("图标")] public Sprite Icon;
         [Tooltip("怪物数量")] public int robotNum;
         [Tooltip("怪物标识")] public string robotSign;
+        [Tooltip("怪物难度")] public int robotDifficulty;
     }
 
     //关卡BUFF配置
@@ -113,7 +113,7 @@ namespace LazyPan {
 
             return true;
         }
-        
+
         // /*随机获取n个关卡数匹配的关卡BUFF配置*/
         // public bool TryGetLevelBuffSetting(int levelNum, int needNum) {
         //     

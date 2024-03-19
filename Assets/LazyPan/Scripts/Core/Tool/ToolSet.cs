@@ -58,7 +58,7 @@ namespace LazyPan {
             }
             for (int i = 0; i < locationInformationSetting.locationInformationDatas.Count; i++) {
                 LocationInformationData data = locationInformationSetting.locationInformationDatas[i];
-                string markSign = "Obj_MarkLocationInformation";
+                string markSign = "Obj_MarkLocationInformationWithDir";
                 GameObject childGameObject = Loader.LoadGo(string.Concat(markSign, "_", i),
                     string.Concat("Tool/", markSign), parentGameObject.transform,
                     true);

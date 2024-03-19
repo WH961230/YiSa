@@ -42,6 +42,7 @@ namespace LazyPan {
                         bool hasFightFlow = Flo.Instance.GetFlow(out Flow_Battle battleFlow);
                         if (hasFightFlow) {
                             MessageRegister.Instance.Dis(MessageCode.Dead, tmpEntity);
+                            MessageRegister.Instance.Dis(MessageCode.DeadRecycle, tmpEntity);
                         }
                         return;
                     }

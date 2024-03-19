@@ -29,7 +29,7 @@ namespace LazyPan {
                     Debug.Log($"血量:{towerEntity.EntityData.BaseRuntimeData.CurHealth}");
                     bool isGetFlow = Flo.Instance.GetFlow(out Flow_Battle battleFlow);
                     if (isGetFlow) {
-                        MessageRegister.Instance.Dis(MessageCode.Dead, entity);
+                        MessageRegister.Instance.Dis(MessageCode.DeadRecycle, tmpEntity);
 
                         Comp battleui = battleFlow.GetUI();
                         Comp info = Cond.Instance.Get<Comp>(battleui, Label.INFO);

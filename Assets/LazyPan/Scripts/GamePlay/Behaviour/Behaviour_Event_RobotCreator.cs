@@ -17,7 +17,7 @@ namespace LazyPan {
             Data.Instance.SelectRobots.Add("Obj_Robot_Soldier");
             PrepareRobot();
             RobotEvent(2, 1);
-            MessageRegister.Instance.Reg<Entity>(MessageCode.Dead, RobotDead);
+            MessageRegister.Instance.Reg<Entity>(MessageCode.DeadRecycle, RobotDeadRecycle);
             MessageRegister.Instance.Reg(MessageCode.GameOver, RemoveAllRobot);
             Data.Instance.OnUpdateEvent.AddListener(Wait);
         }
@@ -58,7 +58,7 @@ namespace LazyPan {
         }
 
         /*机器人死亡*/
-        private void RobotDead(Entity entity) {
+        private void RobotDeadRecycle(Entity entity) {
             if (entity.EntityData.BaseRuntimeData.Type == "Robot") {
                 RemoveRobot(entity);
             }
@@ -92,7 +92,7 @@ namespace LazyPan {
 
         public override void Clear() {
             base.Clear();
-            MessageRegister.Instance.UnReg<Entity>(MessageCode.Dead, RobotDead);
+            MessageRegister.Instance.UnReg<Entity>(MessageCode.DeadRecycle, RobotDeadRecycle);
             MessageRegister.Instance.UnReg(MessageCode.GameOver, RemoveAllRobot);
             ClockUtil.Instance.Stop(clock);
             Data.Instance.OnUpdateEvent.RemoveListener(Wait);

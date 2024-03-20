@@ -19,12 +19,12 @@ namespace LazyPan {
             comp = UI.Instance.Open("UI_Begin");
             volumeEntity = Obj.Instance.LoadEntity("Obj_Volume_Volume");
             lightEntity = Obj.Instance.LoadEntity("Obj_Light_DirectionalLight");
-            beginCameraEntity = Obj.Instance.LoadEntity("Obj_Camera_BeginCamera");
+            beginCameraEntity = Obj.Instance.LoadEntity("Obj_Camera_Camera");
 
-            playerSoldierEntity = Obj.Instance.LoadEntity("Obj_Player_BeginSoldier");
+            playerSoldierEntity = Obj.Instance.LoadEntity("Obj_Player_Soldier");
             Data.Instance.CanControl = true;
 
-            floorEntity = Obj.Instance.LoadEntity("Obj_Terrain_Begin");
+            floorEntity = Obj.Instance.LoadEntity("Obj_Terrain_Terrain");
 
             announcementComp = Cond.Instance.Get<Comp>(comp, Label.ANNOUNCEMENT);
             announcementComp.gameObject.SetActive(false);
@@ -37,7 +37,7 @@ namespace LazyPan {
                 Data.Instance.FirstPlay = true;
             }
 
-            startGameEntity = Obj.Instance.LoadEntity("Obj_Event_BeginStartGame");
+            startGameEntity = Obj.Instance.LoadEntity("Obj_Event_StartGame");
             startGameEntity.EntityData.BaseRuntimeData.CurMaxEnergy = 3;
             startGameEntity.EntityData.BaseRuntimeData.CurEnergy = 0;
             startGameEntity.EntityData.BaseRuntimeData.CurChargeEnergySpeed = 1;

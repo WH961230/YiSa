@@ -16,7 +16,7 @@ namespace LazyPan {
                         Cond.Instance.Get<Transform>(entity, Label.BODY).position,
                         entity.EntityData.BaseRuntimeData.CurDetectDistance, out Entity robotEntity);
                     if (findRobotEntity && robotEntity.EntityData.BaseRuntimeData.CurHealth > 0) {
-                        GameObject template = Loader.LoadGo("弹药", "Obj/Battle/Obj_Fx_Bullet", Data.Instance.ObjRoot, true);
+                        GameObject template = Loader.LoadGo("弹药", "Common/Obj_Fx_Bullet", Data.Instance.ObjRoot, true);
                         Transform bulletMuzzle = Cond.Instance.Get<Transform>(entity, Label.MUZZLE);
                         template.transform.position = bulletMuzzle.position;
                         template.transform.forward = (Cond.Instance.Get<Transform>(robotEntity, Label.HIT).position - bulletMuzzle.position).normalized;
@@ -48,7 +48,7 @@ namespace LazyPan {
                         return;
                     }
                     /*掉血表现*/
-                    GameObject template = Loader.LoadGo("掉血", "Obj/Battle/Obj_Fx_BeHit", Data.Instance.ObjRoot, true);
+                    GameObject template = Loader.LoadGo("掉血", "Common/Obj_Fx_BeHit", Data.Instance.ObjRoot, true);
                     Transform squirt = Cond.Instance.Get<Transform>(tmpEntity, Label.SQUIRT);
                     template.transform.position = squirt.position;
                     template.transform.rotation = squirt.rotation;

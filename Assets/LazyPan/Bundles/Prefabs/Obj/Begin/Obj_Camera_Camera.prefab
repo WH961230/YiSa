@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4701317000307736355}
   - component: {fileID: 3426798771061242697}
   m_Layer: 0
-  m_Name: Obj_Camera_BattleCamera
+  m_Name: Obj_Camera_Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6118677874761072040}
-  m_LocalRotation: {x: 0.35355338, y: 0.35355338, z: -0.1464466, w: 0.8535535}
+  m_LocalRotation: {x: 0.35355338, y: 0.35355344, z: -0.14644666, w: 0.85355335}
   m_LocalPosition: {x: -9.11, y: 13.48, z: -9.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -45,7 +45,7 @@ Camera:
   m_GameObject: {fileID: 6118677874761072040}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -67,11 +67,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: -20
-  far clip plane: 100
+  near clip plane: 0.3
+  far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -292,17 +292,12 @@ MonoBehaviour:
   OnPointerExitEvent:
     m_PersistentCalls:
       m_Calls: []
-  OnControllerColliderHitEvent:
-    m_PersistentCalls:
-      m_Calls: []
   OnDrawGizmosAction:
     m_PersistentCalls:
       m_Calls: []
   GameObjects: []
   Transforms: []
   Colliders: []
-  Materials: []
-  Renderers: []
   CharacterControllers: []
   Buttons: []
   Sliders: []
@@ -314,23 +309,7 @@ MonoBehaviour:
   PlayableDirectors: []
   TimelineAssets: []
   Comps: []
-  UnityEventDatas:
-  - Sign: PlayerShootEvent
-    UnityEvent:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 4701317000307736355}
-          m_TargetAssemblyTypeName: DG.Tweening.DOTweenAnimation, Assembly-CSharp-firstpass
-          m_MethodName: RecreateTweenAndPlay
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  UnityEventDatas: []
   DoTweenAnimationDatas: []
   TrailRendererDatas: []
   CameraDatas:

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 namespace LazyPan {
     public class ObjConfig {
 		public string Sign;
+		public string Flow;
 		public string Type;
 		public string Name;
 		public string CreatureType;
@@ -19,11 +20,12 @@ namespace LazyPan {
             try {
                 string[] values = line.Split(',');
 				Sign = values[0];
-				Type = values[1];
-				Name = values[2];
-				CreatureType = values[3];
-				SetUpLocationInformationSign = values[4];
-				SetUpBehaviourSign = values[5];
+				Flow = values[1];
+				Type = values[2];
+				Name = values[3];
+				CreatureType = values[4];
+				SetUpLocationInformationSign = values[5];
+				SetUpBehaviourSign = values[6];
 
             } catch (Exception e) {
                 Console.WriteLine(e);
@@ -40,7 +42,7 @@ namespace LazyPan {
             for (int i = 0; i < lines.Length; i++) {
                 if (i > 2) {
                     ObjConfig config = new ObjConfig(lines[i]);
-                    dics.Add(config.Sign, config);
+                    dics.Add(string.Concat(config.Flow, "|", config.Sign), config);
                 }
             }
 
@@ -48,7 +50,8 @@ namespace LazyPan {
         }
 
         public static ObjConfig Get(string sign) {
-            if (dics.TryGetValue(sign, out ObjConfig config)) {
+            string tmpSign = string.Concat(Flo.Instance.CurFlowSign, "|", sign);
+            if (dics.TryGetValue(tmpSign, out ObjConfig config)) {
                 return config;
             }
 

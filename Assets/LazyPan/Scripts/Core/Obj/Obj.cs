@@ -11,7 +11,7 @@ namespace LazyPan {
         }
 
         public void UnPreload() {
-            GameObject.Destroy(Data.Instance.ObjRoot.gameObject);
+            Object.Destroy(Data.Instance.ObjRoot.gameObject);
         }
 
         //加载物体

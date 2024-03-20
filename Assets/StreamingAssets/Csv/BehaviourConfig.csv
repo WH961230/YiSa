@@ -22,3 +22,5 @@ Behaviour_Auto_Shoot,自动射击,自动射击
 Behaviour_Auto_Motion,自动移动,自动移动
 Behaviour_Auto_DeathDrop,自动死亡掉落,自动死亡掉落
 Behaviour_Auto_Pick,自动拾取,自动拾取
+Behaviour_Event_ActivableCreator,可激活创建,可激活创建
+Behaviour_Event_TriggerActivable,可激活激活,可激活激活

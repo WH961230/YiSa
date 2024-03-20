@@ -17,7 +17,7 @@ namespace LazyPan {
         private Entity lightEntity;
         private Entity robotCreatorEntity;
         private Entity levelSelectEntity;
-
+        private Entity activableEntity;
         public override void Init(Flow baseFlow) {
             base.Init(baseFlow);
 #if UNITY_EDITOR
@@ -56,6 +56,9 @@ namespace LazyPan {
             robotCreatorEntity = Obj.Instance.LoadEntity("Obj_Event_RobotCreator");
             /*关卡难度选择器*/
             levelSelectEntity = Obj.Instance.LoadEntity("Obj_Event_LevelSelect");
+            /*可激活生成器*/
+            activableEntity = Obj.Instance.LoadEntity("Obj_Event_ActivableCreator");
+
             pd.enabled = false;
             Data.Instance.CanControl = true;
         }
@@ -108,6 +111,7 @@ namespace LazyPan {
             Obj.Instance.UnLoadEntity(cameraEntity);
             Obj.Instance.UnLoadEntity(robotCreatorEntity);
             Obj.Instance.UnLoadEntity(levelSelectEntity);
+            Obj.Instance.UnLoadEntity(activableEntity);
             MessageRegister.Instance.UnReg(MessageCode.GameOver, Settlement);
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace LazyPan {
     public partial class Data {
@@ -8,6 +9,7 @@ namespace LazyPan {
         public bool SelectLevel;//选择关卡
         public bool StartNextLevel;//开始下一关卡
         public List<string> SelectRobots;//每局生成的机器人标识
+        public List<PointData> ActivableEvents;//可激活事件
         public bool SelectLevelUp;//选择角色升级
 
         public void Default() {
@@ -18,5 +20,10 @@ namespace LazyPan {
             StartNextLevel = false;
             CanControl = false;
         }
+    }
+
+    public class PointData {
+        public string Sign;
+        public Vector3 Point;
     }
 }

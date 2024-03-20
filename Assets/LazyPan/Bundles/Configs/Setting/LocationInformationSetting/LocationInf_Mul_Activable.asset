@@ -10,11 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77819a1bce2c4b03a3046288c64f14d7, type: 3}
-  m_Name: LocationInf_Single_Building
+  m_Name: LocationInf_Mul_Activable
   m_EditorClassIdentifier: 
-  SettingName: "\u5EFA\u7B51\u70B9\u4F4D"
+  SettingName: 
   TerrainGo: {fileID: 2774054687865642621, guid: 19f6b3071ae2fab4ca04bdabd2ad3e65,
     type: 3}
   locationInformationDatas:
-  - Position: {x: 0, y: 0, z: 0}
+  - Position: {x: 19.1, y: 0, z: 19.5}
+    Rotation: {x: 0, y: 180, z: 0}
+  - Position: {x: -19.7, y: 0, z: 19.5}
+    Rotation: {x: 0, y: 180, z: 0}
+  - Position: {x: -19.7, y: 0, z: -9.7}
+    Rotation: {x: 0, y: 180, z: 0}
+  - Position: {x: 19.9, y: 0, z: -9.7}
     Rotation: {x: 0, y: 180, z: 0}

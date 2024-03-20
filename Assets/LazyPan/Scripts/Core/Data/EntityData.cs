@@ -54,7 +54,7 @@ namespace LazyPan {
         /*基础参数*/
         public string Sign;//标识
         public string Type;//类型
-        public bool DeathDrop;//死亡掉落
+        public int DeathDrop;//死亡掉落 0 不掉落 1 掉落经验值 2掉落可激活事件
         /*移动参数*/
         public int CurMotionState;//默认 0 禁止 1 移动 2 冲刺
         public float DefMotionSpeed;//默认移动速度

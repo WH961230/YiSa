@@ -14,7 +14,6 @@
           </e>
           <e p="AssetGroupTemplates" t="Include" />
           <e p="DataBuilders" t="Include" />
-          <e p="link.xml" t="Include" />
           <e p="Windows" t="Include" />
         </e>
         <e p="LazyPan" t="Include">
@@ -133,10 +132,12 @@
                 <e p="Behaviour_Auto_Shoot.cs" t="Include" />
                 <e p="Behaviour_Auto_TriggerCharge.cs" t="Include" />
                 <e p="Behaviour_Auto_TriggerHealth.cs" t="Include" />
+                <e p="Behaviour_Event_ActivableCreator.cs" t="Include" />
                 <e p="Behaviour_Event_BeginTimeline.cs" t="Include" />
                 <e p="Behaviour_Event_LevelSelect.cs" t="Include" />
                 <e p="Behaviour_Event_LevelUpSelect.cs" t="Include" />
                 <e p="Behaviour_Event_RobotCreator.cs" t="Include" />
+                <e p="Behaviour_Event_TriggerActivable.cs" t="Include" />
                 <e p="Behaviour_Event_TriggerChargeStartGame.cs" t="Include" />
                 <e p="Behaviour_Input_CloseFight.cs" t="Include" />
                 <e p="Behaviour_Input_Motion.cs" t="Include" />

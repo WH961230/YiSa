@@ -16,3 +16,5 @@ Obj_Event_RobotCreator,Event,敌人创建器,,,Behaviour_Event_RobotCreator
 Obj_Terrain_Begin,Terrain,开始地形,,,
 Obj_Event_BeginStartGame,Event,开始游戏物体,,LocationInf_Single_BeginStartGame,Behaviour_Event_TriggerChargeStartGame
 Obj_Event_LevelSelect,Event,关卡难度选择器,,,Behaviour_Event_LevelSelect
+Obj_Activable_Activable,Activable,可激活物体,,LocationInf_Mul_Activable,Behaviour_Event_TriggerActivable
+Obj_Event_ActivableCreator,Event,可激活创建器,,,Behaviour_Event_ActivableCreator

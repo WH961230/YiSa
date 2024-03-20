@@ -2,7 +2,6 @@
 
 namespace LazyPan {
     public class Behaviour_Event_RobotCreator : Behaviour {
-        private Flow_Battle flow;
         private Clock clock;
         private List<Entity> robotSoldierEntities;
         private Queue<string> robotSoldierQueuies;
@@ -10,7 +9,6 @@ namespace LazyPan {
         public Behaviour_Event_RobotCreator(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             robotSoldierEntities = new List<Entity>();
             robotSoldierQueuies = new Queue<string>();
-            Flo.Instance.GetFlow(out flow);
             /*第一波 普通机器人*/
             Data.Instance.SelectRobots = new List<string>();
             Data.Instance.SelectRobots.Add("Obj_Robot_Soldier");

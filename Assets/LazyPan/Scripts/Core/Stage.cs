@@ -66,9 +66,9 @@ public class LoadGlobal : StageWork {
     public override void Update() {
         if (SceneManager.GetActiveScene().name == Parameters.sceneName && game == null) {
             game = Loader.LoadGo("全局", "Global/Global", null, true).GetComponent<Game>();
-            game.Init();
             clock = ClockUtil.Instance.AlarmAfter(Parameters.delayTime, () => {
                 Parameters.progress = 1f;
+                game.Init();
             });
         }
 

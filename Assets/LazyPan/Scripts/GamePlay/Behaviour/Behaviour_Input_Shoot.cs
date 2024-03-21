@@ -18,7 +18,7 @@ namespace LazyPan {
         }
 
         private void Shoot() {
-            GameObject template = Loader.LoadGo("弹药", "Obj/Fight/Obj_Fx_Bullet", Data.Instance.ObjRoot, true);
+            GameObject template = Loader.LoadGo("弹药", "Common/Obj_Fx_Bullet", Data.Instance.ObjRoot, true);
             Transform bulletMuzzle = Cond.Instance.Get<Transform>(entity, Label.MUZZLE);
             template.transform.position = bulletMuzzle.position;
             template.transform.rotation = bulletMuzzle.rotation;

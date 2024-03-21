@@ -32,7 +32,7 @@ namespace LazyPan {
                     tmpEntity.EntityData.BaseRuntimeData.CurHealth -= 10 /*伤害*/;
                     Debug.Log($"curHealth:{entity.EntityData.BaseRuntimeData.CurHealth}");
                     /*掉血表现*/
-                    GameObject template = Loader.LoadGo("掉血", "Obj/Fight/Obj_Fx_BeHit", Data.Instance.ObjRoot, true);
+                    GameObject template = Loader.LoadGo("掉血", "Common/Obj_Fx_BeHit", Data.Instance.ObjRoot, true);
                     Transform squirt = Cond.Instance.Get<Transform>(tmpEntity, Label.SQUIRT);
                     template.transform.position = squirt.position;
                     template.transform.rotation = squirt.rotation;

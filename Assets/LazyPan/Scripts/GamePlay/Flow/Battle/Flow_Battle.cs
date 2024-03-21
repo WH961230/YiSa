@@ -25,7 +25,7 @@ namespace LazyPan {
 #endif
             volumeEntity = Obj.Instance.LoadEntity("Obj_Volume_Volume");
             lightEntity = Obj.Instance.LoadEntity("Obj_Light_DirectionalLight");
-            floorEntity = Obj.Instance.LoadEntity("Obj_Terrain_Cube");
+            floorEntity = Obj.Instance.LoadEntity("Obj_Terrain_Terrain");
 
             beginTimelineEntity = Obj.Instance.LoadEntity("Obj_Event_BeginTimeline");
             PlayTimeline();
@@ -47,11 +47,11 @@ namespace LazyPan {
             /*战斗UI*/
             battleComp = UI.Instance.Open("UI_Battle");
             /*战场玩家*/
-            playerSoldierEntity = Obj.Instance.LoadEntity("Obj_Player_BattleSoldier");
+            playerSoldierEntity = Obj.Instance.LoadEntity("Obj_Player_Soldier");
             /*塔*/
             towerEntity = Obj.Instance.LoadEntity("Obj_Building_Tower");
             /*相机实体*/
-            cameraEntity = Obj.Instance.LoadEntity("Obj_Camera_BattleCamera");
+            cameraEntity = Obj.Instance.LoadEntity("Obj_Camera_Camera");
             /*机器人生成器*/
             robotCreatorEntity = Obj.Instance.LoadEntity("Obj_Event_RobotCreator");
             /*关卡难度选择器*/

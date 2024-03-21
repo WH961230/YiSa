@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 8290678932251384635}
   - component: {fileID: 5580114232840049140}
   m_Layer: 0
-  m_Name: Obj_Event_BeginStartGame
+  m_Name: Obj_Event_StartGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

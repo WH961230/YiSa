@@ -1,70 +1,53 @@
-﻿using UnityEngine.UI;
+﻿using UnityEngine;
+using UnityEngine.Playables;
 
 namespace LazyPan {
     public class Flow_Begin : Flow {
-        private Entity floorEntity;
-        private Entity volumeEntity;
-        private Entity lightEntity;
-        private Entity beginCameraEntity;
-        private Entity playerSoldierEntity;
-        private Comp comp;
-        private Comp announcementComp;
-        private Entity startGameEntity;
+		private Comp UI_Begin;
+
+		private Entity Obj_Volume_Volume;
+		private Entity Obj_Light_DirectionalLight;
+		private Entity Obj_Camera_Camera;
+		private Entity Obj_Terrain_Terrain;
+		private Entity Obj_Event_StartGame;
+		private Entity Obj_Player_Soldier;
 
         public override void Init(Flow baseFlow) {
             base.Init(baseFlow);
-#if UNITY_EDITOR
-            ConsoleEx.Instance.Content("log", $"=> 进入开始流程");
-#endif
-            comp = UI.Instance.Open("UI_Begin");
-            volumeEntity = Obj.Instance.LoadEntity("Obj_Volume_Volume");
-            lightEntity = Obj.Instance.LoadEntity("Obj_Light_DirectionalLight");
-            beginCameraEntity = Obj.Instance.LoadEntity("Obj_Camera_Camera");
+            ConsoleEx.Instance.Content("log", "Flow_Begin  开始流程");
+			UI_Begin = UI.Instance.Open("UI_Begin");
 
-            playerSoldierEntity = Obj.Instance.LoadEntity("Obj_Player_Soldier");
-            Data.Instance.CanControl = true;
-
-            floorEntity = Obj.Instance.LoadEntity("Obj_Terrain_Terrain");
-
-            announcementComp = Cond.Instance.Get<Comp>(comp, Label.ANNOUNCEMENT);
-            announcementComp.gameObject.SetActive(false);
-
-            if (!Data.Instance.FirstPlay) {
-                announcementComp.gameObject.SetActive(true);
-                ButtonRegister.AddListener(Cond.Instance.Get<Button>(announcementComp, Label.BACK), () => {
-                    announcementComp.gameObject.SetActive(false);
-                });
-                Data.Instance.FirstPlay = true;
-            }
-
-            startGameEntity = Obj.Instance.LoadEntity("Obj_Event_StartGame");
-            startGameEntity.EntityData.BaseRuntimeData.CurMaxEnergy = 3;
-            startGameEntity.EntityData.BaseRuntimeData.CurEnergy = 0;
-            startGameEntity.EntityData.BaseRuntimeData.CurChargeEnergySpeed = 1;
-            startGameEntity.EntityData.BaseRuntimeData.DefEnergyDownSpeed = 1;
-
-            ButtonRegister.AddListener(Cond.Instance.Get<Button>(comp, Label.QUIT), () => {
-                Clear();
-                Launch.instance.QuitGame();
-            });
+			Obj_Volume_Volume = Obj.Instance.LoadEntity("Obj_Volume_Volume");
+			Obj_Light_DirectionalLight = Obj.Instance.LoadEntity("Obj_Light_DirectionalLight");
+			Obj_Camera_Camera = Obj.Instance.LoadEntity("Obj_Camera_Camera");
+			Obj_Terrain_Terrain = Obj.Instance.LoadEntity("Obj_Terrain_Terrain");
+			Obj_Event_StartGame = Obj.Instance.LoadEntity("Obj_Event_StartGame");
+			Obj_Player_Soldier = Obj.Instance.LoadEntity("Obj_Player_Soldier");
         }
 
-        public void Next() {
+		/*获取UI*/
+		public Comp GetUI() {
+			return UI_Begin;
+		}
+
+
+        /*下一步*/
+        public void Next(string teleportSceneSign) {
             Clear();
-            Launch.instance.StageLoad("Battle");
+            Launch.instance.StageLoad(teleportSceneSign);
         }
 
         public override void Clear() {
             base.Clear();
-            ButtonRegister.RemoveAllListener(Cond.Instance.Get<Button>(comp, Label.NEXT));
-            UI.Instance.Close("UI_Begin");
+			Obj.Instance.UnLoadEntity(Obj_Player_Soldier);
+			Obj.Instance.UnLoadEntity(Obj_Event_StartGame);
+			Obj.Instance.UnLoadEntity(Obj_Terrain_Terrain);
+			Obj.Instance.UnLoadEntity(Obj_Camera_Camera);
+			Obj.Instance.UnLoadEntity(Obj_Light_DirectionalLight);
+			Obj.Instance.UnLoadEntity(Obj_Volume_Volume);
 
-            Obj.Instance.UnLoadEntity(volumeEntity);
-            Obj.Instance.UnLoadEntity(lightEntity);
-            Obj.Instance.UnLoadEntity(playerSoldierEntity);
-            Obj.Instance.UnLoadEntity(floorEntity);
-            Obj.Instance.UnLoadEntity(beginCameraEntity);
-            Obj.Instance.UnLoadEntity(startGameEntity);
+			UI.Instance.Close("UI_Begin");
+
         }
     }
 }

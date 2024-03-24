@@ -32,7 +32,7 @@ namespace LazyPan {
                 if (entity.EntityData.BaseRuntimeData.CurEnergy >= entity.EntityData.BaseRuntimeData.CurMaxEnergy) {
                     bool getFlow = Flo.Instance.GetFlow(out beginFlow);
                     if (getFlow) {
-                        beginFlow.Next();
+                        beginFlow.Next("Battle");
                         return;
                     }
                 }

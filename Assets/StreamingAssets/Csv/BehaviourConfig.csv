@@ -1,7 +1,7 @@
 ﻿Sign,Name,Description
 string,string,string
 标识,名字,描述
-Behaviour_Input_Motion,输入移动,【实现输入前后左右移动以相机为坐标轴】Comp 挂载CharacterController Input 配置 Player/Motion
+Behaviour_Input_AlignCameraMovement,对齐相机移动,【实现输入前后左右移动以相机为坐标轴】Comp 挂载CharacterController Input 配置 Player/Motion
 Behaviour_Input_Rotate,输入旋转,【实现输入右键地面实现光标显示隐藏与角色旋转】Comp 挂载 CharacterController UI_Fight Comp 挂载 Cursor RectTran 检测地面层级 Floor Input 配置 Player/MouseRightPress
 Behaviour_Input_Shoot,输入射击,【实现输入左键在实体的Muzzle位置生成Bullet弹药】Comp挂载 Muzzle Input 配置 Player/MouseLeft Loader 物体 Obj/Resource/Obj_Bullet
 Behaviour_Input_CloseFight,输入近战,【实现输入空格播放近战时间轴事件】Input 配置 Player/Space Comp 挂载 <Timeline> CloseFightTimelineAsset Comp 挂载 <PlayableDirector> PlayableDirector
@@ -15,7 +15,7 @@ Behaviour_Auto_Knockback,击退,击退
 Behaviour_Auto_TriggerCharge,触发充能,触发充能
 Behaviour_Auto_TriggerHealth,触发回血,触发回血
 Behaviour_Event_RobotCreator,机器人创建器,机器人创建器
-Behaviour_Event_TriggerChargeStartGame,开始游戏触发,开始游戏触发
+Behaviour_Trigger_ChargeStartGame,开始游戏触发,开始游戏触发
 Behaviour_Event_LevelSelect,关卡选择事件,关卡选择事件
 Behaviour_Event_LevelUpSelect,升级选择事件,升级选择事件
 Behaviour_Auto_Shoot,自动射击,自动射击

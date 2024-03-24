@@ -1,0 +1,17 @@
+﻿FlowCode,Flow,LifeCycleCode,LifeCycle,StageCode,Stage,SignCode,Sign,BehaviourCode,Behaviour
+string,string,string,string,string,string,string,string,string,string
+流程代码标识,流程,生命周期代码标识,生命周期,阶段代码标识,阶段,标识代码标识,实体,行为代码标识,行为
+Begin,开始,open_ui,创建,Init,初始化,UI_Begin,开始界面,,
+Begin,开始,load_entity,创建,Init,初始化,Obj_Volume_Volume,后处理,,
+Begin,开始,load_entity,创建,Init,初始化,Obj_Light_DirectionalLight,灯光,,
+Begin,开始,load_entity,创建,Init,初始化,Obj_Camera_Camera,相机,,
+Begin,开始,load_entity,创建,Init,初始化,Obj_Terrain_Terrain,地形,,
+Begin,开始,load_entity,创建,Init,初始化,Obj_Event_StartGame,开始游戏充能物体,,
+Begin,开始,load_entity,创建,Init,初始化,Obj_Player_Soldier,开始玩家,Behaviour_Input_Motion,
+Begin,开始,unload_entity,销毁,Clear,清除,Obj_Player_Soldier,开始玩家,,
+Begin,开始,unload_entity,销毁,Clear,清除,Obj_Event_StartGame,开始游戏充能物体,,
+Begin,开始,unload_entity,销毁,Clear,清除,Obj_Terrain_Terrain,地形,,
+Begin,开始,unload_entity,销毁,Clear,清除,Obj_Camera_Camera,相机,,
+Begin,开始,unload_entity,销毁,Clear,清除,Obj_Light_DirectionalLight,灯光,,
+Begin,开始,unload_entity,销毁,Clear,清除,Obj_Volume_Volume,后处理,,
+Begin,开始,close_ui,销毁,Clear,清除,UI_Begin,开始界面,,

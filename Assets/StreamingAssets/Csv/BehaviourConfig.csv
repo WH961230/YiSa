@@ -1,21 +1,21 @@
 ﻿Sign,Name,Description
 string,string,string
 标识,名字,描述
-Behaviour_Input_AlignCameraMovement,对齐相机移动,【实现输入前后左右移动以相机为坐标轴】Comp 挂载CharacterController Input 配置 Player/Motion
-Behaviour_Input_Rotate,输入旋转,【实现输入右键地面实现光标显示隐藏与角色旋转】Comp 挂载 CharacterController UI_Fight Comp 挂载 Cursor RectTran 检测地面层级 Floor Input 配置 Player/MouseRightPress
-Behaviour_Input_Shoot,输入射击,【实现输入左键在实体的Muzzle位置生成Bullet弹药】Comp挂载 Muzzle Input 配置 Player/MouseLeft Loader 物体 Obj/Resource/Obj_Bullet
-Behaviour_Input_CloseFight,输入近战,【实现输入空格播放近战时间轴事件】Input 配置 Player/Space Comp 挂载 <Timeline> CloseFightTimelineAsset Comp 挂载 <PlayableDirector> PlayableDirector
-Behaviour_Auto_FollowPlayer,跟随玩家,【实现跟随类型为主玩家的挂载Body】ObjType.MainPlayer Comp 挂载 Body
-Behaviour_Event_BeginTimeline,播放开始时间轴,【播放开始时间轴事件】Comp 挂载 <PlayableDirector> PlayableDirector 
-Behaviour_Auto_Rotate,自动跟随鼠标旋转,【实现根据当前的鼠标检测到地面的位置实现偏移】Comp 挂载 <CharacterController> CharacterController Comp 挂载 <Transform> Point//计算旋转偏移 UI_Fight Comp 挂载 Cursor RectTran 检测地面层级 Floor
-Behaviour_Auto_Gravity,重力,【实现重力】Comp 挂载 <CharacterController> CharacterController 检测地面层级 Floor
-Behaviour_Input_Teleport,输入冲刺,【实现输入空格播放传送时间轴事件】Input 配置 Player/Space Comp 挂载 <Timeline> TeleportTimelineAsset Comp 挂载 <PlayableDirector> PlayableDirector
+Behaviour_Input_AlignCameraMovement,对齐相机移动,对齐相机移动
+Behaviour_Input_Rotate,输入旋转,输入旋转
+Behaviour_Input_Shoot,输入射击,输入射击
+Behaviour_Input_CloseFight,输入近战,输入近战
+Behaviour_Auto_FollowPlayer,跟随玩家,跟随玩家
+Behaviour_Event_BeginTimeline,播放开始时间轴,播放开始时间轴
+Behaviour_Auto_Rotate,自动跟随鼠标旋转,自动跟随鼠标旋转
+Behaviour_Auto_Gravity,重力,重力
+Behaviour_Input_Teleport,输入冲刺,输入冲刺
 Behaviour_Auto_SelfDetonationAttack,自杀攻击,自杀攻击
 Behaviour_Auto_Knockback,击退,击退
 Behaviour_Auto_TriggerCharge,触发充能,触发充能
 Behaviour_Auto_TriggerHealth,触发回血,触发回血
 Behaviour_Event_RobotCreator,机器人创建器,机器人创建器
-Behaviour_Trigger_ChargeStartGame,开始游戏触发,开始游戏触发
+Behaviour_Trigger_ChargeStartGame,开始游戏充能,开始游戏充能
 Behaviour_Event_LevelSelect,关卡选择事件,关卡选择事件
 Behaviour_Event_LevelUpSelect,升级选择事件,升级选择事件
 Behaviour_Auto_Shoot,自动射击,自动射击

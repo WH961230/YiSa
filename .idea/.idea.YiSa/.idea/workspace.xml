@@ -24,15 +24,15 @@
   <component name="ChangeListManager">
     <list default="true" id="751138b9-e304-4f88-90e0-21e17608f2fb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Txt/GenerateBehaviourTemplate.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Txt/GenerateBehaviourTemplate.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Txt/GenerateBehaviourTemplate.txt.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Txt/GenerateBehaviourTemplate.txt.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Txt/GenerateFlowTemplate.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Txt/GenerateFlowTemplate.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Tool/Generate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Tool/Generate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Event_TriggerChargeStartGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Event_TriggerChargeStartGame.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/Begin.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/Begin.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/Begin/Flow_Begin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/Begin/Flow_Begin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Event_TriggerChargeStartGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Trigger_ChargeStartGame.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Event_TriggerChargeStartGame.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Trigger_ChargeStartGame.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Input_AlignCameraMovement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Input_AlignCameraMovement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Trigger_ChargeStartGame.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Trigger_ChargeStartGame.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/BehaviourConfig.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/BehaviourConfig.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/ObjConfig.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/ObjConfig.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/CodeFragment.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/CodeFragment.csv.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +61,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Data/Data.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_FollowPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Comp/Comp.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/FightFlow/Flow_Fight.cs" />
@@ -112,6 +111,7 @@
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Trigger_ChargeStartGame.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Event_BeginTimeline.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Event_TriggerChargeStartGame.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Trigger_ChargeStartGame.cs" />
       </list>
     </option>
   </component>
@@ -215,7 +215,8 @@
       <workItem from="1710936854845" duration="5370000" />
       <workItem from="1711190767406" duration="690000" />
       <workItem from="1711256916880" duration="23760000" />
-      <workItem from="1711292725493" duration="308000" />
+      <workItem from="1711292725493" duration="361000" />
+      <workItem from="1711353302638" duration="3486000" />
     </task>
     <servers />
   </component>
@@ -316,10 +317,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1253" y="333" width="755" height="536" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1711268981068" />
-    <state x="895" y="383" width="672" height="678" key="search.everywhere.popup" timestamp="1710938658448">
+    <state x="895" y="383" width="672" height="678" key="search.everywhere.popup" timestamp="1711364010917">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="895" y="383" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1710938658448" />
+    <state x="895" y="383" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1711364010917" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

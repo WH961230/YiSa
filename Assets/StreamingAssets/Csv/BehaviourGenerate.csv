@@ -2,19 +2,28 @@
 string,string,string,string,string
 行为代码标识,行为,行为类型代码标识,方法代码标识,方法
 FollowPlayer,跟随玩家,Auto,Init,初始化
-FollowPlayer,跟随玩家,Auto,Follow(),跟随
+FollowPlayer,跟随玩家,Auto,Follow,跟随
 FollowPlayer,跟随玩家,Auto,Clear,清除
-BeginTimeline,开始时间轴,Event,Namespace,using UnityEngine.Playables;
 BeginTimeline,开始时间轴,Event,Init,初始化
-BeginTimeline,开始时间轴,Event,CheckStartControl(PlayableDirector pd),检测角色控制
+BeginTimeline,开始时间轴,Event,SetPlayerControl,设置角色控制
+BeginTimeline,开始时间轴,Event,GetPlayerControl,获取角色控制
+BeginTimeline,开始时间轴,Event,StartPlay,开始播放
+BeginTimeline,开始时间轴,Event,StopPlay,停止播放
 BeginTimeline,开始时间轴,Event,Clear,清除
-AlignCameraMovement,对齐相机移动,Input,Namespace,using UnityEngine.InputSystem;
 AlignCameraMovement,对齐相机移动,Input,Init,初始化
-AlignCameraMovement,对齐相机移动,Input,MotionEvent(InputAction.CallbackContext obj),移动输入检测
-AlignCameraMovement,对齐相机移动,Input,OnMotionUpdate(),角色移动更新
+AlignCameraMovement,对齐相机移动,Input,GetInput,获取输入
+AlignCameraMovement,对齐相机移动,Input,GetTarget,获取移动物
+AlignCameraMovement,对齐相机移动,Input,GetCamera,获取相机
+AlignCameraMovement,对齐相机移动,Input,GetSpeed,获取速度
+AlignCameraMovement,对齐相机移动,Input,GetInputAlignCameraDir,获取输入对齐相机方向
+AlignCameraMovement,对齐相机移动,Input,CanMovement,可以移动
+AlignCameraMovement,对齐相机移动,Input,GetMovementDir,获取位移方向
+AlignCameraMovement,对齐相机移动,Input,SetMovementDir,设置位移方向
+AlignCameraMovement,对齐相机移动,Input,Movement,移动
+AlignCameraMovement,对齐相机移动,Input,GetAnimator,获取动画控制器
 AlignCameraMovement,对齐相机移动,Input,Clear,清除
 ChargeStartGame,开始物体充能,Trigger,Init,初始化
-ChargeStartGame,开始物体充能,Trigger,ChargeIn(Collider arg0),进入充能
-ChargeStartGame,开始物体充能,Trigger,ChargeOut(Collider arg0),离开充能
-ChargeStartGame,开始物体充能,Trigger,Charge(),充能刷新
+ChargeStartGame,开始物体充能,Trigger,ChargeIn,进入充能
+ChargeStartGame,开始物体充能,Trigger,ChargeOut,离开充能
+ChargeStartGame,开始物体充能,Trigger,Charge,充能刷新
 ChargeStartGame,开始物体充能,Trigger,Clear,清除

@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
+using UnityEngine.Playables;
 
 namespace LazyPan {
-    public class Flow_Begin : Flow {
+    public class Flow_Begin_bk : Flow {
 		private Comp UI_Begin;
 
 		private Entity Obj_Volume_Volume;
@@ -22,7 +23,6 @@ namespace LazyPan {
 			Obj_Terrain_Terrain = Obj.Instance.LoadEntity("Obj_Terrain_Terrain");
 			Obj_Event_StartGame = Obj.Instance.LoadEntity("Obj_Event_StartGame");
 			Obj_Player_Soldier = Obj.Instance.LoadEntity("Obj_Player_Soldier");
-
         }
 
 		/*获取UI*/

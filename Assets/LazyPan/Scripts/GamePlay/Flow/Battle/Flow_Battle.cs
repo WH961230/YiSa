@@ -1,118 +1,79 @@
-﻿using System.Collections.Generic;
-using TMPro;
-using UnityEngine.Playables;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 namespace LazyPan {
     public class Flow_Battle : Flow {
-        private Comp battleComp;
-        private Comp SettlementComp;
-        private Entity floorEntity;
-        private Entity cameraEntity;
-        private Entity playerSoldierEntity;
-        private Entity robotSoldierEntity;
-        private Entity towerEntity;
-        private Entity beginTimelineEntity;
-        private Entity volumeEntity;
-        private Entity lightEntity;
-        private Entity robotCreatorEntity;
-        private Entity levelSelectEntity;
-        private Entity activableEntity;
+		private Comp UI_Battle;
+
+		private Entity Obj_Volume_Volume;
+		private Entity Obj_Light_DirectionalLight;
+		private Entity Obj_Terrain_Terrain;
+		private Entity Obj_Event_BeginTimeline;
+		private Entity Obj_Camera_Camera;
+		private Entity Obj_Player_Soldier;
+		private Entity Obj_Building_Tower;
+		private Entity Obj_Event_PlayerUpgrade;
+		private Entity Obj_Event_LevelUpgrade;
+		private Entity Obj_Event_ActivableCreator;
+		private Entity Obj_Event_RobotCreator;
+		private Entity Obj_Event_Settlement;
+
         public override void Init(Flow baseFlow) {
             base.Init(baseFlow);
-#if UNITY_EDITOR
-            ConsoleEx.Instance.Content("log", $"=> 进入战斗流程");
-#endif
-            volumeEntity = Obj.Instance.LoadEntity("Obj_Volume_Volume");
-            lightEntity = Obj.Instance.LoadEntity("Obj_Light_DirectionalLight");
-            floorEntity = Obj.Instance.LoadEntity("Obj_Terrain_Terrain");
+            ConsoleEx.Instance.Content("log", "Flow_Battle  战斗流程");
+			UI_Battle = UI.Instance.Open("UI_Battle");
 
-            beginTimelineEntity = Obj.Instance.LoadEntity("Obj_Event_BeginTimeline");
-            PlayTimeline();
-            MessageRegister.Instance.Reg(MessageCode.GameOver, Settlement);
+			Obj_Volume_Volume = Obj.Instance.LoadEntity("Obj_Volume_Volume");
+			Obj_Light_DirectionalLight = Obj.Instance.LoadEntity("Obj_Light_DirectionalLight");
+			Obj_Terrain_Terrain = Obj.Instance.LoadEntity("Obj_Terrain_Terrain");
+			Obj_Event_BeginTimeline = Obj.Instance.LoadEntity("Obj_Event_BeginTimeline");
+
         }
 
-        public Comp GetUI() {
-            return battleComp;
-        }
+		/*获取UI*/
+		public Comp GetUI() {
+			return UI_Battle;
+		}
 
-        private void PlayTimeline() {
-            //播放完开场演示后生成玩家
-            PlayableDirector playableDirector = Cond.Instance.Get<PlayableDirector>(beginTimelineEntity, Label.PLAYABLEDIRECTOR);
-            playableDirector.stopped += Play;
-            playableDirector.Play();
-        }
+		/*开始游戏*/
+		public void Play() {
+			Obj.Instance.UnLoadEntity(Obj_Event_BeginTimeline);
+			Obj_Camera_Camera = Obj.Instance.LoadEntity("Obj_Camera_Camera");
+			Obj_Player_Soldier = Obj.Instance.LoadEntity("Obj_Player_Soldier");
+			Obj_Building_Tower = Obj.Instance.LoadEntity("Obj_Building_Tower");
+			Obj_Event_PlayerUpgrade = Obj.Instance.LoadEntity("Obj_Event_PlayerUpgrade");
+			Obj_Event_LevelUpgrade = Obj.Instance.LoadEntity("Obj_Event_LevelUpgrade");
+			Obj_Event_ActivableCreator = Obj.Instance.LoadEntity("Obj_Event_ActivableCreator");
+			Obj_Event_RobotCreator = Obj.Instance.LoadEntity("Obj_Event_RobotCreator");
+		}
 
-        private void Play(PlayableDirector pd) {
-            /*战斗UI*/
-            battleComp = UI.Instance.Open("UI_Battle");
-            /*战场玩家*/
-            playerSoldierEntity = Obj.Instance.LoadEntity("Obj_Player_Soldier");
-            /*塔*/
-            towerEntity = Obj.Instance.LoadEntity("Obj_Building_Tower");
-            /*相机实体*/
-            cameraEntity = Obj.Instance.LoadEntity("Obj_Camera_Camera");
-            /*机器人生成器*/
-            robotCreatorEntity = Obj.Instance.LoadEntity("Obj_Event_RobotCreator");
-            /*关卡难度选择器*/
-            levelSelectEntity = Obj.Instance.LoadEntity("Obj_Event_LevelSelect");
-            /*可激活生成器*/
-            activableEntity = Obj.Instance.LoadEntity("Obj_Event_ActivableCreator");
+		/*结算*/
+		public void Settlement() {
+			Obj_Event_Settlement = Obj.Instance.LoadEntity("Obj_Event_Settlement");
+		}
 
-            pd.enabled = false;
-            Data.Instance.CanControl = true;
-        }
 
-        /*结算*/
-        public void Settlement() {
-            SettlementComp = Cond.Instance.Get<Comp>(battleComp, Label.SETTLEMENT);
-            SettlementComp.gameObject.SetActive(true);
-
-            Button again = Cond.Instance.Get<Button>(SettlementComp, Label.AGAIN);
-            ButtonRegister.AddListener(again, Again);
-
-            Button returnBtn = Cond.Instance.Get<Button>(SettlementComp, Label.RETURN);
-            ButtonRegister.AddListener(returnBtn, Return);
-        }
-
-        /*回到主菜单*/
-        private void Return() {
-            Button returnBtn = Cond.Instance.Get<Button>(SettlementComp, Label.RETURN);
-            ButtonRegister.RemoveListener(returnBtn, Return);
+        /*下一步*/
+        public void Next(string teleportSceneSign) {
             Clear();
-            Data.Instance.Default();
-            Game.instance.Clear();
-            Launch.instance.StageLoad("Begin");
-        }
-
-        /*再来一局*/
-        private void Again() {
-            Button again = Cond.Instance.Get<Button>(SettlementComp, Label.AGAIN);
-            ButtonRegister.RemoveListener(again, Again);
-            Clear();
-            Data.Instance.OnUpdateEvent.RemoveAllListeners();
-            Data.Instance.OnFixedUpdateEvent.RemoveAllListeners();
-            Data.Instance.OnLateUpdateEvent.RemoveAllListeners();
-            Data.Instance.Default();
-            Game.instance.Clear();
-            Game.instance.Init();
+            Launch.instance.StageLoad(teleportSceneSign);
         }
 
         public override void Clear() {
             base.Clear();
-            UI.Instance.Close("UI_Battle");
+			Obj.Instance.UnLoadEntity(Obj_Event_Settlement);
+			Obj.Instance.UnLoadEntity(Obj_Event_RobotCreator);
+			Obj.Instance.UnLoadEntity(Obj_Event_ActivableCreator);
+			Obj.Instance.UnLoadEntity(Obj_Event_LevelUpgrade);
+			Obj.Instance.UnLoadEntity(Obj_Event_PlayerUpgrade);
+			Obj.Instance.UnLoadEntity(Obj_Building_Tower);
+			Obj.Instance.UnLoadEntity(Obj_Player_Soldier);
+			Obj.Instance.UnLoadEntity(Obj_Camera_Camera);
+			Obj.Instance.UnLoadEntity(Obj_Volume_Volume);
+			Obj.Instance.UnLoadEntity(Obj_Light_DirectionalLight);
+			Obj.Instance.UnLoadEntity(Obj_Terrain_Terrain);
 
-            Obj.Instance.UnLoadEntity(floorEntity);
-            Obj.Instance.UnLoadEntity(volumeEntity);
-            Obj.Instance.UnLoadEntity(lightEntity);
-            Obj.Instance.UnLoadEntity(playerSoldierEntity);
-            Obj.Instance.UnLoadEntity(towerEntity);
-            Obj.Instance.UnLoadEntity(beginTimelineEntity);
-            Obj.Instance.UnLoadEntity(cameraEntity);
-            Obj.Instance.UnLoadEntity(robotCreatorEntity);
-            Obj.Instance.UnLoadEntity(levelSelectEntity);
-            Obj.Instance.UnLoadEntity(activableEntity);
-            MessageRegister.Instance.UnReg(MessageCode.GameOver, Settlement);
+			UI.Instance.Close("UI_Battle");
+
         }
     }
 }

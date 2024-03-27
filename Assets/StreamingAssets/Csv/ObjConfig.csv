@@ -6,7 +6,7 @@ Obj_Terrain_Terrain,Flow_Begin,Terrain,地形,,,
 Obj_Light_DirectionalLight,Flow_Begin,Light,直射灯光,,,
 Obj_Player_Soldier,Flow_Begin,Player,开始方块,Strong,LocationInf_Single_BeginPlayer,Behaviour_Input_AlignCameraMovement
 Obj_Camera_Camera,Flow_Begin,Camera,开始主相机,,,
-Obj_Event_StartGame,Flow_Begin,Event,开始游戏物体,,LocationInf_Single_BeginStartGame,Behaviour_Trigger_ChargeStartGame
+Obj_Event_StartGame,Flow_Begin,Event,开始游戏物体,SuperStrong,LocationInf_Single_BeginStartGame,Behaviour_Trigger_ChargeStartGame
 Obj_Light_DirectionalLight,Flow_Battle,Light,直射灯光,,,
 Obj_Terrain_Terrain,Flow_Battle,Terrain,地形,,,
 Obj_Volume_Volume,Flow_Battle,Volume,后处理,,,

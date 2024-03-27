@@ -119,7 +119,7 @@ namespace LazyPan {
                         openui.Add(values[6]);
                     } else if (values[2] == "close_ui") {
                         closeui.Add(values[6]);
-                    } else if (values[2] == "load_entity" || values[2] == "unload_entity") {
+                    } else if (values[2] == "load_entity" || values[2] == "unload_entity" || values[2] == null) {
                         /*创建与销毁*/
                         string key = values[4];
                         string value = string.Concat(values[2], "|", values[6], "|", values[5]);
@@ -186,7 +186,7 @@ namespace LazyPan {
                             } else {
                                 /*创建阶段方法开头*/
                                 string methodName = keyValue.Value[0].Split("|")[2];
-                                stagereplace += string.Concat("\t\t/*", methodName ,"*/\n\t\tpublic void ", key, " () {\n");
+                                stagereplace += string.Concat("\t\t/*", methodName,"*/\n\t\tpublic void ", key, "() {\n");
 
                                 /*阶段创建数据*/
                                 foreach (string tmpInit in keyValue.Value) {
@@ -194,7 +194,7 @@ namespace LazyPan {
                                     if (valStrs[0] == "load_entity") {
                                         stagereplace += $"\t\t\t{valStrs[1]} = Obj.Instance.LoadEntity(\"{valStrs[1]}\");\n";
                                         /*实体属性*/
-                                        entityfieldreplace += $"\t\tprivate Entity {valStrs[1]};\n";
+                                        entityfieldreplace += string.Concat($"\t\tprivate Entity {valStrs[1]};\n");
                                     } else if (valStrs[0] == "unload_entity") {
                                         stagereplace += $"\t\t\tObj.Instance.UnLoadEntity({valStrs[1]});\n";
                                     }
@@ -245,7 +245,6 @@ namespace LazyPan {
             ReadCSV.Instance.Read("BehaviourGenerate", out string content, out string[] lines);
             Debug.Log(content);
 
-            List<string> namespaces = new List<string>();
             Dictionary<string, List<string>> customer = new Dictionary<string, List<string>>();
 
             /*生成行为脚本*/
@@ -261,7 +260,7 @@ namespace LazyPan {
                     string curMethodCode = strs[3];
                     /*缓存内容*/
                     if (curMethodCode == "Namespace") {
-                        namespaces.Add(strs[4]);
+
                     } else if (curMethodCode == "Init") {
 
                     } else if (curMethodCode == "Clear") {
@@ -286,11 +285,6 @@ namespace LazyPan {
                         var log = streamReader.ReadToEnd();
                         streamReader.Close();
 
-                        string curNamespace = "";
-                        foreach (string n in namespaces) {
-                            curNamespace += $"{n}\n";
-                        }
-                        log = Regex.Replace(log, "#命名空间#", curNamespace);
                         log = Regex.Replace(log, "#行为类型#", curBehaviourType);
                         log = Regex.Replace(log, "#行为标识#", string.Concat(curBehaviourSign, "_Template"));
 
@@ -299,7 +293,7 @@ namespace LazyPan {
                         foreach (KeyValuePair<string, List<string>> temp in customer) {
                             /*方法开头*/
                             string[] methodKeyStr = temp.Key.Split("|");
-                            customerMethod += string.Concat("\t\t/*", methodKeyStr[1] ,"*/\n\t\tprivate void ", methodKeyStr[0], " {\n");
+                            customerMethod += string.Concat("\t\t/*", methodKeyStr[1] ,"*/\n\t\tprivate void ", methodKeyStr[0], "() {\n");
 
                             /*方法结尾*/
                             customerMethod += "\t\t}\n\n";
@@ -314,7 +308,6 @@ namespace LazyPan {
                         AssetDatabase.ImportAsset(createPath);
 
                         customer.Clear();
-                        namespaces.Clear();
                     }
                 }
             }

@@ -1,5 +1,4 @@
 using UnityEngine;
-#命名空间#
 
 namespace LazyPan {
     public class Flow_#流程标识# : Flow {

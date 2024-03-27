@@ -292,14 +292,14 @@ namespace LazyPan {
                         }
                         log = Regex.Replace(log, "#命名空间#", curNamespace);
                         log = Regex.Replace(log, "#行为类型#", curBehaviourType);
-                        log = Regex.Replace(log, "#行为标识#", curBehaviourSign);
+                        log = Regex.Replace(log, "#行为标识#", string.Concat(curBehaviourSign, "_Template"));
 
                         string customerMethod = "";
 
                         foreach (KeyValuePair<string, List<string>> temp in customer) {
                             /*方法开头*/
                             string[] methodKeyStr = temp.Key.Split("|");
-                            customerMethod += string.Concat("\t\t/*", methodKeyStr[1] ,"*/\n\t\tpublic void ", methodKeyStr[0], " {\n");
+                            customerMethod += string.Concat("\t\t/*", methodKeyStr[1] ,"*/\n\t\tprivate void ", methodKeyStr[0], " {\n");
 
                             /*方法结尾*/
                             customerMethod += "\t\t}\n\n";
@@ -307,7 +307,7 @@ namespace LazyPan {
                         log = Regex.Replace(log, "#自定义方法#", customerMethod);
 
                         /*创建脚本*/
-                        var createPath = $"Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_{type}_{curBehaviourSign}.cs";
+                        var createPath = $"Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_{type}_{string.Concat(curBehaviourSign, "_Template")}.cs";
                         var streamWriter = new StreamWriter(createPath, false, new UTF8Encoding(true, false));
                         streamWriter.Write(log);
                         streamWriter.Close();

@@ -42,3 +42,9 @@ Activable,可激活物体,Trigger,Clear,清除
 GameOver,游戏结束检测,Event,Init,初始化
 GameOver,游戏结束检测,Event,GameOver,游戏结束
 GameOver,游戏结束检测,Event,Clear,清除
+Sprint,冲刺,Input,Init,初始化
+Sprint,冲刺,Input,GetInput,获取输入
+Sprint,冲刺,Input,Sprint,冲刺
+Sprint,冲刺,Input,Sprinting,冲刺中
+Sprint,冲刺,Input,SetCanControl,设置是否可控
+Sprint,冲刺,Input,Clear,清除

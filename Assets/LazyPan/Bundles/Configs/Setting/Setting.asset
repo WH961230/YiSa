@@ -21,7 +21,7 @@ MonoBehaviour:
     RotateSpeed: 1000
     TeleportSpeed: 30
     TeleportTime: 0.1
-    TeleportColdTime: 1
+    TeleportColdTime: 0.3
     GravitySpeed: 10
     Attack: 20
     AttackIntervalTime: 0.2

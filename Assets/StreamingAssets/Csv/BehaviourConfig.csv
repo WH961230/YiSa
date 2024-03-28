@@ -9,7 +9,7 @@ Behaviour_Auto_FollowPlayer,跟随玩家,跟随玩家
 Behaviour_Event_BeginTimeline,播放开始时间轴,播放开始时间轴
 Behaviour_Auto_Rotate,自动跟随鼠标旋转,自动跟随鼠标旋转
 Behaviour_Auto_Gravity,重力,重力
-Behaviour_Input_Teleport,输入冲刺,输入冲刺
+Behaviour_Input_Sprint,输入冲刺,输入冲刺
 Behaviour_Auto_SelfDetonationAttack,自杀攻击,自杀攻击
 Behaviour_Auto_Knockback,击退,击退
 Behaviour_Auto_TriggerCharge,触发充能,触发充能

@@ -41,7 +41,7 @@ namespace LazyPan {
                     if (tmpEntity.EntityData.BaseRuntimeData.CurHealth <= 0) {
                         bool hasFightFlow = Flo.Instance.GetFlow(out Flow_Battle battleFlow);
                         if (hasFightFlow) {
-                            tmpEntity.EntityData.BaseRuntimeData.DeathDrop = 2;
+                            tmpEntity.EntityData.BaseRuntimeData.DeathDrop = Random.Range(1, 10);
                             MessageRegister.Instance.Dis(MessageCode.Dead, tmpEntity);
                             MessageRegister.Instance.Dis(MessageCode.DeadRecycle, tmpEntity);
                         }

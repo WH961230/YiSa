@@ -135,8 +135,10 @@ namespace LazyPan {
     }
 
     public class MessageCode {
-        public static int Dead = 0;
-        public static int GameOver = 1;
-        public static int DeadRecycle = 2;
+        public static int Dead = 0;//实体死亡
+        public static int GameOver = 1;//游戏结束
+        public static int DeadRecycle = 2;//死亡回收
+        public static int ClearRobot = 3; //怪物清空
+        public static int NextLevel = 4;//开始下一关卡
     }
 }

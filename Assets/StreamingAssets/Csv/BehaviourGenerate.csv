@@ -16,7 +16,8 @@ AlignCameraMovement,对齐相机移动,Input,GetTarget,获取移动物
 AlignCameraMovement,对齐相机移动,Input,GetCamera,获取相机
 AlignCameraMovement,对齐相机移动,Input,GetSpeed,获取速度
 AlignCameraMovement,对齐相机移动,Input,GetInputAlignCameraDir,获取输入对齐相机方向
-AlignCameraMovement,对齐相机移动,Input,CanMovement,可以移动
+AlignCameraMovement,对齐相机移动,Input,SetPlayerControl,设置角色控制
+AlignCameraMovement,对齐相机移动,Input,GetPlayerControl,获取可以移动
 AlignCameraMovement,对齐相机移动,Input,GetMovementDir,获取位移方向
 AlignCameraMovement,对齐相机移动,Input,SetMovementDir,设置位移方向
 AlignCameraMovement,对齐相机移动,Input,Movement,移动
@@ -27,3 +28,17 @@ ChargeStartGame,开始物体充能,Trigger,ChargeIn,进入充能
 ChargeStartGame,开始物体充能,Trigger,ChargeOut,离开充能
 ChargeStartGame,开始物体充能,Trigger,Charge,充能刷新
 ChargeStartGame,开始物体充能,Trigger,Clear,清除
+PlayerUpgrade,玩家升级,Event,Init,初始化
+PlayerUpgrade,玩家升级,Event,SelectOneOutOfThree,BUFF三选一
+PlayerUpgrade,玩家升级,Event,Clear,清除
+LevelUpgrade,关卡升级,Event,Init,初始化
+LevelUpgrade,关卡升级,Event,SelectOneOutOfThree,BUFF三选一
+LevelUpgrade,关卡升级,Event,LevelUpgrade,设置升级
+LevelUpgrade,关卡升级,Event,SetCanControl,设置是否可控
+LevelUpgrade,关卡升级,Event,Clear,清除
+Activable,可激活物体,Trigger,Init,初始化
+Activable,可激活物体,Trigger,Active,激活
+Activable,可激活物体,Trigger,Clear,清除
+GameOver,游戏结束检测,Event,Init,初始化
+GameOver,游戏结束检测,Event,GameOver,游戏结束
+GameOver,游戏结束检测,Event,Clear,清除

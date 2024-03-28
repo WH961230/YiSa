@@ -20,9 +20,7 @@ namespace LazyPan {
         private Entity activableEntity;
         public override void Init(Flow baseFlow) {
             base.Init(baseFlow);
-#if UNITY_EDITOR
             ConsoleEx.Instance.Content("log", $"=> 进入战斗流程");
-#endif
             volumeEntity = Obj.Instance.LoadEntity("Obj_Volume_Volume");
             lightEntity = Obj.Instance.LoadEntity("Obj_Light_DirectionalLight");
             floorEntity = Obj.Instance.LoadEntity("Obj_Terrain_Terrain");

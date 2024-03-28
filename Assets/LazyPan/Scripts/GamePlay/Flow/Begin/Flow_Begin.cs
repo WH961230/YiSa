@@ -8,7 +8,7 @@ namespace LazyPan {
 		private Entity Obj_Light_DirectionalLight;
 		private Entity Obj_Camera_Camera;
 		private Entity Obj_Terrain_Terrain;
-		private Entity Obj_Event_StartGame;
+		private Entity Obj_Trigger_StartGame;
 		private Entity Obj_Player_Soldier;
 
         public override void Init(Flow baseFlow) {
@@ -20,7 +20,7 @@ namespace LazyPan {
 			Obj_Light_DirectionalLight = Obj.Instance.LoadEntity("Obj_Light_DirectionalLight");
 			Obj_Camera_Camera = Obj.Instance.LoadEntity("Obj_Camera_Camera");
 			Obj_Terrain_Terrain = Obj.Instance.LoadEntity("Obj_Terrain_Terrain");
-			Obj_Event_StartGame = Obj.Instance.LoadEntity("Obj_Event_StartGame");
+			Obj_Trigger_StartGame = Obj.Instance.LoadEntity("Obj_Trigger_StartGame");
 			Obj_Player_Soldier = Obj.Instance.LoadEntity("Obj_Player_Soldier");
 
         }
@@ -40,7 +40,7 @@ namespace LazyPan {
         public override void Clear() {
             base.Clear();
 			Obj.Instance.UnLoadEntity(Obj_Player_Soldier);
-			Obj.Instance.UnLoadEntity(Obj_Event_StartGame);
+			Obj.Instance.UnLoadEntity(Obj_Trigger_StartGame);
 			Obj.Instance.UnLoadEntity(Obj_Terrain_Terrain);
 			Obj.Instance.UnLoadEntity(Obj_Camera_Camera);
 			Obj.Instance.UnLoadEntity(Obj_Light_DirectionalLight);

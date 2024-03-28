@@ -19,9 +19,7 @@ namespace LazyPan {
 
                 DontDestroyOnLoad(gameObject);
 
-#if UNITY_EDITOR
                 ConsoleEx.Instance.Init(OpenConsole);
-#endif
 
                 StageLoad("Begin");
             }

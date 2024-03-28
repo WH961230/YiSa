@@ -13,20 +13,22 @@ namespace LazyPan {
             Data.Instance.SelectRobots = new List<string>();
             Data.Instance.SelectRobots.Add("Obj_Robot_Soldier");
             Data.Instance.SelectRobots.Add("Obj_Robot_Soldier");
-            PrepareRobot();
-            RobotEvent(2, 1);
+            StartNextLevel();
+            MessageRegister.Instance.Reg(MessageCode.NextLevel, StartNextLevel);
             MessageRegister.Instance.Reg<Entity>(MessageCode.DeadRecycle, RobotDeadRecycle);
             MessageRegister.Instance.Reg(MessageCode.GameOver, RemoveAllRobot);
             Data.Instance.OnUpdateEvent.AddListener(Wait);
         }
 
         private void Wait() {
-            if (Data.Instance.StartNextLevel) {
-                //准备机器人
-                PrepareRobot();
-                RobotEvent(2, 1);
-                Data.Instance.StartNextLevel = false;
-            }
+
+        }
+
+        /*开始下一关卡*/
+        private void StartNextLevel() {
+            //准备机器人
+            PrepareRobot();
+            RobotEvent(2, 1);
         }
 
         /*机器人事件 几秒钟后 间隔几秒 生成怪物 一共需要生成几只*/
@@ -68,21 +70,15 @@ namespace LazyPan {
                 robotSoldierEntities.Remove(robotEntity);
                 Obj.Instance.UnLoadEntity(robotEntity);
                 if (robotSoldierEntities.Count == 0) {
-#if UNITY_EDITOR
                     ConsoleEx.Instance.Content("log", $"怪物清空!");
-#endif
-                    Data.Instance.LevelNum++;
-                    Data.Instance.SelectLevel = true;
-                    Data.Instance.CanControl = false;
+                    MessageRegister.Instance.Dis(MessageCode.ClearRobot);
                 }
             }
         }
 
         /*移除所有机器人*/
         private void RemoveAllRobot() {
-#if UNITY_EDITOR
             ConsoleEx.Instance.Content("log", $"所有怪物清空!");
-#endif
             foreach (Entity robotEntity in robotSoldierEntities) {
                 Obj.Instance.UnLoadEntity(robotEntity);
             }
@@ -93,6 +89,7 @@ namespace LazyPan {
             base.Clear();
             MessageRegister.Instance.UnReg<Entity>(MessageCode.DeadRecycle, RobotDeadRecycle);
             MessageRegister.Instance.UnReg(MessageCode.GameOver, RemoveAllRobot);
+            MessageRegister.Instance.UnReg(MessageCode.NextLevel, StartNextLevel);
             ClockUtil.Instance.Stop(clock);
             Data.Instance.OnUpdateEvent.RemoveListener(Wait);
         }

@@ -20,9 +20,7 @@ namespace LazyPan {
 
         public bool AddEntity(int id, Entity entity) {
             if (EntityDic.TryAdd(id, entity)) {
-#if UNITY_EDITOR
                 ConsoleEx.Instance.Content("log", $"ID:{id} 注册实体:{entity.ObjConfig.Name}");
-#endif
                 return true;
             }
 

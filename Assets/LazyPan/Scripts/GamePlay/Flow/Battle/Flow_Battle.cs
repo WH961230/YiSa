@@ -15,7 +15,6 @@ namespace LazyPan {
 		private Entity Obj_Event_LevelUpgrade;
 		private Entity Obj_Event_ActivableCreator;
 		private Entity Obj_Event_RobotCreator;
-		private Entity Obj_Event_GameOver;
 		private Entity Obj_Event_Settlement;
 
         public override void Init(Flow baseFlow) {
@@ -40,12 +39,13 @@ namespace LazyPan {
 			Obj.Instance.UnLoadEntity(Obj_Event_BeginTimeline);
 			Obj_Camera_Camera = Obj.Instance.LoadEntity("Obj_Camera_Camera");
 			Obj_Player_Soldier = Obj.Instance.LoadEntity("Obj_Player_Soldier");
+			Obj_Player_Soldier.EntityData.BaseRuntimeData.PlayerInfo.HealthPoint =
+				Loader.LoadSetting().PlayerSetting.HealthPoint;
 			Obj_Building_Tower = Obj.Instance.LoadEntity("Obj_Building_Tower");
 			Obj_Event_PlayerUpgrade = Obj.Instance.LoadEntity("Obj_Event_PlayerUpgrade");
 			Obj_Event_LevelUpgrade = Obj.Instance.LoadEntity("Obj_Event_LevelUpgrade");
 			Obj_Event_ActivableCreator = Obj.Instance.LoadEntity("Obj_Event_ActivableCreator");
 			Obj_Event_RobotCreator = Obj.Instance.LoadEntity("Obj_Event_RobotCreator");
-			Obj_Event_GameOver = Obj.Instance.LoadEntity("Obj_Event_GameOver");
 		}
 
 		/*结算*/
@@ -63,7 +63,6 @@ namespace LazyPan {
         public override void Clear() {
             base.Clear();
 			Obj.Instance.UnLoadEntity(Obj_Event_Settlement);
-			Obj.Instance.UnLoadEntity(Obj_Event_GameOver);
 			Obj.Instance.UnLoadEntity(Obj_Event_RobotCreator);
 			Obj.Instance.UnLoadEntity(Obj_Event_ActivableCreator);
 			Obj.Instance.UnLoadEntity(Obj_Event_LevelUpgrade);

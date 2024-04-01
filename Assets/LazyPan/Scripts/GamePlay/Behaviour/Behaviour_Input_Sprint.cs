@@ -35,7 +35,7 @@ namespace LazyPan {
 
         /*设置是否可控*/
         private void SetCanControl(bool canControl) {
-            Data.Instance.CanControl = canControl;
+            entity.EntityData.BaseRuntimeData.PlayerInfo.AllowMovement = canControl;
         }
 
         /*冲刺中*/

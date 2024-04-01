@@ -74,6 +74,12 @@ namespace LazyPan {
 
     [CreateAssetMenu(menuName = "LazyPan/Setting", fileName = "Setting")]
     public class Setting : ScriptableObject {
+        [Header("关卡配置")] public LevelSetting LevelSetting;
+        [Header("玩家配置")] public PlayerSetting PlayerSetting;
+        [Header("机器人配置")] public RobotSetting RobotSetting;
+        [Header("Buff配置")] public BuffSetting BuffSetting;
+        [Header("塔配置")] public TowerSetting TowerSetting;
+
         [Header("基础信息配置")] public List<BaseSetting> BaseSettings;
         [Header("关卡机器人配置")] public List<LevelRobotSetting> LevelRobotSettings;
         [Header("关卡BUFF配置")] public List<LevelBuffSetting> LevelBuffSettings;
@@ -91,32 +97,33 @@ namespace LazyPan {
             return false;
         }
 
-        /*随机获取n个关卡数匹配的关卡机器人配置*/
-        public bool TryGetLevelRobotSetting(int levelNum, int needNum, out List<LevelRobotSetting> ret) {
-            ret = new List<LevelRobotSetting>();
-            foreach (LevelRobotSetting setting in LevelRobotSettings) {
-                if (setting.LevelNum == levelNum) {
-                    ret.Add(setting);
+        /*获取n个不重复的机器人配置*/
+        public bool TryGetRobotByCount(int num, out List<RobotSettingInfo> robotSettingInfo) {
+            int[] index = MathUtil.Instance.GetRandNoRepeatIndex(RobotSetting.RobotSettingInfo.Count, 3);
+            if (index != null) {
+                robotSettingInfo = new List<RobotSettingInfo>();
+                foreach (int i in index) {
+                    robotSettingInfo.Add(RobotSetting.RobotSettingInfo[i]);
+                }
+
+                return true;
+            }
+
+            robotSettingInfo = default;
+            return false;
+        }
+
+        /*获取机器人配置*/
+        public bool TryGetRobotBySign(string sign, out RobotSettingInfo robotSettingInfo) {
+            foreach (RobotSettingInfo info in RobotSetting.RobotSettingInfo) {
+                if (info.Sign == sign) {
+                    robotSettingInfo = info;
+                    return true;
                 }
             }
 
-            if (ret.Count < needNum) {
-                ret = default;
-                return false;
-            }
-
-            int[] indexs = MathUtil.Instance.GetRandNoRepeatIndex(ret.Count, needNum);
-            ret.Clear();
-            foreach (int index in indexs) {
-                ret.Add(LevelRobotSettings[index]);
-            }
-
-            return true;
+            robotSettingInfo = default;
+            return false;
         }
-
-        // /*随机获取n个关卡数匹配的关卡BUFF配置*/
-        // public bool TryGetLevelBuffSetting(int levelNum, int needNum) {
-        //     
-        // }
     }
 }

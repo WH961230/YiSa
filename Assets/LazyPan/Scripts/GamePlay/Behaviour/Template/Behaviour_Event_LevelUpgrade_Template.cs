@@ -13,6 +13,10 @@ namespace LazyPan {
 		private void LevelUpgrade() {
 		}
 
+		/*选择机器人配置*/
+		private void SelectRobotSetting() {
+		}
+
 		/*设置是否可控*/
 		private void SetCanControl() {
 		}

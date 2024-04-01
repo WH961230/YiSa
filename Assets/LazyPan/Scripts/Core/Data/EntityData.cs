@@ -7,6 +7,9 @@ namespace LazyPan {
             BaseRuntimeData = new BaseRuntimeData();
             BaseRuntimeData.Sign = config.Sign;
             BaseRuntimeData.Type = config.Type;
+            BaseRuntimeData.PlayerInfo = new PlayerInfo();
+            BaseRuntimeData.RobotInfo = new RobotInfo();
+            BaseRuntimeData.TowerInfo = new TowerInfo();
             if (setting.TryGetBaseSetting(config.CreatureType, out BaseSetting baseSetting)) {
                 /*基参*/
                 BaseRuntimeData.DefHealth = baseSetting.Health;
@@ -105,5 +108,9 @@ namespace LazyPan {
         /*经验值*/
         public float CurExp;//经验值
         public float CurExpMax;//经验值最大值
+
+        public PlayerInfo PlayerInfo;//玩家数据
+        public RobotInfo RobotInfo;//机器人数据
+        public TowerInfo TowerInfo;//塔数据
     }
 }

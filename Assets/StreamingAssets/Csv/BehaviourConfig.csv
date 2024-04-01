@@ -25,3 +25,4 @@ Behaviour_Auto_Pick,自动拾取,自动拾取
 Behaviour_Event_ActivableCreator,可激活创建,可激活创建
 Behaviour_Trigger_Activable,可激活激活,可激活激活
 Behaviour_Event_GameOver,游戏结束检测,游戏结束检测
+Behaviour_Auto_RotateWithDirectionOfMovement,随着移动方向旋转,随着移动方向旋转

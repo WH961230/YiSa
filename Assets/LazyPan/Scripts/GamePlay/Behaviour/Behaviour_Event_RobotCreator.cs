@@ -10,24 +10,21 @@ namespace LazyPan {
             robotSoldierEntities = new List<Entity>();
             robotSoldierQueuies = new Queue<string>();
             /*第一波 普通机器人*/
-            Data.Instance.SelectRobots = new List<string>();
-            Data.Instance.SelectRobots.Add("Obj_Robot_Soldier");
-            Data.Instance.SelectRobots.Add("Obj_Robot_Soldier");
-            StartNextLevel();
-            MessageRegister.Instance.Reg(MessageCode.NextLevel, StartNextLevel);
-            MessageRegister.Instance.Reg<Entity>(MessageCode.DeadRecycle, RobotDeadRecycle);
-            MessageRegister.Instance.Reg(MessageCode.GameOver, RemoveAllRobot);
+            PrepareRobot("Obj_Robot_Soldier");
+            PrepareRobot("Obj_Robot_Soldier");
+            RobotCreate();
+            MessageRegister.Instance.Reg(MessageCode.RobotCreate, RobotCreate);
+            MessageRegister.Instance.Reg<string>(MessageCode.LevelUpgradeIncreaseRobot, PrepareRobot);
+            MessageRegister.Instance.Reg<Entity, int>(MessageCode.BeInjuried, RobotBeInjured);
             Data.Instance.OnUpdateEvent.AddListener(Wait);
         }
 
         private void Wait() {
-
+            
         }
 
-        /*开始下一关卡*/
-        private void StartNextLevel() {
-            //准备机器人
-            PrepareRobot();
+        /*生成怪物*/
+        private void RobotCreate() {
             RobotEvent(2, 1);
         }
 
@@ -43,24 +40,38 @@ namespace LazyPan {
         }
 
         /*怪物队列预备*/
-        private void PrepareRobot() {
-            foreach (string robotSign in Data.Instance.SelectRobots) {
-                robotSoldierQueuies.Enqueue(robotSign);
-            }
+        private void PrepareRobot(string sign) {
+            robotSoldierQueuies.Enqueue(sign);
         }
 
         /*怪物生成*/
         private void InstanceRobot() {
             if (robotSoldierQueuies.Count > 0) {
                 string robotSign = robotSoldierQueuies.Dequeue();
-                robotSoldierEntities.Add(Obj.Instance.LoadEntity(robotSign));
+                Entity robot = Obj.Instance.LoadEntity(robotSign);
+                bool getSetting = Loader.LoadSetting().TryGetRobotBySign(robotSign, out RobotSettingInfo info);
+                if (getSetting) {
+                    robot.EntityData.BaseRuntimeData.RobotInfo.HealthPoint = info.HealthPoint;
+                    robotSoldierEntities.Add(robot);
+                }
             }
         }
 
-        /*机器人死亡*/
-        private void RobotDeadRecycle(Entity entity) {
-            if (entity.EntityData.BaseRuntimeData.Type == "Robot") {
-                RemoveRobot(entity);
+        /*机器人受伤*/
+        private void RobotBeInjured(Entity robot, int damage) {
+            /*受伤*/
+            robot.EntityData.BaseRuntimeData.RobotInfo.HealthPoint -= damage;
+            /*血量小于零掉落*/
+            if (robot.EntityData.BaseRuntimeData.RobotInfo.HealthPoint <= 0) {
+                /*敌方攻击*/
+                if (robot.EntityData.BaseRuntimeData.RobotInfo.DeathType == 0) {
+                    /*掉落*/
+                    entity.EntityData.BaseRuntimeData.RobotInfo.DeathDropType = UnityEngine.Random.Range(0, 3);
+                    MessageRegister.Instance.Dis(MessageCode.DeathDrop, robot);
+                }
+
+                /*死亡*/
+                RemoveRobot(robot);
             }
         }
 
@@ -71,7 +82,7 @@ namespace LazyPan {
                 Obj.Instance.UnLoadEntity(robotEntity);
                 if (robotSoldierEntities.Count == 0) {
                     ConsoleEx.Instance.Content("log", $"怪物清空!");
-                    MessageRegister.Instance.Dis(MessageCode.ClearRobot);
+                    MessageRegister.Instance.Dis(MessageCode.LevelUpgrade);
                 }
             }
         }
@@ -87,9 +98,10 @@ namespace LazyPan {
 
         public override void Clear() {
             base.Clear();
-            MessageRegister.Instance.UnReg<Entity>(MessageCode.DeadRecycle, RobotDeadRecycle);
-            MessageRegister.Instance.UnReg(MessageCode.GameOver, RemoveAllRobot);
-            MessageRegister.Instance.UnReg(MessageCode.NextLevel, StartNextLevel);
+            RemoveAllRobot();
+            MessageRegister.Instance.UnReg<Entity, int>(MessageCode.BeInjuried, RobotBeInjured);
+            MessageRegister.Instance.UnReg<string>(MessageCode.LevelUpgradeIncreaseRobot, PrepareRobot);
+            MessageRegister.Instance.UnReg(MessageCode.RobotCreate, RobotCreate);
             ClockUtil.Instance.Stop(clock);
             Data.Instance.OnUpdateEvent.RemoveListener(Wait);
         }

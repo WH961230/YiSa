@@ -1,13 +1,12 @@
 ﻿using System.Collections.Generic;
 using TMPro;
-using UnityEngine;
 using UnityEngine.UI;
 
 namespace LazyPan {
     public class Behaviour_Event_LevelUpgrade : Behaviour {
         private Flow_Battle battleFlow;
         public Behaviour_Event_LevelUpgrade(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
-            MessageRegister.Instance.Reg(MessageCode.ClearRobot, SelectOneOutOfThree);
+            MessageRegister.Instance.Reg(MessageCode.LevelUpgrade, SelectOneOutOfThree);
         }
 
 		/*BUFF三选一*/
@@ -21,8 +20,7 @@ namespace LazyPan {
                 Comp battleui = battleFlow.GetUI();
                 Comp levelselect = Cond.Instance.Get<Comp>(battleui, Label.Assemble(Label.LEVEL, Label.SELECT));
                 levelselect.gameObject.SetActive(true);
-                bool isGetLevelRobotSetting = Loader.LoadSetting().TryGetLevelRobotSetting(Data.Instance.LevelNum, 3,
-                    out List<LevelRobotSetting> robotSettings);
+                bool isGetLevelRobotSetting = Loader.LoadSetting().TryGetRobotByCount(3, out List<RobotSettingInfo> robotSettings);
                 if (isGetLevelRobotSetting) {
                     Button A = Cond.Instance.Get<Button>(levelselect, Label.A);
                     ButtonRegister.AddListener(A, SelectRobotSetting, robotSettings[0]);
@@ -42,33 +40,27 @@ namespace LazyPan {
             }
         }
 
-        private void SelectRobotSetting(LevelRobotSetting robotSetting) {
-            int num = robotSetting.robotNum;
-            while (num > 0) {
-                Data.Instance.SelectRobots.Add(robotSetting.robotSign);
-                num--;
-            }
-
+        /*选择机器人配置*/
+        private void SelectRobotSetting(RobotSettingInfo robotSettingInfo) {
+            SetCanControl(true);
             Comp levelselect = Cond.Instance.Get<Comp>(battleFlow.GetUI(), Label.Assemble(Label.LEVEL, Label.SELECT));
             levelselect.gameObject.SetActive(false);
-            SetCanControl(true);
-            MessageRegister.Instance.Dis(MessageCode.NextLevel);
+            MessageRegister.Instance.Dis(MessageCode.LevelUpgradeIncreaseRobot, robotSettingInfo.Sign);
         }
 
         /*设置升级*/
         private void LevelUpgrade() {
-            Data.Instance.LevelNum++;
-            Data.Instance.SelectLevel = true;
+            Data.Instance.LevelInfo.Level++;
         }
 
         /*设置是否可控*/
         private void SetCanControl(bool canControl) {
-            Data.Instance.CanControl = canControl;
+            Cond.Instance.GetPlayerEntity().EntityData.BaseRuntimeData.PlayerInfo.AllowMovement = canControl;
         }
 
         public override void Clear() {
             base.Clear();
-            MessageRegister.Instance.UnReg(MessageCode.ClearRobot, SelectOneOutOfThree);
+            MessageRegister.Instance.UnReg(MessageCode.LevelUpgrade, SelectOneOutOfThree);
         }
     }
 }

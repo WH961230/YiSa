@@ -37,16 +37,8 @@ namespace LazyPan {
             }
             if (Data.Instance.TryGetEntityByBodyPrefabID(go.GetInstanceID(), out Entity tmpEntity)) {
                 if (tmpEntity.EntityData.BaseRuntimeData.CurHealth > 0) {
-                    tmpEntity.EntityData.BaseRuntimeData.CurHealth -= entity.EntityData.BaseRuntimeData.CurAttack /*伤害*/;
-                    if (tmpEntity.EntityData.BaseRuntimeData.CurHealth <= 0) {
-                        bool hasFightFlow = Flo.Instance.GetFlow(out Flow_Battle battleFlow);
-                        if (hasFightFlow) {
-                            tmpEntity.EntityData.BaseRuntimeData.DeathDrop = Random.Range(1, 10);
-                            MessageRegister.Instance.Dis(MessageCode.Dead, tmpEntity);
-                            MessageRegister.Instance.Dis(MessageCode.DeadRecycle, tmpEntity);
-                        }
-                        return;
-                    }
+                    tmpEntity.EntityData.BaseRuntimeData.RobotInfo.DeathType = 0;
+                    MessageRegister.Instance.Dis(MessageCode.BeInjuried, tmpEntity, Loader.LoadSetting().TowerSetting.Attack);
                     /*掉血表现*/
                     GameObject template = Loader.LoadGo("掉血", "Common/Obj_Fx_BeHit", Data.Instance.ObjRoot, true);
                     Transform squirt = Cond.Instance.Get<Transform>(tmpEntity, Label.SQUIRT);

@@ -2,24 +2,24 @@
 
 namespace LazyPan {
     public class Behaviour_Auto_Gravity : Behaviour {
-        private CharacterController characterController;
         public Behaviour_Auto_Gravity(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
-            characterController = Cond.Instance.Get<CharacterController>(entity, Label.CHARACTERCONTROLLER);
-            Data.Instance.OnLateUpdateEvent.AddListener(OnGravityLateUpdate);
+            Data.Instance.OnLateUpdateEvent.AddListener(Gravity);
         }
 
-        private void OnGravityLateUpdate() {
-            if (entity.EntityData.BaseRuntimeData.CurMotionState == 0) {
-                entity.EntityData.BaseRuntimeData.CurGravityDir = Vector3.zero;
-                entity.EntityData.BaseRuntimeData.CurGravityDir += Vector3.down;
-                characterController.Move(entity.EntityData.BaseRuntimeData.CurGravityDir * Time.deltaTime *
-                                         entity.EntityData.BaseRuntimeData.GravitySpeed);
-            }
+        /*重力*/
+        private void Gravity() {
+            Cond.Instance.Get<CharacterController>(entity, Label.CHARACTERCONTROLLER).Move(
+                Vector3.down * Time.deltaTime * GetGravitySpeed());
+        }
+
+        /*获取重力速度*/
+        private float GetGravitySpeed() {
+            return Loader.LoadSetting().PlayerSetting.GravitySpeed;
         }
 
         public override void Clear() {
             base.Clear();
-            Data.Instance.OnLateUpdateEvent.RemoveListener(OnGravityLateUpdate);
+            Data.Instance.OnLateUpdateEvent.RemoveListener(Gravity);
         }
     }
 }

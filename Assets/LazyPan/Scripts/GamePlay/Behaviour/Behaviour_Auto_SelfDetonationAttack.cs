@@ -14,32 +14,24 @@ namespace LazyPan {
             }
 
             if (Data.Instance.TryGetEntityByBodyPrefabID(arg0.gameObject.GetInstanceID(), out Entity tmpEntity)) {
-                Entity towerEntity = null;
-                if (tmpEntity.EntityData.BaseRuntimeData.Type == "Building") {
-                    towerEntity = tmpEntity;
-                }
-
-                if (tmpEntity.EntityData.BaseRuntimeData.Type == "Player") {
-                    Cond.Instance.GetTowerEntity(out towerEntity);
-                }
-
-                if (towerEntity != null) {
-                    towerEntity.EntityData.BaseRuntimeData.CurHealth -= entity.EntityData.BaseRuntimeData.CurAttack;
-
-                    Debug.Log($"血量:{towerEntity.EntityData.BaseRuntimeData.CurHealth}");
+                if (tmpEntity.EntityData.BaseRuntimeData.Type == "Building" ||
+                    tmpEntity.EntityData.BaseRuntimeData.Type == "Player") {
+                    Entity beInjuredEntity = Cond.Instance.GetPlayerEntity();
                     bool isGetFlow = Flo.Instance.GetFlow(out Flow_Battle battleFlow);
                     if (isGetFlow) {
-                        MessageRegister.Instance.Dis(MessageCode.DeadRecycle, tmpEntity);
+                        bool getSetting = Loader.LoadSetting().TryGetRobotBySign(entity.ObjConfig.Sign, out RobotSettingInfo i);
+                        if (getSetting) {
+                            MessageRegister.Instance.Dis(MessageCode.BeInjuried, beInjuredEntity, i.Attack);
+                            entity.EntityData.BaseRuntimeData.RobotInfo.DeathType = 1;
+                            MessageRegister.Instance.Dis(MessageCode.BeInjuried, entity,
+                                entity.EntityData.BaseRuntimeData.RobotInfo.HealthPoint);
+                        }
 
                         Comp battleui = battleFlow.GetUI();
                         Comp info = Cond.Instance.Get<Comp>(battleui, Label.INFO);
-                        Cond.Instance.Get<Slider>(info, Label.HEALTH).value = towerEntity.EntityData.BaseRuntimeData.CurHealth /
-                                                                              towerEntity.EntityData.BaseRuntimeData
+                        Cond.Instance.Get<Slider>(info, Label.HEALTH).value = beInjuredEntity.EntityData.BaseRuntimeData.CurHealth /
+                                                                              beInjuredEntity.EntityData.BaseRuntimeData
                                                                                   .CurHealthMax;
-                        if (towerEntity.EntityData.BaseRuntimeData.CurHealth <= 0) {
-                            MessageRegister.Instance.Dis(MessageCode.GameOver);
-                            Data.Instance.GameOver = true;
-                        }
                     }
                 }
             }

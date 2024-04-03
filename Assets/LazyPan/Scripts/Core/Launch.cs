@@ -8,7 +8,6 @@ namespace LazyPan {
         private void Awake() {
             if (instance == null) {
                 instance = this;
-                Data.Instance.Setting = Loader.LoadSetting();
                 Config.Instance.Init();
                 Obj.Instance.Init();
 

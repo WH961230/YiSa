@@ -49,11 +49,7 @@ namespace LazyPan {
             if (robotSoldierQueuies.Count > 0) {
                 string robotSign = robotSoldierQueuies.Dequeue();
                 Entity robot = Obj.Instance.LoadEntity(robotSign);
-                bool getSetting = Loader.LoadSetting().TryGetRobotBySign(robotSign, out RobotSettingInfo info);
-                if (getSetting) {
-                    robot.EntityData.BaseRuntimeData.RobotInfo.HealthPoint = info.HealthPoint;
-                    robotSoldierEntities.Add(robot);
-                }
+                robotSoldierEntities.Add(robot);
             }
         }
 

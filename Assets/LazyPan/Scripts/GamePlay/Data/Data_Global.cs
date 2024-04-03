@@ -20,8 +20,9 @@ namespace LazyPan {
 
     /*玩家*/
     public class PlayerInfo {
-        public int HealthPoint;//血量
-        //经验
+        public float HealthPoint;//血量
+        /*经验值*/
+        public float Experience;//经验值
         //可移动
         public bool AllowMovement;//允许移动
     }
@@ -29,7 +30,7 @@ namespace LazyPan {
     /*机器人*/
     public class RobotInfo {
         //种类
-        public int HealthPoint;//血量
+        public float HealthPoint;//血量
         public int DeathDropType;//死亡掉落类型 0 无 1 经验值 2 可激活
         public int DeathType;//死亡类型 0 敌方攻击 1 自杀
     }
@@ -37,6 +38,7 @@ namespace LazyPan {
     /*塔*/
     public class TowerInfo {
         //武器
+        public float Energy;//当前能量
     }
 
     /*BUFF*/

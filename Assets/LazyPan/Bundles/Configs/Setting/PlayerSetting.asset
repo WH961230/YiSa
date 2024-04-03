@@ -14,4 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthPoint: 100
   RotateSpeed: 500
+  MovementSpeed: 5
   GravitySpeed: 10
+  SprintSpeed: 5
+  SprintTime: 0.5
+  HealthRecoverSpeed: 1
+  HealthMax: 100
+  ExperienceMax: 10

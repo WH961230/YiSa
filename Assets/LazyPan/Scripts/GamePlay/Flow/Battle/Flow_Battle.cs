@@ -4,13 +4,11 @@ namespace LazyPan {
     public class Flow_Battle : Flow {
 		private Comp UI_Battle;
 
-		private Entity Obj_Volume_Volume;
-		private Entity Obj_Light_DirectionalLight;
 		private Entity Obj_Terrain_Terrain;
 		private Entity Obj_Event_BeginTimeline;
 		private Entity Obj_Camera_Camera;
 		private Entity Obj_Player_Soldier;
-		private Entity Obj_Building_Tower;
+		private Entity Obj_Tower_Tower;
 		private Entity Obj_Event_PlayerUpgrade;
 		private Entity Obj_Event_LevelUpgrade;
 		private Entity Obj_Event_ActivableCreator;
@@ -22,8 +20,6 @@ namespace LazyPan {
             ConsoleEx.Instance.Content("log", "Flow_Battle  战斗流程");
 			UI_Battle = UI.Instance.Open("UI_Battle");
 
-			Obj_Volume_Volume = Obj.Instance.LoadEntity("Obj_Volume_Volume");
-			Obj_Light_DirectionalLight = Obj.Instance.LoadEntity("Obj_Light_DirectionalLight");
 			Obj_Terrain_Terrain = Obj.Instance.LoadEntity("Obj_Terrain_Terrain");
 			Obj_Event_BeginTimeline = Obj.Instance.LoadEntity("Obj_Event_BeginTimeline");
 
@@ -39,9 +35,7 @@ namespace LazyPan {
 			Obj.Instance.UnLoadEntity(Obj_Event_BeginTimeline);
 			Obj_Camera_Camera = Obj.Instance.LoadEntity("Obj_Camera_Camera");
 			Obj_Player_Soldier = Obj.Instance.LoadEntity("Obj_Player_Soldier");
-			Obj_Player_Soldier.EntityData.BaseRuntimeData.PlayerInfo.HealthPoint =
-				Loader.LoadSetting().PlayerSetting.HealthPoint;
-			Obj_Building_Tower = Obj.Instance.LoadEntity("Obj_Building_Tower");
+			Obj_Tower_Tower = Obj.Instance.LoadEntity("Obj_Tower_Tower");
 			Obj_Event_PlayerUpgrade = Obj.Instance.LoadEntity("Obj_Event_PlayerUpgrade");
 			Obj_Event_LevelUpgrade = Obj.Instance.LoadEntity("Obj_Event_LevelUpgrade");
 			Obj_Event_ActivableCreator = Obj.Instance.LoadEntity("Obj_Event_ActivableCreator");
@@ -67,11 +61,9 @@ namespace LazyPan {
 			Obj.Instance.UnLoadEntity(Obj_Event_ActivableCreator);
 			Obj.Instance.UnLoadEntity(Obj_Event_LevelUpgrade);
 			Obj.Instance.UnLoadEntity(Obj_Event_PlayerUpgrade);
-			Obj.Instance.UnLoadEntity(Obj_Building_Tower);
+			Obj.Instance.UnLoadEntity(Obj_Tower_Tower);
 			Obj.Instance.UnLoadEntity(Obj_Player_Soldier);
 			Obj.Instance.UnLoadEntity(Obj_Camera_Camera);
-			Obj.Instance.UnLoadEntity(Obj_Volume_Volume);
-			Obj.Instance.UnLoadEntity(Obj_Light_DirectionalLight);
 			Obj.Instance.UnLoadEntity(Obj_Terrain_Terrain);
 
 			UI.Instance.Close("UI_Battle");

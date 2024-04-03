@@ -4,8 +4,6 @@ namespace LazyPan {
     public class Flow_Begin : Flow {
 		private Comp UI_Begin;
 
-		private Entity Obj_Volume_Volume;
-		private Entity Obj_Light_DirectionalLight;
 		private Entity Obj_Camera_Camera;
 		private Entity Obj_Terrain_Terrain;
 		private Entity Obj_Trigger_StartGame;
@@ -16,8 +14,6 @@ namespace LazyPan {
             ConsoleEx.Instance.Content("log", "Flow_Begin  开始流程");
 			UI_Begin = UI.Instance.Open("UI_Begin");
 
-			Obj_Volume_Volume = Obj.Instance.LoadEntity("Obj_Volume_Volume");
-			Obj_Light_DirectionalLight = Obj.Instance.LoadEntity("Obj_Light_DirectionalLight");
 			Obj_Camera_Camera = Obj.Instance.LoadEntity("Obj_Camera_Camera");
 			Obj_Terrain_Terrain = Obj.Instance.LoadEntity("Obj_Terrain_Terrain");
 			Obj_Trigger_StartGame = Obj.Instance.LoadEntity("Obj_Trigger_StartGame");
@@ -43,8 +39,6 @@ namespace LazyPan {
 			Obj.Instance.UnLoadEntity(Obj_Trigger_StartGame);
 			Obj.Instance.UnLoadEntity(Obj_Terrain_Terrain);
 			Obj.Instance.UnLoadEntity(Obj_Camera_Camera);
-			Obj.Instance.UnLoadEntity(Obj_Light_DirectionalLight);
-			Obj.Instance.UnLoadEntity(Obj_Volume_Volume);
 
 			UI.Instance.Close("UI_Begin");
 

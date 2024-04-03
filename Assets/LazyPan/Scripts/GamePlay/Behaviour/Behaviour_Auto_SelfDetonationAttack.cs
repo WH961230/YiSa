@@ -29,9 +29,8 @@ namespace LazyPan {
 
                         Comp battleui = battleFlow.GetUI();
                         Comp info = Cond.Instance.Get<Comp>(battleui, Label.INFO);
-                        Cond.Instance.Get<Slider>(info, Label.HEALTH).value = beInjuredEntity.EntityData.BaseRuntimeData.CurHealth /
-                                                                              beInjuredEntity.EntityData.BaseRuntimeData
-                                                                                  .CurHealthMax;
+                        Cond.Instance.Get<Slider>(info, Label.HEALTH).value = beInjuredEntity.EntityData.BaseRuntimeData.PlayerInfo.HealthPoint /
+                                                                              Loader.LoadSetting().PlayerSetting.MaxHealth;
                     }
                 }
             }

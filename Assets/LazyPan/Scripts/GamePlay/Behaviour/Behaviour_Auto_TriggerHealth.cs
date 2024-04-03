@@ -5,6 +5,7 @@ namespace LazyPan {
     public class Behaviour_Auto_TriggerHealth : Behaviour {
         private Comp battleui;
         private Flow_Battle battleFlow;
+        private bool isHealthing;
         public Behaviour_Auto_TriggerHealth(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             Cond.Instance.Get<Comp>(entity, Label.Assemble(Label.ENERGY, Label.TRIGGER)).OnTriggerEnterEvent.AddListener(HealthIn);
             Cond.Instance.Get<Comp>(entity, Label.Assemble(Label.ENERGY, Label.TRIGGER)).OnTriggerExitEvent.AddListener(HealthOut);
@@ -15,39 +16,40 @@ namespace LazyPan {
             Data.Instance.OnUpdateEvent.AddListener(Health);
         }
 
+        /*离开回血区域*/
         private void HealthOut(Collider arg0) {
             if (Data.Instance.TryGetEntityByBodyPrefabID(arg0.gameObject.GetInstanceID(), out Entity playerEntity)) {
                 if (playerEntity.EntityData.BaseRuntimeData.Type == "Player") {
-                    entity.EntityData.BaseRuntimeData.CurIsHealthing = false;
+                    isHealthing = false;
                 }
             }
         }
 
+        /*进入回血区域*/
         private void HealthIn(Collider arg0) {
             if (Data.Instance.TryGetEntityByBodyPrefabID(arg0.gameObject.GetInstanceID(), out Entity playerEntity)) {
                 if (playerEntity.EntityData.BaseRuntimeData.Type == "Player") {
-                    entity.EntityData.BaseRuntimeData.CurIsHealthing = true;
+                    isHealthing = true;
                 }
             }
         }
 
+        /*血量回复*/
         private void Health() {
-            if (entity.EntityData.BaseRuntimeData.CurIsHealthing) {
+            if (isHealthing) {
                 //加血
-                entity.EntityData.BaseRuntimeData.CurHealth +=
-                    entity.EntityData.BaseRuntimeData.CurHealthSpeed * Time.deltaTime;
+                entity.EntityData.BaseRuntimeData.PlayerInfo.HealthPoint +=
+                    Loader.LoadSetting().PlayerSetting.HealthRecoverSpeed * Time.deltaTime;
                 //血量上限
-                entity.EntityData.BaseRuntimeData.CurHealth = Mathf.Min(entity.EntityData.BaseRuntimeData.CurHealth,
-                    entity.EntityData.BaseRuntimeData.CurHealthMax);
+                entity.EntityData.BaseRuntimeData.PlayerInfo.HealthPoint = Mathf.Min(
+                    entity.EntityData.BaseRuntimeData.PlayerInfo.HealthPoint,
+                    Loader.LoadSetting().PlayerSetting.MaxHealth);
             }
 
             //血条展示
-            if (entity.EntityData.BaseRuntimeData.CurHealth > 0) {
-                Comp info = Cond.Instance.Get<Comp>(battleui, Label.INFO);
-                Cond.Instance.Get<Slider>(info, Label.HEALTH).value = entity.EntityData.BaseRuntimeData.CurHealth /
-                                                                          entity.EntityData.BaseRuntimeData
-                                                                              .CurHealthMax;
-            }
+            Comp info = Cond.Instance.Get<Comp>(battleui, Label.INFO);
+            Cond.Instance.Get<Slider>(info, Label.HEALTH).value = entity.EntityData.BaseRuntimeData.PlayerInfo.HealthPoint /
+                                                                  Loader.LoadSetting().PlayerSetting.MaxHealth;
         }
 
         public override void Clear() {

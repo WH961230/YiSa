@@ -7,7 +7,6 @@ namespace LazyPan {
 		public string Flow;
 		public string Type;
 		public string Name;
-		public string CreatureType;
 		public string SetUpLocationInformationSign;
 		public string SetUpBehaviourSign;
 
@@ -23,9 +22,8 @@ namespace LazyPan {
 				Flow = values[1];
 				Type = values[2];
 				Name = values[3];
-				CreatureType = values[4];
-				SetUpLocationInformationSign = values[5];
-				SetUpBehaviourSign = values[6];
+				SetUpLocationInformationSign = values[4];
+				SetUpBehaviourSign = values[5];
 
             } catch (Exception e) {
                 Console.WriteLine(e);

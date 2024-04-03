@@ -140,5 +140,6 @@ namespace LazyPan {
         public static int LevelUpgrade = 3; //关卡升级
         public static int LevelUpgradeIncreaseRobot = 5;//关卡升级新增怪物
         public static int RobotCreate = 4;//生成怪物
+        public static int BeHit = 1;//被击中
     }
 }

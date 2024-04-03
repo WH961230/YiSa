@@ -5,6 +5,7 @@ namespace LazyPan {
     public class Behaviour_Input_Sprint : Behaviour {
         private TrailRenderer trailRenderer;
         private CharacterController characterController;
+        private float deploy;
 
         public Behaviour_Input_Sprint(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             characterController = Cond.Instance.Get<CharacterController>(entity, Label.CHARACTERCONTROLLER);
@@ -12,6 +13,7 @@ namespace LazyPan {
 
             InputRegister.Instance.Load(InputRegister.Instance.Space, GetInput);
             Data.Instance.OnUpdateEvent.AddListener(Sprinting);
+            deploy = -1;
         }
 
         /*获取输入*/
@@ -21,14 +23,15 @@ namespace LazyPan {
             }
         }
 
+        /*获取冲刺速度*/
+        private float GetSprintSpeed() {
+            return Loader.LoadSetting().PlayerSetting.SprintSpeed;
+        }
+
         /*冲刺*/
         private void Sprint() {
-            if (entity.EntityData.BaseRuntimeData.CurMotionState != 2 && entity.EntityData.BaseRuntimeData.CurTeleportColdDeployTime == 0) {
-                trailRenderer.gameObject.SetActive(true);
-                entity.EntityData.BaseRuntimeData.CurTeleportDeployTime = entity.EntityData.BaseRuntimeData.DefTeleportTime;
-                entity.EntityData.BaseRuntimeData.CurTeleportColdDeployTime =
-                    entity.EntityData.BaseRuntimeData.DefTeleportColdTime;
-                entity.EntityData.BaseRuntimeData.CurMotionState = 2;
+            if (deploy == -1) {
+                deploy = Loader.LoadSetting().PlayerSetting.SprintTime;
                 SetCanControl(false);
             }
         }
@@ -40,27 +43,12 @@ namespace LazyPan {
 
         /*冲刺中*/
         private void Sprinting() {
-            if (entity.EntityData.BaseRuntimeData.CurMotionState == 2) {
-                if (entity.EntityData.BaseRuntimeData.CurTeleportDeployTime > 0) {
-                    entity.EntityData.BaseRuntimeData.CurTeleportDeployTime -= Time.deltaTime;
-                    entity.EntityData.BaseRuntimeData.CurTeleportDir = Vector3.zero;
-                    entity.EntityData.BaseRuntimeData.CurTeleportDir = Cond.Instance.Get<Transform>(entity, Label.BODY).forward;
-                    characterController.Move(entity.EntityData.BaseRuntimeData.CurTeleportDir *
-                                             Time.deltaTime * entity.EntityData.BaseRuntimeData.DefTeleportSpeed);
-                } else {
-                    entity.EntityData.BaseRuntimeData.CurTeleportDeployTime = -1;
-                    trailRenderer.gameObject.SetActive(false);
-                    entity.EntityData.BaseRuntimeData.CurTeleportDir = Vector3.zero;
-                    entity.EntityData.BaseRuntimeData.CurMotionState = 0;
-                    SetCanControl(true);
-                }
-            }
-
-            //冲刺冷却
-            if (entity.EntityData.BaseRuntimeData.CurTeleportColdDeployTime > 0) {
-                entity.EntityData.BaseRuntimeData.CurTeleportColdDeployTime -= Time.deltaTime;
+            if (deploy > 0) {
+                deploy -= Time.deltaTime;
+                characterController.Move(Cond.Instance.Get<Transform>(entity, Label.BODY).forward * Time.deltaTime * GetSprintSpeed());
             } else {
-                entity.EntityData.BaseRuntimeData.CurTeleportColdDeployTime = 0;
+                deploy = -1;
+                SetCanControl(true);
             }
         }
 

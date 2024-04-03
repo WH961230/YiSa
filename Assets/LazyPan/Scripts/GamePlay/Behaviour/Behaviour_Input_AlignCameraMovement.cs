@@ -10,7 +10,7 @@ namespace LazyPan {
             Data.Instance.OnUpdateEvent.AddListener(Movement);
             SetPlayerControl(true);
         }
-        
+
         /*获取输入*/
         private void GetInput(InputAction.CallbackContext obj) {
             input = obj.ReadValue<Vector2>();
@@ -28,7 +28,7 @@ namespace LazyPan {
 
         /*获取速度*/
         private float GetSpeed() {
-            return entity.EntityData.BaseRuntimeData.CurMotionSpeed;
+            return Loader.LoadSetting().PlayerSetting.MovementSpeed;
         }
 
         /*获取输入对齐相机方向*/
@@ -39,16 +39,6 @@ namespace LazyPan {
             Vector3 cameraRight = camera.right;
             cameraRight.y = 0;
             return cameraForward.normalized * input.y + cameraRight.normalized * input.x;
-        }
-
-        /*获取位移方向*/
-        private Vector3 GetMovementDir() {
-            return entity.EntityData.BaseRuntimeData.CurMotionDir;
-        }
-
-        /*设置位移方向*/
-        private void SetMovementDir(Vector3 dir) {
-            entity.EntityData.BaseRuntimeData.CurMotionDir = dir;
         }
 
         /*设置角色控制*/
@@ -75,8 +65,6 @@ namespace LazyPan {
                 CharacterController cc = GetTarget();
                 float speed = GetSpeed();
                 Vector3 dir = GetInputAlignCameraDir();
-                SetMovementDir(dir);
-                dir = GetMovementDir();
                 cc.Move(speed * Time.deltaTime * dir);
             }
         }

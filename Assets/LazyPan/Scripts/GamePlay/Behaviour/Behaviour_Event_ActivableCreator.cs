@@ -18,7 +18,7 @@ namespace LazyPan {
             if (deadEntity.EntityData.BaseRuntimeData.RobotInfo.DeathDropType == 2) {
                 ConsoleEx.Instance.Content("log", $"[{deadEntity.ID}] 死亡掉落可激活");
                 Instance("Obj_Activable_Activable", Cond.Instance.Get<Transform>(deadEntity, Label.BODY).position);
-                deadEntity.EntityData.BaseRuntimeData.DeathDrop = 0;
+                deadEntity.EntityData.BaseRuntimeData.RobotInfo.DeathType = 0;
             }
         }
 

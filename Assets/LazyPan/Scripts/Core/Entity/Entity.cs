@@ -13,7 +13,6 @@ namespace LazyPan {
         public Comp Comp;//组件
         public ObjConfig ObjConfig;//配置
         public EntityData EntityData;//实体数据
-        public Setting EntitySetting;//实体配置
 
         public void Init(string sign) {
             //设置ID
@@ -21,8 +20,6 @@ namespace LazyPan {
             //设置配置
             ObjConfig objConfig = ObjConfig.Get(sign);
             ObjConfig = objConfig;
-            //实体配置
-            EntitySetting = Data.Instance.Setting;
             //获取对象池的物体 如数量不足 对象池预加载
             Prefab = Loader.LoadGo(null,
                 string.Concat(SceneConfig.Get(SceneManager.GetActiveScene().name).DirPath, objConfig.Sign),
@@ -32,7 +29,7 @@ namespace LazyPan {
             //物体名赋值
             Prefab.name = string.Concat("[", ID, "]", objConfig.Name);
             //创建实体数据
-            EntityData = new EntityData(objConfig, EntitySetting);
+            EntityData = new EntityData(objConfig);
             //读取配置位置初始化
             if (!string.IsNullOrEmpty(objConfig.SetUpLocationInformationSign)) {
                 LocationInformationSetting setting = Loader.LoadAsset<LocationInformationSetting>(AssetType.ASSET,

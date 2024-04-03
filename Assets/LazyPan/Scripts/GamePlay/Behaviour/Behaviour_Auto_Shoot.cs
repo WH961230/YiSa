@@ -3,19 +3,20 @@ using UnityEngine;
 
 namespace LazyPan {
     public class Behaviour_Auto_Shoot : Behaviour {
+        private float deploy;
         public Behaviour_Auto_Shoot(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             Data.Instance.OnUpdateEvent.AddListener(OnShootUpdate);
         }
 
         private void OnShootUpdate() {
-            if (entity.EntityData.BaseRuntimeData.CurEnergy > 0) {
-                if (entity.EntityData.BaseRuntimeData.CurAttackIntervalDeployTime > 0) {
-                    entity.EntityData.BaseRuntimeData.CurAttackIntervalDeployTime -= Time.deltaTime;
+            if (entity.EntityData.BaseRuntimeData.TowerInfo.Energy > 0) {
+                if (deploy > 0) {
+                    deploy -= Time.deltaTime;
                 } else {
                     bool findRobotEntity = Cond.Instance.GetRandEntityByTypeWithinDistance(Label.ROBOT,
                         Cond.Instance.Get<Transform>(entity, Label.BODY).position,
-                        entity.EntityData.BaseRuntimeData.CurDetectDistance, out Entity robotEntity);
-                    if (findRobotEntity && robotEntity.EntityData.BaseRuntimeData.CurHealth > 0) {
+                        Loader.LoadSetting().TowerSetting.AttackRange, out Entity robotEntity);
+                    if (findRobotEntity && robotEntity.EntityData.BaseRuntimeData.RobotInfo.HealthPoint > 0) {
                         GameObject template = Loader.LoadGo("弹药", "Common/Obj_Fx_Bullet", Data.Instance.ObjRoot, true);
                         Transform bulletMuzzle = Cond.Instance.Get<Transform>(entity, Label.MUZZLE);
                         template.transform.position = bulletMuzzle.position;
@@ -25,8 +26,7 @@ namespace LazyPan {
                             Object.Destroy(template);
                         });
                     }
-                    entity.EntityData.BaseRuntimeData.CurAttackIntervalDeployTime =
-                        entity.EntityData.BaseRuntimeData.DefAttackIntervalTime;
+                    deploy = Loader.LoadSetting().TowerSetting.AttackIntervalTime;
                 }
             }
         }
@@ -36,7 +36,10 @@ namespace LazyPan {
                 return;
             }
             if (Data.Instance.TryGetEntityByBodyPrefabID(go.GetInstanceID(), out Entity tmpEntity)) {
-                if (tmpEntity.EntityData.BaseRuntimeData.CurHealth > 0) {
+                if (tmpEntity.EntityData.BaseRuntimeData.Type != "Robot") {
+                    return;
+                }
+                if (tmpEntity.EntityData.BaseRuntimeData.RobotInfo.HealthPoint > 0) {
                     tmpEntity.EntityData.BaseRuntimeData.RobotInfo.DeathType = 0;
                     MessageRegister.Instance.Dis(MessageCode.BeInjuried, tmpEntity, Loader.LoadSetting().TowerSetting.Attack);
                     /*掉血表现*/
@@ -45,11 +48,7 @@ namespace LazyPan {
                     template.transform.position = squirt.position;
                     template.transform.rotation = squirt.rotation;
                     /*击退表现*/
-                    tmpEntity.EntityData.BaseRuntimeData.CurKnockbackDir = (
-                        Cond.Instance.Get<Transform>(tmpEntity, Label.BODY).position -
-                        Cond.Instance.Get<Transform>(entity, Label.BODY).position).normalized;
-                    tmpEntity.EntityData.BaseRuntimeData.CurKnockbackDeployTime =
-                        tmpEntity.EntityData.BaseRuntimeData.DefKnockbackTime;
+                    MessageRegister.Instance.Dis(MessageCode.BeHit, entity, tmpEntity);
                     /*受击材质高亮*/
                     Material mat = Cond.Instance.Get<Renderer>(tmpEntity, Label.Assemble(Label.BODY, Label.RENDERER)).material;
                     mat.SetColor("_EmissionColor", Color.white);

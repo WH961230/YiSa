@@ -4,8 +4,8 @@ using UnityEngine.UI;
 namespace LazyPan {
     public class Behaviour_Trigger_ChargeStartGame : Behaviour {
         private Flow_Begin beginFlow;
-        private float deploy;
         private Image energyImage;
+        private bool isCharging;
 
         public Behaviour_Trigger_ChargeStartGame(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             Cond.Instance.Get<Comp>(entity, Label.TRIGGER).OnTriggerEnterEvent.AddListener(ChargeIn);
@@ -14,22 +14,23 @@ namespace LazyPan {
             Data.Instance.OnUpdateEvent.AddListener(Charge);
         }
 
+        /*进入充能*/
         private void ChargeIn(Collider arg0) {
             if (Data.Instance.TryGetEntityByBodyPrefabID(arg0.gameObject.GetInstanceID(), out Entity playerEntity)) {
                 if (playerEntity.EntityData.BaseRuntimeData.Type == "Player") {
-                    entity.EntityData.BaseRuntimeData.CurIsCharging = true;
-                    deploy = 1;
+                    isCharging = true;
                     energyImage.gameObject.SetActive(true);
                 }
             }
         }
 
+        /*充能刷新*/
         private void Charge() {
-            if (entity.EntityData.BaseRuntimeData.CurIsCharging) {
-                entity.EntityData.BaseRuntimeData.CurEnergy +=
-                    entity.EntityData.BaseRuntimeData.CurChargeEnergySpeed * Time.deltaTime;
+            if (isCharging) {
+                entity.EntityData.BaseRuntimeData.TowerInfo.Energy +=
+                    Loader.LoadSetting().TowerSetting.ChargeEnergySpeed * Time.deltaTime;
 
-                if (entity.EntityData.BaseRuntimeData.CurEnergy >= entity.EntityData.BaseRuntimeData.CurMaxEnergy) {
+                if (entity.EntityData.BaseRuntimeData.TowerInfo.Energy >= Loader.LoadSetting().TowerSetting.MaxEnergy) {
                     bool getFlow = Flo.Instance.GetFlow(out beginFlow);
                     if (getFlow) {
                         beginFlow.Next("Battle");
@@ -38,21 +39,22 @@ namespace LazyPan {
                 }
 
                 if (energyImage.gameObject.activeSelf) {
-                    energyImage.fillAmount = entity.EntityData.BaseRuntimeData.CurEnergy /
-                        entity.EntityData.BaseRuntimeData.CurMaxEnergy;
+                    energyImage.fillAmount = entity.EntityData.BaseRuntimeData.TowerInfo.Energy /
+                                             Loader.LoadSetting().TowerSetting.MaxEnergy;
                 }
             } else {
                 energyImage.gameObject.SetActive(false);
-                entity.EntityData.BaseRuntimeData.CurEnergy = 0;
+                entity.EntityData.BaseRuntimeData.TowerInfo.Energy = 0;
             }
         }
 
+        /*离开充能*/
         private void ChargeOut(Collider collider) {
             if (Data.Instance.TryGetEntityByBodyPrefabID(collider.gameObject.GetInstanceID(), out Entity playerEntity)) {
                 if (playerEntity.EntityData.BaseRuntimeData.Type == "Player") {
-                    entity.EntityData.BaseRuntimeData.CurIsCharging = false;
+                    isCharging = false;
                     energyImage.gameObject.SetActive(false);
-                    entity.EntityData.BaseRuntimeData.CurEnergy = 0;
+                    entity.EntityData.BaseRuntimeData.TowerInfo.Energy = 0;
                 }
             }
         }

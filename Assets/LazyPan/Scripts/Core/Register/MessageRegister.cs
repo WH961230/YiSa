@@ -136,6 +136,7 @@ namespace LazyPan {
 
     public class MessageCode {
         public static int BeInjuried = 6;//被受伤
+        public static int BeSelfDetonation = 2;//自爆
         public static int DeathDrop = 0;//死亡掉落
         public static int LevelUpgrade = 3; //关卡升级
         public static int LevelUpgradeIncreaseRobot = 5;//关卡升级新增怪物

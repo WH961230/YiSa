@@ -16,6 +16,7 @@ namespace LazyPan {
             MessageRegister.Instance.Reg(MessageCode.RobotCreate, RobotCreate);
             MessageRegister.Instance.Reg<string>(MessageCode.LevelUpgradeIncreaseRobot, PrepareRobot);
             MessageRegister.Instance.Reg<Entity, int>(MessageCode.BeInjuried, RobotBeInjured);
+            MessageRegister.Instance.Reg<Entity>(MessageCode.BeSelfDetonation, RobotBeSelfDetonation);
             Data.Instance.OnUpdateEvent.AddListener(Wait);
         }
 
@@ -53,21 +54,34 @@ namespace LazyPan {
             }
         }
 
-        /*机器人受伤*/
-        private void RobotBeInjured(Entity robot, int damage) {
-            /*受伤*/
-            robot.EntityData.BaseRuntimeData.RobotInfo.HealthPoint -= damage;
-            /*血量小于零掉落*/
-            if (robot.EntityData.BaseRuntimeData.RobotInfo.HealthPoint <= 0) {
-                /*敌方攻击*/
-                if (robot.EntityData.BaseRuntimeData.RobotInfo.DeathType == 0) {
-                    /*掉落*/
-                    entity.EntityData.BaseRuntimeData.RobotInfo.DeathDropType = UnityEngine.Random.Range(0, 3);
-                    MessageRegister.Instance.Dis(MessageCode.DeathDrop, robot);
-                }
-
+        /*机器人自爆*/
+        private void RobotBeSelfDetonation(Entity robot) {
+            if (robot.EntityData.BaseRuntimeData.Type == "Robot") {
+                robot.EntityData.BaseRuntimeData.RobotInfo.HealthPoint = 0;
+                /*自杀*/
+                robot.EntityData.BaseRuntimeData.RobotInfo.DeathType = 1;
                 /*死亡*/
                 RemoveRobot(robot);
+            }
+        }
+
+        /*机器人受伤*/
+        private void RobotBeInjured(Entity robot, int damage) {
+            if (robot.EntityData.BaseRuntimeData.Type == "Robot") {
+                /*受伤*/
+                robot.EntityData.BaseRuntimeData.RobotInfo.HealthPoint -= damage;
+                /*血量小于零掉落*/
+                if (robot.EntityData.BaseRuntimeData.RobotInfo.HealthPoint <= 0) {
+                    /*敌方攻击*/
+                    if (robot.EntityData.BaseRuntimeData.RobotInfo.DeathType == 0) {
+                        /*掉落*/
+                        entity.EntityData.BaseRuntimeData.RobotInfo.DeathDropType = UnityEngine.Random.Range(0, 3);
+                        MessageRegister.Instance.Dis(MessageCode.DeathDrop, robot);
+                    }
+
+                    /*死亡*/
+                    RemoveRobot(robot);
+                }
             }
         }
 
@@ -96,6 +110,7 @@ namespace LazyPan {
             base.Clear();
             RemoveAllRobot();
             MessageRegister.Instance.UnReg<Entity, int>(MessageCode.BeInjuried, RobotBeInjured);
+            MessageRegister.Instance.UnReg<Entity>(MessageCode.BeSelfDetonation, RobotBeSelfDetonation);
             MessageRegister.Instance.UnReg<string>(MessageCode.LevelUpgradeIncreaseRobot, PrepareRobot);
             MessageRegister.Instance.UnReg(MessageCode.RobotCreate, RobotCreate);
             ClockUtil.Instance.Stop(clock);

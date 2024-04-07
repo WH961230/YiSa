@@ -15,7 +15,7 @@ MonoBehaviour:
   Attack: 20
   AttackIntervalTime: 1
   AttackRange: 10
-  ChargeEnergySpeed: 3
+  ChargeEnergySpeed: 10
   MaxEnergy: 20
   DownEnergySpeed: 1
   RangeRotateAngle: 5

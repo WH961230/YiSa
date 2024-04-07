@@ -36,19 +36,20 @@ namespace LazyPan {
 
         /*血量回复*/
         private void Health() {
+            Entity playerEntity = Cond.Instance.GetPlayerEntity();
             if (isHealthing) {
                 //加血
-                entity.EntityData.BaseRuntimeData.PlayerInfo.HealthPoint +=
+                playerEntity.EntityData.BaseRuntimeData.PlayerInfo.HealthPoint +=
                     Loader.LoadSetting().PlayerSetting.HealthRecoverSpeed * Time.deltaTime;
                 //血量上限
-                entity.EntityData.BaseRuntimeData.PlayerInfo.HealthPoint = Mathf.Min(
-                    entity.EntityData.BaseRuntimeData.PlayerInfo.HealthPoint,
+                playerEntity.EntityData.BaseRuntimeData.PlayerInfo.HealthPoint = Mathf.Min(
+                    playerEntity.EntityData.BaseRuntimeData.PlayerInfo.HealthPoint,
                     Loader.LoadSetting().PlayerSetting.MaxHealth);
             }
 
             //血条展示
             Comp info = Cond.Instance.Get<Comp>(battleui, Label.INFO);
-            Cond.Instance.Get<Slider>(info, Label.HEALTH).value = entity.EntityData.BaseRuntimeData.PlayerInfo.HealthPoint /
+            Cond.Instance.Get<Slider>(info, Label.HEALTH).value = playerEntity.EntityData.BaseRuntimeData.PlayerInfo.HealthPoint /
                                                                   Loader.LoadSetting().PlayerSetting.MaxHealth;
         }
 

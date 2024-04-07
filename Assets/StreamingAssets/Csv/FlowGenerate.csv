@@ -22,10 +22,12 @@ Battle,战斗,load_entity,创建,Play,开始游戏,Obj_Event_PlayerUpgrade,玩�
 Battle,战斗,load_entity,创建,Play,开始游戏,Obj_Event_LevelUpgrade,关卡难度选择器,检测敌人是否清除
 Battle,战斗,load_entity,创建,Play,开始游戏,Obj_Event_ActivableCreator,可激活生成器,生成可激活物体
 Battle,战斗,load_entity,创建,Play,开始游戏,Obj_Event_RobotCreator,机器人生成器,生成机器人
+Battle,战斗,load_entity,创建,Play,开始游戏,Obj_Event_DropExperience,经验掉落事件,经验掉落事件
 Battle,战斗,load_entity,创建,Settlement,结算,Obj_Event_Settlement,结算事件,
 Battle,战斗,,,Return,返回主菜单,,,结算行为
 Battle,战斗,,,Again,再来一局,,,
 Battle,战斗,unload_entity,销毁,Clear,清除,Obj_Event_Settlement,结算事件,
+Battle,战斗,unload_entity,销毁,Clear,清除,Obj_Event_DropExperience,经验掉落事件,经验掉落事件
 Battle,战斗,unload_entity,销毁,Clear,清除,Obj_Event_RobotCreator,机器人生成器,
 Battle,战斗,unload_entity,销毁,Clear,清除,Obj_Event_ActivableCreator,可激活生成器,
 Battle,战斗,unload_entity,销毁,Clear,清除,Obj_Event_LevelUpgrade,关卡难度选择器,

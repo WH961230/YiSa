@@ -16,20 +16,18 @@ namespace LazyPan {
             if (Data.Instance.TryGetEntityByBodyPrefabID(arg0.gameObject.GetInstanceID(), out Entity tmpEntity)) {
                 if (tmpEntity.EntityData.BaseRuntimeData.Type == "Building" ||
                     tmpEntity.EntityData.BaseRuntimeData.Type == "Player") {
-                    Entity beInjuredEntity = Cond.Instance.GetPlayerEntity();
+                    Entity playerEntity = Cond.Instance.GetPlayerEntity();
                     bool isGetFlow = Flo.Instance.GetFlow(out Flow_Battle battleFlow);
                     if (isGetFlow) {
                         bool getSetting = Loader.LoadSetting().TryGetRobotBySign(entity.ObjConfig.Sign, out RobotSettingInfo i);
                         if (getSetting) {
-                            MessageRegister.Instance.Dis(MessageCode.BeInjuried, beInjuredEntity, i.Attack);
-                            entity.EntityData.BaseRuntimeData.RobotInfo.DeathType = 1;
-                            MessageRegister.Instance.Dis(MessageCode.BeInjuried, entity,
-                                entity.EntityData.BaseRuntimeData.RobotInfo.HealthPoint);
+                            MessageRegister.Instance.Dis(MessageCode.BeInjuried, playerEntity, i.Attack);
+                            MessageRegister.Instance.Dis(MessageCode.BeSelfDetonation, entity);
                         }
 
                         Comp battleui = battleFlow.GetUI();
                         Comp info = Cond.Instance.Get<Comp>(battleui, Label.INFO);
-                        Cond.Instance.Get<Slider>(info, Label.HEALTH).value = beInjuredEntity.EntityData.BaseRuntimeData.PlayerInfo.HealthPoint /
+                        Cond.Instance.Get<Slider>(info, Label.HEALTH).value = playerEntity.EntityData.BaseRuntimeData.PlayerInfo.HealthPoint /
                                                                               Loader.LoadSetting().PlayerSetting.MaxHealth;
                     }
                 }

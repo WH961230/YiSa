@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15bd48abfbb04a6ba7e7b949754c045b, type: 3}
   m_Name: PlayerSetting
   m_EditorClassIdentifier: 
-  HealthPoint: 100
   RotateSpeed: 500
-  MovementSpeed: 5
+  MovementSpeed: 8
   GravitySpeed: 10
   SprintSpeed: 5
   SprintTime: 0.5
   HealthRecoverSpeed: 1
-  HealthMax: 100
-  ExperienceMax: 10
+  MaxHealth: 0
+  MaxExperience: 0

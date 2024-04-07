@@ -6,6 +6,7 @@ namespace LazyPan {
             MessageRegister.Instance.Reg<Entity>(MessageCode.DeathDrop, DeathDrop);
         }
 
+        /*死亡掉落*/
         private void DeathDrop(Entity deadEntity) {
             if (deadEntity.EntityData.BaseRuntimeData.RobotInfo.DeathDropType == 1) {
                 ConsoleEx.Instance.Content("log", $"[{deadEntity.ID}] 死亡掉落经验值");

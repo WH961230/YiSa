@@ -53,3 +53,6 @@ Gravity,重力,Auto,Init,初始化
 Gravity,重力,Auto,Gravity,重力
 Gravity,重力,Auto,GetGravitySpeed,获取重力速度
 Gravity,重力,Auto,Clear,清除
+DropExperience,经验值掉落,Event,Init,初始化
+DropExperience,经验值掉落,Event,DeathDrop,死亡掉落
+DropExperience,经验值掉落,Event,Clear,清除

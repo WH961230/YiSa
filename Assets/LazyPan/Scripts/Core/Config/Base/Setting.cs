@@ -125,5 +125,21 @@ namespace LazyPan {
             robotSettingInfo = default;
             return false;
         }
+
+        /*获取n个不重复的 BuFF 配置*/
+        public bool TryGetBuffByCount(int num, out List<BuffSettingInfo> buffSettingInfo) {
+            int[] index = MathUtil.Instance.GetRandNoRepeatIndex(BuffSetting.BuffSettingInfo.Count, 3);
+            if (index != null) {
+                buffSettingInfo = new List<BuffSettingInfo>();
+                foreach (int i in index) {
+                    buffSettingInfo.Add(BuffSetting.BuffSettingInfo[i]);
+                }
+
+                return true;
+            }
+
+            buffSettingInfo = default;
+            return false;
+        }
     }
 }

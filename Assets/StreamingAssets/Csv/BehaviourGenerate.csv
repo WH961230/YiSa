@@ -26,9 +26,6 @@ ChargeStartGame,开始物体充能,Trigger,ChargeIn,进入充能
 ChargeStartGame,开始物体充能,Trigger,ChargeOut,离开充能
 ChargeStartGame,开始物体充能,Trigger,Charge,充能刷新
 ChargeStartGame,开始物体充能,Trigger,Clear,清除
-PlayerUpgrade,玩家升级,Event,Init,初始化
-PlayerUpgrade,玩家升级,Event,SelectOneOutOfThree,BUFF三选一
-PlayerUpgrade,玩家升级,Event,Clear,清除
 LevelUpgrade,关卡升级,Event,Init,初始化
 LevelUpgrade,关卡升级,Event,SelectOneOutOfThree,BUFF三选一
 LevelUpgrade,关卡升级,Event,LevelUpgrade,设置升级
@@ -56,3 +53,9 @@ Gravity,重力,Auto,Clear,清除
 DropExperience,经验值掉落,Event,Init,初始化
 DropExperience,经验值掉落,Event,DeathDrop,死亡掉落
 DropExperience,经验值掉落,Event,Clear,清除
+PlayerUpgrade,玩家升级,Auto,Init,初始化
+PlayerUpgrade,玩家升级,Auto,LevelUp,升级
+PlayerUpgrade,玩家升级,Auto,Clear,清除
+Pick,拾取,Auto,Init,初始化
+Pick,拾取,Auto,Pick,拾取
+Pick,拾取,Auto,Clear,清除

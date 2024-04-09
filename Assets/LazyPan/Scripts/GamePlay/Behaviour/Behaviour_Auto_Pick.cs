@@ -33,6 +33,10 @@ namespace LazyPan {
                 Cond.Instance.Get<Slider>(info, Label.EXP).value =
                     playerEntity.EntityData.BaseRuntimeData.PlayerInfo.Experience /
                     Loader.LoadSetting().PlayerSetting.MaxExperience;
+                if (playerEntity.EntityData.BaseRuntimeData.PlayerInfo.Experience >=
+                    Loader.LoadSetting().PlayerSetting.MaxExperience) {
+                    MessageRegister.Instance.Dis(MessageCode.PlayerUpgrade);
+                }
             }
         }
 

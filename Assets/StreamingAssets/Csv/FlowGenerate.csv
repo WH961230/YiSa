@@ -18,7 +18,6 @@ Battle,战斗,unload_entity,销毁,Play,开始游戏,Obj_Event_BeginTimeline,开
 Battle,战斗,load_entity,创建,Play,开始游戏,Obj_Camera_Camera,相机,跟随玩家
 Battle,战斗,load_entity,创建,Play,开始游戏,Obj_Player_Soldier,战场玩家,重力|对齐相机移动|输入旋转|输入冲刺|自动拾取
 Battle,战斗,load_entity,创建,Play,开始游戏,Obj_Tower_Tower,塔,自动攻击
-Battle,战斗,load_entity,创建,Play,开始游戏,Obj_Event_PlayerUpgrade,玩家升级事件,检测玩家是否经验值已满
 Battle,战斗,load_entity,创建,Play,开始游戏,Obj_Event_LevelUpgrade,关卡难度选择器,检测敌人是否清除
 Battle,战斗,load_entity,创建,Play,开始游戏,Obj_Event_ActivableCreator,可激活生成器,生成可激活物体
 Battle,战斗,load_entity,创建,Play,开始游戏,Obj_Event_RobotCreator,机器人生成器,生成机器人
@@ -31,7 +30,6 @@ Battle,战斗,unload_entity,销毁,Clear,清除,Obj_Event_DropExperience,经验�
 Battle,战斗,unload_entity,销毁,Clear,清除,Obj_Event_RobotCreator,机器人生成器,
 Battle,战斗,unload_entity,销毁,Clear,清除,Obj_Event_ActivableCreator,可激活生成器,
 Battle,战斗,unload_entity,销毁,Clear,清除,Obj_Event_LevelUpgrade,关卡难度选择器,
-Battle,战斗,unload_entity,销毁,Clear,清除,Obj_Event_PlayerUpgrade,玩家升级事件,
 Battle,战斗,unload_entity,销毁,Clear,清除,Obj_Tower_Tower,塔,
 Battle,战斗,unload_entity,销毁,Clear,清除,Obj_Player_Soldier,战场玩家,
 Battle,战斗,unload_entity,销毁,Clear,清除,Obj_Camera_Camera,相机,

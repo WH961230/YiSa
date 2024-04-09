@@ -17,7 +17,6 @@ Behaviour_Auto_TriggerHealth,触发回血,触发回血
 Behaviour_Event_RobotCreator,机器人创建器,机器人创建器
 Behaviour_Trigger_ChargeStartGame,开始游戏充能,开始游戏充能
 Behaviour_Event_LevelUpgrade,关卡难度选择器,关卡难度选择器
-Behaviour_Event_PlayerUpgrade,玩家升级事件,玩家升级事件
 Behaviour_Auto_Shoot,自动射击,自动射击
 Behaviour_Auto_Motion,自动移动,自动移动
 Behaviour_Auto_DeathDrop,自动死亡掉落,自动死亡掉落
@@ -26,3 +25,4 @@ Behaviour_Event_ActivableCreator,可激活创建,可激活创建
 Behaviour_Trigger_Activable,可激活激活,可激活激活
 Behaviour_Event_GameOver,游戏结束检测,游戏结束检测
 Behaviour_Auto_RotateWithDirectionOfMovement,随着移动方向旋转,随着移动方向旋转
+Behaviour_Auto_PlayerUpgrade,玩家升级事件,玩家升级事件

@@ -5,7 +5,7 @@ using System.Reflection;
 namespace LazyPan {
     public class BehaviourRegister : Singleton<BehaviourRegister> {
         //实体注册行为
-        public bool RegisterBehaviour(int id, string sign) {
+        public bool RegisterBehaviour(int id, string sign, string param) {
             //是否有实体
             if (Data.Instance.TryGetEntityByID(id, out Entity entity)) {
                 if (Data.Instance.BehaviourDic.TryGetValue(id, out List<Behaviour> behaviours)) {

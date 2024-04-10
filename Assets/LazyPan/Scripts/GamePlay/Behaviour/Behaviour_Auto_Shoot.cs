@@ -40,7 +40,7 @@ namespace LazyPan {
                     return;
                 }
                 if (tmpEntity.EntityData.BaseRuntimeData.RobotInfo.HealthPoint > 0) {
-                    tmpEntity.EntityData.BaseRuntimeData.RobotInfo.DeathType = 0;
+                    tmpEntity.EntityData.BaseRuntimeData.RobotInfo.BeAttackType = 1;
                     MessageRegister.Instance.Dis(MessageCode.BeInjuried, tmpEntity, Loader.LoadSetting().TowerSetting.Attack);
                     /*掉血表现*/
                     GameObject template = Loader.LoadGo("掉血", "Common/Obj_Fx_BeHit", Data.Instance.ObjRoot, true);

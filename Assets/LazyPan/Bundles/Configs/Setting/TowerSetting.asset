@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7dcc9a4f26345a4a51b72d4aa9147ff, type: 3}
   m_Name: TowerSetting
   m_EditorClassIdentifier: 
-  Attack: 20
-  AttackIntervalTime: 1
-  AttackRange: 10
+  Attack: 10
+  AttackIntervalTime: 0.1
+  AttackRange: 20
   ChargeEnergySpeed: 10
   MaxEnergy: 20
   DownEnergySpeed: 1

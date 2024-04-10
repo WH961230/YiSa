@@ -12,7 +12,6 @@ namespace LazyPan {
 		private Entity Obj_Event_LevelUpgrade;
 		private Entity Obj_Event_ActivableCreator;
 		private Entity Obj_Event_RobotCreator;
-		private Entity Obj_Event_DropExperience;
 		private Entity Obj_Event_Settlement;
 
         public override void Init(Flow baseFlow) {
@@ -39,7 +38,6 @@ namespace LazyPan {
 			Obj_Event_LevelUpgrade = Obj.Instance.LoadEntity("Obj_Event_LevelUpgrade");
 			Obj_Event_ActivableCreator = Obj.Instance.LoadEntity("Obj_Event_ActivableCreator");
 			Obj_Event_RobotCreator = Obj.Instance.LoadEntity("Obj_Event_RobotCreator");
-			Obj_Event_DropExperience = Obj.Instance.LoadEntity("Obj_Event_DropExperience");
 		}
 
 		/*结算*/
@@ -57,7 +55,6 @@ namespace LazyPan {
         public override void Clear() {
             base.Clear();
 			Obj.Instance.UnLoadEntity(Obj_Event_Settlement);
-			Obj.Instance.UnLoadEntity(Obj_Event_DropExperience);
 			Obj.Instance.UnLoadEntity(Obj_Event_RobotCreator);
 			Obj.Instance.UnLoadEntity(Obj_Event_ActivableCreator);
 			Obj.Instance.UnLoadEntity(Obj_Event_LevelUpgrade);

@@ -1,9 +1,9 @@
-﻿using UnityEngine;
-
-namespace LazyPan {
+﻿namespace LazyPan {
     public partial class Data {
-        public GlobalInfo GlobalInfo;//全局
-        public LevelInfo LevelInfo;//关卡
+        public GlobalInfo GlobalInfo = new GlobalInfo();//全局
+        public LevelInfo LevelInfo = new LevelInfo() {
+            Level = 1
+        };//关卡
     }
 
     /*全局*/
@@ -11,6 +11,7 @@ namespace LazyPan {
         public bool IsGameStart;//是否游戏开始
         public bool IsGamePause;//是否游戏暂停
         public bool IsGameOver;//是否游戏结束
+        public bool AllowMovement;//允许移动//可移动
     }
 
     /*关卡*/
@@ -23,16 +24,15 @@ namespace LazyPan {
         public float HealthPoint;//血量
         /*经验值*/
         public float Experience;//经验值
-        //可移动
-        public bool AllowMovement;//允许移动
     }
 
     /*机器人*/
     public class RobotInfo {
         //种类
         public float HealthPoint;//血量
+        public bool IsDead => HealthPoint == 0;//死亡
         public int DeathDropType;//死亡掉落类型 0 无 1 经验值 2 可激活
-        public int DeathType;//死亡类型 0 敌方攻击 1 自杀
+        public int BeAttackType;//死亡类型 1 敌方 2 自杀
     }
 
     /*塔*/

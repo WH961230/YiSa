@@ -17,7 +17,23 @@ MonoBehaviour:
     Icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
     Description: "\u673A\u5668\u4EBA"
     Attack: 10
-    MovementSpeed: 5
-    HealthPoint: 50
+    MovementSpeed: 2
+    MaxHealth: 20
+    KnockbackSpeed: 5
+    KnockbackDuraing: 0.5
+  - Sign: Obj_Robot_SoldierB
+    Icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+    Description: "\u673A\u5668\u4EBAB"
+    Attack: 10
+    MovementSpeed: 2
+    MaxHealth: 20
+    KnockbackSpeed: 5
+    KnockbackDuraing: 0.5
+  - Sign: Obj_Robot_SoldierC
+    Icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+    Description: "\u673A\u5668\u4EBAC"
+    Attack: 10
+    MovementSpeed: 2
+    MaxHealth: 20
     KnockbackSpeed: 5
     KnockbackDuraing: 0.5

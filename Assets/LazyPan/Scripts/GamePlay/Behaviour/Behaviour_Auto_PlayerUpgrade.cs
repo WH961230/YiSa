@@ -11,11 +11,8 @@ namespace LazyPan {
 
 		/*升级*/
 		private void LevelUp() {
-            /*经验值归零*/
-            entity.EntityData.BaseRuntimeData.PlayerInfo.Experience = 0;
             /*移动禁止*/
             SetCanControl(false);
-            /*触发Buff三选一*/
             //弹出 Buff 难度增加的选择 三选一
             bool isGetFlow = Flo.Instance.GetFlow(out battleFlow);
             if (isGetFlow) {
@@ -25,16 +22,19 @@ namespace LazyPan {
                 bool isGetLevelBuffSetting = Loader.LoadSetting().TryGetBuffByCount(3, out List<BuffSettingInfo> buffSettings);
                 if (isGetLevelBuffSetting) {
                     Button A = Cond.Instance.Get<Button>(levelselect, Label.A);
+                    ButtonRegister.RemoveAllListener(A);
                     ButtonRegister.AddListener(A, SelectBuffSetting, buffSettings[0]);
                     Cond.Instance.Get<TextMeshProUGUI>(levelselect, Label.A).text = buffSettings[0].Description;
                     Cond.Instance.Get<Image>(levelselect, Label.A).sprite = buffSettings[0].Icon;
 
                     Button B = Cond.Instance.Get<Button>(levelselect, Label.B);
+                    ButtonRegister.RemoveAllListener(B);
                     ButtonRegister.AddListener(B, SelectBuffSetting, buffSettings[1]);
                     Cond.Instance.Get<TextMeshProUGUI>(levelselect, Label.B).text = buffSettings[1].Description;
                     Cond.Instance.Get<Image>(levelselect, Label.B).sprite = buffSettings[1].Icon;
 
                     Button C = Cond.Instance.Get<Button>(levelselect, Label.C);
+                    ButtonRegister.RemoveAllListener(C);
                     ButtonRegister.AddListener(C, SelectBuffSetting, buffSettings[2]);
                     Cond.Instance.Get<TextMeshProUGUI>(levelselect, Label.C).text = buffSettings[2].Description;
                     Cond.Instance.Get<Image>(levelselect, Label.C).sprite = buffSettings[2].Icon;
@@ -44,16 +44,29 @@ namespace LazyPan {
 
         /*选择BUFF配置*/
         private void SelectBuffSetting(BuffSettingInfo buffSettingInfo) {
+            /*经验值归零*/
+            entity.EntityData.BaseRuntimeData.PlayerInfo.Experience = 0;
+            Comp battleui = battleFlow.GetUI();
+            Comp info = Cond.Instance.Get<Comp>(battleui, Label.INFO);
+            Cond.Instance.Get<Slider>(info, Label.EXP).value =
+                entity.EntityData.BaseRuntimeData.PlayerInfo.Experience /
+                Loader.LoadSetting().PlayerSetting.MaxExperience;
+
             SetCanControl(true);
             Comp levelselect = Cond.Instance.Get<Comp>(battleFlow.GetUI(), Label.Assemble(Label.LEVEL, Label.SELECT));
             levelselect.gameObject.SetActive(false);
-            if(Be)
-            BehaviourRegister.Instance.RegisterBehaviour(entity.ID, buffSettingInfo.BehaviourSign);
+            if (BehaviourRegister.Instance.TryGetRegisterBehaviour(entity.ID, buffSettingInfo.BehaviourSign, out Behaviour behaviour)) {
+                if (buffSettingInfo.CanUpgrade) {
+                    behaviour.Upgrade();
+                }
+            } else {
+                BehaviourRegister.Instance.RegisterBehaviour(entity.ID, buffSettingInfo.BehaviourSign);
+            }
         }
 
         /*设置是否可控*/
         private void SetCanControl(bool canControl) {
-            Cond.Instance.GetPlayerEntity().EntityData.BaseRuntimeData.PlayerInfo.AllowMovement = canControl;
+            Data.Instance.GlobalInfo.AllowMovement = canControl;
         }
 
         public override void Clear() {

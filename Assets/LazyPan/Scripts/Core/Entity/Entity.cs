@@ -88,6 +88,7 @@ namespace LazyPan {
             //ID重置
             ID = 0;
             //数据销毁
+            EntityData.Clear();
             EntityData = null;
         }
     }

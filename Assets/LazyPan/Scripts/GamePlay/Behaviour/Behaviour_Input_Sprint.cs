@@ -32,13 +32,12 @@ namespace LazyPan {
         private void Sprint() {
             if (deploy == -1) {
                 deploy = Loader.LoadSetting().PlayerSetting.SprintTime;
-                SetCanControl(false);
             }
         }
 
         /*设置是否可控*/
         private void SetCanControl(bool canControl) {
-            entity.EntityData.BaseRuntimeData.PlayerInfo.AllowMovement = canControl;
+            Data.Instance.GlobalInfo.AllowMovement = canControl;
         }
 
         /*冲刺中*/
@@ -47,8 +46,9 @@ namespace LazyPan {
                 deploy -= Time.deltaTime;
                 characterController.Move(Cond.Instance.Get<Transform>(entity, Label.BODY).forward * Time.deltaTime * GetSprintSpeed());
             } else {
-                deploy = -1;
-                SetCanControl(true);
+                if (deploy != -1) {
+                    deploy = -1;
+                }
             }
         }
 

@@ -12,11 +12,17 @@
             } else if (config.Type == "Player") {
                 BaseRuntimeData.PlayerInfo = new PlayerInfo();
                 BaseRuntimeData.PlayerInfo.HealthPoint = Loader.LoadSetting().PlayerSetting.MaxHealth;
-                BaseRuntimeData.PlayerInfo.Experience = Loader.LoadSetting().PlayerSetting.MaxExperience;
+                BaseRuntimeData.PlayerInfo.Experience = 0;
             } else if (config.Type == "Tower") {
                 BaseRuntimeData.TowerInfo = new TowerInfo();
                 BaseRuntimeData.TowerInfo.Energy = Loader.LoadSetting().TowerSetting.MaxEnergy;
             }
+        }
+
+        public void Clear() {
+            BaseRuntimeData.RobotInfo = null;
+            BaseRuntimeData.PlayerInfo = null;
+            BaseRuntimeData.TowerInfo = null;
         }
     }
 

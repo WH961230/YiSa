@@ -11,6 +11,8 @@ namespace LazyPan {
             ConsoleEx.Instance.Content("log", $"ID:{entity.ID} 注册行为:{BehaviourConfig.Get(BehaviourSign).Name}");
         }
 
+        public virtual void Upgrade() {}
+
         public virtual void Clear() {
             ConsoleEx.Instance.Content("log", $"ID:{entity.ID} 注销行为:{BehaviourConfig.Get(BehaviourSign).Name}");
         }

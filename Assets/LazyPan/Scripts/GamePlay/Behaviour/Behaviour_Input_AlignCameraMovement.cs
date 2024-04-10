@@ -43,12 +43,12 @@ namespace LazyPan {
 
         /*设置角色控制*/
         private void SetPlayerControl(bool canControl) {
-            entity.EntityData.BaseRuntimeData.PlayerInfo.AllowMovement = canControl;
+            Data.Instance.GlobalInfo.AllowMovement = canControl;
         }
 
         /*获取可以移动*/
         private bool GetPlayerControl() {
-            return entity.EntityData.BaseRuntimeData.PlayerInfo.AllowMovement;
+            return Data.Instance.GlobalInfo.AllowMovement;
         }
 
         /*获取动画控制器*/

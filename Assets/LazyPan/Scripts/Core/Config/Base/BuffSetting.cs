@@ -14,5 +14,6 @@ namespace LazyPan {
         [Tooltip("描述")] public string Description;
         [Tooltip("图标")] public Sprite Icon;
         [Tooltip("行为标识")] public string BehaviourSign;
+        [Tooltip("是否可升级")] public bool CanUpgrade;
     }
 }

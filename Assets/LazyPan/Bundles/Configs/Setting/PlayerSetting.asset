@@ -15,8 +15,8 @@ MonoBehaviour:
   RotateSpeed: 500
   MovementSpeed: 8
   GravitySpeed: 10
-  SprintSpeed: 5
-  SprintTime: 0.5
+  SprintSpeed: 10
+  SprintTime: 1
   HealthRecoverSpeed: 1
-  MaxHealth: 0
-  MaxExperience: 0
+  MaxHealth: 100
+  MaxExperience: 5

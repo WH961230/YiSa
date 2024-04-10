@@ -1,32 +1,42 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace LazyPan {
     public class Behaviour_Event_RobotCreator : Behaviour {
         private Clock clock;
-        private List<Entity> robotSoldierEntities;
-        private Queue<string> robotSoldierQueuies;
+        private List<string> robotSigns;//当前要生成的怪物
+        private List<Entity> robotSoldierEntities;//此轮已生成的怪物
+        private Queue<string> robotSoldierQueuies;//生成队列
 
         public Behaviour_Event_RobotCreator(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             robotSoldierEntities = new List<Entity>();
             robotSoldierQueuies = new Queue<string>();
+            robotSigns = new List<string>();
             /*第一波 普通机器人*/
-            PrepareRobot("Obj_Robot_Soldier");
-            PrepareRobot("Obj_Robot_Soldier");
+            BasePrepareRobot();
             RobotCreate();
             MessageRegister.Instance.Reg(MessageCode.RobotCreate, RobotCreate);
-            MessageRegister.Instance.Reg<string>(MessageCode.LevelUpgradeIncreaseRobot, PrepareRobot);
+            MessageRegister.Instance.Reg<string>(MessageCode.LevelUpgradeIncreaseRobot, AddRobot);
             MessageRegister.Instance.Reg<Entity, int>(MessageCode.BeInjuried, RobotBeInjured);
             MessageRegister.Instance.Reg<Entity>(MessageCode.BeSelfDetonation, RobotBeSelfDetonation);
-            Data.Instance.OnUpdateEvent.AddListener(Wait);
         }
 
-        private void Wait() {
-            
+        /*默认怪物队列预备*/
+        private void BasePrepareRobot() {
+            AddRobot("Obj_Robot_Soldier");
+            AddRobot("Obj_Robot_SoldierB");
+        }
+
+        /*记录生成的敌人标识*/
+        private void AddRobot(string sign) {
+            robotSigns.Add(sign);
         }
 
         /*生成怪物*/
         private void RobotCreate() {
-            RobotEvent(2, 1);
+            PrepareRobot();
+            RobotEvent(2, 1.5f);
         }
 
         /*机器人事件 几秒钟后 间隔几秒 生成怪物 一共需要生成几只*/
@@ -41,8 +51,11 @@ namespace LazyPan {
         }
 
         /*怪物队列预备*/
-        private void PrepareRobot(string sign) {
-            robotSoldierQueuies.Enqueue(sign);
+        private void PrepareRobot() {
+            robotSoldierQueuies.Clear();
+            foreach (string robotSign in robotSigns) {
+                robotSoldierQueuies.Enqueue(robotSign);
+            }
         }
 
         /*怪物生成*/
@@ -59,7 +72,7 @@ namespace LazyPan {
             if (robot.EntityData.BaseRuntimeData.Type == "Robot") {
                 robot.EntityData.BaseRuntimeData.RobotInfo.HealthPoint = 0;
                 /*自杀*/
-                robot.EntityData.BaseRuntimeData.RobotInfo.DeathType = 1;
+                robot.EntityData.BaseRuntimeData.RobotInfo.BeAttackType = 2;
                 /*死亡*/
                 RemoveRobot(robot);
             }
@@ -68,19 +81,21 @@ namespace LazyPan {
         /*机器人受伤*/
         private void RobotBeInjured(Entity robot, int damage) {
             if (robot.EntityData.BaseRuntimeData.Type == "Robot") {
-                /*受伤*/
-                robot.EntityData.BaseRuntimeData.RobotInfo.HealthPoint -= damage;
-                /*血量小于零掉落*/
-                if (robot.EntityData.BaseRuntimeData.RobotInfo.HealthPoint <= 0) {
-                    /*敌方攻击*/
-                    if (robot.EntityData.BaseRuntimeData.RobotInfo.DeathType == 0) {
-                        /*掉落*/
-                        entity.EntityData.BaseRuntimeData.RobotInfo.DeathDropType = UnityEngine.Random.Range(0, 3);
-                        MessageRegister.Instance.Dis(MessageCode.DeathDrop, robot);
-                    }
+                if (robot.EntityData.BaseRuntimeData.RobotInfo != null && !robot.EntityData.BaseRuntimeData.RobotInfo.IsDead) {
+                    /*受伤*/
+                    robot.EntityData.BaseRuntimeData.RobotInfo.HealthPoint -= damage;
+                    /*血量小于零掉落*/
+                    if (robot.EntityData.BaseRuntimeData.RobotInfo.HealthPoint <= 0) {
+                        /*敌方攻击*/
+                        if (robot.EntityData.BaseRuntimeData.RobotInfo.BeAttackType == 1) {
+                            /*掉落*/
+                            robot.EntityData.BaseRuntimeData.RobotInfo.DeathDropType = UnityEngine.Random.Range(0, 3);
+                            MessageRegister.Instance.Dis(MessageCode.DeathDrop, robot);
+                        }
 
-                    /*死亡*/
-                    RemoveRobot(robot);
+                        /*死亡*/
+                        RemoveRobot(robot);
+                    }
                 }
             }
         }
@@ -111,10 +126,9 @@ namespace LazyPan {
             RemoveAllRobot();
             MessageRegister.Instance.UnReg<Entity, int>(MessageCode.BeInjuried, RobotBeInjured);
             MessageRegister.Instance.UnReg<Entity>(MessageCode.BeSelfDetonation, RobotBeSelfDetonation);
-            MessageRegister.Instance.UnReg<string>(MessageCode.LevelUpgradeIncreaseRobot, PrepareRobot);
+            MessageRegister.Instance.UnReg<string>(MessageCode.LevelUpgradeIncreaseRobot, AddRobot);
             MessageRegister.Instance.UnReg(MessageCode.RobotCreate, RobotCreate);
             ClockUtil.Instance.Stop(clock);
-            Data.Instance.OnUpdateEvent.RemoveListener(Wait);
         }
     }
 }

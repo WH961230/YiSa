@@ -72,6 +72,7 @@ namespace LazyPan {
         public override void Clear() {
             base.Clear();
             Data.Instance.OnUpdateEvent.RemoveListener(Movement);
+            InputRegister.Instance.UnLoad(InputRegister.Instance.Motion, GetInput);
         }
     }
 }

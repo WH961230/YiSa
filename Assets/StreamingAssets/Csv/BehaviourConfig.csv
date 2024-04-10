@@ -2,6 +2,7 @@
 string,string,string
 标识,名字,描述
 Behaviour_Input_AlignCameraMovement,对齐相机移动,对齐相机移动
+Behaviour_Input_MoveRelativeToWorldCoordinates,相对世界坐标移动,相对世界坐标移动
 Behaviour_Input_Rotate,输入旋转,输入旋转
 Behaviour_Input_Shoot,输入射击,输入射击
 Behaviour_Input_CloseFight,输入近战,输入近战

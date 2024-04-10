@@ -89,7 +89,7 @@ namespace LazyPan {
                         /*敌方攻击*/
                         if (robot.EntityData.BaseRuntimeData.RobotInfo.BeAttackType == 1) {
                             /*掉落*/
-                            robot.EntityData.BaseRuntimeData.RobotInfo.DeathDropType = UnityEngine.Random.Range(0, 3);
+                            robot.EntityData.BaseRuntimeData.RobotInfo.DeathDropType = UnityEngine.Random.Range(0, 100);
                             MessageRegister.Instance.Dis(MessageCode.DeathDrop, robot);
                         }
 

@@ -25,7 +25,6 @@ namespace LazyPan {
         private void Pick(Collider arg0) {
             if (arg0.gameObject.layer == LayerMask.NameToLayer("Drop")) {
                 if (lastInstanceID != arg0.gameObject.GetInstanceID()) {
-                    Debug.LogError($"pick {arg0.gameObject.GetInstanceID()}");
                     arg0.GetComponent<Collider>().enabled = false;
                     Object.Destroy(arg0.gameObject);
                     Entity playerEntity = Cond.Instance.GetPlayerEntity();

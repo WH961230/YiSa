@@ -67,7 +67,8 @@ namespace LazyPan {
         public static string A = "A";
         public static string B = "B";
         public static string C = "C";
-        
+        public static string SYSTEM = "System";
+
         //组合A+B
         public static string Assemble(string labelA, string labelB) {
             return string.Concat(labelA, labelB);

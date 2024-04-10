@@ -21,6 +21,13 @@ AlignCameraMovement,对齐相机移动,Input,SetMovementDir,设置位移方向
 AlignCameraMovement,对齐相机移动,Input,Movement,移动
 AlignCameraMovement,对齐相机移动,Input,GetAnimator,获取动画控制器
 AlignCameraMovement,对齐相机移动,Input,Clear,清除
+MoveRelativeToWorldCoordinates,相对世界坐标移动,Input,Init,初始化
+MoveRelativeToWorldCoordinates,相对世界坐标移动,Input,GetTarget,获取移动物
+MoveRelativeToWorldCoordinates,相对世界坐标移动,Input,GetInput,获取输入
+MoveRelativeToWorldCoordinates,相对世界坐标移动,Input,GetSpeed,获取速度
+MoveRelativeToWorldCoordinates,相对世界坐标移动,Input,SetPlayerControl,设置角色控制
+MoveRelativeToWorldCoordinates,相对世界坐标移动,Input,GetPlayerControl,获取可以移动
+MoveRelativeToWorldCoordinates,相对世界坐标移动,Input,Clear,清除
 ChargeStartGame,开始物体充能,Trigger,Init,初始化
 ChargeStartGame,开始物体充能,Trigger,ChargeIn,进入充能
 ChargeStartGame,开始物体充能,Trigger,ChargeOut,离开充能

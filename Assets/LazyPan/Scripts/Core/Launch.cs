@@ -14,6 +14,8 @@ namespace LazyPan {
                 Data.Instance.UIDontDestroyRoot = Loader.LoadGo("加载画布", "Global/Global_UIRoot", null, true).transform;
                 Data.Instance.UIDontDestroyRoot.gameObject.AddComponent<Stage>();
                 Data.Instance.UIDontDestroyRoot.gameObject.GetComponent<Canvas>().sortingOrder = 1;
+                Comp uirootcomp = Data.Instance.UIDontDestroyRoot.GetComponent<Comp>();
+                Cond.Instance.Get<Transform>(uirootcomp, Label.Assemble(Label.EVENT, Label.SYSTEM)).gameObject.SetActive(false);
                 DontDestroyOnLoad(Data.Instance.UIDontDestroyRoot.gameObject);
 
                 DontDestroyOnLoad(gameObject);

@@ -15,7 +15,7 @@ namespace LazyPan {
 
         /*死亡掉落*/
         private void DeadDrop(Entity deadEntity) {
-            if (deadEntity.EntityData.BaseRuntimeData.RobotInfo.DeathDropType == 2) {
+            if (deadEntity.EntityData.BaseRuntimeData.RobotInfo.DeathDropType >= 95) {
                 ConsoleEx.Instance.Content("log", $"[{deadEntity.ID}] 死亡掉落可激活");
                 Instance("Obj_Activable_Activable", Cond.Instance.Get<Transform>(deadEntity, Label.BODY).position);
             }

@@ -9,7 +9,7 @@ namespace LazyPan {
         /*死亡掉落*/
         private void DeathDrop(Entity deadEntity) {
             if (deadEntity.ID == entity.ID) {
-                if (deadEntity.EntityData.BaseRuntimeData.RobotInfo.DeathDropType == 1) {
+                if (deadEntity.EntityData.BaseRuntimeData.RobotInfo.DeathDropType < 33) {
                     ConsoleEx.Instance.Content("log", $"[{deadEntity.ID}] 死亡掉落经验值");
                     GameObject template = Loader.LoadGo("经验值", "Common/Obj_Fx_Drop", Data.Instance.ObjRoot, true);
                     Comp comp = template.GetComponent<Comp>();

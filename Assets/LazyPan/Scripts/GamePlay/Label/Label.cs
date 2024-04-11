@@ -68,6 +68,7 @@ namespace LazyPan {
         public static string B = "B";
         public static string C = "C";
         public static string SYSTEM = "System";
+        public static string OWN = "Own";
 
         //组合A+B
         public static string Assemble(string labelA, string labelB) {

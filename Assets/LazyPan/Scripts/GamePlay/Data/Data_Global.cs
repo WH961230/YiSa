@@ -1,9 +1,6 @@
 ﻿namespace LazyPan {
     public partial class Data {
         public GlobalInfo GlobalInfo = new GlobalInfo();//全局
-        public LevelInfo LevelInfo = new LevelInfo() {
-            Level = 1
-        };//关卡
     }
 
     /*全局*/
@@ -12,11 +9,9 @@
         public bool IsGamePause;//是否游戏暂停
         public bool IsGameOver;//是否游戏结束
         public bool AllowMovement;//允许移动//可移动
-    }
-
-    /*关卡*/
-    public class LevelInfo {
-        public int Level;//关卡数
+        public int Level = 1;//关卡数量
+        public int RobotLevel = 1;//怪物难度
+        public int OwnLevel = 1;//己方等级
     }
 
     /*玩家*/

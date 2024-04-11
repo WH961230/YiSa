@@ -21,6 +21,7 @@ MonoBehaviour:
     MaxHealth: 20
     KnockbackSpeed: 5
     KnockbackDuraing: 0.5
+    robotDifficulty: 1
   - Sign: Obj_Robot_SoldierB
     Icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
     Description: "\u673A\u5668\u4EBAB"
@@ -29,6 +30,7 @@ MonoBehaviour:
     MaxHealth: 20
     KnockbackSpeed: 5
     KnockbackDuraing: 0.5
+    robotDifficulty: 2
   - Sign: Obj_Robot_SoldierC
     Icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
     Description: "\u673A\u5668\u4EBAC"
@@ -37,3 +39,4 @@ MonoBehaviour:
     MaxHealth: 20
     KnockbackSpeed: 5
     KnockbackDuraing: 0.5
+    robotDifficulty: 2

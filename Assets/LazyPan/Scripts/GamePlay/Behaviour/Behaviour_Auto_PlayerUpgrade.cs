@@ -13,7 +13,7 @@ namespace LazyPan {
 		private void LevelUp() {
             /*移动禁止*/
             SetCanControl(false);
-            //弹出 Buff 难度增加的选择 三选一
+            /*弹出 Buff 难度增加的选择 三选一*/
             bool isGetFlow = Flo.Instance.GetFlow(out battleFlow);
             if (isGetFlow) {
                 Comp battleui = battleFlow.GetUI();
@@ -44,6 +44,9 @@ namespace LazyPan {
 
         /*选择BUFF配置*/
         private void SelectBuffSetting(BuffSettingInfo buffSettingInfo) {
+            /*己方等级*/
+            Data.Instance.GlobalInfo.OwnLevel++;
+            RefreshLevel();
             /*经验值归零*/
             entity.EntityData.BaseRuntimeData.PlayerInfo.Experience = 0;
             Comp battleui = battleFlow.GetUI();
@@ -62,6 +65,18 @@ namespace LazyPan {
             } else {
                 BehaviourRegister.Instance.RegisterBehaviour(entity.ID, buffSettingInfo.BehaviourSign);
             }
+        }
+
+        /*更新等级*/
+        private void RefreshLevel() {
+            Comp battleui = battleFlow.GetUI();
+            Comp info = Cond.Instance.Get<Comp>(battleui, Label.INFO);
+            TextMeshProUGUI robotLevel = Cond.Instance.Get<TextMeshProUGUI>(info, Label.Assemble(Label.ROBOT, Label.LEVEL));
+            robotLevel.text = Data.Instance.GlobalInfo.RobotLevel.ToString("D2");
+            TextMeshProUGUI ownLevel = Cond.Instance.Get<TextMeshProUGUI>(info, Label.Assemble(Label.OWN, Label.LEVEL));
+            ownLevel.text = Data.Instance.GlobalInfo.OwnLevel.ToString("D2");
+            TextMeshProUGUI level = Cond.Instance.Get<TextMeshProUGUI>(info, Label.LEVEL);
+            level.text = Data.Instance.GlobalInfo.Level.ToString("D2");
         }
 
         /*设置是否可控*/

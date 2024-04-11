@@ -11,6 +11,7 @@ namespace LazyPan {
             //可激活事件
             Instance("Obj_Activable_Activable", Vector3.zero);
             MessageRegister.Instance.Reg<Entity>(MessageCode.DeathDrop, DeadDrop);
+            MessageRegister.Instance.Reg<Entity>(MessageCode.RecycleActivable, RecycleActivable);
         }
 
         /*死亡掉落*/
@@ -30,9 +31,18 @@ namespace LazyPan {
             activableEventEntities.Add(instance);
         }
 
+        /*回收*/
+        private void RecycleActivable(Entity activable) {
+            if (activableEventEntities.Contains(activable)) {
+                activableEventEntities.Remove(activable);
+                Obj.Instance.UnLoadEntity(activable);
+            }
+        }
+
         public override void Clear() {
             base.Clear();
             MessageRegister.Instance.UnReg<Entity>(MessageCode.DeathDrop, DeadDrop);
+            MessageRegister.Instance.UnReg<Entity>(MessageCode.RecycleActivable, RecycleActivable);
         }
     }
 }

@@ -17,6 +17,7 @@ MonoBehaviour:
   RobotSetting: {fileID: 11400000, guid: c6e482975bbcc104ca58a9b4dbf9c2d8, type: 2}
   BuffSetting: {fileID: 11400000, guid: 22f5d700a3a963f44b9f7d0f55cbc618, type: 2}
   TowerSetting: {fileID: 11400000, guid: 02123969d60b79247ae4eb8543ce7ee1, type: 2}
+  ActivableSetting: {fileID: 11400000, guid: 476277d9ed84fff4896d8595a3a23efc, type: 2}
   BaseSettings:
   - CreatureType: Strong
     Health: 0

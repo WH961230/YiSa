@@ -9,8 +9,8 @@ namespace LazyPan {
         private bool isCharging;
 
         public Behaviour_Auto_TriggerCharge(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
-            Cond.Instance.Get<Comp>(entity, Label.Assemble(Label.ENERGY, Label.TRIGGER)).OnTriggerEnterEvent.AddListener(ChargeIn);
-            Cond.Instance.Get<Comp>(entity,  Label.Assemble(Label.ENERGY, Label.TRIGGER)).OnTriggerExitEvent.AddListener(ChargeOut);
+            Cond.Instance.Get<Comp>(entity, Label.TRIGGER).OnTriggerEnterEvent.AddListener(ChargeIn);
+            Cond.Instance.Get<Comp>(entity, Label.TRIGGER).OnTriggerExitEvent.AddListener(ChargeOut);
             rangeComp = Cond.Instance.Get<Comp>(entity, Label.RANGE);
             Data.Instance.OnUpdateEvent.AddListener(Charge);
             energyImage = Cond.Instance.Get<Image>(Cond.Instance.Get<Comp>(entity, Label.ENERGY), Label.ENERGY);
@@ -69,8 +69,8 @@ namespace LazyPan {
         public override void Clear() {
             base.Clear();
             Data.Instance.OnUpdateEvent.RemoveListener(Charge);
-            Cond.Instance.Get<Comp>(entity, Label.Assemble(Label.ENERGY, Label.TRIGGER)).OnTriggerEnterEvent.RemoveListener(ChargeIn);
-            Cond.Instance.Get<Comp>(entity, Label.Assemble(Label.ENERGY, Label.TRIGGER)).OnTriggerExitEvent.RemoveListener(ChargeOut);
+            Cond.Instance.Get<Comp>(entity, Label.TRIGGER).OnTriggerEnterEvent.RemoveListener(ChargeIn);
+            Cond.Instance.Get<Comp>(entity, Label.TRIGGER).OnTriggerExitEvent.RemoveListener(ChargeOut);
         }
     }
 }

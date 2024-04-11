@@ -339,12 +339,10 @@ MonoBehaviour:
   Comps:
   - Sign: Energy
     Comp: {fileID: 5669303281416075529}
-  - Sign: EnergyTrigger
-    Comp: {fileID: 4369872884724600063}
   - Sign: Range
     Comp: {fileID: 8655644467706230058}
-  - Sign: Range
-    Comp: {fileID: 8655644467706230058}
+  - Sign: Trigger
+    Comp: {fileID: 8330645091339950014}
   UnityEventDatas:
   - Sign: PlayerMotionEvent
     UnityEvent:
@@ -549,8 +547,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4297712533671462929}
-  - component: {fileID: 4369872884724600063}
   - component: {fileID: 4601555491617859953}
+  - component: {fileID: 8330645091339950014}
   m_Layer: 0
   m_Name: ChargeTrigger
   m_TagString: Untagged
@@ -573,7 +571,28 @@ Transform:
   m_Father: {fileID: 2841481044385809183}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
---- !u!114 &4369872884724600063
+--- !u!135 &4601555491617859953
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8828358996569982243}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 4.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8330645091339950014
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -644,27 +663,6 @@ MonoBehaviour:
   DoTweenAnimationDatas: []
   TrailRendererDatas: []
   CameraDatas: []
---- !u!135 &4601555491617859953
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8828358996569982243}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 4.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9057053115547042497
 GameObject:
   m_ObjectHideFlags: 0

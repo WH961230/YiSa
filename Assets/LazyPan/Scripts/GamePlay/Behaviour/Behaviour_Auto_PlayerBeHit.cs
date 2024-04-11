@@ -3,11 +3,11 @@
 namespace LazyPan {
     public class Behaviour_Auto_PlayerBeHit : Behaviour {
         public Behaviour_Auto_PlayerBeHit(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
-            MessageRegister.Instance.Reg<Entity, float>(MessageCode.BeInjuried, BeHit);
+            MessageRegister.Instance.Reg<Entity, int>(MessageCode.BeInjuried, BeHit);
         }
 
 		/*受到伤害*/
-		private void BeHit(Entity target, float damage) {
+		private void BeHit(Entity target, int damage) {
             if (target.ID == entity.ID) {
                 entity.EntityData.BaseRuntimeData.PlayerInfo.HealthPoint -= damage;
                 entity.EntityData.BaseRuntimeData.PlayerInfo.HealthPoint = Mathf.Max(
@@ -27,7 +27,7 @@ namespace LazyPan {
 
         public override void Clear() {
             base.Clear();
-            MessageRegister.Instance.UnReg<Entity, float>(MessageCode.BeInjuried, BeHit);
+            MessageRegister.Instance.UnReg<Entity, int>(MessageCode.BeInjuried, BeHit);
         }
     }
 }

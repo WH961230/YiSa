@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2105026006429737542}
   - component: {fileID: 6026598944706966911}
   - component: {fileID: 9146972564336916639}
-  - component: {fileID: 7373113451757663590}
-  - component: {fileID: 9155151942740591507}
+  - component: {fileID: 6336427636469478406}
+  - component: {fileID: 4237495759948059712}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -86,8 +86,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7373113451757663590
-BoxCollider:
+--- !u!135 &6336427636469478406
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -105,9 +105,9 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 2.3
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &9155151942740591507
+--- !u!114 &4237495759948059712
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -314,10 +314,10 @@ MonoBehaviour:
   PlayableDirectors: []
   TimelineAssets: []
   Comps:
-  - Sign: Trigger
-    Comp: {fileID: 9155151942740591507}
   - Sign: Energy
     Comp: {fileID: 2691218798736724515}
+  - Sign: Trigger
+    Comp: {fileID: 4237495759948059712}
   UnityEventDatas: []
   DoTweenAnimationDatas: []
   TrailRendererDatas: []
@@ -460,6 +460,21 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9065992012012740882, guid: c9c2cccac7d554e47bdec6a8c632037d,
+        type: 3}
+      propertyPath: Colliders.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9065992012012740882, guid: c9c2cccac7d554e47bdec6a8c632037d,
+        type: 3}
+      propertyPath: Colliders.Array.data[0].Sign
+      value: Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 9065992012012740882, guid: c9c2cccac7d554e47bdec6a8c632037d,
+        type: 3}
+      propertyPath: Colliders.Array.data[0].Collider
+      value: 
+      objectReference: {fileID: 6336427636469478406}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

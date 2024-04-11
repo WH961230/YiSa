@@ -14,7 +14,7 @@ namespace LazyPan {
             }
 
             if (Data.Instance.TryGetEntityByBodyPrefabID(arg0.gameObject.GetInstanceID(), out Entity tmpEntity)) {
-                if (tmpEntity.EntityData.BaseRuntimeData.Type == "Building" ||
+                if (tmpEntity.EntityData.BaseRuntimeData.Type == "Tower" ||
                     tmpEntity.EntityData.BaseRuntimeData.Type == "Player") {
                     Entity playerEntity = Cond.Instance.GetPlayerEntity();
                     bool isGetFlow = Flo.Instance.GetFlow(out Flow_Battle battleFlow);

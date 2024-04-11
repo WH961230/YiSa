@@ -7,8 +7,8 @@ namespace LazyPan {
         private Flow_Battle battleFlow;
         private bool isHealthing;
         public Behaviour_Auto_TriggerHealth(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
-            Cond.Instance.Get<Comp>(entity, Label.Assemble(Label.ENERGY, Label.TRIGGER)).OnTriggerEnterEvent.AddListener(HealthIn);
-            Cond.Instance.Get<Comp>(entity, Label.Assemble(Label.ENERGY, Label.TRIGGER)).OnTriggerExitEvent.AddListener(HealthOut);
+            Cond.Instance.Get<Comp>(entity, Label.TRIGGER).OnTriggerEnterEvent.AddListener(HealthIn);
+            Cond.Instance.Get<Comp>(entity, Label.TRIGGER).OnTriggerExitEvent.AddListener(HealthOut);
             bool isGetFlow = Flo.Instance.GetFlow(out battleFlow);
             if (isGetFlow) {
                 battleui = battleFlow.GetUI();
@@ -56,8 +56,8 @@ namespace LazyPan {
         public override void Clear() {
             base.Clear();
             Data.Instance.OnUpdateEvent.RemoveListener(Health);
-            Cond.Instance.Get<Comp>(entity, Label.Assemble(Label.ENERGY, Label.TRIGGER)).OnTriggerEnterEvent.RemoveListener(HealthIn);
-            Cond.Instance.Get<Comp>(entity, Label.Assemble(Label.ENERGY, Label.TRIGGER)).OnTriggerExitEvent.RemoveListener(HealthOut);
+            Cond.Instance.Get<Comp>(entity, Label.TRIGGER).OnTriggerEnterEvent.RemoveListener(HealthIn);
+            Cond.Instance.Get<Comp>(entity, Label.TRIGGER).OnTriggerExitEvent.RemoveListener(HealthOut);
         }
     }
 }

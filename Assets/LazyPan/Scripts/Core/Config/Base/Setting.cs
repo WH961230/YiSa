@@ -79,6 +79,7 @@ namespace LazyPan {
         [Header("机器人配置")] public RobotSetting RobotSetting;
         [Header("Buff配置")] public BuffSetting BuffSetting;
         [Header("塔配置")] public TowerSetting TowerSetting;
+        [Header("可激活Buff配置")] public ActivableSetting ActivableSetting;
 
         [Header("基础信息配置")] public List<BaseSetting> BaseSettings;
         [Header("关卡机器人配置")] public List<LevelRobotSetting> LevelRobotSettings;

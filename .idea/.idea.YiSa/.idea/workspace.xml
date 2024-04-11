@@ -23,25 +23,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="751138b9-e304-4f88-90e0-21e17608f2fb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Config/Base/ActivableSetting.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Config/Base/ActivableSetting.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/RobotSetting.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/RobotSetting.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/TowerSetting.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/TowerSetting.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Global/Global_UIRoot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Global/Global_UIRoot.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Battle/Obj_Camera_Camera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Battle/Obj_Camera_Camera.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Battle/Obj_Tower_Tower.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Battle/Obj_Tower_Tower.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Launch.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Launch.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_DropExperience.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_DropExperience.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_FollowPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_FollowPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Pick.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Pick.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Event_ActivableCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Event_ActivableCreator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Event_RobotCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Event_RobotCreator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_AlignCameraMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_AlignCameraMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Auto_DropExperience_Template.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Auto_DropExperience_Template.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Auto_Pick_Template.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Auto_Pick_Template.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Auto_PlayerUpgrade_Template.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Auto_PlayerUpgrade_Template.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Label/Label.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Label/Label.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Battle/Obj_Activable_Activable.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/Battle/Obj_Activable_Activable.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Config/Base/Setting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Config/Base/Setting.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Register/MessageRegister.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Register/MessageRegister.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_PlayerUpgrade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_PlayerUpgrade.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Trigger_Activable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Trigger_Activable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Auto_Laser_Template.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Auto_Laser_Template.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Auto_SniperRifle_Template.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Auto_SniperRifle_Template.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Auto_SurroundingTheBallOfLight_Template.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Auto_SurroundingTheBallOfLight_Template.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/Battle/Flow_Battle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/Battle/Flow_Battle.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/BehaviourConfig.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/BehaviourConfig.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/BehaviourGenerate.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/BehaviourGenerate.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/FlowGenerate.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/FlowGenerate.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/ObjConfig.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/ObjConfig.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -120,6 +116,10 @@
       </list>
     </option>
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 1
+}]]></component>
   <component name="ProjectId" id="2cdN6hCIoDgE1ZtD3v5ebHQ2IFL" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -128,10 +128,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="Discover.Launch.Via.Unity" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\Evore\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Evore\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
+      "C:\\Users\\Evore\\AppData\\Local\\Symbols\\src"
+    ]
+  }
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$PROJECT_DIR$/../YiSaBuild\Roguelike.exe" />
@@ -161,8 +175,9 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
+      <option name="projectPathOnTarget" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
@@ -170,8 +185,9 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
+      <option name="projectPathOnTarget" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
@@ -239,6 +255,7 @@
       <workItem from="1712641318499" duration="10486000" />
       <workItem from="1712711402276" duration="14244000" />
       <workItem from="1712755470846" duration="4693000" />
+      <workItem from="1712826165714" duration="2309000" />
     </task>
     <servers />
   </component>
@@ -257,16 +274,9 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1712757863486">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1712757863486" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

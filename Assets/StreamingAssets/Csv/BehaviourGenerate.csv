@@ -78,3 +78,6 @@ SniperRifle,狙击枪,Auto,Init,初始化
 SniperRifle,狙击枪,Auto,Shoot,发射
 SniperRifle,狙击枪,Auto,ShootTrigger,碰撞
 SniperRifle,狙击枪,Auto,Clear,清除
+PlayerBeHit,激光,Auto,Init,初始化
+PlayerBeHit,激光,Auto,BeHit,受到伤害
+PlayerBeHit,激光,Auto,Clear,清除

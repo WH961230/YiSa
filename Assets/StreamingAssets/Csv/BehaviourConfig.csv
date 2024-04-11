@@ -30,3 +30,4 @@ Behaviour_Auto_PlayerUpgrade,玩家升级事件,玩家升级事件
 Behaviour_Auto_SurroundingTheBallOfLight,环绕光球,环绕光球
 Behaviour_Auto_Laser,激光,激光
 Behaviour_Auto_SniperRifle,狙击枪,狙击枪
+Behaviour_Auto_PlayerBeHit,玩家受到伤害,玩家受到伤害

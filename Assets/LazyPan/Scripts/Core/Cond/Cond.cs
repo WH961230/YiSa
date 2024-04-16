@@ -27,12 +27,16 @@ namespace LazyPan {
             return Data.Instance.TryGetEntityByType("Tower", out entity);
         }
 
-        public bool GetRandEntityByType(string type, out Entity entity) {
-            return Data.Instance.TryGetRandEntityByType(type, out entity);
-        }
+        public bool TryGetGround(Vector3 point, out Vector3 ret) {
+            bool get = Physics.Raycast(new Ray(point, Vector3.down), out RaycastHit hit, Mathf.Infinity,
+                1 << LayerMask.NameToLayer("Floor"));
+            if (get) {
+                ret = hit.point;
+                return true;
+            }
 
-        public bool GetEntityByID(int id, out Entity entity) {
-            return Data.Instance.TryGetEntityByID(id, out entity);
+            ret = default;
+            return false;
         }
 
         #endregion

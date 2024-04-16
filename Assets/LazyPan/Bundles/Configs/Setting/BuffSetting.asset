@@ -23,8 +23,8 @@ MonoBehaviour:
     Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
     BehaviourSign: Behaviour_Auto_Laser
     CanUpgrade: 1
-  - Sign: "\u72D9\u51FB\u67AA"
-    Description: "\u72D9\u51FB\u67AA"
+  - Sign: "\u5730\u9707"
+    Description: "\u5730\u9707"
     Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-    BehaviourSign: Behaviour_Auto_SniperRifle
+    BehaviourSign: Behaviour_Auto_Earthquake
     CanUpgrade: 1

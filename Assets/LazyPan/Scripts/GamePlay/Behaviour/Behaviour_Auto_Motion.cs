@@ -17,8 +17,15 @@ namespace LazyPan {
             Vector3 dir = (Cond.Instance.Get<Transform>(Cond.Instance.GetPlayerEntity(), Label.BODY).position -
                            Cond.Instance.Get<Transform>(entity, Label.BODY).position).normalized;
             bool getSetting = Loader.LoadSetting().TryGetRobotBySign(entity.ObjConfig.Sign, out RobotSettingInfo info);
+            float movementSpeed = info.MovementSpeed;
             if (getSetting && GetControl()) {
-                characterController.Move(dir * Time.deltaTime * info.MovementSpeed);
+                if (entity.EntityData.BaseRuntimeData.RobotInfo.SlowTime > 0) {
+                    entity.EntityData.BaseRuntimeData.RobotInfo.SlowTime -= Time.deltaTime;
+                    movementSpeed /= 2;
+                } else {
+                    entity.EntityData.BaseRuntimeData.RobotInfo.SlowTime = 0;
+                }
+                characterController.Move(dir * Time.deltaTime * movementSpeed);
             }
         }
 

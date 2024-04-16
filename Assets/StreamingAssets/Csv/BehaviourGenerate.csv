@@ -74,10 +74,10 @@ Laser,激光,Auto,Init,初始化
 Laser,激光,Auto,Laser,发射激光
 Laser,激光,Auto,LaserTrigger,激光碰撞
 Laser,激光,Auto,Clear,清除
-SniperRifle,狙击枪,Auto,Init,初始化
-SniperRifle,狙击枪,Auto,Shoot,发射
-SniperRifle,狙击枪,Auto,ShootTrigger,碰撞
-SniperRifle,狙击枪,Auto,Clear,清除
-PlayerBeHit,激光,Auto,Init,初始化
-PlayerBeHit,激光,Auto,BeHit,受到伤害
-PlayerBeHit,激光,Auto,Clear,清除
+PlayerBeHit,玩家受到伤害,Auto,Init,初始化
+PlayerBeHit,玩家受到伤害,Auto,BeHit,受到伤害
+PlayerBeHit,玩家受到伤害,Auto,Clear,清除
+Earthquake,地震,Auto,Init,初始化
+Earthquake,地震,Auto,Earthquake,地震
+Earthquake,激光,Auto,EarthquakeTrigger,地震碰撞
+Earthquake,地震,Auto,Clear,清除

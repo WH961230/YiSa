@@ -10,10 +10,14 @@ namespace LazyPan {
         private void DeathDrop(Entity deadEntity) {
             if (deadEntity.ID == entity.ID) {
                 if (deadEntity.EntityData.BaseRuntimeData.RobotInfo.DeathDropType < 33) {
-                    ConsoleEx.Instance.Content("log", $"[{deadEntity.ID}] 死亡掉落经验值");
-                    GameObject template = Loader.LoadGo("经验值", "Common/Obj_Fx_Drop", Data.Instance.ObjRoot, true);
-                    Comp comp = template.GetComponent<Comp>();
-                    Cond.Instance.Get<Transform>(comp, Label.FOOT).position = Cond.Instance.Get<Transform>(deadEntity, Label.BODY).position;
+                    bool get = Cond.Instance.TryGetGround(Cond.Instance.Get<Transform>(deadEntity, Label.BODY).position,
+                        out Vector3 point);
+                    if (get) {
+                        ConsoleEx.Instance.Content("log", $"[{deadEntity.ID}] 死亡掉落经验值");
+                        GameObject template = Loader.LoadGo("经验值", "Common/Obj_Fx_Drop", Data.Instance.ObjRoot, true);
+                        Comp comp = template.GetComponent<Comp>();
+                        Cond.Instance.Get<Transform>(comp, Label.FOOT).position = point;
+                    }
                 }
             }
         }

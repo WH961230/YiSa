@@ -52,6 +52,7 @@ namespace LazyPan {
         public List<DoTweenAnimationData> DoTweenAnimationDatas = new List<DoTweenAnimationData>();
         public List<TrailRendererData> TrailRendererDatas = new List<TrailRendererData>();
         public List<CameraData> CameraDatas = new List<CameraData>();
+        public List<LineRendererData> LineRendererDatas = new List<LineRendererData>();
 
         public T Get<T>(string sign) where T : Object {
             if (typeof(T) == typeof(CharacterController)) {
@@ -167,6 +168,12 @@ namespace LazyPan {
                     if (data.Sign == sign) {
                         return data.Camera as T;
                     }
+                }
+            } else if (typeof(T) == typeof(LineRenderer)) {
+                foreach (LineRendererData data in LineRendererDatas) {
+                    if (data.Sign == sign) {
+                        return data.LineRenderer as T;
+                    } 
                 }
             }
 
@@ -355,6 +362,12 @@ namespace LazyPan {
         public class CameraData {
             public string Sign;
             public Camera Camera;
+        }
+
+        [Serializable]
+        public class LineRendererData {
+            public string Sign;
+            public LineRenderer LineRenderer;
         }
     }
 }

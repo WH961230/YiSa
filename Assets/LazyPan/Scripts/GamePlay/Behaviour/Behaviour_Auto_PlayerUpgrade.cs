@@ -58,12 +58,13 @@ namespace LazyPan {
             SetCanControl(true);
             Comp levelselect = Cond.Instance.Get<Comp>(battleFlow.GetUI(), Label.Assemble(Label.LEVEL, Label.SELECT));
             levelselect.gameObject.SetActive(false);
-            if (BehaviourRegister.Instance.TryGetRegisterBehaviour(entity.ID, buffSettingInfo.BehaviourSign, out Behaviour behaviour)) {
+            Cond.Instance.GetTowerEntity(out Entity towerEntity);
+            if (BehaviourRegister.Instance.TryGetRegisterBehaviour(towerEntity.ID, buffSettingInfo.BehaviourSign, out Behaviour behaviour)) {
                 if (buffSettingInfo.CanUpgrade) {
                     behaviour.Upgrade();
                 }
             } else {
-                BehaviourRegister.Instance.RegisterBehaviour(entity.ID, buffSettingInfo.BehaviourSign);
+                BehaviourRegister.Instance.RegisterBehaviour(towerEntity.ID, buffSettingInfo.BehaviourSign);
             }
         }
 

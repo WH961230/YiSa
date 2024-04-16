@@ -26,6 +26,7 @@
         //种类
         public float HealthPoint;//血量
         public bool IsDead => HealthPoint == 0;//死亡
+        public float SlowTime;//被减速时间
         public int DeathDropType;//死亡掉落类型 0 无 1 经验值 2 可激活
         public int BeAttackType;//死亡类型 1 敌方 2 自杀
     }

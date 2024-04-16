@@ -25,8 +25,8 @@ MonoBehaviour:
   - Sign: Obj_Robot_SoldierB
     Icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
     Description: "\u673A\u5668\u4EBAB"
-    Attack: 10
-    MovementSpeed: 3
+    Attack: 20
+    MovementSpeed: 2
     MaxHealth: 20
     KnockbackSpeed: 5
     KnockbackDuraing: 0.5

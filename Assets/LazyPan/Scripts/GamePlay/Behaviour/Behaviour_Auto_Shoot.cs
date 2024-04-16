@@ -5,10 +5,10 @@ namespace LazyPan {
     public class Behaviour_Auto_Shoot : Behaviour {
         private float deploy;
         public Behaviour_Auto_Shoot(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
-            Data.Instance.OnUpdateEvent.AddListener(OnShootUpdate);
+            Data.Instance.OnUpdateEvent.AddListener(Shoot);
         }
 
-        private void OnShootUpdate() {
+        private void Shoot() {
             if (entity.EntityData.BaseRuntimeData.TowerInfo.Energy > 0) {
                 if (deploy > 0) {
                     deploy -= Time.deltaTime;
@@ -66,7 +66,7 @@ namespace LazyPan {
 
         public override void Clear() {
             base.Clear();
-            Data.Instance.OnUpdateEvent.RemoveListener(OnShootUpdate);
+            Data.Instance.OnUpdateEvent.RemoveListener(Shoot);
         }
     }
 }

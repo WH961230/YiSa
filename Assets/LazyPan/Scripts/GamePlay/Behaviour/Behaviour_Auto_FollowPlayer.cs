@@ -4,10 +4,11 @@ namespace LazyPan {
     public class Behaviour_Auto_FollowPlayer : Behaviour {
         private Transform FollowTr;
         public Behaviour_Auto_FollowPlayer(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
-            Data.Instance.OnLateUpdateEvent.AddListener(OnFollowPlayerUpdate);
+            Data.Instance.OnLateUpdateEvent.AddListener(FollowPlayer);
         }
 
-        private void OnFollowPlayerUpdate() {
+        /*跟随玩家*/
+        private void FollowPlayer() {
             if (FollowTr == null) {
                 if (Cond.Instance.GetPlayerEntity() != null) {
                     FollowTr = Cond.Instance.Get<Transform>(Cond.Instance.GetPlayerEntity(), Label.BODY);
@@ -20,7 +21,7 @@ namespace LazyPan {
 
         public override void Clear() {
             base.Clear();
-            Data.Instance.OnLateUpdateEvent.RemoveListener(OnFollowPlayerUpdate);
+            Data.Instance.OnLateUpdateEvent.RemoveListener(FollowPlayer);
         }
     }
 }

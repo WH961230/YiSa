@@ -3,9 +3,6 @@ string,string,string
 标识,名字,描述
 Behaviour_Input_AlignCameraMovement,对齐相机移动,对齐相机移动
 Behaviour_Input_MoveRelativeToWorldCoordinates,相对世界坐标移动,相对世界坐标移动
-Behaviour_Input_Rotate,输入旋转,输入旋转
-Behaviour_Input_Shoot,输入射击,输入射击
-Behaviour_Input_CloseFight,输入近战,输入近战
 Behaviour_Auto_FollowPlayer,跟随玩家,跟随玩家
 Behaviour_Event_BeginTimeline,播放开始时间轴,播放开始时间轴
 Behaviour_Auto_Rotate,自动跟随鼠标旋转,自动跟随鼠标旋转
@@ -18,7 +15,7 @@ Behaviour_Auto_TriggerHealth,触发回血,触发回血
 Behaviour_Event_RobotCreator,机器人创建器,机器人创建器
 Behaviour_Trigger_ChargeStartGame,开始游戏充能,开始游戏充能
 Behaviour_Event_LevelUpgrade,关卡难度选择器,关卡难度选择器
-Behaviour_Auto_Shoot,自动射击,自动射击
+Behaviour_Auto_Shoot,基础自动射击,基础自动射击
 Behaviour_Auto_Motion,自动移动,自动移动
 Behaviour_Auto_DropExperience,自动死亡掉落,自动死亡掉落
 Behaviour_Auto_Pick,自动拾取,自动拾取
@@ -29,5 +26,5 @@ Behaviour_Auto_RotateWithDirectionOfMovement,随着移动方向旋转,随着移�
 Behaviour_Auto_PlayerUpgrade,玩家升级事件,玩家升级事件
 Behaviour_Auto_SurroundingTheBallOfLight,环绕光球,环绕光球
 Behaviour_Auto_Laser,激光,激光
-Behaviour_Auto_SniperRifle,狙击枪,狙击枪
 Behaviour_Auto_PlayerBeHit,玩家受到伤害,玩家受到伤害
+Behaviour_Auto_Earthquake,地震,地震

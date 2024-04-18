@@ -15,28 +15,31 @@ MonoBehaviour:
   RobotSettingInfo:
   - Sign: Obj_Robot_Soldier
     Icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-    Description: "\u673A\u5668\u4EBA"
+    Description: "\u65B0\u589E\u4E94\u4E2A\u5C0F\u65B9\u5757"
     Attack: 10
+    Num: 5
     MovementSpeed: 3
     MaxHealth: 20
     KnockbackSpeed: 5
     KnockbackDuraing: 0.5
-    robotDifficulty: 1
+    RobotDifficulty: 1
   - Sign: Obj_Robot_SoldierB
     Icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-    Description: "\u673A\u5668\u4EBAB"
+    Description: "\u65B0\u589E\u4E00\u4E2A\u5927\u65B9\u5757"
     Attack: 20
+    Num: 1
     MovementSpeed: 2
-    MaxHealth: 20
+    MaxHealth: 50
     KnockbackSpeed: 5
     KnockbackDuraing: 0.5
-    robotDifficulty: 2
+    RobotDifficulty: 2
   - Sign: Obj_Robot_SoldierC
     Icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-    Description: "\u673A\u5668\u4EBAC"
+    Description: "\u65B0\u589E\u4E00\u4E2A\u589E\u6B96\u65B9\u5757"
     Attack: 10
+    Num: 1
     MovementSpeed: 3
-    MaxHealth: 20
+    MaxHealth: 5
     KnockbackSpeed: 5
     KnockbackDuraing: 0.5
-    robotDifficulty: 2
+    RobotDifficulty: 2

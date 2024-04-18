@@ -21,7 +21,7 @@ namespace LazyPan {
             if (getSetting && GetControl()) {
                 if (entity.EntityData.BaseRuntimeData.RobotInfo.SlowTime > 0) {
                     entity.EntityData.BaseRuntimeData.RobotInfo.SlowTime -= Time.deltaTime;
-                    movementSpeed /= 2;
+                    movementSpeed *= 0.7f;
                 } else {
                     entity.EntityData.BaseRuntimeData.RobotInfo.SlowTime = 0;
                 }

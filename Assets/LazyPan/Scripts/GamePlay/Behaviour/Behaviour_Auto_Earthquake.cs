@@ -26,6 +26,7 @@ namespace LazyPan {
 			GameObject template = Loader.LoadGo("弹药", "Common/Obj_Fx_EarthquakeBullet", Data.Instance.ObjRoot, true);
 			Transform bulletMuzzle = Cond.Instance.Get<Transform>(entity, Label.FOOT);
 			template.transform.position = bulletMuzzle.position;
+			Cond.Instance.Get<Comp>(template.GetComponent<Comp>(), Label.TRIGGER).OnTriggerEnterEvent.RemoveAllListeners();
 			Cond.Instance.Get<Comp>(template.GetComponent<Comp>(), Label.TRIGGER).OnTriggerEnterEvent.AddListener(EarthquakeTrigger);
 			ClockUtil.Instance.AlarmAfter(1f, () => {
 				if (template != null) {
@@ -48,7 +49,15 @@ namespace LazyPan {
 			}
 		}
 
-        public override void Clear() {
+		public override void Upgrade() {
+			base.Upgrade();
+			EarthquakeNum++;
+			if (EarthquakeNum > 3) {
+				EarthquakeNum = 3;
+			}
+		}
+
+		public override void Clear() {
             base.Clear();
             Data.Instance.OnUpdateEvent.RemoveListener(Earthquake);
         }

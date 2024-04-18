@@ -17,20 +17,22 @@ namespace LazyPan {
             BasePrepareRobot();
             RobotCreate();
             MessageRegister.Instance.Reg(MessageCode.RobotCreate, RobotCreate);
-            MessageRegister.Instance.Reg<string>(MessageCode.LevelUpgradeIncreaseRobot, AddRobot);
+            MessageRegister.Instance.Reg<string, int>(MessageCode.LevelUpgradeIncreaseRobot, AddRobot);
             MessageRegister.Instance.Reg<Entity, int>(MessageCode.BeInjuried, RobotBeInjured);
             MessageRegister.Instance.Reg<Entity>(MessageCode.BeSelfDetonation, RobotBeSelfDetonation);
         }
 
         /*默认怪物队列预备*/
         private void BasePrepareRobot() {
-            AddRobot("Obj_Robot_Soldier");
-            AddRobot("Obj_Robot_SoldierB");
+            AddRobot("Obj_Robot_Soldier", 5);
         }
 
         /*记录生成的敌人标识*/
-        private void AddRobot(string sign) {
-            robotSigns.Add(sign);
+        private void AddRobot(string sign, int num) {
+            while (num > 0) {
+                robotSigns.Add(sign);
+                num--;
+            }
         }
 
         /*生成怪物*/
@@ -126,7 +128,7 @@ namespace LazyPan {
             RemoveAllRobot();
             MessageRegister.Instance.UnReg<Entity, int>(MessageCode.BeInjuried, RobotBeInjured);
             MessageRegister.Instance.UnReg<Entity>(MessageCode.BeSelfDetonation, RobotBeSelfDetonation);
-            MessageRegister.Instance.UnReg<string>(MessageCode.LevelUpgradeIncreaseRobot, AddRobot);
+            MessageRegister.Instance.UnReg<string, int>(MessageCode.LevelUpgradeIncreaseRobot, AddRobot);
             MessageRegister.Instance.UnReg(MessageCode.RobotCreate, RobotCreate);
             ClockUtil.Instance.Stop(clock);
         }

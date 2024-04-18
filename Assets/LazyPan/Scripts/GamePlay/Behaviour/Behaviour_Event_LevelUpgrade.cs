@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace LazyPan {
@@ -17,6 +18,7 @@ namespace LazyPan {
 		private void SelectOneOutOfThree() {
             LevelUpgrade();
             SetCanControl(false);
+            Time.timeScale = 0;
 
             //弹出下一关机器人难度增加的选择 三选一
             Comp battleui = battleFlow.GetUI();
@@ -47,13 +49,14 @@ namespace LazyPan {
         /*选择机器人配置*/
         private void SelectRobotSetting(RobotSettingInfo robotSettingInfo) {
             /*怪物等级*/
-            Data.Instance.GlobalInfo.RobotLevel += robotSettingInfo.robotDifficulty;
+            Data.Instance.GlobalInfo.RobotLevel += robotSettingInfo.RobotDifficulty;
             RefreshLevel();
             /*恢复控制*/
             SetCanControl(true);
             Comp levelselect = Cond.Instance.Get<Comp>(battleFlow.GetUI(), Label.Assemble(Label.LEVEL, Label.SELECT));
             levelselect.gameObject.SetActive(false);
-            MessageRegister.Instance.Dis(MessageCode.LevelUpgradeIncreaseRobot, robotSettingInfo.Sign);
+            Time.timeScale = 1;
+            MessageRegister.Instance.Dis(MessageCode.LevelUpgradeIncreaseRobot, robotSettingInfo.Sign, robotSettingInfo.Num);
             MessageRegister.Instance.Dis(MessageCode.RobotCreate);
         }
 

@@ -1,6 +1,9 @@
-﻿namespace LazyPan {
+﻿using System.Collections.Generic;
+
+namespace LazyPan {
     public partial class Data {
         public GlobalInfo GlobalInfo = new GlobalInfo();//全局
+        public List<BuffInfo> BuffInfo = new List<BuffInfo>();//Buff
     }
 
     /*全局*/
@@ -39,7 +42,9 @@
 
     /*BUFF*/
     public class BuffInfo {
-        
+        public bool Disable;//禁用
+        public int Level;//当前升级 无法升级的 0 可以升级的 等级数
+        public BuffSettingInfo Setting;
     }
 
     /*激活*/

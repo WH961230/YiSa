@@ -45,6 +45,7 @@ namespace LazyPan {
         public List<TMP_InputFieldData> TMPInputFields = new List<TMP_InputFieldData>();
         public List<AnimatorData> Animators = new List<AnimatorData>();
         public List<ImageData> Images = new List<ImageData>();
+        public List<SpriteData> Sprites = new List<SpriteData>();
         public List<PlayableDirectorData> PlayableDirectors = new List<PlayableDirectorData>();
         public List<TimelineAssetData> TimelineAssets = new List<TimelineAssetData>();
         public List<CompData> Comps = new List<CompData>();
@@ -131,6 +132,12 @@ namespace LazyPan {
                 foreach (ImageData imageData in Images) {
                     if (imageData.Sign == sign) {
                         return imageData.Image as T;
+                    }
+                }
+            } else if (typeof(T) == typeof(Sprite)) {
+                foreach (SpriteData spriteData in Sprites) {
+                    if (spriteData.Sign == sign) {
+                        return spriteData.Sprite as T;
                     }
                 }
             } else if (typeof(T) == typeof(PlayableDirector)) {
@@ -284,6 +291,12 @@ namespace LazyPan {
         public class ImageData {
             public string Sign;
             public Image Image;
+        }
+
+        [Serializable]
+        public class SpriteData {
+            public string Sign;
+            public Sprite Sprite;
         }
 
         [Serializable]

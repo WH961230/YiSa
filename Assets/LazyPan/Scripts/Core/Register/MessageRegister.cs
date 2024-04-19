@@ -135,6 +135,7 @@ namespace LazyPan {
     }
 
     public class MessageCode {
+        public static int GameOver = 9;//游戏结束
         public static int RecycleActivable = 8;//回收可激活
         public static int BeInjuried = 6;//被受伤
         public static int BeSelfDetonation = 2;//自爆

@@ -8,8 +8,8 @@ namespace LazyPan {
         private int lastInstanceID;
 
         public Behaviour_Auto_Pick(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
-            Cond.Instance.Get<Comp>(entity, Label.Assemble(Label.BODY, Label.TRIGGER)).OnTriggerEnterEvent
-                .AddListener(Pick);
+            Comp bodycomp = Cond.Instance.Get<Comp>(entity, Label.Assemble(Label.BODY, Label.COMP));
+            Cond.Instance.Get<Comp>(bodycomp, Label.TRIGGER).OnTriggerEnterEvent.AddListener(Pick);
             bool isGetFlow = Flo.Instance.GetFlow(out battleFlow);
             if (isGetFlow) {
                 battleui = battleFlow.GetUI();
@@ -48,8 +48,8 @@ namespace LazyPan {
 
         public override void Clear() {
             base.Clear();
-            Cond.Instance.Get<Comp>(entity, Label.Assemble(Label.BODY, Label.TRIGGER)).OnTriggerEnterEvent
-                .RemoveListener(Pick);
+            Comp bodycomp = Cond.Instance.Get<Comp>(entity, Label.Assemble(Label.BODY, Label.COMP));
+            Cond.Instance.Get<Comp>(bodycomp, Label.TRIGGER).OnTriggerEnterEvent.RemoveListener(Pick);
         }
     }
 }

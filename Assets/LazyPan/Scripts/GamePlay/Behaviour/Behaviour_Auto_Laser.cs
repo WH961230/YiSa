@@ -65,7 +65,6 @@ namespace LazyPan {
 					return;
 				}
 				if (tmpEntity.EntityData.BaseRuntimeData.RobotInfo.HealthPoint > 0) {
-					Debug.Log("激光伤害 " + Loader.LoadSetting().TowerSetting.Attack);
 					tmpEntity.EntityData.BaseRuntimeData.RobotInfo.BeAttackType = 1;
 					MessageRegister.Instance.Dis(MessageCode.BeInjuried, tmpEntity, Loader.LoadSetting().TowerSetting.Attack);
 					/*掉血表现*/

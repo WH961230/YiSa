@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace LazyPan {
     public class Behaviour_Auto_PlayerUpgrade : Behaviour {
         private Flow_Battle battleFlow;
         public Behaviour_Auto_PlayerUpgrade(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
-            MessageRegister.Instance.Reg(MessageCode.PlayerUpgrade, LevelUp);
+            MessageRegister.Instance.Reg(MessageCode.PlayerUpgrade, Select);
             Data.Instance.BuffInfo.Clear();
             for (int i = 0; i < Loader.LoadSetting().BuffSetting.BuffSettingInfo.Count; i++) {
                 BuffSettingInfo tmp = Loader.LoadSetting().BuffSetting.BuffSettingInfo[i];
@@ -19,15 +20,16 @@ namespace LazyPan {
         }
 
 		/*升级*/
-		private void LevelUp() {
+		private void Select() {
             /*移动禁止*/
-            SetCanControl(false);
+            Time.timeScale = 0;
+
             /*弹出 Buff 难度增加的选择 三选一*/
             bool isGetFlow = Flo.Instance.GetFlow(out battleFlow);
             if (isGetFlow) {
                 Comp battleui = battleFlow.GetUI();
-                Comp levelselect = Cond.Instance.Get<Comp>(battleui, Label.Assemble(Label.LEVEL, Label.SELECT));
-                levelselect.gameObject.SetActive(true);
+                Comp select = Cond.Instance.Get<Comp>(battleui, Label.SELECT);
+                select.gameObject.SetActive(true);
                 /*找到所有可以选择的Buff*/
                 List<BuffSettingInfo> parentInfo = new List<BuffSettingInfo>();
                 for (int i = 0; i < Data.Instance.BuffInfo.Count; i++) {
@@ -40,32 +42,35 @@ namespace LazyPan {
                 /*展示Buff*/
                 bool isGetLevelBuffSetting = Loader.LoadSetting().TryGetBuffByCount(3, parentInfo, out List<BuffSettingInfo> buffSettings);
                 if (isGetLevelBuffSetting) {
-                    Button A = Cond.Instance.Get<Button>(levelselect, Label.A);
+                    Comp selectA = Cond.Instance.Get<Comp>(select, Label.Assemble(Label.SELECT, Label.A));
+                    Button A = Cond.Instance.Get<Button>(selectA, Label.BUTTON);
                     ButtonRegister.RemoveAllListener(A);
                     ButtonRegister.AddListener(A, SelectBuffSetting, buffSettings[0]);
-                    Cond.Instance.Get<TextMeshProUGUI>(levelselect, Label.A).text = buffSettings[0].Description;
-                    Cond.Instance.Get<Image>(levelselect, Label.A).sprite = buffSettings[0].Icon;
-                    SetSubscript(buffSettings[0]);
+                    Cond.Instance.Get<TextMeshProUGUI>(selectA, Label.INFO).text = buffSettings[0].Description;
+                    Cond.Instance.Get<Image>(selectA, Label.ICON).sprite = buffSettings[0].Icon;
+                    SetSubscript(selectA, buffSettings[0]);
 
-                    Button B = Cond.Instance.Get<Button>(levelselect, Label.B);
+                    Comp selectB = Cond.Instance.Get<Comp>(select, Label.Assemble(Label.SELECT, Label.B));
+                    Button B = Cond.Instance.Get<Button>(selectB, Label.BUTTON);
                     ButtonRegister.RemoveAllListener(B);
                     ButtonRegister.AddListener(B, SelectBuffSetting, buffSettings[1]);
-                    Cond.Instance.Get<TextMeshProUGUI>(levelselect, Label.B).text = buffSettings[1].Description;
-                    Cond.Instance.Get<Image>(levelselect, Label.B).sprite = buffSettings[1].Icon;
-                    SetSubscript(buffSettings[1]);
+                    Cond.Instance.Get<TextMeshProUGUI>(selectB, Label.INFO).text = buffSettings[1].Description;
+                    Cond.Instance.Get<Image>(selectB, Label.ICON).sprite = buffSettings[1].Icon;
+                    SetSubscript(selectB, buffSettings[1]);
 
-                    Button C = Cond.Instance.Get<Button>(levelselect, Label.C);
+                    Comp selectC = Cond.Instance.Get<Comp>(select, Label.Assemble(Label.SELECT, Label.C));
+                    Button C = Cond.Instance.Get<Button>(selectC, Label.BUTTON);
                     ButtonRegister.RemoveAllListener(C);
                     ButtonRegister.AddListener(C, SelectBuffSetting, buffSettings[2]);
-                    Cond.Instance.Get<TextMeshProUGUI>(levelselect, Label.C).text = buffSettings[2].Description;
-                    Cond.Instance.Get<Image>(levelselect, Label.C).sprite = buffSettings[2].Icon;
-                    SetSubscript(buffSettings[2]);
+                    Cond.Instance.Get<TextMeshProUGUI>(selectC, Label.INFO).text = buffSettings[2].Description;
+                    Cond.Instance.Get<Image>(selectC, Label.ICON).sprite = buffSettings[2].Icon;
+                    SetSubscript(selectC, buffSettings[2]);
                 }
             }
         }
 
         /*设置下标 无法升级的就提供图标 可以升级的就提供等级*/
-        private void SetSubscript(BuffSettingInfo setting) {
+        private void SetSubscript(Comp select, BuffSettingInfo setting) {
             /*获取配置的公共数据*/
             BuffInfo buffinfo = null;
             for (int i = 0; i < Data.Instance.BuffInfo.Count; i++) {
@@ -77,11 +82,25 @@ namespace LazyPan {
             }
 
             if (buffinfo != null) {
+                Sprite empty = Cond.Instance.Get<Sprite>(Cond.Instance.Get<Comp>(battleFlow.GetUI(), Label.SELECT), Label.EMPTY);
+                Sprite full = Cond.Instance.Get<Sprite>(Cond.Instance.Get<Comp>(battleFlow.GetUI(), Label.SELECT), Label.FULL);
+                Image diffA = Cond.Instance.Get<Image>(select, Label.A);
+                Image diffB = Cond.Instance.Get<Image>(select, Label.B);
+                Image diffC = Cond.Instance.Get<Image>(select, Label.C);
+                Image subIcon = Cond.Instance.Get<Image>(select, Label.Assemble(Label.SUBSCRIPT, Label.ICON));
                 if (buffinfo.Level > 0) {/*可升级 显示等级*/
-                    Comp levelA = Cond.Instance.Get<Comp>(levelselect, Label.Assemble(Label.LEVEL, Label.A));
-                    Cond.Instance.Get<Image>(levelA, Label.A);
+                    diffA.gameObject.SetActive(true);
+                    diffB.gameObject.SetActive(true);
+                    diffB.sprite = buffinfo.Level > 1 ? full : empty;
+                    diffC.gameObject.SetActive(true);
+                    diffC.sprite = buffinfo.Level > 2 ? full : empty;
+                    subIcon.gameObject.SetActive(false);
                 } else {/*不可升级 显示图标*/
-                    
+                    diffA.gameObject.SetActive(false);
+                    diffB.gameObject.SetActive(false);
+                    diffC.gameObject.SetActive(false);
+                    subIcon.gameObject.SetActive(true);
+                    subIcon.sprite = buffinfo.Setting.SubscriptIcon;
                 }
             }
         }
@@ -99,16 +118,29 @@ namespace LazyPan {
                 entity.EntityData.BaseRuntimeData.PlayerInfo.Experience /
                 Loader.LoadSetting().PlayerSetting.MaxExperience;
 
-            SetCanControl(true);
-            Comp levelselect = Cond.Instance.Get<Comp>(battleFlow.GetUI(), Label.Assemble(Label.LEVEL, Label.SELECT));
-            levelselect.gameObject.SetActive(false);
+            Time.timeScale = 1;
+            Comp select = Cond.Instance.Get<Comp>(battleFlow.GetUI(), Label.SELECT);
+            select.gameObject.SetActive(false);
             Cond.Instance.GetTowerEntity(out Entity towerEntity);
+
             if (BehaviourRegister.Instance.TryGetRegisterBehaviour(towerEntity.ID, buffSettingInfo.BehaviourSign, out Behaviour behaviour)) {
                 if (buffSettingInfo.CanUpgrade) {
                     behaviour.Upgrade();
                 }
             } else {
                 BehaviourRegister.Instance.RegisterBehaviour(towerEntity.ID, buffSettingInfo.BehaviourSign);
+            }
+
+            /*当前项可以升级 则升级*/
+            for (int i = 0; i < Data.Instance.BuffInfo.Count; i++) {
+                BuffInfo tmp = Data.Instance.BuffInfo[i];
+                if (tmp.Setting == buffSettingInfo && tmp.Level > 0) {
+                    tmp.Level++;
+                    if (tmp.Level > 3) {
+                        tmp.Disable = true;
+                    }
+                    break;
+                }
             }
         }
 
@@ -124,14 +156,9 @@ namespace LazyPan {
             level.text = Data.Instance.GlobalInfo.Level.ToString("D2");
         }
 
-        /*设置是否可控*/
-        private void SetCanControl(bool canControl) {
-            Data.Instance.GlobalInfo.AllowMovement = canControl;
-        }
-
         public override void Clear() {
             base.Clear();
-            MessageRegister.Instance.UnReg(MessageCode.PlayerUpgrade, LevelUp);
+            MessageRegister.Instance.UnReg(MessageCode.PlayerUpgrade, Select);
         }
     }
 }

@@ -34,7 +34,6 @@ RectTransform:
   - {fileID: 2115059808630285059}
   - {fileID: 3641106784558459769}
   - {fileID: 3721875506996897690}
-  - {fileID: 1560649979277020681}
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -119,14 +118,10 @@ MonoBehaviour:
     Comp: {fileID: 7350009867839253853}
   - Sign: Info
     Comp: {fileID: 8637681209528424344}
-  - Sign: Select
-    Comp: {fileID: 0}
   - Sign: Settlement
     Comp: {fileID: 896607794036140499}
-  - Sign: LevelSelect
+  - Sign: Select
     Comp: {fileID: 6943782701328647894}
-  - Sign: LevelUpSelect
-    Comp: {fileID: 7939515233093022513}
   UnityEventDatas: []
   DoTweenAnimationDatas: []
   TrailRendererDatas: []
@@ -144,7 +139,7 @@ GameObject:
   - component: {fileID: 1981872343472819575}
   - component: {fileID: 6277949958298334332}
   m_Layer: 5
-  m_Name: Diff (1)
+  m_Name: DiffB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -531,7 +526,7 @@ GameObject:
   - component: {fileID: 2435591884543682047}
   - component: {fileID: 1202081410097949930}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Info
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -768,116 +763,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &980198803912064841
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1560649979277020681}
-  - component: {fileID: 7939515233093022513}
-  m_Layer: 5
-  m_Name: UI_LevelUpSelect
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1560649979277020681
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 980198803912064841}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3983488282480366576}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &7939515233093022513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 980198803912064841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 159660bcc7281a24cad3eaf11416759e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnParticleCollisionEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerStayEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnCollisionEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnCollisionStayEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnCollisionExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnBecameVisibleEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnBecameInvisibleEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnPointerEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnPointerExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnControllerColliderHitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnDrawGizmosAction:
-    m_PersistentCalls:
-      m_Calls: []
-  GameObjects: []
-  Transforms: []
-  Colliders: []
-  Materials: []
-  Renderers: []
-  CharacterControllers: []
-  Buttons: []
-  Sliders: []
-  Texts: []
-  TextMeshProUGUIs: []
-  TMPInputFields: []
-  Animators: []
-  Images: []
-  Sprites: []
-  PlayableDirectors: []
-  TimelineAssets: []
-  Comps: []
-  UnityEventDatas: []
-  DoTweenAnimationDatas: []
-  TrailRendererDatas: []
-  CameraDatas: []
-  LineRendererDatas: []
 --- !u!1 &985580190521633473
 GameObject:
   m_ObjectHideFlags: 0
@@ -890,7 +775,7 @@ GameObject:
   - component: {fileID: 1680185414821082546}
   - component: {fileID: 461382132409436296}
   m_Layer: 5
-  m_Name: Diff (2)
+  m_Name: DiffC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -966,8 +851,9 @@ GameObject:
   - component: {fileID: 1747084427392627047}
   - component: {fileID: 5266675349357365761}
   - component: {fileID: 8742998782025242877}
+  - component: {fileID: 5515603446776484969}
   m_Layer: 5
-  m_Name: C
+  m_Name: SelectC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1078,6 +964,93 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5515603446776484969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009127650547471714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159660bcc7281a24cad3eaf11416759e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnParticleCollisionEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTriggerEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTriggerStayEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTriggerExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCollisionEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCollisionStayEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCollisionExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnBecameVisibleEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnBecameInvisibleEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPointerEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPointerExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnControllerColliderHitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDrawGizmosAction:
+    m_PersistentCalls:
+      m_Calls: []
+  GameObjects: []
+  Transforms: []
+  Colliders: []
+  Materials: []
+  Renderers: []
+  CharacterControllers: []
+  Buttons:
+  - Sign: Button
+    Button: {fileID: 8742998782025242877}
+  Sliders: []
+  Texts: []
+  TextMeshProUGUIs:
+  - Sign: Info
+    TextMeshProUGUI: {fileID: 6106804778751361445}
+  TMPInputFields: []
+  Animators: []
+  Images:
+  - Sign: A
+    Image: {fileID: 2732704576171967109}
+  - Sign: B
+    Image: {fileID: 6775985548070886298}
+  - Sign: C
+    Image: {fileID: 2827457802906122370}
+  - Sign: SubscriptIcon
+    Image: {fileID: 6543602013173342265}
+  - Sign: Icon
+    Image: {fileID: 7508852903067621732}
+  Sprites: []
+  PlayableDirectors: []
+  TimelineAssets: []
+  Comps: []
+  UnityEventDatas: []
+  DoTweenAnimationDatas: []
+  TrailRendererDatas: []
+  CameraDatas: []
+  LineRendererDatas: []
 --- !u!1 &1450820089824301543
 GameObject:
   m_ObjectHideFlags: 0
@@ -2243,7 +2216,7 @@ GameObject:
   - component: {fileID: 4681131927101569275}
   - component: {fileID: 7355652450120923196}
   m_Layer: 5
-  m_Name: Diff
+  m_Name: DiffA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2319,7 +2292,7 @@ GameObject:
   - component: {fileID: 2890277967045656770}
   - component: {fileID: 2169506328564626118}
   m_Layer: 5
-  m_Name: Diff (2)
+  m_Name: DiffC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2709,7 +2682,7 @@ GameObject:
   - component: {fileID: 339463046923588940}
   - component: {fileID: 4170641157055214806}
   m_Layer: 5
-  m_Name: Icon
+  m_Name: SubscriptIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3211,7 +3184,7 @@ GameObject:
   - component: {fileID: 7523975525600244355}
   - component: {fileID: 6543602013173342265}
   m_Layer: 5
-  m_Name: Icon
+  m_Name: SubscriptIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3650,7 +3623,7 @@ GameObject:
   - component: {fileID: 9001925140463582249}
   - component: {fileID: 2827457802906122370}
   m_Layer: 5
-  m_Name: Diff (2)
+  m_Name: DiffC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3726,7 +3699,7 @@ GameObject:
   - component: {fileID: 8989117896718616448}
   - component: {fileID: 2732704576171967109}
   m_Layer: 5
-  m_Name: Diff
+  m_Name: DiffA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3914,9 +3887,8 @@ GameObject:
   - component: {fileID: 8263648411950861637}
   - component: {fileID: 3430574609509586673}
   - component: {fileID: 7955404894746532214}
-  - component: {fileID: 4979899107359386884}
   m_Layer: 5
-  m_Name: Level
+  m_Name: Subscript
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3984,87 +3956,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4979899107359386884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5145643902946376358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 159660bcc7281a24cad3eaf11416759e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnParticleCollisionEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerStayEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnCollisionEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnCollisionStayEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnCollisionExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnBecameVisibleEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnBecameInvisibleEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnPointerEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnPointerExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnControllerColliderHitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnDrawGizmosAction:
-    m_PersistentCalls:
-      m_Calls: []
-  GameObjects: []
-  Transforms: []
-  Colliders: []
-  Materials: []
-  Renderers: []
-  CharacterControllers: []
-  Buttons: []
-  Sliders: []
-  Texts: []
-  TextMeshProUGUIs: []
-  TMPInputFields: []
-  Animators: []
-  Images:
-  - Sign: A
-    Image: {fileID: 7355652450120923196}
-  - Sign: B
-    Image: {fileID: 6277949958298334332}
-  - Sign: C
-    Image: {fileID: 461382132409436296}
-  - Sign: Icon
-    Image: {fileID: 4170641157055214806}
-  Sprites: []
-  PlayableDirectors: []
-  TimelineAssets: []
-  Comps: []
-  UnityEventDatas: []
-  DoTweenAnimationDatas: []
-  TrailRendererDatas: []
-  CameraDatas: []
-  LineRendererDatas: []
 --- !u!1 &5383782266805891382
 GameObject:
   m_ObjectHideFlags: 0
@@ -4077,7 +3968,7 @@ GameObject:
   - component: {fileID: 1575568044656661445}
   - component: {fileID: 5722340471630209345}
   m_Layer: 5
-  m_Name: Diff
+  m_Name: DiffA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4153,7 +4044,7 @@ GameObject:
   - component: {fileID: 7886392994861995556}
   - component: {fileID: 4166629905649897655}
   m_Layer: 5
-  m_Name: Diff (1)
+  m_Name: DiffB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4228,9 +4119,8 @@ GameObject:
   - component: {fileID: 3805149585094243208}
   - component: {fileID: 4523841891685516759}
   - component: {fileID: 3289842733191311494}
-  - component: {fileID: 8289577408550608470}
   m_Layer: 5
-  m_Name: Level
+  m_Name: Subscript
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4298,87 +4188,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8289577408550608470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5682732479254961914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 159660bcc7281a24cad3eaf11416759e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnParticleCollisionEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerStayEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnCollisionEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnCollisionStayEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnCollisionExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnBecameVisibleEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnBecameInvisibleEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnPointerEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnPointerExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnControllerColliderHitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnDrawGizmosAction:
-    m_PersistentCalls:
-      m_Calls: []
-  GameObjects: []
-  Transforms: []
-  Colliders: []
-  Materials: []
-  Renderers: []
-  CharacterControllers: []
-  Buttons: []
-  Sliders: []
-  Texts: []
-  TextMeshProUGUIs: []
-  TMPInputFields: []
-  Animators: []
-  Images:
-  - Sign: A
-    Image: {fileID: 5722340471630209345}
-  - Sign: B
-    Image: {fileID: 4166629905649897655}
-  - Sign: C
-    Image: {fileID: 2169506328564626118}
-  - Sign: Icon
-    Image: {fileID: 5929052461872345540}
-  Sprites: []
-  PlayableDirectors: []
-  TimelineAssets: []
-  Comps: []
-  UnityEventDatas: []
-  DoTweenAnimationDatas: []
-  TrailRendererDatas: []
-  CameraDatas: []
-  LineRendererDatas: []
 --- !u!1 &5840366966758546615
 GameObject:
   m_ObjectHideFlags: 0
@@ -4466,9 +4275,8 @@ GameObject:
   - component: {fileID: 1635379030037466740}
   - component: {fileID: 4303651260669902153}
   - component: {fileID: 1410825138982920149}
-  - component: {fileID: 3361179199088218708}
   m_Layer: 5
-  m_Name: Level
+  m_Name: Subscript
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4536,87 +4344,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3361179199088218708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6194730578589900118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 159660bcc7281a24cad3eaf11416759e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnParticleCollisionEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerStayEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnCollisionEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnCollisionStayEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnCollisionExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnBecameVisibleEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnBecameInvisibleEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnPointerEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnPointerExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnControllerColliderHitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnDrawGizmosAction:
-    m_PersistentCalls:
-      m_Calls: []
-  GameObjects: []
-  Transforms: []
-  Colliders: []
-  Materials: []
-  Renderers: []
-  CharacterControllers: []
-  Buttons: []
-  Sliders: []
-  Texts: []
-  TextMeshProUGUIs: []
-  TMPInputFields: []
-  Animators: []
-  Images:
-  - Sign: A
-    Image: {fileID: 2732704576171967109}
-  - Sign: B
-    Image: {fileID: 6775985548070886298}
-  - Sign: C
-    Image: {fileID: 2827457802906122370}
-  - Sign: Icon
-    Image: {fileID: 6543602013173342265}
-  Sprites: []
-  PlayableDirectors: []
-  TimelineAssets: []
-  Comps: []
-  UnityEventDatas: []
-  DoTweenAnimationDatas: []
-  TrailRendererDatas: []
-  CameraDatas: []
-  LineRendererDatas: []
 --- !u!1 &6318701174889058846
 GameObject:
   m_ObjectHideFlags: 0
@@ -4629,7 +4356,7 @@ GameObject:
   - component: {fileID: 8420924956209403334}
   - component: {fileID: 6106804778751361445}
   m_Layer: 5
-  m_Name: Text (TMP) (2)
+  m_Name: Info
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4855,12 +4582,12 @@ GameObject:
   - component: {fileID: 3721875506996897690}
   - component: {fileID: 6943782701328647894}
   m_Layer: 5
-  m_Name: UI_LevelSelect
+  m_Name: UI_Select
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3721875506996897690
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4941,31 +4668,13 @@ MonoBehaviour:
   Materials: []
   Renderers: []
   CharacterControllers: []
-  Buttons:
-  - Sign: A
-    Button: {fileID: 8342723311908877597}
-  - Sign: B
-    Button: {fileID: 2336218436801785181}
-  - Sign: C
-    Button: {fileID: 8742998782025242877}
+  Buttons: []
   Sliders: []
   Texts: []
-  TextMeshProUGUIs:
-  - Sign: A
-    TextMeshProUGUI: {fileID: 1202081410097949930}
-  - Sign: B
-    TextMeshProUGUI: {fileID: 362753955681592280}
-  - Sign: C
-    TextMeshProUGUI: {fileID: 6106804778751361445}
+  TextMeshProUGUIs: []
   TMPInputFields: []
   Animators: []
-  Images:
-  - Sign: IconA
-    Image: {fileID: 3055727232158471499}
-  - Sign: IconB
-    Image: {fileID: 5669411934179194848}
-  - Sign: IconC
-    Image: {fileID: 7508852903067621732}
+  Images: []
   Sprites:
   - Sign: Empty
     Sprite: {fileID: 21300000, guid: 5a50656d98da577418facb05ebec0feb, type: 3}
@@ -4974,12 +4683,12 @@ MonoBehaviour:
   PlayableDirectors: []
   TimelineAssets: []
   Comps:
-  - Sign: LevelA
-    Comp: {fileID: 8289577408550608470}
-  - Sign: LevelB
-    Comp: {fileID: 4979899107359386884}
-  - Sign: LevelC
-    Comp: {fileID: 3361179199088218708}
+  - Sign: SelectA
+    Comp: {fileID: 1917651156245467615}
+  - Sign: SelectB
+    Comp: {fileID: 6862007656055213321}
+  - Sign: SelectC
+    Comp: {fileID: 5515603446776484969}
   UnityEventDatas: []
   DoTweenAnimationDatas: []
   TrailRendererDatas: []
@@ -5073,7 +4782,7 @@ GameObject:
   - component: {fileID: 6964034544804279397}
   - component: {fileID: 6775985548070886298}
   m_Layer: 5
-  m_Name: Diff (1)
+  m_Name: DiffB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5301,8 +5010,9 @@ GameObject:
   - component: {fileID: 641508078064177594}
   - component: {fileID: 4833400683722031121}
   - component: {fileID: 2336218436801785181}
+  - component: {fileID: 6862007656055213321}
   m_Layer: 5
-  m_Name: B
+  m_Name: SelectB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5413,6 +5123,93 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6862007656055213321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7683868074576439765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159660bcc7281a24cad3eaf11416759e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnParticleCollisionEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTriggerEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTriggerStayEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTriggerExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCollisionEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCollisionStayEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCollisionExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnBecameVisibleEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnBecameInvisibleEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPointerEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPointerExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnControllerColliderHitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDrawGizmosAction:
+    m_PersistentCalls:
+      m_Calls: []
+  GameObjects: []
+  Transforms: []
+  Colliders: []
+  Materials: []
+  Renderers: []
+  CharacterControllers: []
+  Buttons:
+  - Sign: Button
+    Button: {fileID: 2336218436801785181}
+  Sliders: []
+  Texts: []
+  TextMeshProUGUIs:
+  - Sign: Info
+    TextMeshProUGUI: {fileID: 362753955681592280}
+  TMPInputFields: []
+  Animators: []
+  Images:
+  - Sign: A
+    Image: {fileID: 7355652450120923196}
+  - Sign: B
+    Image: {fileID: 6277949958298334332}
+  - Sign: C
+    Image: {fileID: 461382132409436296}
+  - Sign: SubscriptIcon
+    Image: {fileID: 4170641157055214806}
+  - Sign: Icon
+    Image: {fileID: 5669411934179194848}
+  Sprites: []
+  PlayableDirectors: []
+  TimelineAssets: []
+  Comps: []
+  UnityEventDatas: []
+  DoTweenAnimationDatas: []
+  TrailRendererDatas: []
+  CameraDatas: []
+  LineRendererDatas: []
 --- !u!1 &8021831222955205907
 GameObject:
   m_ObjectHideFlags: 0
@@ -5425,8 +5222,9 @@ GameObject:
   - component: {fileID: 3417713563438160355}
   - component: {fileID: 6366677118730624812}
   - component: {fileID: 8342723311908877597}
+  - component: {fileID: 1917651156245467615}
   m_Layer: 5
-  m_Name: A
+  m_Name: SelectA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5537,6 +5335,93 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1917651156245467615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8021831222955205907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159660bcc7281a24cad3eaf11416759e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnParticleCollisionEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTriggerEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTriggerStayEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTriggerExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCollisionEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCollisionStayEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCollisionExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnBecameVisibleEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnBecameInvisibleEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPointerEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPointerExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnControllerColliderHitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDrawGizmosAction:
+    m_PersistentCalls:
+      m_Calls: []
+  GameObjects: []
+  Transforms: []
+  Colliders: []
+  Materials: []
+  Renderers: []
+  CharacterControllers: []
+  Buttons:
+  - Sign: Button
+    Button: {fileID: 8342723311908877597}
+  Sliders: []
+  Texts: []
+  TextMeshProUGUIs:
+  - Sign: Info
+    TextMeshProUGUI: {fileID: 1202081410097949930}
+  TMPInputFields: []
+  Animators: []
+  Images:
+  - Sign: A
+    Image: {fileID: 5722340471630209345}
+  - Sign: B
+    Image: {fileID: 4166629905649897655}
+  - Sign: C
+    Image: {fileID: 2169506328564626118}
+  - Sign: SubscriptIcon
+    Image: {fileID: 5929052461872345540}
+  - Sign: Icon
+    Image: {fileID: 3055727232158471499}
+  Sprites: []
+  PlayableDirectors: []
+  TimelineAssets: []
+  Comps: []
+  UnityEventDatas: []
+  DoTweenAnimationDatas: []
+  TrailRendererDatas: []
+  CameraDatas: []
+  LineRendererDatas: []
 --- !u!1 &8213961357305113736
 GameObject:
   m_ObjectHideFlags: 0
@@ -5837,7 +5722,7 @@ GameObject:
   - component: {fileID: 6754403782984737812}
   - component: {fileID: 362753955681592280}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: Info
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6303,7 +6188,7 @@ GameObject:
   - component: {fileID: 6333035824080352034}
   - component: {fileID: 5929052461872345540}
   m_Layer: 5
-  m_Name: Icon
+  m_Name: SubscriptIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

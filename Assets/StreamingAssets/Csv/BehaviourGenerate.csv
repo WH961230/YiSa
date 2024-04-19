@@ -81,3 +81,6 @@ Earthquake,地震,Auto,Init,初始化
 Earthquake,地震,Auto,Earthquake,地震
 Earthquake,激光,Auto,EarthquakeTrigger,地震碰撞
 Earthquake,地震,Auto,Clear,清除
+Settlement,结算,Event,Init,初始化
+Settlement,结算,Event,Settlement,结算
+Settlement,结算,Event,Clear,清除

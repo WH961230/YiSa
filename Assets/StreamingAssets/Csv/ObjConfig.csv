@@ -18,3 +18,4 @@ Obj_Event_PlayerUpgrade,Flow_Battle,Event,玩家升级事件,,Behaviour_Event_Pl
 Obj_Activable_Activable,Flow_Battle,Activable,可激活物体,LocationInf_Mul_Activable,Behaviour_Trigger_Activable
 Obj_Event_ActivableCreator,Flow_Battle,Event,可激活创建器,,Behaviour_Event_ActivableCreator
 Obj_Event_LevelUpgrade,Flow_Battle,Event,关卡难度选择器,,Behaviour_Event_LevelUpgrade
+Obj_Event_Settlement,Flow_Battle,Event,结算,,Behaviour_Event_Settlement

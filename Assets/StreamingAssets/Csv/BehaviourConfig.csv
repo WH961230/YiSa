@@ -28,3 +28,4 @@ Behaviour_Auto_SurroundingTheBallOfLight,环绕光球,环绕光球
 Behaviour_Auto_Laser,激光,激光
 Behaviour_Auto_PlayerBeHit,玩家受到伤害,玩家受到伤害
 Behaviour_Auto_Earthquake,地震,地震
+Behaviour_Event_Settlement,结算,结算

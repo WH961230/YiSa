@@ -7,7 +7,7 @@ namespace LazyPan {
     public class Behaviour_Event_LevelUpgrade : Behaviour {
         private Flow_Battle battleFlow;
         public Behaviour_Event_LevelUpgrade(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
-            MessageRegister.Instance.Reg(MessageCode.LevelUpgrade, SelectOneOutOfThree);
+            MessageRegister.Instance.Reg(MessageCode.LevelUpgrade, Select);
             bool getFlow = Flo.Instance.GetFlow(out battleFlow);
             if (getFlow) {
                 RefreshLevel();
@@ -15,34 +15,36 @@ namespace LazyPan {
         }
 
 		/*BUFF三选一*/
-		private void SelectOneOutOfThree() {
+		private void Select() {
             LevelUpgrade();
-            SetCanControl(false);
             Time.timeScale = 0;
 
             //弹出下一关机器人难度增加的选择 三选一
             Comp battleui = battleFlow.GetUI();
-            Comp levelselect = Cond.Instance.Get<Comp>(battleui, Label.Assemble(Label.LEVEL, Label.SELECT));
-            levelselect.gameObject.SetActive(true);
+            Comp select = Cond.Instance.Get<Comp>(battleui, Label.SELECT);
+            select.gameObject.SetActive(true);
             bool isGetLevelRobotSetting = Loader.LoadSetting().TryGetRobotByCount(3, out List<RobotSettingInfo> robotSettings);
             if (isGetLevelRobotSetting) {
-                Button A = Cond.Instance.Get<Button>(levelselect, Label.A);
+                Comp selectA = Cond.Instance.Get<Comp>(select, Label.Assemble(Label.SELECT, Label.A));
+                Button A = Cond.Instance.Get<Button>(selectA, Label.BUTTON);
                 ButtonRegister.RemoveAllListener(A);
                 ButtonRegister.AddListener(A, SelectRobotSetting, robotSettings[0]);
-                Cond.Instance.Get<TextMeshProUGUI>(levelselect, Label.A).text = robotSettings[0].Description;
-                Cond.Instance.Get<Image>(levelselect, Label.A).sprite = robotSettings[0].Icon;
+                Cond.Instance.Get<TextMeshProUGUI>(selectA, Label.INFO).text = robotSettings[0].Description;
+                Cond.Instance.Get<Image>(selectA, Label.ICON).sprite = robotSettings[0].Icon;
 
-                Button B = Cond.Instance.Get<Button>(levelselect, Label.B);
+                Comp selectB = Cond.Instance.Get<Comp>(select, Label.Assemble(Label.SELECT, Label.B));
+                Button B = Cond.Instance.Get<Button>(selectB, Label.BUTTON);
                 ButtonRegister.RemoveAllListener(B);
                 ButtonRegister.AddListener(B, SelectRobotSetting, robotSettings[1]);
-                Cond.Instance.Get<TextMeshProUGUI>(levelselect, Label.B).text = robotSettings[1].Description;
-                Cond.Instance.Get<Image>(levelselect, Label.B).sprite = robotSettings[1].Icon;
+                Cond.Instance.Get<TextMeshProUGUI>(selectB, Label.INFO).text = robotSettings[1].Description;
+                Cond.Instance.Get<Image>(selectB, Label.ICON).sprite = robotSettings[1].Icon;
 
-                Button C = Cond.Instance.Get<Button>(levelselect, Label.C);
+                Comp selectC = Cond.Instance.Get<Comp>(select, Label.Assemble(Label.SELECT, Label.C));
+                Button C = Cond.Instance.Get<Button>(selectC, Label.BUTTON);
                 ButtonRegister.RemoveAllListener(C);
                 ButtonRegister.AddListener(C, SelectRobotSetting, robotSettings[2]);
-                Cond.Instance.Get<TextMeshProUGUI>(levelselect, Label.C).text = robotSettings[2].Description;
-                Cond.Instance.Get<Image>(levelselect, Label.C).sprite = robotSettings[2].Icon;
+                Cond.Instance.Get<TextMeshProUGUI>(selectC, Label.INFO).text = robotSettings[2].Description;
+                Cond.Instance.Get<Image>(selectC, Label.ICON).sprite = robotSettings[2].Icon;
             }
         }
 
@@ -51,10 +53,8 @@ namespace LazyPan {
             /*怪物等级*/
             Data.Instance.GlobalInfo.RobotLevel += robotSettingInfo.RobotDifficulty;
             RefreshLevel();
-            /*恢复控制*/
-            SetCanControl(true);
-            Comp levelselect = Cond.Instance.Get<Comp>(battleFlow.GetUI(), Label.Assemble(Label.LEVEL, Label.SELECT));
-            levelselect.gameObject.SetActive(false);
+            Comp select = Cond.Instance.Get<Comp>(battleFlow.GetUI(), Label.SELECT);
+            select.gameObject.SetActive(false);
             Time.timeScale = 1;
             MessageRegister.Instance.Dis(MessageCode.LevelUpgradeIncreaseRobot, robotSettingInfo.Sign, robotSettingInfo.Num);
             MessageRegister.Instance.Dis(MessageCode.RobotCreate);
@@ -78,14 +78,9 @@ namespace LazyPan {
             level.text = Data.Instance.GlobalInfo.Level.ToString("D2");
         }
 
-        /*设置是否可控*/
-        private void SetCanControl(bool canControl) {
-            Data.Instance.GlobalInfo.AllowMovement = canControl;
-        }
-
         public override void Clear() {
             base.Clear();
-            MessageRegister.Instance.UnReg(MessageCode.LevelUpgrade, SelectOneOutOfThree);
+            MessageRegister.Instance.UnReg(MessageCode.LevelUpgrade, Select);
         }
     }
 }

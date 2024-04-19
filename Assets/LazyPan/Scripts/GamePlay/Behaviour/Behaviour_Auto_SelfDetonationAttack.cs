@@ -4,8 +4,8 @@ using UnityEngine.UI;
 namespace LazyPan {
     public class Behaviour_Auto_SelfDetonationAttack : Behaviour {
         public Behaviour_Auto_SelfDetonationAttack(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
-            Cond.Instance.Get<Comp>(entity, Label.Assemble(Label.BODY, Label.COMP)).OnTriggerEnterEvent
-                .AddListener(OnHitTriggerEnter);
+            Comp bodyComp = Cond.Instance.Get<Comp>(entity, Label.Assemble(Label.BODY, Label.COMP));
+            Cond.Instance.Get<Comp>(bodyComp, Label.TRIGGER).OnTriggerEnterEvent.AddListener(OnHitTriggerEnter);
         }
 
         private void OnHitTriggerEnter(Collider arg0) {
@@ -36,8 +36,8 @@ namespace LazyPan {
 
         public override void Clear() {
             base.Clear();
-            Cond.Instance.Get<Comp>(entity, Label.Assemble(Label.BODY, Label.COMP)).OnTriggerEnterEvent
-                .RemoveListener(OnHitTriggerEnter);
+            Comp bodyComp = Cond.Instance.Get<Comp>(entity, Label.Assemble(Label.BODY, Label.COMP));
+            Cond.Instance.Get<Comp>(bodyComp, Label.TRIGGER).OnTriggerEnterEvent.RemoveListener(OnHitTriggerEnter);
         }
     }
 }

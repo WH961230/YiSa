@@ -36,6 +36,12 @@ namespace LazyPan {
             }
         }
 
+        public void RemoveAllEntity() {
+            EntityDic.Clear();
+            BehaviourDic.Clear();
+            EntityID = 0;
+        }
+
         //通过 标识 查找实体
         public bool TryGetEntityBySign(string objSign, out Entity entity) {
             foreach (Entity tmpEntity in EntityDic.Values) {
@@ -104,10 +110,13 @@ namespace LazyPan {
         //通过组件查找实体
         public bool TryGetEntityByBodyPrefabID(int id, out Entity entity) {
             foreach (Entity tempEntity in EntityDic.Values) {
-                Transform bodyTran = Cond.Instance.Get<Transform>(tempEntity, Label.BODY);
-                if (bodyTran != null && bodyTran.gameObject.GetInstanceID() == id) {
-                    entity = tempEntity;
-                    return true;
+                Comp bodycomp = Cond.Instance.Get<Comp>(tempEntity, Label.Assemble(Label.BODY, Label.COMP));
+                if (bodycomp != null) {
+                    Transform bodyTran = Cond.Instance.Get<Comp>(bodycomp, Label.TRIGGER).gameObject.transform;
+                    if (bodyTran != null && bodyTran.gameObject.GetInstanceID() == id) {
+                        entity = tempEntity;
+                        return true;
+                    }
                 }
             }
 

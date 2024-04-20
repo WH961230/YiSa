@@ -8,10 +8,7 @@ namespace LazyPan {
         private Flow_Battle battleFlow;
         public Behaviour_Event_LevelUpgrade(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             MessageRegister.Instance.Reg(MessageCode.LevelUpgrade, Select);
-            bool getFlow = Flo.Instance.GetFlow(out battleFlow);
-            if (getFlow) {
-                RefreshLevel();
-            }
+            Flo.Instance.GetFlow(out battleFlow);
         }
 
 		/*BUFF三选一*/

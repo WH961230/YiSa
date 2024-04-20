@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace LazyPan {
     public partial class Data {
@@ -22,6 +23,7 @@ namespace LazyPan {
         public float HealthPoint;//血量
         /*经验值*/
         public float Experience;//经验值
+        public Vector3 MovementDir;//移动方向
     }
 
     /*机器人*/

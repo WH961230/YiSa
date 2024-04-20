@@ -32,6 +32,7 @@ namespace LazyPan {
             Data.Instance.OnFixedUpdateEvent.RemoveAllListeners();
             Data.Instance.OnLateUpdateEvent.RemoveAllListeners();
             Data.Instance.RemoveAllEntity();
+            Data.Instance.GlobalInfo = new GlobalInfo();
 
             Stage stage = Data.Instance.UIDontDestroyRoot.gameObject.GetComponent<Stage>();
             stage.Load(SceneConfig.Get(sceneName).DelayTime, sceneName);

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace LazyPan {
     public class Behaviour_Auto_PlayerBeHit : Behaviour {
@@ -13,6 +14,12 @@ namespace LazyPan {
                 entity.EntityData.BaseRuntimeData.PlayerInfo.HealthPoint = Mathf.Max(
                     entity.EntityData.BaseRuntimeData.PlayerInfo.HealthPoint,
                     0);
+
+                Flo.Instance.GetFlow(out Flow_Battle battleflow);
+                Comp info = Cond.Instance.Get<Comp>(battleflow.GetUI(), Label.INFO);
+                Cond.Instance.Get<Slider>(info, Label.HEALTH).value = entity.EntityData.BaseRuntimeData.PlayerInfo.HealthPoint /
+                                                                      Loader.LoadSetting().PlayerSetting.MaxHealth;
+
                 if (entity.EntityData.BaseRuntimeData.PlayerInfo.HealthPoint == 0) {
                     Next();
                 }

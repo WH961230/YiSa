@@ -8,7 +8,7 @@ namespace LazyPan {
         public Behaviour_Input_AlignCameraMovement(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             InputRegister.Instance.Load(InputRegister.Instance.Motion, GetInput);
             Data.Instance.OnUpdateEvent.AddListener(Movement);
-            SetPlayerControl(true);
+            Data.Instance.GlobalInfo.AllowMovement = true;
         }
 
         /*获取输入*/
@@ -41,16 +41,6 @@ namespace LazyPan {
             return cameraForward.normalized * input.y + cameraRight.normalized * input.x;
         }
 
-        /*设置角色控制*/
-        private void SetPlayerControl(bool canControl) {
-            Data.Instance.GlobalInfo.AllowMovement = canControl;
-        }
-
-        /*获取可以移动*/
-        private bool GetPlayerControl() {
-            return Data.Instance.GlobalInfo.AllowMovement;
-        }
-
         /*获取动画控制器*/
         private Animator GetAnimator() {
             return Cond.Instance.Get<Animator>(entity, Label.Assemble(Label.BODY, Label.ANIMATOR));
@@ -61,7 +51,7 @@ namespace LazyPan {
             if (entity.EntityData == null) {
                 return;
             }
-            if (GetPlayerControl()) {
+            if (Data.Instance.GlobalInfo.AllowMovement) {
                 CharacterController cc = GetTarget();
                 float speed = GetSpeed();
                 Vector3 dir = GetInputAlignCameraDir();

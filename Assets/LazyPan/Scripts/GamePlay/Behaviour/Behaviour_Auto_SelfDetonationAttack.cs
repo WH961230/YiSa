@@ -24,11 +24,6 @@ namespace LazyPan {
                             MessageRegister.Instance.Dis(MessageCode.BeInjuried, playerEntity, i.Attack);
                             MessageRegister.Instance.Dis(MessageCode.BeSelfDetonation, entity);
                         }
-
-                        Comp battleui = battleFlow.GetUI();
-                        Comp info = Cond.Instance.Get<Comp>(battleui, Label.INFO);
-                        Cond.Instance.Get<Slider>(info, Label.HEALTH).value = playerEntity.EntityData.BaseRuntimeData.PlayerInfo.HealthPoint /
-                                                                              Loader.LoadSetting().PlayerSetting.MaxHealth;
                     }
                 }
             }

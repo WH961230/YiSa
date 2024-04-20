@@ -7,7 +7,9 @@ namespace LazyPan {
 	    public Behaviour_Input_MoveRelativeToWorldCoordinates(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
 		    InputRegister.Instance.Load(InputRegister.Instance.Motion, GetInput);
 		    Data.Instance.OnUpdateEvent.AddListener(Movement);
-		    SetPlayerControl(true);
+		    Data.Instance.GlobalInfo.AllowMovement = true;
+		    entity.EntityData.BaseRuntimeData.PlayerInfo.MovementDir =
+			    Cond.Instance.Get<Transform>(entity, Label.BODY).forward;
 	    }
 
 		/*获取移动物*/
@@ -25,25 +27,18 @@ namespace LazyPan {
 			return Loader.LoadSetting().PlayerSetting.MovementSpeed;
 		}
 
-		/*设置角色控制*/
-		private void SetPlayerControl(bool canControl) {
-			Data.Instance.GlobalInfo.AllowMovement = canControl;
-		}
-
-		/*获取可以移动*/
-		private bool GetPlayerControl() {
-			return Data.Instance.GlobalInfo.AllowMovement;
-		}
-
 		/*移动*/
 		private void Movement() {
 			if (entity.EntityData == null) {
 				return;
 			}
-			if (GetPlayerControl()) {
+			if (Data.Instance.GlobalInfo.AllowMovement) {
 				CharacterController cc = GetTarget();
 				float speed = GetSpeed();
 				Vector3 dir = new Vector3(input.x, 0, input.y);
+				if (dir != Vector3.zero) {
+					entity.EntityData.BaseRuntimeData.PlayerInfo.MovementDir = dir;
+				}
 				cc.Move(speed * Time.deltaTime * dir);
 			}
 		}

@@ -10,15 +10,8 @@ namespace LazyPan {
         public Behaviour_Auto_Pick(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             Comp bodycomp = Cond.Instance.Get<Comp>(entity, Label.Assemble(Label.BODY, Label.COMP));
             Cond.Instance.Get<Comp>(bodycomp, Label.TRIGGER).OnTriggerEnterEvent.AddListener(Pick);
-            bool isGetFlow = Flo.Instance.GetFlow(out battleFlow);
-            if (isGetFlow) {
-                battleui = battleFlow.GetUI();
-
-                Comp info = Cond.Instance.Get<Comp>(battleui, Label.INFO);
-                Cond.Instance.Get<Slider>(info, Label.EXP).value =
-                    Cond.Instance.GetPlayerEntity().EntityData.BaseRuntimeData.PlayerInfo.Experience /
-                    Loader.LoadSetting().PlayerSetting.MaxExperience;
-            }
+            Flo.Instance.GetFlow(out battleFlow);
+            battleui = battleFlow.GetUI();
         }
 
         /*拾取*/

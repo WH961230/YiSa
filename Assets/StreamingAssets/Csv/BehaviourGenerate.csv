@@ -48,11 +48,6 @@ Sprint,冲刺,Input,Sprint,冲刺
 Sprint,冲刺,Input,Sprinting,冲刺中
 Sprint,冲刺,Input,SetCanControl,设置是否可控
 Sprint,冲刺,Input,Clear,清除
-RotateWithDirectionOfMovement,随着移动方向旋转,Auto,Init,初始化
-RotateWithDirectionOfMovement,随着移动方向旋转,Auto,GetMovementDir,获取移动方向
-RotateWithDirectionOfMovement,随着移动方向旋转,Auto,RotateToDir,旋转
-RotateWithDirectionOfMovement,随着移动方向旋转,Auto,GetRotateSpeed,获取旋转速度
-RotateWithDirectionOfMovement,随着移动方向旋转,Auto,Clear,清除
 Gravity,重力,Auto,Init,初始化
 Gravity,重力,Auto,Gravity,重力
 Gravity,重力,Auto,GetGravitySpeed,获取重力速度

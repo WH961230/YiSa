@@ -18,7 +18,7 @@ namespace LazyPan {
                            Cond.Instance.Get<Transform>(entity, Label.BODY).position).normalized;
             bool getSetting = Loader.LoadSetting().TryGetRobotBySign(entity.ObjConfig.Sign, out RobotSettingInfo info);
             float movementSpeed = info.MovementSpeed;
-            if (getSetting && GetControl()) {
+            if (getSetting) {
                 if (entity.EntityData.BaseRuntimeData.RobotInfo.SlowTime > 0) {
                     entity.EntityData.BaseRuntimeData.RobotInfo.SlowTime -= Time.deltaTime;
                     movementSpeed *= 0.7f;
@@ -27,11 +27,6 @@ namespace LazyPan {
                 }
                 characterController.Move(dir * Time.deltaTime * movementSpeed);
             }
-        }
-
-        /*获取可以移动*/
-        private bool GetControl() {
-            return Data.Instance.GlobalInfo.AllowMovement;
         }
 
         public override void Clear() {

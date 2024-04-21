@@ -24,25 +24,8 @@
   <component name="ChangeListManager">
     <list default="true" id="751138b9-e304-4f88-90e0-21e17608f2fb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/LocationInformationSetting/LocationInf_Single_BattlePlayer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/LocationInformationSetting/LocationInf_Single_BattlePlayer.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/PlayerSetting.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/PlayerSetting.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/UI/UI_Battle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/UI/UI_Battle.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Launch.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Launch.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Motion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Motion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Pick.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Pick.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_PlayerBeHit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_PlayerBeHit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_PlayerUpgrade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_PlayerUpgrade.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_RotateWithDirectionOfMovement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_RotateWithDirectionOfMovement.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_SelfDetonationAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_SelfDetonationAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Event_LevelUpgrade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Event_LevelUpgrade.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_AlignCameraMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_AlignCameraMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_MoveRelativeToWorldCoordinates.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_MoveRelativeToWorldCoordinates.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_Sprint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_Sprint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Data/Data_Global.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Data/Data_Global.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/BehaviourConfig.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/BehaviourConfig.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/BehaviourGenerate.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/BehaviourGenerate.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/ObjConfig.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/ObjConfig.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Event_RobotCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Event_RobotCreator.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +87,6 @@
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Data/EntityData.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/Battle/Flow_Battle.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Config/Base/PlayerSetting.cs" />
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Event_RobotCreator.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_DropExperience.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_FollowPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_TriggerCharge.cs" />
@@ -129,6 +111,7 @@
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_Sprint.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_MoveRelativeToWorldCoordinates.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Motion.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Event_RobotCreator.cs" />
       </list>
     </option>
   </component>
@@ -180,10 +163,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="10452">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="10452" />
+      <option name="pid" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -265,7 +248,8 @@
       <workItem from="1713577198678" duration="2720000" />
       <workItem from="1713581945630" duration="775000" />
       <workItem from="1713608044792" duration="311000" />
-      <workItem from="1713620124362" duration="4454000" />
+      <workItem from="1713620124362" duration="4469000" />
+      <workItem from="1713692379456" duration="2374000" />
     </task>
     <servers />
   </component>
@@ -290,78 +274,78 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1758" height="216" key="GridCell.Tab.0.bottom" timestamp="1713621279067">
+    <state width="1758" height="216" key="GridCell.Tab.0.bottom" timestamp="1713626886952">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1758" height="216" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1713621279067" />
-    <state width="1758" height="216" key="GridCell.Tab.0.center" timestamp="1713621279067">
+    <state width="1758" height="216" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1713626886952" />
+    <state width="1758" height="216" key="GridCell.Tab.0.center" timestamp="1713626886952">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1758" height="216" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1713621279067" />
-    <state width="1758" height="216" key="GridCell.Tab.0.left" timestamp="1713621279067">
+    <state width="1758" height="216" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1713626886952" />
+    <state width="1758" height="216" key="GridCell.Tab.0.left" timestamp="1713626886952">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1758" height="216" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1713621279067" />
-    <state width="1758" height="216" key="GridCell.Tab.0.right" timestamp="1713621279067">
+    <state width="1758" height="216" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1713626886952" />
+    <state width="1758" height="216" key="GridCell.Tab.0.right" timestamp="1713626886952">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1758" height="216" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1713621279067" />
-    <state width="1758" height="216" key="GridCell.Tab.1.bottom" timestamp="1713621279067">
+    <state width="1758" height="216" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1713626886952" />
+    <state width="1758" height="216" key="GridCell.Tab.1.bottom" timestamp="1713626886952">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1758" height="216" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1713621279067" />
-    <state width="1758" height="216" key="GridCell.Tab.1.center" timestamp="1713621279067">
+    <state width="1758" height="216" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1713626886952" />
+    <state width="1758" height="216" key="GridCell.Tab.1.center" timestamp="1713626886952">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1758" height="216" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1713621279067" />
-    <state width="1758" height="216" key="GridCell.Tab.1.left" timestamp="1713621279067">
+    <state width="1758" height="216" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1713626886952" />
+    <state width="1758" height="216" key="GridCell.Tab.1.left" timestamp="1713626886952">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1758" height="216" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1713621279067" />
-    <state width="1758" height="216" key="GridCell.Tab.1.right" timestamp="1713621279067">
+    <state width="1758" height="216" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1713626886952" />
+    <state width="1758" height="216" key="GridCell.Tab.1.right" timestamp="1713626886952">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1758" height="216" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1713621279067" />
-    <state width="1758" height="216" key="GridCell.Tab.2.bottom" timestamp="1713621279067">
+    <state width="1758" height="216" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1713626886952" />
+    <state width="1758" height="216" key="GridCell.Tab.2.bottom" timestamp="1713626886952">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1758" height="216" key="GridCell.Tab.2.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1713621279067" />
-    <state width="1758" height="216" key="GridCell.Tab.2.center" timestamp="1713621279067">
+    <state width="1758" height="216" key="GridCell.Tab.2.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1713626886952" />
+    <state width="1758" height="216" key="GridCell.Tab.2.center" timestamp="1713626886952">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1758" height="216" key="GridCell.Tab.2.center/0.0.2560.1400@0.0.2560.1400" timestamp="1713621279067" />
-    <state width="1758" height="216" key="GridCell.Tab.2.left" timestamp="1713621279067">
+    <state width="1758" height="216" key="GridCell.Tab.2.center/0.0.2560.1400@0.0.2560.1400" timestamp="1713626886952" />
+    <state width="1758" height="216" key="GridCell.Tab.2.left" timestamp="1713626886952">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1758" height="216" key="GridCell.Tab.2.left/0.0.2560.1400@0.0.2560.1400" timestamp="1713621279067" />
-    <state width="1758" height="216" key="GridCell.Tab.2.right" timestamp="1713621279067">
+    <state width="1758" height="216" key="GridCell.Tab.2.left/0.0.2560.1400@0.0.2560.1400" timestamp="1713626886952" />
+    <state width="1758" height="216" key="GridCell.Tab.2.right" timestamp="1713626886952">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1758" height="216" key="GridCell.Tab.2.right/0.0.2560.1400@0.0.2560.1400" timestamp="1713621279067" />
-    <state width="1758" height="216" key="GridCell.Tab.3.bottom" timestamp="1713621279067">
+    <state width="1758" height="216" key="GridCell.Tab.2.right/0.0.2560.1400@0.0.2560.1400" timestamp="1713626886952" />
+    <state width="1758" height="216" key="GridCell.Tab.3.bottom" timestamp="1713626886952">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1758" height="216" key="GridCell.Tab.3.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1713621279067" />
-    <state width="1758" height="216" key="GridCell.Tab.3.center" timestamp="1713621279067">
+    <state width="1758" height="216" key="GridCell.Tab.3.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1713626886952" />
+    <state width="1758" height="216" key="GridCell.Tab.3.center" timestamp="1713626886952">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1758" height="216" key="GridCell.Tab.3.center/0.0.2560.1400@0.0.2560.1400" timestamp="1713621279067" />
-    <state width="1758" height="216" key="GridCell.Tab.3.left" timestamp="1713621279067">
+    <state width="1758" height="216" key="GridCell.Tab.3.center/0.0.2560.1400@0.0.2560.1400" timestamp="1713626886952" />
+    <state width="1758" height="216" key="GridCell.Tab.3.left" timestamp="1713626886952">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1758" height="216" key="GridCell.Tab.3.left/0.0.2560.1400@0.0.2560.1400" timestamp="1713621279067" />
-    <state width="1758" height="216" key="GridCell.Tab.3.right" timestamp="1713621279067">
+    <state width="1758" height="216" key="GridCell.Tab.3.left/0.0.2560.1400@0.0.2560.1400" timestamp="1713626886952" />
+    <state width="1758" height="216" key="GridCell.Tab.3.right" timestamp="1713626886952">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1758" height="216" key="GridCell.Tab.3.right/0.0.2560.1400@0.0.2560.1400" timestamp="1713621279067" />
+    <state width="1758" height="216" key="GridCell.Tab.3.right/0.0.2560.1400@0.0.2560.1400" timestamp="1713626886952" />
     <state x="698" y="254" width="1123" height="895" key="find.popup" timestamp="1713620741102">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="698" y="254" width="1123" height="895" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1713620741102" />
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1713626173837">
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1713692520283">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1713626173837" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1713692520283" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

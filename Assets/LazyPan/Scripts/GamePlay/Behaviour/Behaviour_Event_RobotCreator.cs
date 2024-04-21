@@ -13,18 +13,24 @@ namespace LazyPan {
             robotSoldierEntities = new List<Entity>();
             robotSoldierQueuies = new Queue<string>();
             robotSigns = new List<string>();
-            /*第一波 普通机器人*/
-            BasePrepareRobot();
-            RobotCreate();
+
             MessageRegister.Instance.Reg(MessageCode.RobotCreate, RobotCreate);
             MessageRegister.Instance.Reg<string, int>(MessageCode.LevelUpgradeIncreaseRobot, AddRobot);
             MessageRegister.Instance.Reg<Entity, int>(MessageCode.BeInjuried, RobotBeInjured);
             MessageRegister.Instance.Reg<Entity>(MessageCode.BeSelfDetonation, RobotBeSelfDetonation);
-        }
 
-        /*默认怪物队列预备*/
-        private void BasePrepareRobot() {
-            AddRobot("Obj_Robot_Soldier", 5);
+            /*第一波 普通机器人*/
+            MessageRegister.Instance.Dis(MessageCode.LevelUpgradeIncreaseRobot, "Obj_Robot_Soldier", 5);
+            MessageRegister.Instance.Dis(MessageCode.RobotCreate);
+            /*展示n秒的关卡数*/
+            Flo.Instance.GetFlow(out Flow_Battle battleflow);
+            Comp ui = battleflow.GetUI();
+            Comp levelcomp = Cond.Instance.Get<Comp>(ui, Label.LEVEL);
+            levelcomp.gameObject.SetActive(true);
+
+            ClockUtil.Instance.AlarmAfter(3, () => {
+                levelcomp.gameObject.SetActive(false);
+            });
         }
 
         /*记录生成的敌人标识*/

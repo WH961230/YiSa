@@ -15,16 +15,43 @@ MonoBehaviour:
   BuffSettingInfo:
   - Sign: "\u73AF\u7ED5\u5149\u7403"
     Description: "\u73AF\u7ED5\u5149\u7403"
+    UpgradeDescriptions:
+    - "\u4E00\u4E2A\u73AF\u7ED5\u5149\u7403"
+    - "\u4E24\u4E2A\u73AF\u7ED5\u5149\u7403"
+    - "\u4E09\u4E2A\u73AF\u7ED5\u5149\u7403"
+    UpgradeParams:
+    - Sign: SurroundSpeed
+      Param: 100
     Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+    SubscriptIcon: {fileID: 0}
     BehaviourSign: Behaviour_Auto_SurroundingTheBallOfLight
     CanUpgrade: 1
+    UpgradeLimit: 3
   - Sign: "\u6FC0\u5149"
     Description: "\u6FC0\u5149"
+    UpgradeDescriptions:
+    - "\u4E00\u4E2A\u6FC0\u5149"
+    - "\u4E24\u4E2A\u6FC0\u5149"
+    - "\u4E09\u4E2A\u6FC0\u5149"
+    UpgradeParams:
+    - Sign: AttackIntervalTime
+      Param: 2
+    - Sign: AttackDamage
+      Param: 50
     Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+    SubscriptIcon: {fileID: 0}
     BehaviourSign: Behaviour_Auto_Laser
     CanUpgrade: 1
+    UpgradeLimit: 3
   - Sign: "\u5730\u9707"
     Description: "\u5730\u9707"
+    UpgradeDescriptions:
+    - "\u4E00\u4E2A\u5730\u9707"
+    - "\u4E24\u4E2A\u5730\u9707"
+    - "\u4E09\u4E2A\u5730\u9707"
+    UpgradeParams: []
     Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+    SubscriptIcon: {fileID: 0}
     BehaviourSign: Behaviour_Auto_Earthquake
     CanUpgrade: 1
+    UpgradeLimit: 3

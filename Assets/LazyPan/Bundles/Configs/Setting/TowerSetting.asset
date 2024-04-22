@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TowerSetting
   m_EditorClassIdentifier: 
   Attack: 10
-  AttackIntervalTime: 2
+  AttackIntervalTime: 0.5
   AttackRange: 10
   ChargeEnergySpeed: 10
   MaxEnergy: 20

@@ -4,11 +4,20 @@ using UnityEngine;
 namespace LazyPan {
     public class Behaviour_Auto_Laser : Behaviour {
 	    private float deploy;
+	    private float attackIntervalTime;
+	    private int attackDamage;
 	    private int LaserNum;
         public Behaviour_Auto_Laser(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
 	        Debug.Log("射线注册");
 	        Data.Instance.OnUpdateEvent.AddListener(Laser);
 	        LaserNum = 1;
+	        Loader.LoadSetting().BuffSetting
+		        .GetParamBySign(behaviourSign, "AttackIntervalTime", out string speed);
+	        attackIntervalTime = float.Parse(speed);
+	        
+	        Loader.LoadSetting().BuffSetting
+		        .GetParamBySign(behaviourSign, "AttackDamage", out string damage);
+	        attackDamage = int.Parse(damage);
         }
 
 		/*发射激光*/
@@ -18,7 +27,7 @@ namespace LazyPan {
 					deploy -= Time.deltaTime;
 				} else {
 					CreateLaser();
-					deploy = Loader.LoadSetting().TowerSetting.AttackIntervalTime;
+					deploy = attackIntervalTime;
 				}
 			}
 		}
@@ -66,7 +75,7 @@ namespace LazyPan {
 				}
 				if (tmpEntity.EntityData.BaseRuntimeData.RobotInfo.HealthPoint > 0) {
 					tmpEntity.EntityData.BaseRuntimeData.RobotInfo.BeAttackType = 1;
-					MessageRegister.Instance.Dis(MessageCode.BeInjuried, tmpEntity, Loader.LoadSetting().TowerSetting.Attack);
+					MessageRegister.Instance.Dis(MessageCode.BeInjuried, tmpEntity, attackDamage);
 					/*掉血表现*/
 					GameObject template = Loader.LoadGo("掉血", "Common/Obj_Fx_BeHit", Data.Instance.ObjRoot, true);
 					Transform squirt = Cond.Instance.Get<Transform>(tmpEntity, Label.SQUIRT);

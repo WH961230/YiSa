@@ -3,31 +3,29 @@
 namespace LazyPan {
     public class Behaviour_Auto_SurroundingTheBallOfLight : Behaviour {
 	    private int surroundNum;
+	    private float surroundSpeed;
 	    private GameObject surround;
 	    private Comp Ball1;
 	    private Comp Ball2;
 	    private Comp Ball3;
         public Behaviour_Auto_SurroundingTheBallOfLight(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
-	        Debug.Log("环绕球体注册");
 	        surroundNum = 1;
 	        surround = Loader.LoadGo("弹药", "Common/Obj_Fx_SurroundBullet", Data.Instance.ObjRoot, true);
 	        Transform bulletMuzzle = Cond.Instance.Get<Transform>(entity, Label.MUZZLE);
 	        surround.transform.position = bulletMuzzle.position;
-	        Ball1 = Cond.Instance
-		        .Get<Comp>(surround.GetComponent<Comp>(), Label.Assemble(Label.TRIGGER, "1"));
-	        Ball2 = Cond.Instance
-		        .Get<Comp>(surround.GetComponent<Comp>(), Label.Assemble(Label.TRIGGER, "2"));
-	        Ball3 = Cond.Instance
-		        .Get<Comp>(surround.GetComponent<Comp>(), Label.Assemble(Label.TRIGGER, "3"));
+	        Ball1 = Cond.Instance.Get<Comp>(surround.GetComponent<Comp>(), Label.Assemble(Label.TRIGGER, "1"));
+	        Ball2 = Cond.Instance.Get<Comp>(surround.GetComponent<Comp>(), Label.Assemble(Label.TRIGGER, "2"));
+	        Ball3 = Cond.Instance.Get<Comp>(surround.GetComponent<Comp>(), Label.Assemble(Label.TRIGGER, "3"));
 	        Ball1.OnTriggerEnterEvent.RemoveAllListeners();
 	        Ball1.OnTriggerEnterEvent.AddListener(SurroundTrigger);
 	        Ball2.OnTriggerEnterEvent.RemoveAllListeners();
 	        Ball2.OnTriggerEnterEvent.AddListener(SurroundTrigger);
 	        Ball3.OnTriggerEnterEvent.RemoveAllListeners();
 	        Ball3.OnTriggerEnterEvent.AddListener(SurroundTrigger);
-	        ShowSurroundBallOfLight();
-	        
 	        Data.Instance.OnUpdateEvent.AddListener(Surround);
+	        Loader.LoadSetting().BuffSetting
+		        .GetParamBySign(behaviourSign, "SurroundSpeed", out string speed);
+	        surroundSpeed = float.Parse(speed);
         }
 
         /*创建环绕球*/
@@ -80,7 +78,7 @@ namespace LazyPan {
 			if (entity.EntityData.BaseRuntimeData.TowerInfo.Energy > 0) {
 				ShowSurroundBallOfLight();
 				Cond.Instance.Get<Transform>(surround.GetComponent<Comp>(), Label.BODY).transform
-					.Rotate(Vector3.up * Time.deltaTime * 200);
+					.Rotate(Vector3.up * Time.deltaTime * surroundSpeed);
 			} else {
 				HideAllSurroundBall();
 			}

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,7 @@ namespace LazyPan {
         public Behaviour_Auto_PlayerUpgrade(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             MessageRegister.Instance.Reg(MessageCode.PlayerUpgrade, Select);
             Data.Instance.BuffInfo.Clear();
+            /*初始化所有BUFF*/
             for (int i = 0; i < Loader.LoadSetting().BuffSetting.BuffSettingInfo.Count; i++) {
                 BuffSettingInfo tmp = Loader.LoadSetting().BuffSetting.BuffSettingInfo[i];
                 Data.Instance.BuffInfo.Add(new BuffInfo() {
@@ -32,6 +34,7 @@ namespace LazyPan {
             Comp battleui = battleFlow.GetUI();
             Comp select = Cond.Instance.Get<Comp>(battleui, Label.SELECT);
             select.gameObject.SetActive(true);
+
             /*找到所有可以选择的Buff*/
             List<BuffSettingInfo> parentInfo = new List<BuffSettingInfo>();
             for (int i = 0; i < Data.Instance.BuffInfo.Count; i++) {
@@ -50,23 +53,61 @@ namespace LazyPan {
                 Button A = Cond.Instance.Get<Button>(selectA, Label.BUTTON);
                 ButtonRegister.RemoveAllListener(A);
                 ButtonRegister.AddListener(A, SelectBuffSetting, buffSettings[0]);
-                Cond.Instance.Get<TextMeshProUGUI>(selectA, Label.INFO).text = buffSettings[0].Description;
+                bool get = TryGetBuffInfo(buffSettings[0].Sign, out BuffInfo infoA);
+                if (get) {
+                    if (buffSettings[0].CanUpgrade) {
+                        get = Loader.LoadSetting().BuffSetting.GetDescriptionByLevel(buffSettings[0].Sign, infoA.Level, out string description);
+                        if (get) {
+                            Cond.Instance.Get<TextMeshProUGUI>(selectA, Label.INFO).text = description;
+                        }
+                    } else {
+                        Cond.Instance.Get<TextMeshProUGUI>(selectA, Label.INFO).text = buffSettings[0].Description;
+                    }
+                }
                 Cond.Instance.Get<Image>(selectA, Label.ICON).sprite = buffSettings[0].Icon;
                 SetSubscript(selectA, buffSettings[0]);
+                
+                
                 Comp selectB = Cond.Instance.Get<Comp>(select, Label.Assemble(Label.SELECT, Label.B));
                 Button B = Cond.Instance.Get<Button>(selectB, Label.BUTTON);
                 ButtonRegister.RemoveAllListener(B);
                 ButtonRegister.AddListener(B, SelectBuffSetting, buffSettings[1]);
-                Cond.Instance.Get<TextMeshProUGUI>(selectB, Label.INFO).text = buffSettings[1].Description;
+                get = TryGetBuffInfo(buffSettings[1].Sign, out BuffInfo infoB);
+                if (get) {
+                    if (buffSettings[1].CanUpgrade) {
+                        get = Loader.LoadSetting().BuffSetting.GetDescriptionByLevel(buffSettings[1].Sign, infoB.Level, out string description);
+                        if (get) {
+                            Cond.Instance.Get<TextMeshProUGUI>(selectB, Label.INFO).text = description;
+                        }
+                    } else {
+                        Cond.Instance.Get<TextMeshProUGUI>(selectB, Label.INFO).text = buffSettings[1].Description;
+                    }
+                }
                 Cond.Instance.Get<Image>(selectB, Label.ICON).sprite = buffSettings[1].Icon;
                 SetSubscript(selectB, buffSettings[1]);
+                
+                
                 Comp selectC = Cond.Instance.Get<Comp>(select, Label.Assemble(Label.SELECT, Label.C));
                 Button C = Cond.Instance.Get<Button>(selectC, Label.BUTTON);
                 ButtonRegister.RemoveAllListener(C);
                 ButtonRegister.AddListener(C, SelectBuffSetting, buffSettings[2]);
-                Cond.Instance.Get<TextMeshProUGUI>(selectC, Label.INFO).text = buffSettings[2].Description;
+                get = TryGetBuffInfo(buffSettings[2].Sign, out BuffInfo infoC);
+                if (get) {
+                    if (buffSettings[2].CanUpgrade) {
+                        get = Loader.LoadSetting().BuffSetting.GetDescriptionByLevel(buffSettings[2].Sign, infoC.Level, out string description);
+                        if (get) {
+                            Cond.Instance.Get<TextMeshProUGUI>(selectC, Label.INFO).text = description;
+                        }
+                    } else {
+                        Cond.Instance.Get<TextMeshProUGUI>(selectC, Label.INFO).text = buffSettings[2].Description;
+                    }
+                }
                 Cond.Instance.Get<Image>(selectC, Label.ICON).sprite = buffSettings[2].Icon;
                 SetSubscript(selectC, buffSettings[2]);
+            } else {
+#if UNITY_EDITOR
+                EditorApplication.isPaused = true;
+#endif
             }
         }
 
@@ -110,7 +151,8 @@ namespace LazyPan {
         private void SelectBuffSetting(BuffSettingInfo buffSettingInfo) {
             /*己方等级*/
             Data.Instance.GlobalInfo.OwnLevel++;
-            RefreshLevel();
+            /*更新左上角信息*/
+            RefreshLevelInfo();
             /*经验值归零*/
             entity.EntityData.BaseRuntimeData.PlayerInfo.Experience = 0;
             Comp battleui = battleFlow.GetUI();
@@ -132,12 +174,32 @@ namespace LazyPan {
                 BehaviourRegister.Instance.RegisterBehaviour(towerEntity.ID, buffSettingInfo.BehaviourSign);
             }
 
+            RefreshDisableBuff(buffSettingInfo);
+        }
+
+        /*获取Buff信息*/
+        private bool TryGetBuffInfo(string sign, out BuffInfo info) {
+            /*当前项可以升级 则升级*/
+            for (int i = 0; i < Data.Instance.BuffInfo.Count; i++) {
+                BuffInfo tmp = Data.Instance.BuffInfo[i];
+                if (tmp.Setting.Sign == sign) {
+                    info = tmp;
+                    return true;
+                }
+            }
+
+            info = default;
+            return false;
+        }
+
+        /*刷新Buff是否禁用*/
+        private void RefreshDisableBuff(BuffSettingInfo buffSettingInfo) {
             /*当前项可以升级 则升级*/
             for (int i = 0; i < Data.Instance.BuffInfo.Count; i++) {
                 BuffInfo tmp = Data.Instance.BuffInfo[i];
                 if (tmp.Setting == buffSettingInfo && tmp.Level > 0) {
                     tmp.Level++;
-                    if (tmp.Level > 3) {
+                    if (tmp.Level > tmp.Setting.UpgradeLimit) {
                         tmp.Disable = true;
                     }
                     break;
@@ -146,7 +208,7 @@ namespace LazyPan {
         }
 
         /*更新等级*/
-        private void RefreshLevel() {
+        private void RefreshLevelInfo() {
             Comp battleui = battleFlow.GetUI();
             Comp info = Cond.Instance.Get<Comp>(battleui, Label.INFO);
             TextMeshProUGUI robotLevel = Cond.Instance.Get<TextMeshProUGUI>(info, Label.Assemble(Label.ROBOT, Label.LEVEL));

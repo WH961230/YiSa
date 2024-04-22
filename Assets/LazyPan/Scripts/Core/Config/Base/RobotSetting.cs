@@ -11,6 +11,7 @@ namespace LazyPan {
     [Serializable]
     public class RobotSettingInfo {
         [Tooltip("标识")] public string Sign;
+        [Tooltip("机器人标识")] public string RobotSign;
         [Tooltip("图标")] public Sprite Icon;
         [Tooltip("描述")] public string Description;
         [Tooltip("攻击力")] public int Attack;

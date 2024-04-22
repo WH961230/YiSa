@@ -30,7 +30,7 @@ namespace LazyPan {
             /*移动禁止*/
             Time.timeScale = 0;
 
-            /*弹出 Buff 难度增加的选择 三选一*/
+            /*弹出 Buff 选择 三选一*/
             Comp battleui = battleFlow.GetUI();
             Comp select = Cond.Instance.Get<Comp>(battleui, Label.SELECT);
             select.gameObject.SetActive(true);

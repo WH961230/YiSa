@@ -13,33 +13,135 @@ MonoBehaviour:
   m_Name: RobotSetting
   m_EditorClassIdentifier: 
   RobotSettingInfo:
-  - Sign: Obj_Robot_Soldier
+  - Sign: "\u65B0\u589E\u5341\u4E2A\u5C0F\u65B9\u5757"
+    RobotSign: Obj_Robot_Soldier
     Icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-    Description: "\u65B0\u589E\u4E94\u4E2A\u5C0F\u65B9\u5757"
-    Attack: 30
-    Num: 5
+    Description: "\u65B0\u589E\u5341\u4E2A\u5C0F\u65B9\u5757"
+    Attack: 10
+    Num: 10
     MovementSpeed: 3
-    MaxHealth: 20
+    MaxHealth: 15
     KnockbackSpeed: 5
     KnockbackDuraing: 0.5
     RobotDifficulty: 1
-  - Sign: Obj_Robot_SoldierB
+  - Sign: "\u65B0\u589E\u4E8C\u5341\u4E2A\u5C0F\u65B9\u5757"
+    RobotSign: Obj_Robot_Soldier
     Icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-    Description: "\u65B0\u589E\u4E00\u4E2A\u5927\u65B9\u5757"
-    Attack: 40
-    Num: 1
-    MovementSpeed: 2
-    MaxHealth: 50
+    Description: "\u65B0\u589E\u4E8C\u5341\u4E2A\u5C0F\u65B9\u5757"
+    Attack: 10
+    Num: 20
+    MovementSpeed: 3
+    MaxHealth: 15
     KnockbackSpeed: 5
     KnockbackDuraing: 0.5
     RobotDifficulty: 2
-  - Sign: Obj_Robot_SoldierC
+  - Sign: "\u65B0\u589E\u4E09\u5341\u4E2A\u5C0F\u65B9\u5757"
+    RobotSign: Obj_Robot_Soldier
     Icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-    Description: "\u65B0\u589E\u4E00\u4E2A\u589E\u6B96\u65B9\u5757"
+    Description: "\u65B0\u589E\u4E09\u5341\u4E2A\u5C0F\u65B9\u5757"
+    Attack: 10
+    Num: 30
+    MovementSpeed: 3
+    MaxHealth: 15
+    KnockbackSpeed: 5
+    KnockbackDuraing: 0.5
+    RobotDifficulty: 3
+  - Sign: "\u65B0\u589E\u56DB\u5341\u4E2A\u5C0F\u65B9\u5757"
+    RobotSign: Obj_Robot_Soldier
+    Icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+    Description: "\u65B0\u589E\u56DB\u5341\u4E2A\u5C0F\u65B9\u5757"
+    Attack: 10
+    Num: 40
+    MovementSpeed: 3
+    MaxHealth: 15
+    KnockbackSpeed: 5
+    KnockbackDuraing: 0.5
+    RobotDifficulty: 4
+  - Sign: "\u65B0\u589E\u4E00\u4E2A\u5927\u65B9\u5757"
+    RobotSign: Obj_Robot_SoldierB
+    Icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+    Description: "\u65B0\u589E\u4E00\u4E2A\u5927\u65B9\u5757"
     Attack: 30
     Num: 1
-    MovementSpeed: 3
+    MovementSpeed: 2
+    MaxHealth: 30
+    KnockbackSpeed: 5
+    KnockbackDuraing: 0.5
+    RobotDifficulty: 1
+  - Sign: "\u65B0\u589E\u4E24\u4E2A\u5927\u65B9\u5757"
+    RobotSign: Obj_Robot_SoldierB
+    Icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+    Description: "\u65B0\u589E\u4E24\u4E2A\u5927\u65B9\u5757"
+    Attack: 30
+    Num: 2
+    MovementSpeed: 2
+    MaxHealth: 30
+    KnockbackSpeed: 5
+    KnockbackDuraing: 0.5
+    RobotDifficulty: 2
+  - Sign: "\u65B0\u589E\u4E09\u4E2A\u5927\u65B9\u5757"
+    RobotSign: Obj_Robot_SoldierB
+    Icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+    Description: "\u65B0\u589E\u4E09\u4E2A\u5927\u65B9\u5757"
+    Attack: 30
+    Num: 3
+    MovementSpeed: 2
+    MaxHealth: 30
+    KnockbackSpeed: 5
+    KnockbackDuraing: 0.5
+    RobotDifficulty: 3
+  - Sign: "\u65B0\u589E\u56DB\u4E2A\u5927\u65B9\u5757"
+    RobotSign: Obj_Robot_SoldierB
+    Icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+    Description: "\u65B0\u589E\u56DB\u4E2A\u5927\u65B9\u5757"
+    Attack: 30
+    Num: 4
+    MovementSpeed: 2
+    MaxHealth: 30
+    KnockbackSpeed: 5
+    KnockbackDuraing: 0.5
+    RobotDifficulty: 4
+  - Sign: "\u65B0\u589E\u4E00\u4E2A\u589E\u6B96\u65B9\u5757"
+    RobotSign: Obj_Robot_SoldierC
+    Icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+    Description: "\u65B0\u589E\u4E00\u4E2A\u589E\u6B96\u65B9\u5757"
+    Attack: 5
+    Num: 1
+    MovementSpeed: 2
+    MaxHealth: 5
+    KnockbackSpeed: 5
+    KnockbackDuraing: 0.5
+    RobotDifficulty: 1
+  - Sign: "\u65B0\u589E\u4E24\u4E2A\u589E\u6B96\u65B9\u5757"
+    RobotSign: Obj_Robot_SoldierC
+    Icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+    Description: "\u65B0\u589E\u4E24\u4E2A\u589E\u6B96\u65B9\u5757"
+    Attack: 5
+    Num: 2
+    MovementSpeed: 2
     MaxHealth: 5
     KnockbackSpeed: 5
     KnockbackDuraing: 0.5
     RobotDifficulty: 2
+  - Sign: "\u65B0\u589E\u4E09\u4E2A\u589E\u6B96\u65B9\u5757"
+    RobotSign: Obj_Robot_SoldierC
+    Icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+    Description: "\u65B0\u589E\u4E09\u4E2A\u589E\u6B96\u65B9\u5757"
+    Attack: 5
+    Num: 3
+    MovementSpeed: 2
+    MaxHealth: 5
+    KnockbackSpeed: 5
+    KnockbackDuraing: 0.5
+    RobotDifficulty: 3
+  - Sign: "\u65B0\u589E\u56DB\u4E2A\u589E\u6B96\u65B9\u5757"
+    RobotSign: Obj_Robot_SoldierC
+    Icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+    Description: "\u65B0\u589E\u56DB\u4E2A\u589E\u6B96\u65B9\u5757"
+    Attack: 5
+    Num: 4
+    MovementSpeed: 2
+    MaxHealth: 5
+    KnockbackSpeed: 5
+    KnockbackDuraing: 0.5
+    RobotDifficulty: 4

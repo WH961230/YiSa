@@ -117,7 +117,7 @@ namespace LazyPan {
         /*获取机器人配置*/
         public bool TryGetRobotBySign(string sign, out RobotSettingInfo robotSettingInfo) {
             foreach (RobotSettingInfo info in RobotSetting.RobotSettingInfo) {
-                if (info.Sign == sign) {
+                if (info.RobotSign == sign) {
                     robotSettingInfo = info;
                     return true;
                 }

@@ -22,15 +22,6 @@ namespace LazyPan {
             /*第一波 普通机器人*/
             MessageRegister.Instance.Dis(MessageCode.LevelUpgradeIncreaseRobot, "Obj_Robot_Soldier", 5);
             MessageRegister.Instance.Dis(MessageCode.RobotCreate);
-            /*展示n秒的关卡数*/
-            Flo.Instance.GetFlow(out Flow_Battle battleflow);
-            Comp ui = battleflow.GetUI();
-            Comp levelcomp = Cond.Instance.Get<Comp>(ui, Label.LEVEL);
-            levelcomp.gameObject.SetActive(true);
-
-            ClockUtil.Instance.AlarmAfter(3, () => {
-                levelcomp.gameObject.SetActive(false);
-            });
         }
 
         /*记录生成的敌人标识*/

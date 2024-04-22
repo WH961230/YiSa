@@ -58,7 +58,11 @@ namespace LazyPan {
         public static string SUBSCRIPT = "Subscript";
         public static string EMPTY = "Empty";
         public static string FULL = "Full";
-
+        public static string TOP = "Top";
+        public static string PAST = "Past";
+        public static string FUTURE = "Future";
+        public static string NOW = "Now";
+        
         //组合A+B
         public static string Assemble(string labelA, string labelB) {
             return string.Concat(labelA, labelB);

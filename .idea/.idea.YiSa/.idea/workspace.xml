@@ -24,11 +24,13 @@
   <component name="ChangeListManager">
     <list default="true" id="751138b9-e304-4f88-90e0-21e17608f2fb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/RobotSetting.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/RobotSetting.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/UI/UI_Battle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/UI/UI_Battle.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Config/Base/RobotSetting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Config/Base/RobotSetting.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_PlayerUpgrade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_PlayerUpgrade.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Event_LevelUpgrade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Event_LevelUpgrade.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/BuffSetting.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/BuffSetting.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Common/Obj_Fx_Bullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Common/Obj_Fx_Bullet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Auto_PlayerBeHit_Template.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Auto_PlayerBeHit_Template.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Input_MoveRelativeToWorldCoordinates_Template.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Input_MoveRelativeToWorldCoordinates_Template.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/BehaviourConfig.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/BehaviourConfig.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/BehaviourGenerate.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/BehaviourGenerate.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/ObjConfig.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/ObjConfig.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +57,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/UI/UI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Laser.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Comp/Comp.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4911ECA4-7F29-4E18-A7B3-306F02701303/06/26f243e6/SerializedObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Framework/Events/Input/InputSystem/OnInputSystemEvent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Tool/Editor/ColliderToolEditor.cs" root0="FORCE_HIGHLIGHTING" />
@@ -64,16 +67,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Tool/Generate.cs" />
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Event_LevelUpgrade_Template.cs" />
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Event_PlayerUpgrade_Template.cs" />
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Event_PlayerUpgrade.cs" />
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Trigger_Activable_Template.cs" />
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Behaviour/Behaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Data/Data.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Event_GameOver.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Config/Base/LevelSetting.cs" />
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Config/Base/BuffSetting.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Event_LevelSelect.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_Motion.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_Rotate.cs" />
@@ -115,6 +111,13 @@
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Config/Base/RobotSetting.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_PlayerUpgrade.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Event_LevelUpgrade.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Config/Base/BuffSetting.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Shotgun.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Sniperrifle.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Strafesatellite.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Ring.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Orbitingball.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Submachinegun.cs" />
       </list>
     </option>
   </component>
@@ -127,6 +130,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34991708" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.29961306" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
@@ -164,10 +169,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="30684">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="30684" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -255,6 +260,11 @@
       <workItem from="1713772878308" duration="6458000" />
       <workItem from="1713786255170" duration="720000" />
       <workItem from="1713796063830" duration="1564000" />
+      <workItem from="1714699922008" duration="1188000" />
+      <workItem from="1714750376372" duration="76000" />
+      <workItem from="1714750482747" duration="172000" />
+      <workItem from="1714879779999" duration="753000" />
+      <workItem from="1714904264186" duration="7173000" />
     </task>
     <servers />
   </component>
@@ -279,6 +289,74 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state width="612" height="464" key="DebuggerActiveHint" timestamp="1714915783212">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="612" height="464" key="DebuggerActiveHint/0.0.2560.1400@0.0.2560.1400" timestamp="1714915783212" />
+    <state width="1840" height="219" key="GridCell.Tab.0.bottom" timestamp="1714915766936">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1840" height="219" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1714915766936" />
+    <state width="1840" height="219" key="GridCell.Tab.0.center" timestamp="1714915766936">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1840" height="219" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1714915766936" />
+    <state width="1840" height="219" key="GridCell.Tab.0.left" timestamp="1714915766936">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1840" height="219" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1714915766936" />
+    <state width="1840" height="219" key="GridCell.Tab.0.right" timestamp="1714915766936">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1840" height="219" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1714915766936" />
+    <state width="1840" height="219" key="GridCell.Tab.1.bottom" timestamp="1714915777062">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1840" height="219" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1714915777062" />
+    <state width="1840" height="219" key="GridCell.Tab.1.center" timestamp="1714915777062">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1840" height="219" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1714915777062" />
+    <state width="1840" height="219" key="GridCell.Tab.1.left" timestamp="1714915777062">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1840" height="219" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1714915777062" />
+    <state width="1840" height="219" key="GridCell.Tab.1.right" timestamp="1714915777062">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1840" height="219" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1714915777062" />
+    <state width="1840" height="219" key="GridCell.Tab.2.bottom" timestamp="1714915766801">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1840" height="219" key="GridCell.Tab.2.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1714915766801" />
+    <state width="1840" height="219" key="GridCell.Tab.2.center" timestamp="1714915766801">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1840" height="219" key="GridCell.Tab.2.center/0.0.2560.1400@0.0.2560.1400" timestamp="1714915766801" />
+    <state width="1840" height="219" key="GridCell.Tab.2.left" timestamp="1714915766800">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1840" height="219" key="GridCell.Tab.2.left/0.0.2560.1400@0.0.2560.1400" timestamp="1714915766800" />
+    <state width="1840" height="219" key="GridCell.Tab.2.right" timestamp="1714915766801">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1840" height="219" key="GridCell.Tab.2.right/0.0.2560.1400@0.0.2560.1400" timestamp="1714915766801" />
+    <state width="1840" height="219" key="GridCell.Tab.3.bottom" timestamp="1714915766801">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1840" height="219" key="GridCell.Tab.3.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1714915766801" />
+    <state width="1840" height="219" key="GridCell.Tab.3.center" timestamp="1714915766801">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1840" height="219" key="GridCell.Tab.3.center/0.0.2560.1400@0.0.2560.1400" timestamp="1714915766801" />
+    <state width="1840" height="219" key="GridCell.Tab.3.left" timestamp="1714915766801">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1840" height="219" key="GridCell.Tab.3.left/0.0.2560.1400@0.0.2560.1400" timestamp="1714915766801" />
+    <state width="1840" height="219" key="GridCell.Tab.3.right" timestamp="1714915766801">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1840" height="219" key="GridCell.Tab.3.right/0.0.2560.1400@0.0.2560.1400" timestamp="1714915766801" />
     <state x="936" y="353" width="672" height="678" key="search.everywhere.popup" timestamp="1713796756471">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -288,10 +366,43 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_SurroundingTheBallOfLight.cs</url>
-          <line>25</line>
-          <properties documentPath="D:\Software\Fork\YiSa\Assets\LazyPan\Scripts\GamePlay\Behaviour\Behaviour_Auto_SurroundingTheBallOfLight.cs" initialLine="25" />
-          <option name="timeStamp" value="10" />
+          <url>file://$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Submachinegun.cs</url>
+          <line>35</line>
+          <properties documentPath="D:\git\fork\YiSa\Assets\LazyPan\Scripts\GamePlay\Behaviour\Behaviour_Auto_Submachinegun.cs" initialLine="33">
+            <startOffsets>
+              <option value="1999" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2055" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Submachinegun.cs</url>
+          <line>26</line>
+          <properties documentPath="D:\git\fork\YiSa\Assets\LazyPan\Scripts\GamePlay\Behaviour\Behaviour_Auto_Submachinegun.cs" initialLine="26">
+            <startOffsets>
+              <option value="1732" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1757" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Comp/Comp.cs</url>
+          <line>200</line>
+          <properties documentPath="D:\git\fork\YiSa\Assets\LazyPan\Scripts\Core\Comp\Comp.cs" initialLine="200">
+            <startOffsets>
+              <option value="9443" />
+            </startOffsets>
+            <endOffsets>
+              <option value="9480" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -303,6 +414,7 @@
     <watches-manager>
       <configuration name="UNITY_DEBUG_RUN_CONFIGURATION">
         <watch expression="SceneManager.GetActiveScene().name" language="C#" />
+        <watch expression="template.GetComponent&lt;Comp&gt;().OnParticleCollisionEvent" language="C#" />
         <watch expression="(Cond.Instance.Get&lt;Transform&gt;(tmpEntity, Label.BODY).position - fromPoint).sqrMagnitude" language="C#" />
         <watch expression="bodyTran.gameObject.GetInstanceID()" language="C#" />
         <watch expression="Loader.LoadSetting().TowerSetting.MaxEnergy" language="C#" />

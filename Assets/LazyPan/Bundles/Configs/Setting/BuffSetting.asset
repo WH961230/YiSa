@@ -13,18 +13,79 @@ MonoBehaviour:
   m_Name: BuffSetting
   m_EditorClassIdentifier: 
   BuffSettingInfo:
-  - Sign: "\u73AF\u7ED5\u5149\u7403"
-    Description: "\u73AF\u7ED5\u5149\u7403"
+  - Sign: "\u51B2\u950B\u67AA"
+    Description: "\u51B2\u950B\u67AA"
+    UpgradeDescriptions: []
+    UpgradeParams: []
+    Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+    SubscriptIcon: {fileID: 0}
+    BehaviourSign: Behaviour_Auto_Submachinegun
+    CanUpgrade: 1
+    UpgradeLimit: 3
+  - Sign: "\u626B\u5C04\u536B\u661F"
+    Description: "\u626B\u5C04\u536B\u661F"
+    UpgradeDescriptions: []
+    UpgradeParams:
+    - Sign: AttackIntervalTime
+      Param: 2
+    - Sign: AttackDamage
+      Param: 50
+    Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+    SubscriptIcon: {fileID: 0}
+    BehaviourSign: Behaviour_Auto_Strafesatellite
+    CanUpgrade: 1
+    UpgradeLimit: 3
+  - Sign: "\u9730\u5F39\u67AA"
+    Description: "\u9730\u5F39\u67AA"
+    UpgradeDescriptions: []
+    UpgradeParams:
+    - Sign: AttackIntervalTime
+      Param: 2
+    - Sign: AttackDamage
+      Param: 50
+    Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+    SubscriptIcon: {fileID: 0}
+    BehaviourSign: Behaviour_Auto_Shotgun
+    CanUpgrade: 1
+    UpgradeLimit: 3
+  - Sign: "\u72D9\u51FB\u67AA"
+    Description: "\u72D9\u51FB\u67AA"
+    UpgradeDescriptions: []
+    UpgradeParams:
+    - Sign: AttackIntervalTime
+      Param: 2
+    - Sign: AttackDamage
+      Param: 50
+    Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+    SubscriptIcon: {fileID: 0}
+    BehaviourSign: Behaviour_Auto_Sniperrifle
+    CanUpgrade: 1
+    UpgradeLimit: 3
+  - Sign: "\u73AF\u7ED5\u7403"
+    Description: "\u73AF\u7ED5\u7403"
     UpgradeDescriptions:
-    - "\u4E00\u4E2A\u73AF\u7ED5\u5149\u7403"
-    - "\u4E24\u4E2A\u73AF\u7ED5\u5149\u7403"
-    - "\u4E09\u4E2A\u73AF\u7ED5\u5149\u7403"
+    - "\u4E00\u4E2A\u73AF\u7ED5\u7403"
+    - "\u4E24\u4E2A\u73AF\u7ED5\u7403"
+    - "\u4E09\u4E2A\u73AF\u7ED5\u7403"
     UpgradeParams:
     - Sign: SurroundSpeed
       Param: 100
     Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
     SubscriptIcon: {fileID: 0}
-    BehaviourSign: Behaviour_Auto_SurroundingTheBallOfLight
+    BehaviourSign: Behaviour_Auto_Orbitingball
+    CanUpgrade: 1
+    UpgradeLimit: 3
+  - Sign: "\u5706\u73AF"
+    Description: "\u5706\u73AF"
+    UpgradeDescriptions: []
+    UpgradeParams:
+    - Sign: AttackIntervalTime
+      Param: 2
+    - Sign: AttackDamage
+      Param: 50
+    Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+    SubscriptIcon: {fileID: 0}
+    BehaviourSign: Behaviour_Auto_Ring
     CanUpgrade: 1
     UpgradeLimit: 3
   - Sign: "\u6FC0\u5149"
@@ -43,15 +104,16 @@ MonoBehaviour:
     BehaviourSign: Behaviour_Auto_Laser
     CanUpgrade: 1
     UpgradeLimit: 3
-  - Sign: "\u5730\u9707"
-    Description: "\u5730\u9707"
-    UpgradeDescriptions:
-    - "\u4E00\u4E2A\u5730\u9707"
-    - "\u4E24\u4E2A\u5730\u9707"
-    - "\u4E09\u4E2A\u5730\u9707"
-    UpgradeParams: []
+  - Sign: "\u624B\u96F7"
+    Description: "\u624B\u96F7"
+    UpgradeDescriptions: []
+    UpgradeParams:
+    - Sign: AttackIntervalTime
+      Param: 2
+    - Sign: AttackDamage
+      Param: 50
     Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
     SubscriptIcon: {fileID: 0}
-    BehaviourSign: Behaviour_Auto_Earthquake
+    BehaviourSign: Behaviour_Auto_Grenade
     CanUpgrade: 1
     UpgradeLimit: 3

@@ -48,19 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnParticleCollisionEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4945340554910830159}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Stop
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnTriggerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -110,6 +98,7 @@ MonoBehaviour:
   TMPInputFields: []
   Animators: []
   Images: []
+  Sprites: []
   PlayableDirectors: []
   TimelineAssets: []
   Comps: []
@@ -117,6 +106,7 @@ MonoBehaviour:
   DoTweenAnimationDatas: []
   TrailRendererDatas: []
   CameraDatas: []
+  LineRendererDatas: []
 --- !u!198 &4945340554910830159
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -371,7 +361,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -3873,7 +3863,7 @@ ParticleSystem:
         m_RotationOrder: 4
     minKillSpeed: 0
     maxKillSpeed: 10000
-    radiusScale: 0.2
+    radiusScale: 3
     collidesWith:
       serializedVersion: 2
       m_Bits: 64
@@ -4018,7 +4008,7 @@ ParticleSystem:
         m_RotationOrder: 4
     maxLights: 20
   TrailModule:
-    enabled: 1
+    enabled: 0
     mode: 0
     ratio: 1
     lifetime:
@@ -4862,7 +4852,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 517443b0350af3240aa6fa1701dec79e, type: 2}
-  - {fileID: 2100000, guid: 8bc300e4182819a4ba7bf873688426bc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

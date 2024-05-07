@@ -45,7 +45,8 @@ namespace LazyPan {
 					for (int i = 0; i < randNoRepeatIndex.Length; i++) {
 						Entity robot = robotEntities[randNoRepeatIndex[i]];
 						if (robot.EntityData.BaseRuntimeData.RobotInfo.HealthPoint > 0) {
-							GameObject template = Loader.LoadGo("弹药", "Common/Obj_Fx_LaserBullet", Data.Instance.ObjRoot, true);
+							buffSettingInfo.GetParam("Bullet", out string bullet);
+							GameObject template = Loader.LoadGo("弹药", string.Concat("Common/", bullet), Data.Instance.ObjRoot, true);
 							Transform bulletMuzzle = Cond.Instance.Get<Transform>(entity, Label.MUZZLE);
 							template.transform.position = bulletMuzzle.position;
 							Vector3 dir = (Cond.Instance.Get<Transform>(robot, Label.HIT).position -

@@ -6,7 +6,7 @@ namespace LazyPan {
         private float deploy;
         private float attackIntervalTime;
         public Behaviour_Auto_Submachinegun(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
-            Data.Instance.OnUpdateEvent.AddListener(Shoot);
+            Data.Instance.OnUpdateEvent.AddListener(Submachinegun);
             Loader.LoadSetting().BuffSetting
                 .GetSettingBySign(behaviourSign, out buffSettingInfo);
 
@@ -14,7 +14,7 @@ namespace LazyPan {
             attackIntervalTime = float.Parse(attackintervaltime);
         }
 
-        private void Shoot() {
+        private void Submachinegun() {
             if (entity.EntityData.BaseRuntimeData.TowerInfo.Energy > 0) {
                 if (deploy > 0) {
                     deploy -= Time.deltaTime;
@@ -23,7 +23,8 @@ namespace LazyPan {
                         Cond.Instance.Get<Transform>(entity, Label.BODY).position,
                         Loader.LoadSetting().TowerSetting.AttackRange, out Entity robotEntity);
                     if (findRobotEntity && robotEntity.EntityData.BaseRuntimeData.RobotInfo.HealthPoint > 0) {
-                        GameObject template = Loader.LoadGo("弹药", "Common/Obj_Fx_Bullet", Data.Instance.ObjRoot, true);
+                        buffSettingInfo.GetParam("Bullet", out string bullet);
+                        GameObject template = Loader.LoadGo("弹药", string.Concat("Common/", bullet), Data.Instance.ObjRoot, true);
                         Transform bulletMuzzle = Cond.Instance.Get<Transform>(entity, Label.MUZZLE);
                         template.transform.position = bulletMuzzle.position;
                         template.transform.forward = (Cond.Instance.Get<Transform>(robotEntity, Label.HIT).position - bulletMuzzle.position).normalized;
@@ -74,7 +75,7 @@ namespace LazyPan {
 
         public override void Clear() {
             base.Clear();
-            Data.Instance.OnUpdateEvent.RemoveListener(Shoot);
+            Data.Instance.OnUpdateEvent.RemoveListener(Submachinegun);
         }
     }
 }

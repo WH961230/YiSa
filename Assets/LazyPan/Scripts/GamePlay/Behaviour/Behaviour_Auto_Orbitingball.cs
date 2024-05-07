@@ -99,7 +99,8 @@ namespace LazyPan {
 					tmpEntity.EntityData.BaseRuntimeData.RobotInfo.BeAttackType = 1;
 					MessageRegister.Instance.Dis(MessageCode.BeInjuried, tmpEntity, Loader.LoadSetting().TowerSetting.Attack);
 					/*掉血表现*/
-					GameObject template = Loader.LoadGo("掉血", "Common/Obj_Fx_BeHit", Data.Instance.ObjRoot, true);
+					buffSettingInfo.GetParam("Bullet", out string bullet);
+					GameObject template = Loader.LoadGo("掉血", string.Concat("Common/", bullet), Data.Instance.ObjRoot, true);
 					Transform squirt = Cond.Instance.Get<Transform>(tmpEntity, Label.SQUIRT);
 					template.transform.position = squirt.position;
 					template.transform.rotation = squirt.rotation;

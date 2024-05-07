@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
 
 namespace LazyPan {
     public class Behaviour_Event_RobotCreator : Behaviour {
@@ -8,6 +6,7 @@ namespace LazyPan {
         private List<string> robotSigns;//当前要生成的怪物
         private List<Entity> robotSoldierEntities;//此轮已生成的怪物
         private Queue<string> robotSoldierQueuies;//生成队列
+        private bool isFinishCreateRobot;//结束创建机器人
 
         public Behaviour_Event_RobotCreator(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             robotSoldierEntities = new List<Entity>();
@@ -44,6 +43,7 @@ namespace LazyPan {
                 if (robotSoldierQueuies.Count > 0) {
                     InstanceRobot();
                 } else {
+                    isFinishCreateRobot = true;
                     ClockUtil.Instance.Stop(clock);
                 }
             });
@@ -104,9 +104,11 @@ namespace LazyPan {
             if (robotSoldierEntities.Contains(robotEntity)) {
                 robotSoldierEntities.Remove(robotEntity);
                 Obj.Instance.UnLoadEntity(robotEntity);
-                if (robotSoldierEntities.Count == 0) {
+                /*如果结束检测中 且 怪物清空 则升级*/
+                if (robotSoldierEntities.Count == 0 && isFinishCreateRobot) {
                     ConsoleEx.Instance.Content("log", $"怪物清空!");
                     MessageRegister.Instance.Dis(MessageCode.LevelUpgrade);
+                    isFinishCreateRobot = false;
                 }
             }
         }

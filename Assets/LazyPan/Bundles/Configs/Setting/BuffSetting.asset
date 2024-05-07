@@ -22,6 +22,8 @@ MonoBehaviour:
     UpgradeParams:
     - Sign: AttackIntervalTime
       Param: 0.3
+    - Sign: Bullet
+      Param: Obj_Fx_Bullet
     Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
     SubscriptIcon: {fileID: 0}
     BehaviourSign: Behaviour_Auto_Submachinegun
@@ -38,6 +40,8 @@ MonoBehaviour:
       Param: 2
     - Sign: AttackDamage
       Param: 50
+    - Sign: Bullet
+      Param: Obj_Fx_StrafesatelliteBullet
     Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
     SubscriptIcon: {fileID: 0}
     BehaviourSign: Behaviour_Auto_Strafesatellite
@@ -54,6 +58,8 @@ MonoBehaviour:
       Param: 2
     - Sign: AttackDamage
       Param: 50
+    - Sign: Bullet
+      Param: Obj_Fx_ShotgunBullet
     Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
     SubscriptIcon: {fileID: 0}
     BehaviourSign: Behaviour_Auto_Shotgun
@@ -70,6 +76,8 @@ MonoBehaviour:
       Param: 2
     - Sign: AttackDamage
       Param: 50
+    - Sign: Bullet
+      Param: Obj_Fx_SniperrifleBullet
     Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
     SubscriptIcon: {fileID: 0}
     BehaviourSign: Behaviour_Auto_Sniperrifle
@@ -84,6 +92,8 @@ MonoBehaviour:
     UpgradeParams:
     - Sign: SurroundSpeed
       Param: 100
+    - Sign: Bullet
+      Param: Obj_Fx_OrbitingballBullet
     Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
     SubscriptIcon: {fileID: 0}
     BehaviourSign: Behaviour_Auto_Orbitingball
@@ -100,6 +110,8 @@ MonoBehaviour:
       Param: 2
     - Sign: AttackDamage
       Param: 50
+    - Sign: Bullet
+      Param: Obj_Fx_RingBullet
     Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
     SubscriptIcon: {fileID: 0}
     BehaviourSign: Behaviour_Auto_Ring
@@ -116,6 +128,8 @@ MonoBehaviour:
       Param: 2
     - Sign: AttackDamage
       Param: 50
+    - Sign: Bullet
+      Param: Obj_Fx_LaserBullet
     Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
     SubscriptIcon: {fileID: 0}
     BehaviourSign: Behaviour_Auto_Laser
@@ -132,6 +146,8 @@ MonoBehaviour:
       Param: 2
     - Sign: AttackDamage
       Param: 50
+    - Sign: Bullet
+      Param: Obj_Fx_GrenadeBullet
     Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
     SubscriptIcon: {fileID: 0}
     BehaviourSign: Behaviour_Auto_Grenade

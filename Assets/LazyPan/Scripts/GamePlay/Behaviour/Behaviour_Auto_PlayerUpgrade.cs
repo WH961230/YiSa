@@ -54,12 +54,16 @@ namespace LazyPan {
             bool isGetLevelBuffSetting = Loader.LoadSetting()
                 .TryGetBuffByCount(3, parentInfo, out List<BuffSettingInfo> buffSettings);
             if (isGetLevelBuffSetting) {
-                foreach (BuffSettingInfo tmpInfo in buffSettings) {
+                for (int i = 0 ; i < buffSettings.Count; i++) {
+                    BuffSettingInfo tmpInfo = buffSettings[i];
                     /*选项一*/
-                    Comp canselect = Cond.Instance.Get<Comp>(select, Label.Assemble(Label.SELECT, Label.A));
+                    string label = i == 0 ? Label.A : "";
+                    label += i == 1 ? Label.B : "";
+                    label += i == 2 ? Label.C : "";
+                    Comp canselect = Cond.Instance.Get<Comp>(select, Label.Assemble(Label.SELECT, label));
                     Button button = Cond.Instance.Get<Button>(canselect, Label.BUTTON);
                     ButtonRegister.RemoveAllListener(button);
-                    ButtonRegister.AddListener(button, SelectBuffSetting, buffSettings[0]);
+                    ButtonRegister.AddListener(button, SelectBuffSetting, tmpInfo);
                     bool get = TryGetBuffInfo(tmpInfo.Sign, out BuffInfo info);
                     if (get) {
                         if (tmpInfo.CanUpgrade) {

@@ -9,6 +9,15 @@ namespace LazyPan {
         private Flow_Battle battleFlow;
         public Behaviour_Auto_PlayerUpgrade(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             MessageRegister.Instance.Reg(MessageCode.PlayerUpgrade, Select);
+            InitBuff();
+            /*激活信息UI*/
+            Flo.Instance.GetFlow(out battleFlow);
+            Comp info = Cond.Instance.Get<Comp>(battleFlow.GetUI(), Label.INFO);
+            info.gameObject.SetActive(true);
+        }
+
+        /*初始化BUFF*/
+        private void InitBuff() {
             Data.Instance.BuffInfo.Clear();
             /*初始化所有BUFF*/
             for (int i = 0; i < Loader.LoadSetting().BuffSetting.BuffSettingInfo.Count; i++) {
@@ -19,10 +28,6 @@ namespace LazyPan {
                     Disable = false,
                 });
             }
-
-            Flo.Instance.GetFlow(out battleFlow);
-            Comp info = Cond.Instance.Get<Comp>(battleFlow.GetUI(), Label.INFO);
-            info.gameObject.SetActive(true);
         }
 
 		/*升级*/
@@ -30,12 +35,12 @@ namespace LazyPan {
             /*移动禁止*/
             Time.timeScale = 0;
 
-            /*弹出 Buff 选择 三选一*/
+            /*三选一UI*/
             Comp battleui = battleFlow.GetUI();
             Comp select = Cond.Instance.Get<Comp>(battleui, Label.SELECT);
             select.gameObject.SetActive(true);
 
-            /*找到所有可以选择的Buff*/
+            /*获取可用Buff*/
             List<BuffSettingInfo> parentInfo = new List<BuffSettingInfo>();
             for (int i = 0; i < Data.Instance.BuffInfo.Count; i++) {
                 BuffInfo info = Data.Instance.BuffInfo[i];
@@ -49,61 +54,26 @@ namespace LazyPan {
             bool isGetLevelBuffSetting = Loader.LoadSetting()
                 .TryGetBuffByCount(3, parentInfo, out List<BuffSettingInfo> buffSettings);
             if (isGetLevelBuffSetting) {
-                Comp selectA = Cond.Instance.Get<Comp>(select, Label.Assemble(Label.SELECT, Label.A));
-                Button A = Cond.Instance.Get<Button>(selectA, Label.BUTTON);
-                ButtonRegister.RemoveAllListener(A);
-                ButtonRegister.AddListener(A, SelectBuffSetting, buffSettings[0]);
-                bool get = TryGetBuffInfo(buffSettings[0].Sign, out BuffInfo infoA);
-                if (get) {
-                    if (buffSettings[0].CanUpgrade) {
-                        get = Loader.LoadSetting().BuffSetting.GetDescriptionByLevel(buffSettings[0].Sign, infoA.Level, out string description);
-                        if (get) {
-                            Cond.Instance.Get<TextMeshProUGUI>(selectA, Label.INFO).text = description;
+                foreach (BuffSettingInfo tmpInfo in buffSettings) {
+                    /*选项一*/
+                    Comp canselect = Cond.Instance.Get<Comp>(select, Label.Assemble(Label.SELECT, Label.A));
+                    Button button = Cond.Instance.Get<Button>(canselect, Label.BUTTON);
+                    ButtonRegister.RemoveAllListener(button);
+                    ButtonRegister.AddListener(button, SelectBuffSetting, buffSettings[0]);
+                    bool get = TryGetBuffInfo(tmpInfo.Sign, out BuffInfo info);
+                    if (get) {
+                        if (tmpInfo.CanUpgrade) {
+                            get = Loader.LoadSetting().BuffSetting.GetDescriptionByLevel(tmpInfo.Sign, info.Level, out string description);
+                            if (get) {
+                                Cond.Instance.Get<TextMeshProUGUI>(canselect, Label.INFO).text = description;
+                            }
+                        } else {
+                            Cond.Instance.Get<TextMeshProUGUI>(canselect, Label.INFO).text = tmpInfo.Description;
                         }
-                    } else {
-                        Cond.Instance.Get<TextMeshProUGUI>(selectA, Label.INFO).text = buffSettings[0].Description;
                     }
+                    Cond.Instance.Get<Image>(canselect, Label.ICON).sprite = tmpInfo.Icon;
+                    SetSubscript(canselect, tmpInfo);
                 }
-                Cond.Instance.Get<Image>(selectA, Label.ICON).sprite = buffSettings[0].Icon;
-                SetSubscript(selectA, buffSettings[0]);
-                
-                
-                Comp selectB = Cond.Instance.Get<Comp>(select, Label.Assemble(Label.SELECT, Label.B));
-                Button B = Cond.Instance.Get<Button>(selectB, Label.BUTTON);
-                ButtonRegister.RemoveAllListener(B);
-                ButtonRegister.AddListener(B, SelectBuffSetting, buffSettings[1]);
-                get = TryGetBuffInfo(buffSettings[1].Sign, out BuffInfo infoB);
-                if (get) {
-                    if (buffSettings[1].CanUpgrade) {
-                        get = Loader.LoadSetting().BuffSetting.GetDescriptionByLevel(buffSettings[1].Sign, infoB.Level, out string description);
-                        if (get) {
-                            Cond.Instance.Get<TextMeshProUGUI>(selectB, Label.INFO).text = description;
-                        }
-                    } else {
-                        Cond.Instance.Get<TextMeshProUGUI>(selectB, Label.INFO).text = buffSettings[1].Description;
-                    }
-                }
-                Cond.Instance.Get<Image>(selectB, Label.ICON).sprite = buffSettings[1].Icon;
-                SetSubscript(selectB, buffSettings[1]);
-                
-                
-                Comp selectC = Cond.Instance.Get<Comp>(select, Label.Assemble(Label.SELECT, Label.C));
-                Button C = Cond.Instance.Get<Button>(selectC, Label.BUTTON);
-                ButtonRegister.RemoveAllListener(C);
-                ButtonRegister.AddListener(C, SelectBuffSetting, buffSettings[2]);
-                get = TryGetBuffInfo(buffSettings[2].Sign, out BuffInfo infoC);
-                if (get) {
-                    if (buffSettings[2].CanUpgrade) {
-                        get = Loader.LoadSetting().BuffSetting.GetDescriptionByLevel(buffSettings[2].Sign, infoC.Level, out string description);
-                        if (get) {
-                            Cond.Instance.Get<TextMeshProUGUI>(selectC, Label.INFO).text = description;
-                        }
-                    } else {
-                        Cond.Instance.Get<TextMeshProUGUI>(selectC, Label.INFO).text = buffSettings[2].Description;
-                    }
-                }
-                Cond.Instance.Get<Image>(selectC, Label.ICON).sprite = buffSettings[2].Icon;
-                SetSubscript(selectC, buffSettings[2]);
             } else {
 #if UNITY_EDITOR
                 EditorApplication.isPaused = true;

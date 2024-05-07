@@ -20,20 +20,16 @@ namespace LazyPan {
             return false;
         }
 
-        /*根据标识获取参数*/
-        public bool GetParamBySign(string buffsign, string sign, out string param) {
+        /*获取配置*/
+        public bool GetSettingBySign(string buffsign, out BuffSettingInfo buffsettinginfo) {
             foreach (BuffSettingInfo info in BuffSettingInfo) {
                 if (info.BehaviourSign == buffsign) {
-                    foreach (BuffParamInfo paraminfo in info.UpgradeParams) {
-                        if (paraminfo.Sign == sign) {
-                            param = paraminfo.Param;
-                            return true;
-                        }
-                    }
+                    buffsettinginfo = info;
+                    return true;
                 }
             }
 
-            param = null;
+            buffsettinginfo = default;
             return false;
         }
     }
@@ -49,6 +45,19 @@ namespace LazyPan {
         [Tooltip("行为标识")] public string BehaviourSign;
         [Tooltip("是否可升级")] public bool CanUpgrade;
         [Tooltip("行为升级上限")] public int UpgradeLimit;
+
+        /*根据标识获取参数*/
+        public bool GetParam(string sign, out string param) {
+            foreach (BuffParamInfo paraminfo in UpgradeParams) {
+                if (paraminfo.Sign == sign) {
+                    param = paraminfo.Param;
+                    return true;
+                }
+            }
+
+            param = null;
+            return false;
+        }
     }
 
     [Serializable]

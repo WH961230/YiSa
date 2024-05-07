@@ -8,6 +8,7 @@ namespace LazyPan {
 	    private Comp Ball1;
 	    private Comp Ball2;
 	    private Comp Ball3;
+	    private BuffSettingInfo buffSettingInfo;
         public Behaviour_Auto_Orbitingball(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
 	        surroundNum = 1;
 	        surround = Loader.LoadGo("弹药", "Common/Obj_Fx_SurroundBullet", Data.Instance.ObjRoot, true);
@@ -24,7 +25,8 @@ namespace LazyPan {
 	        Ball3.OnTriggerEnterEvent.AddListener(SurroundTrigger);
 	        Data.Instance.OnUpdateEvent.AddListener(Surround);
 	        Loader.LoadSetting().BuffSetting
-		        .GetParamBySign(behaviourSign, "SurroundSpeed", out string speed);
+		        .GetSettingBySign(behaviourSign, out buffSettingInfo);
+	        buffSettingInfo.GetParam("SurroundSpeed", out string speed);
 	        surroundSpeed = float.Parse(speed);
         }
 

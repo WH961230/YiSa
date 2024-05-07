@@ -7,16 +7,18 @@ namespace LazyPan {
 	    private float attackIntervalTime;
 	    private int attackDamage;
 	    private int LaserNum;
+	    private BuffSettingInfo buffSettingInfo;
+
         public Behaviour_Auto_Laser(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
-	        Debug.Log("射线注册");
 	        Data.Instance.OnUpdateEvent.AddListener(Laser);
 	        LaserNum = 1;
 	        Loader.LoadSetting().BuffSetting
-		        .GetParamBySign(behaviourSign, "AttackIntervalTime", out string speed);
+		        .GetSettingBySign(behaviourSign, out buffSettingInfo);
+
+	        buffSettingInfo.GetParam("AttackIntervalTime", out string speed);
 	        attackIntervalTime = float.Parse(speed);
-	        
-	        Loader.LoadSetting().BuffSetting
-		        .GetParamBySign(behaviourSign, "AttackDamage", out string damage);
+
+	        buffSettingInfo.GetParam("AttackDamage", out string damage);
 	        attackDamage = int.Parse(damage);
         }
 

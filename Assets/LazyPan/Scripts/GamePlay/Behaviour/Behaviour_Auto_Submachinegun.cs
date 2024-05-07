@@ -2,9 +2,16 @@
 
 namespace LazyPan {
     public class Behaviour_Auto_Submachinegun : Behaviour {
+        private BuffSettingInfo buffSettingInfo;
         private float deploy;
+        private float attackIntervalTime;
         public Behaviour_Auto_Submachinegun(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             Data.Instance.OnUpdateEvent.AddListener(Shoot);
+            Loader.LoadSetting().BuffSetting
+                .GetSettingBySign(behaviourSign, out buffSettingInfo);
+
+            buffSettingInfo.GetParam("AttackIntervalTime", out string attackintervaltime);
+            attackIntervalTime = float.Parse(attackintervaltime);
         }
 
         private void Shoot() {
@@ -27,7 +34,7 @@ namespace LazyPan {
                             Object.Destroy(template);
                         });
                     }
-                    deploy = Loader.LoadSetting().TowerSetting.AttackIntervalTime;
+                    deploy = attackIntervalTime;
                 }
             }
         }

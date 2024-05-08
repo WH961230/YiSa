@@ -23,59 +23,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="751138b9-e304-4f88-90e0-21e17608f2fb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Common/Obj_Fx_StrafesatelliteBullet.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Common/Obj_Fx_StrafesatelliteBullet.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Common/Obj_Fx_StrafesatelliteShootBullet.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Common/Obj_Fx_StrafesatelliteShootBullet.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Sounds.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Sounds/GrenadeExplosion.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Sounds/GrenadeExplosion.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Sounds/GrenadeThrow.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Sounds/GrenadeThrow.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Sounds/Orbitingball.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Sounds/Orbitingball.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Sounds/Shotgun.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Sounds/Shotgun.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Sounds/Sniperrifle.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Sounds/Sniperrifle.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Sounds/Strafesatellite.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Sounds/Strafesatellite.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Sounds/Submachinegun.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Sounds/Submachinegun.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Sounds/Undescription.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Sounds/Undescription.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Grenade.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Auto_Orbitingball_Template.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Auto_Orbitingball_Template.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Auto_Ring_Template.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Auto_Ring_Template.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Auto_Shotgun_Template.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Auto_Shotgun_Template.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Auto_Sniperrifle_Template.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Auto_Sniperrifle_Template.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Auto_Strafesatellite_Template.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Auto_Strafesatellite_Template.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Auto_Submachinegun_Template.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Template/Behaviour_Auto_Submachinegun_Template.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Asset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Asset.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/BuffSetting.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/BuffSetting.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Common/Obj_Fx_EarthquakeBullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Common/Obj_Fx_ShotgunBullet.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Common/Obj_Fx_EarthquakeBullet.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Common/Obj_Fx_ShotgunBullet.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Common/Obj_Fx_SurroundBullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Common/Obj_Fx_SurroundBullet.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Config/Base/TowerSetting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Config/Base/TowerSetting.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/GameSetting.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/GameSetting.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/RobotSetting.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/RobotSetting.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Common/Obj_Fx_ShotgunBullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Common/Obj_Fx_ShotgunBullet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Common/Obj_Fx_StrafesatelliteShootBullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Common/Obj_Fx_StrafesatelliteShootBullet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Common/Obj_Fx_SurroundBullet.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Common/Obj_Fx_SurroundBullet.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Sounds/Shotgun.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Sounds/Shotgun.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Sound/Sound.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Sound/Sound.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Laser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Laser.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Orbitingball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Orbitingball.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_PlayerUpgrade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_PlayerUpgrade.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Ring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Ring.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_SelfDetonationAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_SelfDetonationAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Shoot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Shoot.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Grenade.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Shotgun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Shotgun.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Sniperrifle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Sniperrifle.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Strafesatellite.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Strafesatellite.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Submachinegun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Submachinegun.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Event_RobotCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Event_RobotCreator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MilkShake/Demo/Materials/Spark.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MilkShake/Demo/Materials/Spark.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Materials/Ground - Logo Scene.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Materials/Ground - Logo Scene.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/ObjConfig.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/ObjConfig.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,8 +80,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Event_GameOver.cs" />
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Config/Base/LevelSetting.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Event_LevelSelect.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_Motion.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Input_Rotate.cs" />
@@ -139,7 +106,6 @@
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Register/MessageRegister.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_SurroundingTheBallOfLight.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Launch.cs" />
-        <option value="$PROJECT_DIR$/Assets/StreamingAssets/Csv/ObjConfig.csv" />
         <option value="$PROJECT_DIR$/Assets/StreamingAssets/Csv/BehaviourConfig.csv" />
         <option value="$PROJECT_DIR$/Assets/StreamingAssets/Csv/BehaviourGenerate.csv" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_SelfDetonationAttack.cs" />
@@ -153,15 +119,18 @@
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Config/Base/RobotSetting.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Event_LevelUpgrade.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Config/Base/BuffSetting.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Sound/Sound.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Submachinegun.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Shotgun.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Sniperrifle.cs" />
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Strafesatellite.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Ring.cs" />
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Submachinegun.cs" />
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Orbitingball.cs" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Laser.cs" />
-        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_PlayerUpgrade.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Orbitingball.cs" />
+        <option value="$PROJECT_DIR$/Assets/StreamingAssets/Csv/ObjConfig.csv" />
         <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Event_RobotCreator.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Knockback.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_PlayerUpgrade.cs" />
+        <option value="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Strafesatellite.cs" />
       </list>
     </option>
   </component>
@@ -173,12 +142,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "git-widget-placeholder": "main",
-    "node.js.selected.package.tslint": "(autodetect)"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34995976" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.30008045" />
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$PROJECT_DIR$/../YiSaBuild/Roguelike.exe" />
@@ -208,19 +177,17 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
-      <option name="projectPathOnTarget" />
       <option name="selectedOptions">
-        <list />
+        <set />
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="18928">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
-      <option name="projectPathOnTarget" />
+      <option name="pid" value="18928" />
       <option name="selectedOptions">
-        <list />
+        <set />
       </option>
       <method v="2" />
     </configuration>
@@ -312,6 +279,7 @@
       <workItem from="1714879779999" duration="753000" />
       <workItem from="1714904264186" duration="7173000" />
       <workItem from="1715084518515" duration="5538000" />
+      <workItem from="1715172469488" duration="8314000" />
     </task>
     <servers />
   </component>
@@ -330,21 +298,82 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
+  <component name="WindowStateProjectService">
+    <state width="2517" height="311" key="GridCell.Tab.0.bottom" timestamp="1715181992646">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="311" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1715181992646" />
+    <state width="2517" height="311" key="GridCell.Tab.0.center" timestamp="1715181992646">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="311" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1715181992646" />
+    <state width="2517" height="311" key="GridCell.Tab.0.left" timestamp="1715181992646">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="311" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1715181992646" />
+    <state width="2517" height="311" key="GridCell.Tab.0.right" timestamp="1715181992646">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="311" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1715181992646" />
+    <state width="2517" height="311" key="GridCell.Tab.1.bottom" timestamp="1715181992646">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="311" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1715181992646" />
+    <state width="2517" height="311" key="GridCell.Tab.1.center" timestamp="1715181992646">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="311" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1715181992646" />
+    <state width="2517" height="311" key="GridCell.Tab.1.left" timestamp="1715181992646">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="311" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1715181992646" />
+    <state width="2517" height="311" key="GridCell.Tab.1.right" timestamp="1715181992646">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="311" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1715181992646" />
+    <state width="2517" height="311" key="GridCell.Tab.2.bottom" timestamp="1715181992646">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="311" key="GridCell.Tab.2.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1715181992646" />
+    <state width="2517" height="311" key="GridCell.Tab.2.center" timestamp="1715181992646">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="311" key="GridCell.Tab.2.center/0.0.2560.1400@0.0.2560.1400" timestamp="1715181992646" />
+    <state width="2517" height="311" key="GridCell.Tab.2.left" timestamp="1715181992646">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="311" key="GridCell.Tab.2.left/0.0.2560.1400@0.0.2560.1400" timestamp="1715181992646" />
+    <state width="2517" height="311" key="GridCell.Tab.2.right" timestamp="1715181992646">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="311" key="GridCell.Tab.2.right/0.0.2560.1400@0.0.2560.1400" timestamp="1715181992646" />
+    <state width="2517" height="311" key="GridCell.Tab.3.bottom" timestamp="1715181992646">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="311" key="GridCell.Tab.3.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1715181992646" />
+    <state width="2517" height="311" key="GridCell.Tab.3.center" timestamp="1715181992646">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="311" key="GridCell.Tab.3.center/0.0.2560.1400@0.0.2560.1400" timestamp="1715181992646" />
+    <state width="2517" height="311" key="GridCell.Tab.3.left" timestamp="1715181992646">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="311" key="GridCell.Tab.3.left/0.0.2560.1400@0.0.2560.1400" timestamp="1715181992646" />
+    <state width="2517" height="311" key="GridCell.Tab.3.right" timestamp="1715181992646">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="311" key="GridCell.Tab.3.right/0.0.2560.1400@0.0.2560.1400" timestamp="1715181992646" />
+    <state x="902" y="432" width="755" height="536" key="find.popup" timestamp="1715175827708">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="902" y="432" width="755" height="536" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1715175827708" />
+  </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/LazyPan/Scripts/Core/Comp/Comp.cs</url>
-          <line>200</line>
-          <properties documentPath="D:\git\fork\YiSa\Assets\LazyPan\Scripts\Core\Comp\Comp.cs" initialLine="200" />
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#System.Delegate" memberName="method_info" />

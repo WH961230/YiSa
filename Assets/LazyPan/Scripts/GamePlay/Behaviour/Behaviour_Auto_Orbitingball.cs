@@ -7,7 +7,7 @@ namespace LazyPan {
 	    /*环绕速度*/
 	    private float surroundSpeed;
 	    /*攻击力*/
-	    private float attackDamage;
+	    private int attackDamage;
 	    /*父物体*/
 	    private GameObject surround;
 	    /*不同等级*/
@@ -28,13 +28,13 @@ namespace LazyPan {
 	        surroundSpeed = float.Parse(speed);
 	        /*攻击伤害*/
 	        buffSettingInfo.GetParam("AttackDamage", out string attackdamage);
-	        attackDamage = float.Parse(attackdamage);
+	        attackDamage = int.Parse(attackdamage);
         }
 
         /*初始化弹药*/
         private void InitBullet() {
 	        buffSettingInfo.GetParam("Bullet", out string bullet);
-	        surround = Loader.LoadGo("弹药", string.Concat("Common/", bullet), Data.Instance.ObjRoot, true);
+	        surround = Loader.LoadGo("环绕球弹药", string.Concat("Common/", bullet), Data.Instance.ObjRoot, true);
 	        surround.transform.position = Cond.Instance.Get<Transform>(entity, Label.MUZZLE).position;
 	        Level1 = Cond.Instance.Get<Comp>(surround.GetComponent<Comp>(), Label.Assemble(Label.LEVEL, "1"));
 	        Level2 = Cond.Instance.Get<Comp>(surround.GetComponent<Comp>(), Label.Assemble(Label.LEVEL, "2"));
@@ -90,7 +90,7 @@ namespace LazyPan {
 				if (tmpEntity.EntityData.BaseRuntimeData.RobotInfo.HealthPoint > 0) {
 					tmpEntity.EntityData.BaseRuntimeData.RobotInfo.BeAttackType = 1;
 					MessageRegister.Instance.Dis(MessageCode.BeInjuried, tmpEntity, attackDamage);
-					Sound.Instance.SoundPlay("Orbitingball", Vector3.zero, false, 1);
+					Sound.Instance.SoundPlay("Orbitingball", Vector3.zero, false, 1, 1);
 				}
 			}
 		}

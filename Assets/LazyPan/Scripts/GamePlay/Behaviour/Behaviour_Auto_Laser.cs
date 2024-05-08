@@ -42,6 +42,7 @@ namespace LazyPan {
 				/*找 laserNum 个血量大于 0 的敌人目标*/
 				int[] randNoRepeatIndex = MathUtil.Instance.GetRandNoRepeatIndex(robotEntities.Count, LaserNum);
 				if (randNoRepeatIndex != null) {
+					bool soundplay = false;
 					for (int i = 0; i < randNoRepeatIndex.Length; i++) {
 						Entity robot = robotEntities[randNoRepeatIndex[i]];
 						if (robot.EntityData.BaseRuntimeData.RobotInfo.HealthPoint > 0) {
@@ -61,7 +62,12 @@ namespace LazyPan {
 									template = null;
 								}
 							});
+							soundplay = true;
 						}
+					}
+
+					if (soundplay) {
+						// Sound.Instance.SoundPlay("Laser", Vector3.zero, false, 1, 1);
 					}
 				}
 			}

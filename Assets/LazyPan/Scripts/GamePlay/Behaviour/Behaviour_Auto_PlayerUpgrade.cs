@@ -24,7 +24,7 @@ namespace LazyPan {
                 BuffSettingInfo tmp = Loader.LoadSetting().BuffSetting.BuffSettingInfo[i];
                 Data.Instance.BuffInfo.Add(new BuffInfo() {
                     Setting = tmp,
-                    Level = tmp.CanUpgrade ? 1 : 0,
+                    Level = tmp.Sign == "冲锋枪" ? 2 : (tmp.CanUpgrade ? 1 : 0),
                     Disable = false,
                 });
             }

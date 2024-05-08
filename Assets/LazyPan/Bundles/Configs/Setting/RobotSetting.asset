@@ -21,8 +21,8 @@ MonoBehaviour:
     Num: 10
     MovementSpeed: 3
     MaxHealth: 15
-    KnockbackSpeed: 5
-    KnockbackDuraing: 0.5
+    KnockbackSpeed: 50
+    KnockbackDuraing: 0.02
     RobotDifficulty: 1
   - Sign: "\u65B0\u589E\u4E8C\u5341\u4E2A\u5C0F\u65B9\u5757"
     RobotSign: Obj_Robot_Soldier
@@ -32,8 +32,8 @@ MonoBehaviour:
     Num: 20
     MovementSpeed: 3
     MaxHealth: 15
-    KnockbackSpeed: 5
-    KnockbackDuraing: 0.5
+    KnockbackSpeed: 50
+    KnockbackDuraing: 0.02
     RobotDifficulty: 2
   - Sign: "\u65B0\u589E\u4E09\u5341\u4E2A\u5C0F\u65B9\u5757"
     RobotSign: Obj_Robot_Soldier
@@ -43,8 +43,8 @@ MonoBehaviour:
     Num: 30
     MovementSpeed: 3
     MaxHealth: 15
-    KnockbackSpeed: 5
-    KnockbackDuraing: 0.5
+    KnockbackSpeed: 50
+    KnockbackDuraing: 0.02
     RobotDifficulty: 3
   - Sign: "\u65B0\u589E\u56DB\u5341\u4E2A\u5C0F\u65B9\u5757"
     RobotSign: Obj_Robot_Soldier
@@ -54,8 +54,8 @@ MonoBehaviour:
     Num: 40
     MovementSpeed: 3
     MaxHealth: 15
-    KnockbackSpeed: 5
-    KnockbackDuraing: 0.5
+    KnockbackSpeed: 50
+    KnockbackDuraing: 0.02
     RobotDifficulty: 4
   - Sign: "\u65B0\u589E\u4E00\u4E2A\u5927\u65B9\u5757"
     RobotSign: Obj_Robot_SoldierB
@@ -65,8 +65,8 @@ MonoBehaviour:
     Num: 1
     MovementSpeed: 2
     MaxHealth: 30
-    KnockbackSpeed: 5
-    KnockbackDuraing: 0.5
+    KnockbackSpeed: 50
+    KnockbackDuraing: 0.02
     RobotDifficulty: 1
   - Sign: "\u65B0\u589E\u4E24\u4E2A\u5927\u65B9\u5757"
     RobotSign: Obj_Robot_SoldierB
@@ -76,8 +76,8 @@ MonoBehaviour:
     Num: 2
     MovementSpeed: 2
     MaxHealth: 30
-    KnockbackSpeed: 5
-    KnockbackDuraing: 0.5
+    KnockbackSpeed: 50
+    KnockbackDuraing: 0.02
     RobotDifficulty: 2
   - Sign: "\u65B0\u589E\u4E09\u4E2A\u5927\u65B9\u5757"
     RobotSign: Obj_Robot_SoldierB
@@ -87,8 +87,8 @@ MonoBehaviour:
     Num: 3
     MovementSpeed: 2
     MaxHealth: 30
-    KnockbackSpeed: 5
-    KnockbackDuraing: 0.5
+    KnockbackSpeed: 50
+    KnockbackDuraing: 0.02
     RobotDifficulty: 3
   - Sign: "\u65B0\u589E\u56DB\u4E2A\u5927\u65B9\u5757"
     RobotSign: Obj_Robot_SoldierB
@@ -98,8 +98,8 @@ MonoBehaviour:
     Num: 4
     MovementSpeed: 2
     MaxHealth: 30
-    KnockbackSpeed: 5
-    KnockbackDuraing: 0.5
+    KnockbackSpeed: 50
+    KnockbackDuraing: 0.02
     RobotDifficulty: 4
   - Sign: "\u65B0\u589E\u4E00\u4E2A\u589E\u6B96\u65B9\u5757"
     RobotSign: Obj_Robot_SoldierC
@@ -109,8 +109,8 @@ MonoBehaviour:
     Num: 1
     MovementSpeed: 2
     MaxHealth: 5
-    KnockbackSpeed: 5
-    KnockbackDuraing: 0.5
+    KnockbackSpeed: 50
+    KnockbackDuraing: 0.02
     RobotDifficulty: 1
   - Sign: "\u65B0\u589E\u4E24\u4E2A\u589E\u6B96\u65B9\u5757"
     RobotSign: Obj_Robot_SoldierC
@@ -120,8 +120,8 @@ MonoBehaviour:
     Num: 2
     MovementSpeed: 2
     MaxHealth: 5
-    KnockbackSpeed: 5
-    KnockbackDuraing: 0.5
+    KnockbackSpeed: 50
+    KnockbackDuraing: 0.02
     RobotDifficulty: 2
   - Sign: "\u65B0\u589E\u4E09\u4E2A\u589E\u6B96\u65B9\u5757"
     RobotSign: Obj_Robot_SoldierC
@@ -131,8 +131,8 @@ MonoBehaviour:
     Num: 3
     MovementSpeed: 2
     MaxHealth: 5
-    KnockbackSpeed: 5
-    KnockbackDuraing: 0.5
+    KnockbackSpeed: 50
+    KnockbackDuraing: 0.02
     RobotDifficulty: 3
   - Sign: "\u65B0\u589E\u56DB\u4E2A\u589E\u6B96\u65B9\u5757"
     RobotSign: Obj_Robot_SoldierC
@@ -142,6 +142,6 @@ MonoBehaviour:
     Num: 4
     MovementSpeed: 2
     MaxHealth: 5
-    KnockbackSpeed: 5
-    KnockbackDuraing: 0.5
+    KnockbackSpeed: 50
+    KnockbackDuraing: 0.02
     RobotDifficulty: 4

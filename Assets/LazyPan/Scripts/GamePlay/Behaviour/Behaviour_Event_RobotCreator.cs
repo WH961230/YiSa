@@ -91,7 +91,8 @@ namespace LazyPan {
                     template.transform.position = squirt.position;
                     template.transform.rotation = squirt.rotation;
                     /*击退表现*/
-                    MessageRegister.Instance.Dis(MessageCode.BeHit, entity, robot);
+                    Cond.Instance.GetTowerEntity(out Entity towerEntity);
+                    MessageRegister.Instance.Dis(MessageCode.BeHit, towerEntity, robot);
                     /*受击材质高亮*/
                     Material mat = Cond.Instance.Get<Renderer>(robot, Label.Assemble(Label.BODY, Label.RENDERER)).material;
                     mat.SetColor("_EmissionColor", Color.white);

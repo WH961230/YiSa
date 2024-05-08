@@ -22,4 +22,7 @@ MonoBehaviour:
   - AssetType: 0
     AssetAddress: Assets/LazyPan/Bundles/Configs/
     AssetSuffix: .asset
+  - AssetType: 3
+    AssetAddress: Assets/LazyPan/Bundles/Sounds/
+    AssetSuffix: .wav
   CommonAssetAddress: []

@@ -21,13 +21,13 @@ MonoBehaviour:
     - "\u4E09\u7B49\u7EA7\u51B2\u950B\u67AA"
     UpgradeParams:
     - Sign: AttackIntervalTime
-      Param: 0.3
+      Param: 0.5
     - Sign: Bullet
       Param: Obj_Fx_Bullet
     - Sign: AttackRange
       Param: 10
     - Sign: AttackDamage
-      Param: 10
+      Param: 8
     Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
     SubscriptIcon: {fileID: 0}
     BehaviourSign: Behaviour_Auto_Submachinegun
@@ -49,7 +49,7 @@ MonoBehaviour:
     - Sign: Bullet
       Param: Obj_Fx_StrafesatelliteBullet
     - Sign: RoundSpeed
-      Param: 2
+      Param: 10
     - Sign: ShotInterval
       Param: 0.5
     Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
@@ -70,6 +70,8 @@ MonoBehaviour:
       Param: 50
     - Sign: Bullet
       Param: Obj_Fx_ShotgunBullet
+    - Sign: AttackRange
+      Param: 15
     Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
     SubscriptIcon: {fileID: 0}
     BehaviourSign: Behaviour_Auto_Shotgun
@@ -88,6 +90,8 @@ MonoBehaviour:
       Param: 50
     - Sign: Bullet
       Param: Obj_Fx_SniperrifleBullet
+    - Sign: AttackRange
+      Param: 10
     Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
     SubscriptIcon: {fileID: 0}
     BehaviourSign: Behaviour_Auto_Sniperrifle

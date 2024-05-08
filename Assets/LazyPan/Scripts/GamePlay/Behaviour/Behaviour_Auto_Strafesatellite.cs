@@ -10,7 +10,7 @@ namespace LazyPan {
         private int StrafesatelliteNum = 1;//卫星等级 卫星数量
         private float StrafesatelliteRoundSpeed;//卫星环绕速度
         private float StrafesatelliteBulletShootInterval;//卫星子弹发射频率
-        private float StrafesatelliteBulletAttackDamage;//卫星子弹发射伤害
+        private int StrafesatelliteBulletAttackDamage;//卫星子弹发射伤害
         /*不同等级的扫射卫星*/
         private Comp Level1;
         private Comp Level2;
@@ -34,7 +34,7 @@ namespace LazyPan {
             StrafesatelliteBulletShootInterval = float.Parse(shotInterval);
             /*卫星发射伤害*/
             buffSettingInfo.GetParam("AttackDamage", out string attackDamage);
-            StrafesatelliteBulletAttackDamage = float.Parse(attackDamage);
+            StrafesatelliteBulletAttackDamage = int.Parse(attackDamage);
         }
 
         /*初始化弹药*/
@@ -68,11 +68,13 @@ namespace LazyPan {
                 if (shotDeploy > 0) {
                     shotDeploy -= Time.deltaTime;
                 } else {
+                    Sound.Instance.SoundPlay("Strafesatellite", Vector3.zero, false, 1, 2);
                     foreach (Comp.TransformData data in level.Transforms) {
                         buffSettingInfo.GetParam("ShotBullet", out string bullet);
                         GameObject shotStrafesatellite = Loader.LoadGo("弹药", string.Concat("Common/", bullet),
                             Data.Instance.ObjRoot, true);
                         shotStrafesatellite.transform.position = data.Tran.position;
+                        shotStrafesatellite.transform.forward = data.Tran.forward;
 
                         Comp templateComp = strafesatellite.GetComponent<Comp>();
                         templateComp.OnParticleCollisionEvent.RemoveAllListeners();
@@ -82,7 +84,6 @@ namespace LazyPan {
                         });
                     }
 
-                    Sound.Instance.SoundPlay("Strafesatellite", Vector3.zero, false, 2);
                     shotDeploy = StrafesatelliteBulletShootInterval;
                 }
             }

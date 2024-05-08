@@ -6,7 +6,7 @@ namespace LazyPan {
         private float deploy;
         private float attackIntervalTime;
         private float attackRange;
-        private float attackDamage;
+        private int attackDamage;
         private BuffSettingInfo buffSettingInfo;
         public Behaviour_Auto_Shotgun(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             Data.Instance.OnUpdateEvent.AddListener(Shotgun);
@@ -14,7 +14,7 @@ namespace LazyPan {
             Loader.LoadSetting().BuffSetting.GetSettingBySign(behaviourSign, out buffSettingInfo);
             /*攻击伤害*/
             buffSettingInfo.GetParam("AttackDamage", out string attackdamage);
-            attackDamage = float.Parse(attackdamage);
+            attackDamage = int.Parse(attackdamage);
             /*攻击范围*/
             buffSettingInfo.GetParam("AttackRange", out string attackrange);
             attackRange = float.Parse(attackrange);
@@ -33,6 +33,7 @@ namespace LazyPan {
                         Cond.Instance.Get<Transform>(entity, Label.BODY).position,
                         attackRange, out Entity robotEntity);
                     if (findRobotEntity && robotEntity.EntityData.BaseRuntimeData.RobotInfo.HealthPoint > 0) {
+                        Sound.Instance.SoundPlay("Shotgun", Vector3.zero, false, 1, 2);
                         buffSettingInfo.GetParam("Bullet", out string bullet);
                         GameObject template = Loader.LoadGo("弹药", string.Concat("Common/", bullet), Data.Instance.ObjRoot, true);
                         Transform bulletMuzzle = Cond.Instance.Get<Transform>(entity, Label.MUZZLE);
@@ -41,7 +42,6 @@ namespace LazyPan {
                         Comp templateComp = template.GetComponent<Comp>();
                         templateComp.OnParticleCollisionEvent.RemoveAllListeners();
                         templateComp.OnParticleCollisionEvent.AddListener(OnTriggerEnter);
-                        Sound.Instance.SoundPlay("Shotgun", Vector3.zero, false, 2);
                     }
                     deploy = attackIntervalTime;
                 }

@@ -21,8 +21,12 @@ namespace LazyPan {
                     if (isGetFlow) {
                         bool getSetting = Loader.LoadSetting().TryGetRobotBySign(entity.ObjConfig.Sign, out RobotSettingInfo i);
                         if (getSetting) {
+                            /*对玩家造成伤害*/
                             MessageRegister.Instance.Dis(MessageCode.BeInjuried, playerEntity, i.Attack);
-                            MessageRegister.Instance.Dis(MessageCode.BeSelfDetonation, entity);
+                            /*碰撞到塔触发自爆*/
+                            if (tmpEntity.EntityData.BaseRuntimeData.Type == "Tower") {
+                                MessageRegister.Instance.Dis(MessageCode.BeSelfDetonation, entity);
+                            }
                         }
                     }
                 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace LazyPan {
     public class Behaviour_Event_RobotCreator : Behaviour {
@@ -83,6 +84,26 @@ namespace LazyPan {
                 if (robot.EntityData.BaseRuntimeData.RobotInfo != null && !robot.EntityData.BaseRuntimeData.RobotInfo.IsDead) {
                     /*受伤*/
                     robot.EntityData.BaseRuntimeData.RobotInfo.HealthPoint -= damage;
+
+                    /*掉血表现*/
+                    GameObject template = Loader.LoadGo("掉血", "Common/Obj_Fx_BeHit", Data.Instance.ObjRoot, true);
+                    Transform squirt = Cond.Instance.Get<Transform>(robot, Label.SQUIRT);
+                    template.transform.position = squirt.position;
+                    template.transform.rotation = squirt.rotation;
+                    /*击退表现*/
+                    MessageRegister.Instance.Dis(MessageCode.BeHit, entity, robot);
+                    /*受击材质高亮*/
+                    Material mat = Cond.Instance.Get<Renderer>(robot, Label.Assemble(Label.BODY, Label.RENDERER)).material;
+                    mat.SetColor("_EmissionColor", Color.white);
+                    mat.EnableKeyword("_EMISSION");
+                    /*复原*/
+                    ClockUtil.Instance.AlarmAfter(0.1f, () => {
+                        Material mat = Cond.Instance
+                            .Get<Renderer>(robot, Label.Assemble(Label.BODY, Label.RENDERER)).material;
+                        mat.SetColor("_EmissionColor", Color.black);
+                        mat.EnableKeyword("_EMISSION");
+                    });
+
                     /*血量小于零掉落*/
                     if (robot.EntityData.BaseRuntimeData.RobotInfo.HealthPoint <= 0) {
                         /*敌方攻击*/

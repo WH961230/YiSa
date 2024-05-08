@@ -79,34 +79,15 @@ namespace LazyPan {
 				if (tmpEntity.EntityData.BaseRuntimeData.RobotInfo.HealthPoint > 0) {
 					tmpEntity.EntityData.BaseRuntimeData.RobotInfo.BeAttackType = 1;
 					MessageRegister.Instance.Dis(MessageCode.BeInjuried, tmpEntity, attackDamage);
-					/*掉血表现*/
-					GameObject template = Loader.LoadGo("掉血", "Common/Obj_Fx_BeHit", Data.Instance.ObjRoot, true);
-					Transform squirt = Cond.Instance.Get<Transform>(tmpEntity, Label.SQUIRT);
-					template.transform.position = squirt.position;
-					template.transform.rotation = squirt.rotation;
-					/*击退表现*/
-					MessageRegister.Instance.Dis(MessageCode.BeHit, entity, tmpEntity);
-					/*受击材质高亮*/
-					Material mat = Cond.Instance.Get<Renderer>(tmpEntity, Label.Assemble(Label.BODY, Label.RENDERER)).material;
-					mat.SetColor("_EmissionColor", Color.white);
-					mat.EnableKeyword("_EMISSION");
-					/*复原*/
-					ClockUtil.Instance.AlarmAfter(0.1f, () => {
-						Material mat = Cond.Instance
-							.Get<Renderer>(tmpEntity, Label.Assemble(Label.BODY, Label.RENDERER)).material;
-						mat.SetColor("_EmissionColor", Color.black);
-						mat.EnableKeyword("_EMISSION");
-					});
 				}
 			}
 		}
 
 		public override void Upgrade() {
 			base.Upgrade();
-			Debug.Log("射线升级");
 			LaserNum++;
-			if (LaserNum > 3) {
-				LaserNum = 3;
+			if (LaserNum > buffSettingInfo.UpgradeLimit) {
+				LaserNum = buffSettingInfo.UpgradeLimit;
 			}
 		}
 

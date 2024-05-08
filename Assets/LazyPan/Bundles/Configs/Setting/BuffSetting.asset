@@ -24,6 +24,10 @@ MonoBehaviour:
       Param: 0.3
     - Sign: Bullet
       Param: Obj_Fx_Bullet
+    - Sign: AttackRange
+      Param: 10
+    - Sign: AttackDamage
+      Param: 10
     Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
     SubscriptIcon: {fileID: 0}
     BehaviourSign: Behaviour_Auto_Submachinegun
@@ -40,8 +44,14 @@ MonoBehaviour:
       Param: 2
     - Sign: AttackDamage
       Param: 50
+    - Sign: ShotBullet
+      Param: Obj_Fx_StrafesatelliteShootBullet
     - Sign: Bullet
       Param: Obj_Fx_StrafesatelliteBullet
+    - Sign: RoundSpeed
+      Param: 2
+    - Sign: ShotInterval
+      Param: 0.5
     Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
     SubscriptIcon: {fileID: 0}
     BehaviourSign: Behaviour_Auto_Strafesatellite

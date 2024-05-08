@@ -2,87 +2,79 @@
 
 namespace LazyPan {
     public class Behaviour_Auto_Orbitingball : Behaviour {
-	    private int surroundNum;
+	    /*环绕等级*/
+	    private int surroundNum = 1;
+	    /*环绕速度*/
 	    private float surroundSpeed;
+	    /*攻击力*/
+	    private float attackDamage;
+	    /*父物体*/
 	    private GameObject surround;
-	    private Comp Ball1;
-	    private Comp Ball2;
-	    private Comp Ball3;
+	    /*不同等级*/
+	    private Comp Level1;
+	    private Comp Level2;
+	    private Comp Level3;
+	    /*配置*/
 	    private BuffSettingInfo buffSettingInfo;
         public Behaviour_Auto_Orbitingball(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
-	        surroundNum = 1;
-	        surround = Loader.LoadGo("弹药", "Common/Obj_Fx_SurroundBullet", Data.Instance.ObjRoot, true);
-	        Transform bulletMuzzle = Cond.Instance.Get<Transform>(entity, Label.MUZZLE);
-	        surround.transform.position = bulletMuzzle.position;
-	        Ball1 = Cond.Instance.Get<Comp>(surround.GetComponent<Comp>(), Label.Assemble(Label.TRIGGER, "1"));
-	        Ball2 = Cond.Instance.Get<Comp>(surround.GetComponent<Comp>(), Label.Assemble(Label.TRIGGER, "2"));
-	        Ball3 = Cond.Instance.Get<Comp>(surround.GetComponent<Comp>(), Label.Assemble(Label.TRIGGER, "3"));
-	        Ball1.OnTriggerEnterEvent.RemoveAllListeners();
-	        Ball1.OnTriggerEnterEvent.AddListener(SurroundTrigger);
-	        Ball2.OnTriggerEnterEvent.RemoveAllListeners();
-	        Ball2.OnTriggerEnterEvent.AddListener(SurroundTrigger);
-	        Ball3.OnTriggerEnterEvent.RemoveAllListeners();
-	        Ball3.OnTriggerEnterEvent.AddListener(SurroundTrigger);
+	        /*获取配置*/
+	        Loader.LoadSetting().BuffSetting.GetSettingBySign(behaviourSign, out buffSettingInfo);
+	        /*初始化弹药*/
+	        InitBullet();
+	        /*注册环绕刷新*/
 	        Data.Instance.OnUpdateEvent.AddListener(Surround);
-	        Loader.LoadSetting().BuffSetting
-		        .GetSettingBySign(behaviourSign, out buffSettingInfo);
+	        /*获取环绕速度*/
 	        buffSettingInfo.GetParam("SurroundSpeed", out string speed);
 	        surroundSpeed = float.Parse(speed);
+	        /*攻击伤害*/
+	        buffSettingInfo.GetParam("AttackDamage", out string attackdamage);
+	        attackDamage = float.Parse(attackdamage);
         }
 
-        /*创建环绕球*/
-        private void ShowSurroundBallOfLight() {
-	        HideAllSurroundBall();
-	        int num = surroundNum;
-	        if (num == 1) {
-		        if (!Ball1.gameObject.activeSelf) {
-			        Ball1.gameObject.SetActive(true);
-		        }
+        /*初始化弹药*/
+        private void InitBullet() {
+	        buffSettingInfo.GetParam("Bullet", out string bullet);
+	        surround = Loader.LoadGo("弹药", string.Concat("Common/", bullet), Data.Instance.ObjRoot, true);
+	        surround.transform.position = Cond.Instance.Get<Transform>(entity, Label.MUZZLE).position;
+	        Level1 = Cond.Instance.Get<Comp>(surround.GetComponent<Comp>(), Label.Assemble(Label.LEVEL, "1"));
+	        Level2 = Cond.Instance.Get<Comp>(surround.GetComponent<Comp>(), Label.Assemble(Label.LEVEL, "2"));
+	        Level3 = Cond.Instance.Get<Comp>(surround.GetComponent<Comp>(), Label.Assemble(Label.LEVEL, "3"));
+	        RegisterTriggerBallEvent();
+        }
+
+        /*注册触发球的事件*/
+        private void RegisterTriggerBallEvent() {
+	        foreach (Comp.CompData compData in Level1.Comps) {
+		        compData.Comp.OnTriggerEnterEvent.RemoveAllListeners();
+		        compData.Comp.OnTriggerEnterEvent.AddListener(SurroundTrigger);
 	        }
-	        
-	        if (num == 2) {
-		        if (!Ball1.gameObject.activeSelf) {
-			        Ball1.gameObject.SetActive(true);
-		        }
-		        if (!Ball2.gameObject.activeSelf) {
-			        Ball2.gameObject.SetActive(true);
-		        }
+	        foreach (Comp.CompData compData in Level2.Comps) {
+		        compData.Comp.OnTriggerEnterEvent.RemoveAllListeners();
+		        compData.Comp.OnTriggerEnterEvent.AddListener(SurroundTrigger);
 	        }
-	        
-	        if (num == 3) {
-		        if (!Ball1.gameObject.activeSelf) {
-			        Ball1.gameObject.SetActive(true);
-		        }
-		        if (!Ball2.gameObject.activeSelf) {
-			        Ball2.gameObject.SetActive(true);
-		        }
-		        if (!Ball3.gameObject.activeSelf) {
-			        Ball3.gameObject.SetActive(true);
-		        }
+	        foreach (Comp.CompData compData in Level3.Comps) {
+		        compData.Comp.OnTriggerEnterEvent.RemoveAllListeners();
+		        compData.Comp.OnTriggerEnterEvent.AddListener(SurroundTrigger);
 	        }
         }
 
         /*隐藏所有的球*/
-        private void HideAllSurroundBall() {
-	        if (Ball1.gameObject.activeSelf) {
-		        Ball1.gameObject.SetActive(false);
-	        }
-	        if (Ball2.gameObject.activeSelf) {
-		        Ball2.gameObject.SetActive(false);
-	        }
-	        if (Ball3.gameObject.activeSelf) {
-		        Ball3.gameObject.SetActive(false);
-	        }
+        private void HideAllSurround() {
+	        Level1.gameObject.SetActive(false);
+	        Level2.gameObject.SetActive(false);
+	        Level3.gameObject.SetActive(false);
         }
 
 		/*环绕*/
 		private void Surround() {
 			if (entity.EntityData.BaseRuntimeData.TowerInfo.Energy > 0) {
-				ShowSurroundBallOfLight();
+				Level1.gameObject.SetActive(surroundNum == 1);
+				Level2.gameObject.SetActive(surroundNum == 2);
+				Level3.gameObject.SetActive(surroundNum == 3);
 				Cond.Instance.Get<Transform>(surround.GetComponent<Comp>(), Label.BODY).transform
 					.Rotate(Vector3.up * Time.deltaTime * surroundSpeed);
 			} else {
-				HideAllSurroundBall();
+				HideAllSurround();
 			}
 		}
 
@@ -97,39 +89,18 @@ namespace LazyPan {
 				}
 				if (tmpEntity.EntityData.BaseRuntimeData.RobotInfo.HealthPoint > 0) {
 					tmpEntity.EntityData.BaseRuntimeData.RobotInfo.BeAttackType = 1;
-					MessageRegister.Instance.Dis(MessageCode.BeInjuried, tmpEntity, Loader.LoadSetting().TowerSetting.Attack);
-					/*掉血表现*/
-					buffSettingInfo.GetParam("Bullet", out string bullet);
-					GameObject template = Loader.LoadGo("掉血", string.Concat("Common/", bullet), Data.Instance.ObjRoot, true);
-					Transform squirt = Cond.Instance.Get<Transform>(tmpEntity, Label.SQUIRT);
-					template.transform.position = squirt.position;
-					template.transform.rotation = squirt.rotation;
-					/*击退表现*/
-					MessageRegister.Instance.Dis(MessageCode.BeHit, entity, tmpEntity);
-					/*受击材质高亮*/
-					Material mat = Cond.Instance.Get<Renderer>(tmpEntity, Label.Assemble(Label.BODY, Label.RENDERER)).material;
-					mat.SetColor("_EmissionColor", Color.white);
-					mat.EnableKeyword("_EMISSION");
-					/*复原*/
-					ClockUtil.Instance.AlarmAfter(0.1f, () => {
-						Material mat = Cond.Instance
-							.Get<Renderer>(tmpEntity, Label.Assemble(Label.BODY, Label.RENDERER)).material;
-						mat.SetColor("_EmissionColor", Color.black);
-						mat.EnableKeyword("_EMISSION");
-					});
+					MessageRegister.Instance.Dis(MessageCode.BeInjuried, tmpEntity, attackDamage);
+					Sound.Instance.SoundPlay("Orbitingball", Vector3.zero, false, 1);
 				}
 			}
 		}
 
 		public override void Upgrade() {
 			base.Upgrade();
-			Debug.Log("环绕球体升级");
 			surroundNum++;
 			if (surroundNum > 3) {
 				surroundNum = 3;
 			}
-
-			ShowSurroundBallOfLight();
 		}
 
 		public override void Clear() {

@@ -12,6 +12,7 @@ namespace LazyPan {
 		private Entity Obj_Event_LevelUpgrade;
 		private Entity Obj_Event_ActivableCreator;
 		private Entity Obj_Event_RobotCreator;
+		private Entity Obj_Music_BackgroundMusic;
 		private Entity Obj_Event_Settlement;
 
         public override void Init(Flow baseFlow) {
@@ -38,6 +39,7 @@ namespace LazyPan {
 			Obj_Event_LevelUpgrade = Obj.Instance.LoadEntity("Obj_Event_LevelUpgrade");
 			Obj_Event_ActivableCreator = Obj.Instance.LoadEntity("Obj_Event_ActivableCreator");
 			Obj_Event_RobotCreator = Obj.Instance.LoadEntity("Obj_Event_RobotCreator");
+			Obj_Music_BackgroundMusic = Obj.Instance.LoadEntity("Obj_Music_BackgroundMusic");
 		}
 
 		/*结算*/
@@ -62,6 +64,7 @@ namespace LazyPan {
 			Obj.Instance.UnLoadEntity(Obj_Player_Soldier);
 			Obj.Instance.UnLoadEntity(Obj_Camera_Camera);
 			Obj.Instance.UnLoadEntity(Obj_Terrain_Terrain);
+			Obj.Instance.UnLoadEntity(Obj_Music_BackgroundMusic);
 
 			UI.Instance.Close("UI_Battle");
 

@@ -88,3 +88,5 @@ Settlement,结算,Event,Clear,清除
 PlayerBeHit,玩家受到伤害,Auto,Init,初始化
 PlayerBeHit,玩家受到伤害,Auto,BeHit,受到伤害
 PlayerBeHit,玩家受到伤害,Auto,Clear,清除
+BackgroundMusic,背景音乐,Auto,Init,初始化
+BackgroundMusic,背景音乐,Auto,Clear,清除

@@ -17,6 +17,14 @@ namespace LazyPan {
             /*攻击间隔*/
             buffSettingInfo.GetParam("AttackIntervalTime", out string attackintervaltime);
             attackIntervalTime = float.Parse(attackintervaltime);
+
+            buffSettingInfo.GetParam("Bullet", out string bullet);
+            GameObject template = Loader.LoadGo("圆环弹药", string.Concat("Common/", bullet), Data.Instance.ObjRoot, true);
+            Transform bulletMuzzle = Cond.Instance.Get<Transform>(entity, Label.MUZZLE);
+            template.transform.position = bulletMuzzle.position;
+            Comp templateComp = template.GetComponent<Comp>();
+            templateComp.OnParticleCollisionEvent.RemoveAllListeners();
+            templateComp.OnParticleCollisionEvent.AddListener(OnTriggerEnter);
         }
 
         /*圆环*/
@@ -25,20 +33,9 @@ namespace LazyPan {
                 if (deploy > 0) {
                     deploy -= Time.deltaTime;
                 } else {
-                    bool findRobotEntity = Cond.Instance.GetRandEntityByTypeWithinDistance(Label.ROBOT,
-                        Cond.Instance.Get<Transform>(entity, Label.BODY).position,
-                        attackRange, out Entity robotEntity);
-                    if (findRobotEntity && robotEntity.EntityData.BaseRuntimeData.RobotInfo.HealthPoint > 0) {
-                        // Sound.Instance.SoundPlay("Shotgun", Vector3.zero, false, 1, 2);
-                        buffSettingInfo.GetParam("Bullet", out string bullet);
-                        GameObject template = Loader.LoadGo("弹药", string.Concat("Common/", bullet), Data.Instance.ObjRoot, true);
-                        Transform bulletMuzzle = Cond.Instance.Get<Transform>(entity, Label.MUZZLE);
-                        template.transform.position = bulletMuzzle.position;
-                        template.transform.forward = (Cond.Instance.Get<Transform>(robotEntity, Label.HIT).position - bulletMuzzle.position).normalized;
-                        Comp templateComp = template.GetComponent<Comp>();
-                        templateComp.OnParticleCollisionEvent.RemoveAllListeners();
-                        templateComp.OnParticleCollisionEvent.AddListener(OnTriggerEnter);
-                    }
+                    // Sound.Instance.SoundPlay("Shotgun", Vector3.zero, false, 1, 2);
+
+
                     deploy = attackIntervalTime;
                 }
             }

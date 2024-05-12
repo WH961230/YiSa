@@ -126,6 +126,8 @@ MonoBehaviour:
       Param: 50
     - Sign: Bullet
       Param: Obj_Fx_RingBullet
+    - Sign: AttackRange
+      Param: 5
     Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
     SubscriptIcon: {fileID: 0}
     BehaviourSign: Behaviour_Auto_Ring

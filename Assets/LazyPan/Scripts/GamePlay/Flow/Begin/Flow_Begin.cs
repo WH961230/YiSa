@@ -8,6 +8,7 @@ namespace LazyPan {
 		private Entity Obj_Terrain_Terrain;
 		private Entity Obj_Trigger_StartGame;
 		private Entity Obj_Player_Soldier;
+		private Entity Obj_Music_BackgroundMusic;
 
         public override void Init(Flow baseFlow) {
             base.Init(baseFlow);
@@ -18,6 +19,7 @@ namespace LazyPan {
 			Obj_Terrain_Terrain = Obj.Instance.LoadEntity("Obj_Terrain_Terrain");
 			Obj_Trigger_StartGame = Obj.Instance.LoadEntity("Obj_Trigger_StartGame");
 			Obj_Player_Soldier = Obj.Instance.LoadEntity("Obj_Player_Soldier");
+			Obj_Music_BackgroundMusic = Obj.Instance.LoadEntity("Obj_Music_BackgroundMusic");
 
         }
 
@@ -39,6 +41,7 @@ namespace LazyPan {
 			Obj.Instance.UnLoadEntity(Obj_Trigger_StartGame);
 			Obj.Instance.UnLoadEntity(Obj_Terrain_Terrain);
 			Obj.Instance.UnLoadEntity(Obj_Camera_Camera);
+			Obj.Instance.UnLoadEntity(Obj_Music_BackgroundMusic);
 
 			UI.Instance.Close("UI_Begin");
 

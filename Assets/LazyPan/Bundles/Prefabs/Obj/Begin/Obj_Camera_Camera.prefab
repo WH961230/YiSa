@@ -166,7 +166,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: a6560a915ef98420e9faacc1c7438823, type: 2}
+  sharedProfile: {fileID: 11400000, guid: a885e2793d76cae4bb271047ea226cf5, type: 2}
 --- !u!1 &6118677874761072040
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,6 +480,7 @@ MonoBehaviour:
   TMPInputFields: []
   Animators: []
   Images: []
+  Sprites: []
   PlayableDirectors: []
   TimelineAssets: []
   Comps: []
@@ -489,3 +490,4 @@ MonoBehaviour:
   CameraDatas:
   - Sign: Camera
     Camera: {fileID: 3843914435664633407}
+  LineRendererDatas: []

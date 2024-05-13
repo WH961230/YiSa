@@ -4,8 +4,8 @@ namespace LazyPan {
     public class Behaviour_Auto_Knockback : Behaviour {
         private CharacterController characterController;
         private Vector3 knockbackDir;
-        private float knockbackSpeed;
-        private float deploy;
+        private float knockbackSpeed = 50;
+        private float deploy = -1;
 
         public Behaviour_Auto_Knockback(Entity entity, string behaviourSign) : base(entity, behaviourSign) {
             characterController = Cond.Instance.Get<CharacterController>(entity, Label.CHARACTERCONTROLLER);
@@ -18,12 +18,7 @@ namespace LazyPan {
             if (entity.ID == arg2.ID) {
                 knockbackDir = (Cond.Instance.Get<Transform>(entity, Label.BODY).position -
                                 Cond.Instance.Get<Transform>(arg1, Label.BODY).position).normalized;
-                bool getSetting = Loader.LoadSetting()
-                    .TryGetRobotBySign(entity.ObjConfig.Sign, out RobotSettingInfo info);
-                if (getSetting) {
-                    knockbackSpeed = info.KnockbackSpeed;
-                    deploy = info.KnockbackDuraing;
-                }
+                deploy = 0.01f;
             }
         }
 

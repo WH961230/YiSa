@@ -129,7 +129,9 @@ namespace LazyPan {
                 /*如果结束检测中 且 怪物清空 则升级*/
                 if (robotSoldierEntities.Count == 0 && isFinishCreateRobot) {
                     ConsoleEx.Instance.Content("log", $"怪物清空!");
-                    MessageRegister.Instance.Dis(MessageCode.LevelUpgrade);
+                    ClockUtil.Instance.AlarmAfter(1, () => {
+                        MessageRegister.Instance.Dis(MessageCode.LevelUpgrade);
+                    });
                     isFinishCreateRobot = false;
                 }
             }

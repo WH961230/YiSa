@@ -19,7 +19,6 @@ namespace LazyPan {
                 Comp info = Cond.Instance.Get<Comp>(battleflow.GetUI(), Label.INFO);
                 Cond.Instance.Get<Slider>(info, Label.HEALTH).value = entity.EntityData.BaseRuntimeData.PlayerInfo.HealthPoint /
                                                                       Loader.LoadSetting().PlayerSetting.MaxHealth;
-
                 if (entity.EntityData.BaseRuntimeData.PlayerInfo.HealthPoint == 0) {
                     Next();
                 }

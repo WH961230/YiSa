@@ -1,0 +1,179 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31390c44c9f3a3d40b424bf6821999a2, type: 3}
+  m_Name: "\u76F8\u5BF9\u4F4D\u7F6E\u8282\u70B9"
+  m_EditorClassIdentifier: 
+  serializedNodes: []
+  nodes:
+  - rid: 2952979642422132764
+  - rid: 2952979642422132765
+  - rid: 2952979642422132778
+  - rid: 2952979642422132779
+  edges:
+  - GUID: 3aaf8990-0f11-4c74-8c9a-da9068c6b254
+    owner: {fileID: 11400000}
+    inputNodeGUID: a9b9ad34-1d5c-4181-b85f-adeb016ab662
+    outputNodeGUID: ad3187f1-ff28-4ff3-a74b-6f209f191f87
+    inputFieldName: inputRelativePosition
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: afd19c8f-320d-4fbb-b200-b04e3b8ab1ba
+    owner: {fileID: 11400000}
+    inputNodeGUID: a9b9ad34-1d5c-4181-b85f-adeb016ab662
+    outputNodeGUID: de3ffaec-f7ac-47a4-9b11-c8fceb6cdde4
+    inputFieldName: inputBeFollowGameObject
+    outputFieldName: outputPlayer
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 1383657c-2089-4341-9a58-d2585fd0f9e0
+    owner: {fileID: 11400000}
+    inputNodeGUID: a9b9ad34-1d5c-4181-b85f-adeb016ab662
+    outputNodeGUID: cfc10f0c-aadc-4133-a3e8-9d6c60daa2e0
+    inputFieldName: inputFollowGameObject
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: output
+  groups: []
+  stackNodes: []
+  pinnedElements:
+  - position:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 150
+      height: 200
+    opened: 1
+    editorType:
+      serializedType: GraphProcessor.ExposedParameterView, com.alelievr.NodeGraphProcessor.Editor,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  exposedParameters:
+  - rid: 2952979642422132768
+  - rid: 2952979642422132774
+  serializedParameterList: []
+  stickyNotes: []
+  nodeInspectorReference: {fileID: 0}
+  position: {x: -238, y: -173, z: 0}
+  scale: {x: 1.3225, y: 1.3225, z: 1}
+  references:
+    version: 2
+    RefIds:
+    - rid: 2952979642422132764
+      type: {class: SetRelativePositionNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: a9b9ad34-1d5c-4181-b85f-adeb016ab662
+        computeOrder: 3
+        position:
+          serializedVersion: 2
+          x: 791
+          y: 398
+          width: 140
+          height: 123
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        inputRelativePosition: {x: -6.31, y: 9.04, z: -6.61}
+        inputBeFollowGameObject: {fileID: 0}
+        inputFollowGameObject: {fileID: 0}
+        IsLerp: 1
+        LerpSpeed: 15
+    - rid: 2952979642422132765
+      type: {class: Vector3Node, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: ad3187f1-ff28-4ff3-a74b-6f209f191f87
+        computeOrder: 2
+        position:
+          serializedVersion: 2
+          x: 596
+          y: 292.23398
+          width: 102
+          height: 75
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        output: {x: -6.31, y: 9.04, z: -6.61}
+        input: {x: -6.31, y: 9.04, z: -6.61}
+    - rid: 2952979642422132768
+      type: {class: GameObjectParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        guid: 4dcb2047-5d62-4ae1-b24d-1207d037bd95
+        name: GameObject
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          rid: 2952979642422132769
+        val: {fileID: 0}
+    - rid: 2952979642422132769
+      type: {class: ExposedParameter/Settings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 4dcb2047-5d62-4ae1-b24d-1207d037bd95
+    - rid: 2952979642422132774
+      type: {class: GameObjectParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        guid: 1b5e22de-96bf-40d7-be5b-e9bac9353318
+        name: CompGameObject
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          rid: 2952979642422132775
+        val: {fileID: 0}
+    - rid: 2952979642422132775
+      type: {class: ExposedParameter/Settings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 1b5e22de-96bf-40d7-be5b-e9bac9353318
+    - rid: 2952979642422132778
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        nodeCustomName: 
+        GUID: cfc10f0c-aadc-4133-a3e8-9d6c60daa2e0
+        computeOrder: 0
+        position:
+          serializedVersion: 2
+          x: 596
+          y: 554.9046
+          width: 103
+          height: 37
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: 4dcb2047-5d62-4ae1-b24d-1207d037bd95
+        accessor: 0
+    - rid: 2952979642422132779
+      type: {class: GetPlayerNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: de3ffaec-f7ac-47a4-9b11-c8fceb6cdde4
+        computeOrder: 1
+        position:
+          serializedVersion: 2
+          x: 515.26013
+          y: 422.98694
+          width: 115
+          height: 75
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        outputPlayer: {fileID: 0}

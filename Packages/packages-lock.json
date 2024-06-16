@@ -180,6 +180,18 @@
       },
       "url": "https://packages.unity.com"
     },
+    "evoreek.lazypan": {
+      "version": "https://github.com/WH961230/LazyPan.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.inputsystem": "1.5.1",
+        "com.unity.addressables": "1.21.20",
+        "com.unity.textmeshpro": "3.0.6",
+        "com.unity.timeline": "1.7.4"
+      },
+      "hash": "c939432cb0d9aa989f0af0e85eedf831b497ea3b"
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,

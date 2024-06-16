@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: bca3a47dc3e5e5849a3855906d7dcbc4
+  m_SerializeEntries:
+  - m_GUID: 7c35e4bd4d075be40b97bad778ec1d70
+    m_Address: Packages/evoreek.lazypan/Runtime/Bundles/GameSetting/GameSetting.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f537e8e5f753e5e46a707b6fb12d5604
+    m_Address: Assets/LazyPan/Bundles/Configs
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5d13fac4251ba29498e17c85f529c236
+    m_Address: Assets/LazyPan/Bundles/Prefabs/Global
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b986460334da14343a863c9317c476bd
+    m_Address: Assets/LazyPan/Bundles/Prefabs/Obj
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5022f5be095d9dd4383608a2f7baf4ba
+    m_Address: Assets/LazyPan/Bundles/Prefabs/Tool
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5ba7671be21c36a4385559c588149cef
+    m_Address: Assets/LazyPan/Bundles/Prefabs/UI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 5cd535f96ceaaaf43a1e3b41ba68119a, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 2ddaa0c9b39b5a848b0f855f08a7da15, type: 2}
+    - {fileID: 11400000, guid: f8fbae124f0d2224b87c2cce3799c999, type: 2}

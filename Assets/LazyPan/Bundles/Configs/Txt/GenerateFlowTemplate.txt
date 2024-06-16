@@ -6,7 +6,7 @@ namespace LazyPan {
 #实体属性#
         public override void Init(Flow baseFlow) {
             base.Init(baseFlow);
-            ConsoleEx.Instance.Content("log", "Flow_#流程标识#  #流程名#流程");
+            ConsoleEx.Instance.ContentSave("flow", "Flow_#流程标识#  #流程名#流程");
 #创建界面#
 #初始化创建实体#
         }

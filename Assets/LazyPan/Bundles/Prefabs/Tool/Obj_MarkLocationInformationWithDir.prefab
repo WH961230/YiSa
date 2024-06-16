@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 530518b135155ef42ba0bb85c614c134, type: 2}
+  - {fileID: 2100000, guid: 75754bb3fa9f57840b7475b403229acb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -144,7 +144,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 530518b135155ef42ba0bb85c614c134, type: 2}
+  - {fileID: 2100000, guid: 75754bb3fa9f57840b7475b403229acb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -227,7 +227,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 530518b135155ef42ba0bb85c614c134, type: 2}
+  - {fileID: 2100000, guid: 75754bb3fa9f57840b7475b403229acb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -310,7 +310,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 530518b135155ef42ba0bb85c614c134, type: 2}
+  - {fileID: 2100000, guid: 75754bb3fa9f57840b7475b403229acb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -393,7 +393,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 530518b135155ef42ba0bb85c614c134, type: 2}
+  - {fileID: 2100000, guid: 75754bb3fa9f57840b7475b403229acb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -476,7 +476,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 530518b135155ef42ba0bb85c614c134, type: 2}
+  - {fileID: 2100000, guid: 75754bb3fa9f57840b7475b403229acb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -582,7 +582,10 @@ MonoBehaviour:
   OnPointerExitEvent:
     m_PersistentCalls:
       m_Calls: []
-  OnControllerColliderHitEvent:
+  OnPointerDownEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPointerUpEvent:
     m_PersistentCalls:
       m_Calls: []
   OnDrawGizmosAction:
@@ -606,8 +609,8 @@ MonoBehaviour:
   Comps: []
   UnityEventDatas: []
   DoTweenAnimationDatas: []
-  TrailRendererDatas: []
-  CameraDatas: []
+  TrailRenderers: []
+  Cameras: []
 --- !u!1 &7640563225086667682
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,7 +672,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 530518b135155ef42ba0bb85c614c134, type: 2}
+  - {fileID: 2100000, guid: 75754bb3fa9f57840b7475b403229acb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -1,0 +1,8 @@
+﻿Sign,Description
+string,string
+标识,描述
+LocationInf_Single_Player,单个_玩家出生点
+LocationInf_Mul_Player,多个_玩家出生点
+LocationInf_Single_Robot,单个_敌人出生点
+LocationInf_Mul_Robot,多个_敌人出生点
+LocationInf_Default,默认零点位

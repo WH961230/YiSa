@@ -1,0 +1,183 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31390c44c9f3a3d40b424bf6821999a2, type: 3}
+  m_Name: "\u89D2\u8272\u63A7\u5236\u5668\u91CD\u529B\u8282\u70B9"
+  m_EditorClassIdentifier: 
+  serializedNodes: []
+  nodes:
+  - rid: 2952979642422132875
+  - rid: 2952979642422132980
+  - rid: 2952979642422132981
+  - rid: 2952979642422132988
+  - rid: 2952979642422132989
+  edges:
+  - GUID: a6e76556-9f42-4d56-9811-da67f88c8534
+    owner: {fileID: 11400000}
+    inputNodeGUID: 23b85f3a-1252-4f7e-a7dd-2b7ac64f0c4c
+    outputNodeGUID: 262bef11-1abf-400a-b730-f7be844ef149
+    inputFieldName: inputSpeed
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 99a2454e-5998-4fec-a18b-e715f8c854b2
+    owner: {fileID: 11400000}
+    inputNodeGUID: 23b85f3a-1252-4f7e-a7dd-2b7ac64f0c4c
+    outputNodeGUID: c0dcd97a-426f-4533-a7e7-b3cd99617afa
+    inputFieldName: inputCharacterController
+    outputFieldName: characterController
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 7b13abfc-c79e-4733-b10e-8bd5365d7778
+    owner: {fileID: 11400000}
+    inputNodeGUID: c0dcd97a-426f-4533-a7e7-b3cd99617afa
+    outputNodeGUID: c88748c6-0067-42a1-9368-f0f20afc4805
+    inputFieldName: gameObject
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: output
+  - GUID: 90e42b02-c4af-4a2e-8260-cefed832c714
+    owner: {fileID: 11400000}
+    inputNodeGUID: 23b85f3a-1252-4f7e-a7dd-2b7ac64f0c4c
+    outputNodeGUID: 2b238276-f8cd-4cda-9110-2b11d44fb54f
+    inputFieldName: inputDirection
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  groups: []
+  stackNodes: []
+  pinnedElements:
+  - position:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 150
+      height: 200
+    opened: 1
+    editorType:
+      serializedType: GraphProcessor.ExposedParameterView, com.alelievr.NodeGraphProcessor.Editor,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  exposedParameters:
+  - rid: 2952979642422132984
+  serializedParameterList: []
+  stickyNotes: []
+  nodeInspectorReference: {fileID: 0}
+  position: {x: -128, y: -48, z: 0}
+  scale: {x: 1.15, y: 1.15, z: 1}
+  references:
+    version: 2
+    RefIds:
+    - rid: 2952979642422132875
+      type: {class: GetCharacterControllerNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: c0dcd97a-426f-4533-a7e7-b3cd99617afa
+        computeOrder: 1
+        position:
+          serializedVersion: 2
+          x: 447
+          y: 443
+          width: 218
+          height: 99
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        gameObject: {fileID: 0}
+        characterController: {fileID: 0}
+    - rid: 2952979642422132980
+      type: {class: SetCharacterControllerMoveNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 23b85f3a-1252-4f7e-a7dd-2b7ac64f0c4c
+        computeOrder: 4
+        position:
+          serializedVersion: 2
+          x: 734.087
+          y: 279.00003
+          width: 151
+          height: 123
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        inputSpeed: 0
+        inputDirection: {x: 0, y: 0, z: 0}
+        inputCharacterController: {fileID: 0}
+    - rid: 2952979642422132981
+      type: {class: FloatNode, ns: , asm: evoreek.lazypan}
+      data:
+        nodeCustomName: 
+        GUID: 262bef11-1abf-400a-b730-f7be844ef149
+        computeOrder: 3
+        position:
+          serializedVersion: 2
+          x: 562.73914
+          y: 121.304344
+          width: 102
+          height: 99
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        output: 0
+        input: 10
+    - rid: 2952979642422132984
+      type: {class: GameObjectParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        guid: bd396065-f374-4810-85d0-d7b5e8e8a3c1
+        name: GameObject
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          rid: 2952979642422132985
+        val: {fileID: 0}
+    - rid: 2952979642422132985
+      type: {class: ExposedParameter/Settings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: bd396065-f374-4810-85d0-d7b5e8e8a3c1
+    - rid: 2952979642422132988
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        nodeCustomName: 
+        GUID: c88748c6-0067-42a1-9368-f0f20afc4805
+        computeOrder: 0
+        position:
+          serializedVersion: 2
+          x: 214
+          y: 470.56522
+          width: 103
+          height: 37
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: bd396065-f374-4810-85d0-d7b5e8e8a3c1
+        accessor: 0
+    - rid: 2952979642422132989
+      type: {class: Vector3Node, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 2b238276-f8cd-4cda-9110-2b11d44fb54f
+        computeOrder: 2
+        position:
+          serializedVersion: 2
+          x: 422.86957
+          y: 304.17392
+          width: 112
+          height: 75
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        output: {x: 0, y: 0, z: 0}
+        input: {x: 0, y: -1, z: 0}

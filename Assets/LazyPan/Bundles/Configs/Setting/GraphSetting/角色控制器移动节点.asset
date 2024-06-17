@@ -88,8 +88,8 @@ MonoBehaviour:
   serializedParameterList: []
   stickyNotes: []
   nodeInspectorReference: {fileID: 0}
-  position: {x: 366, y: 373, z: 0}
-  scale: {x: 1.15, y: 1.15, z: 1}
+  position: {x: 430, y: 282, z: 0}
+  scale: {x: 1, y: 1, z: 1}
   references:
     version: 2
     RefIds:
@@ -128,7 +128,7 @@ MonoBehaviour:
         expanded: 0
         debug: 0
         nodeLock: 0
-        inputSpeed: 20
+        inputSpeed: 10
         inputDirection: {x: 0, y: 0, z: 0}
         inputCharacterController: {fileID: 0}
         inputAlignGameObject: {fileID: 0}
@@ -142,14 +142,14 @@ MonoBehaviour:
         position:
           serializedVersion: 2
           x: 239
-          y: -271
+          y: -272
           width: 102
           height: 99
         expanded: 0
         debug: 0
         nodeLock: 0
-        output: 20
-        input: 20
+        output: 10
+        input: 10
     - rid: 2952979642422132958
       type: {class: GetInputNode, ns: , asm: Assembly-CSharp}
       data:

@@ -21,9 +21,10 @@ public class SetCharacterControllerMoveNode : BaseNode {
                     break;
                 case 角色移动方向类型.物体相对位置:
                     if (inputAlignGameObject != null) {
-                        dir = inputAlignGameObject.transform.forward * inputDirection.z +
-                              inputAlignGameObject.transform.right * inputDirection.x +
-                              inputAlignGameObject.transform.up * inputDirection.y;
+                        Vector3 forward = inputAlignGameObject.transform.forward;
+                        forward.y = 0;
+                        dir = forward * inputDirection.z +
+                              inputAlignGameObject.transform.right * inputDirection.x;
                     }
                     break;
             }

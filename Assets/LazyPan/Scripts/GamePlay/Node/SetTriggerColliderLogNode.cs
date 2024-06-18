@@ -7,6 +7,7 @@ using UnityEngine.Events;
 
 [System.Serializable, NodeMenuItem("Custom/设置碰撞体日志节点")]
 public class SetTriggerColliderLogNode : BaseNode {
+    [Input(name = "日志")] public string Log;
     [Output(name = "碰撞体触发事件")] public UnityAction<Collider> outputUnityAction;
 
     public override string name => "设置碰撞体日志节点";
@@ -29,6 +30,6 @@ public class SetTriggerColliderLogNode : BaseNode {
     }
 
     private void TriggerColliderLog(Collider collider) {
-        Debug.LogError(collider.name);
+        Debug.LogError(Log + collider.name);
     }
 }

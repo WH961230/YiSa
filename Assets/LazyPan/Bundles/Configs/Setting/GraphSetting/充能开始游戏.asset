@@ -14,33 +14,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serializedNodes: []
   nodes:
-  - rid: 3956706250016686108
   - rid: 3956706250016686115
-  - rid: 3956706250016686130
   - rid: 3956706250016686143
+  - rid: 2952979691228626958
+  - rid: 2952979691228626963
+  - rid: 2952979691228626974
+  - rid: 2952979691228627019
+  - rid: 2952979691228627028
   edges:
-  - GUID: efe9b150-2fde-4c71-99a1-510ec1689cf4
+  - GUID: d50df55e-2439-461f-8abd-0f9fa6fb91da
     owner: {fileID: 11400000}
-    inputNodeGUID: a48f5439-ba26-4286-a974-b69d677b4d2b
+    inputNodeGUID: 38e36936-4967-446d-b77a-7ed96a2fd010
     outputNodeGUID: abf1bc1b-3414-4fa9-b695-d77675e6018d
     inputFieldName: inputTriggerGameObject
     outputFieldName: output
     inputPortIdentifier: 
     outputPortIdentifier: output
-  - GUID: ef1260e7-794d-430e-b681-bcbe8ec8c445
+  - GUID: b638d733-f5ee-43e1-8a36-f5927e8cf408
     owner: {fileID: 11400000}
-    inputNodeGUID: a48f5439-ba26-4286-a974-b69d677b4d2b
-    outputNodeGUID: b4368f0c-4a3d-468d-a179-ff61fce5001a
-    inputFieldName: executed
-    outputFieldName: executes
+    inputNodeGUID: 38e36936-4967-446d-b77a-7ed96a2fd010
+    outputNodeGUID: 769bb656-8db5-4852-9135-3f26b4b654a2
+    inputFieldName: inputTriggerEnterUnityAction
+    outputFieldName: outputUnityAction
     inputPortIdentifier: 
     outputPortIdentifier: 
-  - GUID: 0fb32500-d2db-459f-bb1f-765232e759dc
+  - GUID: 941989c8-5ded-48d0-9e25-f4f9011119a3
     owner: {fileID: 11400000}
-    inputNodeGUID: a48f5439-ba26-4286-a974-b69d677b4d2b
-    outputNodeGUID: 769bb656-8db5-4852-9135-3f26b4b654a2
-    inputFieldName: inputUnityAction
-    outputFieldName: outputUnityAction
+    inputNodeGUID: 769bb656-8db5-4852-9135-3f26b4b654a2
+    outputNodeGUID: 025099e9-70a3-41a9-a75c-adadf5dc04d6
+    inputFieldName: Log
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 4576a2c3-7ebc-4527-acba-df549266f321
+    owner: {fileID: 11400000}
+    inputNodeGUID: 69ffe624-dd0e-4624-9af5-f4289b6e1106
+    outputNodeGUID: 90c3e31c-2933-4a5b-8399-07cc3fdbf4f3
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: input
+    outputPortIdentifier: 
+  - GUID: a94e3850-7aee-4b66-8e24-684a92a5ae9c
+    owner: {fileID: 11400000}
+    inputNodeGUID: 90c3e31c-2933-4a5b-8399-07cc3fdbf4f3
+    outputNodeGUID: 38e36936-4967-446d-b77a-7ed96a2fd010
+    inputFieldName: executed
+    outputFieldName: executes
     inputPortIdentifier: 
     outputPortIdentifier: 
   groups: []
@@ -58,30 +77,120 @@ MonoBehaviour:
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   exposedParameters:
   - rid: 3956706250016686111
+  - rid: 2952979691228626970
   serializedParameterList: []
   stickyNotes: []
   nodeInspectorReference: {fileID: 0}
-  position: {x: 202, y: 92, z: 0}
-  scale: {x: 1.15, y: 1.15, z: 1}
+  position: {x: -300, y: -597, z: 0}
+  scale: {x: 2, y: 2, z: 1}
   references:
     version: 2
     RefIds:
-    - rid: 3956706250016686108
-      type: {class: SetTriggerEnterEventNode, ns: , asm: Assembly-CSharp}
+    - rid: 2952979691228626958
+      type: {class: SetTriggerEventNode, ns: , asm: Assembly-CSharp}
       data:
         nodeCustomName: 
-        GUID: a48f5439-ba26-4286-a974-b69d677b4d2b
+        GUID: 38e36936-4967-446d-b77a-7ed96a2fd010
         computeOrder: 3
         position:
           serializedVersion: 2
-          x: 470
-          y: 284
-          width: 240
-          height: 75
+          x: 485.24167
+          y: 503.5001
+          width: 262
+          height: 147
         expanded: 0
         debug: 0
         nodeLock: 0
         inputTriggerGameObject: {fileID: 0}
+        outputTriggerEnter: 1
+        outputTriggerExit: 1
+    - rid: 2952979691228626963
+      type: {class: StringNode, ns: , asm: evoreek.lazypan}
+      data:
+        nodeCustomName: 
+        GUID: 025099e9-70a3-41a9-a75c-adadf5dc04d6
+        computeOrder: 1
+        position:
+          serializedVersion: 2
+          x: -80.93825
+          y: 568.8156
+          width: 214
+          height: 177
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        output: "\u8FDB\u5165\u78B0\u649E\u4F53:"
+    - rid: 2952979691228626970
+      type: {class: BoolParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        guid: 755d3053-1022-408d-a9cb-a5641c3df648
+        name: Charging
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          rid: 2952979691228626971
+        val: 1
+    - rid: 2952979691228626971
+      type: {class: ExposedParameter/Settings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 755d3053-1022-408d-a9cb-a5641c3df648
+    - rid: 2952979691228626974
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        nodeCustomName: 
+        GUID: 69ffe624-dd0e-4624-9af5-f4289b6e1106
+        computeOrder: 5
+        position:
+          serializedVersion: 2
+          x: 1147.5
+          y: 528
+          width: 86
+          height: 37
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: 755d3053-1022-408d-a9cb-a5641c3df648
+        accessor: 1
+    - rid: 2952979691228627019
+      type: {class: BoolNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 90c3e31c-2933-4a5b-8399-07cc3fdbf4f3
+        computeOrder: 4
+        position:
+          serializedVersion: 2
+          x: 828.5
+          y: 514
+          width: 102
+          height: 75
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 1
+        output: 0
+    - rid: 2952979691228627028
+      type: {class: IfNode, ns: , asm: evoreek.lazypan}
+      data:
+        nodeCustomName: 
+        GUID: 26e840bf-d168-496b-bb7c-04aadaa4d333
+        computeOrder: 6
+        position:
+          serializedVersion: 2
+          x: 999
+          y: 652
+          width: 152
+          height: 113
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        condition: 0
+        compareOperator: 0
     - rid: 3956706250016686111
       type: {class: GameObjectParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
       data:
@@ -107,11 +216,11 @@ MonoBehaviour:
       data:
         nodeCustomName: 
         GUID: abf1bc1b-3414-4fa9-b695-d77675e6018d
-        computeOrder: 1
+        computeOrder: 0
         position:
           serializedVersion: 2
-          x: 252.36296
-          y: 411.93573
+          x: 251.8611
+          y: 477.07053
           width: 103
           height: 37
         expanded: 0
@@ -119,33 +228,19 @@ MonoBehaviour:
         nodeLock: 0
         parameterGUID: 97095e99-b152-4a11-8766-45511bb534bd
         accessor: 0
-    - rid: 3956706250016686130
-      type: {class: StartNode, ns: NodeGraphProcessor.Examples, asm: evoreek.lazypan}
-      data:
-        nodeCustomName: 
-        GUID: b4368f0c-4a3d-468d-a179-ff61fce5001a
-        computeOrder: 2
-        position:
-          serializedVersion: 2
-          x: 252.00003
-          y: 284
-          width: 88
-          height: 75
-        expanded: 0
-        debug: 0
-        nodeLock: 0
     - rid: 3956706250016686143
       type: {class: SetTriggerColliderLogNode, ns: , asm: Assembly-CSharp}
       data:
         nodeCustomName: 
         GUID: 769bb656-8db5-4852-9135-3f26b4b654a2
-        computeOrder: 0
+        computeOrder: 2
         position:
           serializedVersion: 2
-          x: 228.34784
-          y: 512.8261
+          x: 197.00008
+          y: 576.6628
           width: 151
           height: 75
         expanded: 0
         debug: 0
         nodeLock: 0
+        Log: "\u8FDB\u5165\u78B0\u649E\u4F53:"

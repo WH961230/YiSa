@@ -23,11 +23,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="751138b9-e304-4f88-90e0-21e17608f2fb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/Windows.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Images/光标.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Images/光标.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Node/GetSpriteNode.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Node/GetSpriteNode.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Node/SetCursorNode.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Node/SetCursorNode.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YiSa/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/GraphSetting/角色控制器移动节点.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/GraphSetting/角色控制器移动节点.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/GraphSetting/朝向目标位置节点.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/GraphSetting/朝向目标位置节点.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/GraphSetting/相对位置节点.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/GraphSetting/相对位置节点.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/GraphSetting/角色控制器移动节点.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/GraphSetting/角色控制器移动节点.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/GraphSetting/角色控制器重力节点.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Configs/Setting/GraphSetting/角色控制器重力节点.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/SceneA/Obj_Camera_Camera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/SceneA/Obj_Camera_Camera.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/SceneA/Obj_Player_Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/Obj/SceneA/Obj_Player_Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Node/SetCharacterControllerMoveNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Node/SetCharacterControllerMoveNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/UI/UI_SceneA.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/UI/UI_SceneA.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/UI/UI_SceneB.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Bundles/Prefabs/UI/UI_SceneB.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/SceneA/Flow_SceneA.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/SceneA/Flow_SceneA.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/SceneB/Flow_SceneB.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Flow/SceneB/Flow_SceneB.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/FlowGenerate.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/FlowGenerate.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/ObjConfig.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Csv/ObjConfig.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,28 +57,33 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Grenade.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Laser.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Framework/Collections/Dictionaries/DictionaryContainsKey.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/InputModules/BaseInput.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/73C3B9FA-4DA6-44C9-A21A-8A16D8E2909F/0a/9428c658/EventDispatcher.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Data/Data_Global.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Label/Label.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Node/GetSpriteNode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Node/SetLookAtTargetNode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Node/SetTriggerColliderLogNode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collab-proxy@2.2.0/Editor/PlasticSCM/Views/IncomingChanges/Developer/DirectoryConflicts/DrawDirectoryResolutionPanel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@14.0.7/Editor/Volume/Drawers/IntParameterDrawer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.shadergraph@14.0.7/Editor/Generation/Targets/BuiltIn/Editor/ShaderGUI/BaseShaderGUI.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/ParameterArgs.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.State/StateGraphAsset.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/InputModules/BaseInput.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Dropdown.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Behaviour/Behaviour_Auto_Grenade.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Label/Label.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../LazyPanFramework/Assets/Test.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6C9B376C-3FCA-40B7-87E8-C1A2133BF243/e5/f075f116/Object.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/73C3B9FA-4DA6-44C9-A21A-8A16D8E2909F/cb/6df42bed/IMGUIContainer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Data/Data_Global.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/evoreek.lazypan@6708ebb55a/Runtime/Core/NodeGraphProcessor/Examples/GraphBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4911ECA4-7F29-4E18-A7B3-306F02701303/06/26f243e6/SerializedObject.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/LazyPan/Scripts/GamePlay/Node/SetLookAtTargetNode.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/evoreek.lazypan@6708ebb55a/Runtime/Core/NodeGraphProcessor/Examples/Scenes/RuntimeGraph/RuntimeGraph.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Framework/Events/Input/InputSystem/OnInputSystemEvent.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collab-proxy@2.2.0/Editor/PlasticSCM/Views/IncomingChanges/Developer/DirectoryConflicts/DrawDirectoryResolutionPanel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/ParameterArgs.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Framework/Collections/Dictionaries/DictionaryContainsKey.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Framework/Collections/Dictionaries/RemoveDictionaryItem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Framework/Events/Input/InputSystem/OnInputSystemEvent.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.State/StateGraphAsset.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/evoreek.lazypan@6708ebb55a/Editor/LazyPanGuide.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/evoreek.lazypan@6708ebb55a/Runtime/Core/Comp/Comp.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/evoreek.lazypan@6708ebb55a/Runtime/Core/Loader/Loader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/evoreek.lazypan@6708ebb55a/Runtime/Core/NodeGraphProcessor/Examples/ConditionalGraph/ConditionalProcessor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/evoreek.lazypan@6708ebb55a/Runtime/Core/NodeGraphProcessor/Examples/GraphBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/evoreek.lazypan@6708ebb55a/Runtime/Core/NodeGraphProcessor/Examples/Scenes/ConditionalGraph/RuntimeConditionalGraph.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/evoreek.lazypan@6708ebb55a/Runtime/Core/NodeGraphProcessor/Examples/Scenes/RuntimeGraph/RuntimeGraph.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/evoreek.lazypan@6708ebb55a/com.alelievr.NodeGraphProcessor/Runtime/Elements/BaseNode.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/evoreek.lazypan@6708ebb55a/com.alelievr.NodeGraphProcessor/Runtime/Processing/ProcessGraphProcessor.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -118,6 +142,10 @@
       </list>
     </option>
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 7
+}]]></component>
   <component name="ProjectId" id="2cdN6hCIoDgE1ZtD3v5ebHQ2IFL" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -126,12 +154,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34995976" />
-    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.30008045" />
-    <property name="Discover.Launch.Via.Unity" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "lazypan",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\Evore\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Evore\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
+      "C:\\Users\\Evore\\AppData\\Local\\Symbols\\src"
+    ]
+  }
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$PROJECT_DIR$/../YiSaBuild/Roguelike.exe" />
@@ -161,17 +201,19 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
+      <option name="projectPathOnTarget" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="27236">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="27236" />
+      <option name="projectPathOnTarget" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
@@ -268,6 +310,7 @@
       <workItem from="1715607879881" duration="2163000" />
       <workItem from="1718534879961" duration="6045000" />
       <workItem from="1718635401892" duration="1410000" />
+      <workItem from="1718669863641" duration="5093000" />
     </task>
     <servers />
   </component>
@@ -286,88 +329,9 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state width="468" height="464" key="DebuggerActiveHint" timestamp="1715530761669">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="468" height="464" key="DebuggerActiveHint/0.0.2560.1400@0.0.2560.1400" timestamp="1715530761669" />
-    <state width="2517" height="311" key="GridCell.Tab.0.bottom" timestamp="1715612230604">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="2517" height="311" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1715612230604" />
-    <state width="2517" height="311" key="GridCell.Tab.0.center" timestamp="1715612230604">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="2517" height="311" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1715612230604" />
-    <state width="2517" height="311" key="GridCell.Tab.0.left" timestamp="1715612230604">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="2517" height="311" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1715612230604" />
-    <state width="2517" height="311" key="GridCell.Tab.0.right" timestamp="1715612230604">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="2517" height="311" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1715612230604" />
-    <state width="2517" height="311" key="GridCell.Tab.1.bottom" timestamp="1715612230605">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="2517" height="311" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1715612230605" />
-    <state width="2517" height="311" key="GridCell.Tab.1.center" timestamp="1715612230605">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="2517" height="311" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1715612230605" />
-    <state width="2517" height="311" key="GridCell.Tab.1.left" timestamp="1715612230604">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="2517" height="311" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1715612230604" />
-    <state width="2517" height="311" key="GridCell.Tab.1.right" timestamp="1715612230605">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="2517" height="311" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1715612230605" />
-    <state width="2517" height="311" key="GridCell.Tab.2.bottom" timestamp="1715612230605">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="2517" height="311" key="GridCell.Tab.2.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1715612230605" />
-    <state width="2517" height="311" key="GridCell.Tab.2.center" timestamp="1715612230605">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="2517" height="311" key="GridCell.Tab.2.center/0.0.2560.1400@0.0.2560.1400" timestamp="1715612230605" />
-    <state width="2517" height="311" key="GridCell.Tab.2.left" timestamp="1715612230605">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="2517" height="311" key="GridCell.Tab.2.left/0.0.2560.1400@0.0.2560.1400" timestamp="1715612230605" />
-    <state width="2517" height="311" key="GridCell.Tab.2.right" timestamp="1715612230605">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="2517" height="311" key="GridCell.Tab.2.right/0.0.2560.1400@0.0.2560.1400" timestamp="1715612230605" />
-    <state width="2517" height="311" key="GridCell.Tab.3.bottom" timestamp="1715612230605">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="2517" height="311" key="GridCell.Tab.3.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1715612230605" />
-    <state width="2517" height="311" key="GridCell.Tab.3.center" timestamp="1715612230605">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="2517" height="311" key="GridCell.Tab.3.center/0.0.2560.1400@0.0.2560.1400" timestamp="1715612230605" />
-    <state width="2517" height="311" key="GridCell.Tab.3.left" timestamp="1715612230605">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="2517" height="311" key="GridCell.Tab.3.left/0.0.2560.1400@0.0.2560.1400" timestamp="1715612230605" />
-    <state width="2517" height="311" key="GridCell.Tab.3.right" timestamp="1715612230605">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="2517" height="311" key="GridCell.Tab.3.right/0.0.2560.1400@0.0.2560.1400" timestamp="1715612230605" />
-    <state x="902" y="432" width="755" height="536" key="find.popup" timestamp="1715608486621">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="902" y="432" width="755" height="536" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1715608486621" />
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1718635423247">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1718635423247" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
